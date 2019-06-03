@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@section('meta')
-    {!! SEO::generate() !!}
-@endsection
-
 @section('content')
     <div id="demo" class="carousel slide" data-ride="carousel">
     <ul class="carousel-indicators">
@@ -43,9 +39,6 @@
     </div>
 
     <h1>Hello, world!</h1>
-@endsection
-
-@section('footer')
 @endsection
 
 @section('scripts')

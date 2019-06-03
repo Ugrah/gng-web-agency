@@ -14,4 +14,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('language/{lang}', 'MainController@language')->where('lang', '[A-Za-z_-]+');
 
     Route::get('/', 'MainController@index')->name('home');
+
+    /*
+     * Testing page
+    */
+    Route::get('/test', 'MainController@test')->name('test');
 });

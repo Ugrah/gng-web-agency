@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\Jobs\ChangeLocale;
 use SEO;
 
+/*
+ * For test
+*/
+use Mail;
+
 class MainController extends Controller
 {
     public function __construct(){}
@@ -30,13 +35,23 @@ class MainController extends Controller
 
     public function index() 
     {
-        //SEO::setTitle(config('seotools.meta.defaults.title'));
+        //SEO::setTitle('Home Page');
         //SEO::setDescription('This is my page description');
         SEO::opengraph()->setUrl('https://gngdev.com');
         SEO::setCanonical('https://gngdev.com');
         //SEO::opengraph()->addProperty('type', 'articles');
-        SEO::twitter()->setSite('@LuizVinicius73');
 
         return view('welcome');
+    }
+
+    public function test()
+    {
+        Mail::send('emails.test', [], function ($m) {
+            $m->from('infos@gngdev.com', 'GnG App');
+
+            $m->to('grulog23@gmail.com', 'Ulrich Grah')->subject('Your Reminder!');
+        });
+
+        return view('test');
     }
 }
