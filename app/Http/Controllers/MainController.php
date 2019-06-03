@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Jobs\ChangeLocale;
+use SEO;
 
 class MainController extends Controller
 {
@@ -29,6 +30,13 @@ class MainController extends Controller
 
     public function index() 
     {
-        
+        //SEO::setTitle(config('seotools.meta.defaults.title'));
+        //SEO::setDescription('This is my page description');
+        SEO::opengraph()->setUrl('https://gngdev.com');
+        SEO::setCanonical('https://gngdev.com');
+        //SEO::opengraph()->addProperty('type', 'articles');
+        SEO::twitter()->setSite('@LuizVinicius73');
+
+        return view('welcome');
     }
 }
