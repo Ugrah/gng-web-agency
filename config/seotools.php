@@ -9,7 +9,7 @@ return [
             'title'        => 'GnG Dev Agency', // set false to total remove
             'description'  => 'Agence de développement web et marketing digital', // set false to total remove
             'separator'    => ' - ',
-            'keywords'     => [],
+            'keywords'     => ['website','creation','site','internet','web','agency','mobile','app','referencement','natural','seo'],
             'canonical'    => null, // Set null for using Url::current(), set false to total remove
             'robots'       => false, // Set to 'all', 'none' or any combination of index/noindex and follow/nofollow
         ],
@@ -32,8 +32,8 @@ return [
         'defaults' => [
             'title'       => 'GnG Dev Agency', // set false to total remove
             'description' => 'Agence de développement web et marketing digital', // set false to total remove
-            'url'         => false, // Set null for using Url::current(), set false to total remove
-            'type'        => false,
+            'url'         => null, // Set null for using Url::current(), set false to total remove
+            'type'        => 'website',
             'site_name'   => false,
             'images'      => [],
         ],
@@ -43,7 +43,7 @@ return [
          * The default values to be used by the twitter cards generator.
          */
         'defaults' => [
-          //'card'        => 'summary',
+          'card'        => 'summary',
           'site'        => '@gngdev',
         ],
     ],

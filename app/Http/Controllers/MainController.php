@@ -37,21 +37,24 @@ class MainController extends Controller
     {
         //SEO::setTitle('Home Page');
         //SEO::setDescription('This is my page description');
-        SEO::opengraph()->setUrl('https://gngdev.com');
-        SEO::setCanonical('https://gngdev.com');
+        //SEO::opengraph()->setUrl($request->fullUrl());
+        //SEO::setCanonical($request->fullUrl());
         //SEO::opengraph()->addProperty('type', 'articles');
+        SEO::opengraph()->addProperty('locale', app()->getLocale());
 
-        return view('welcome');
+        return view('statics.index');
     }
 
     public function test()
     {
+        /*
         Mail::send('emails.test', [], function ($m) {
             $m->from('infos@gngdev.com', 'GnG App');
 
             $m->to('grulog23@gmail.com', 'Ulrich Grah')->subject('Your Reminder!');
         });
-
+        */
+        SEO::opengraph()->addProperty('locale', app()->getLocale());
         return view('test');
     }
 }

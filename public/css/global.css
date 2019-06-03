@@ -1,3 +1,82 @@
 body { 
-	font-family: 'ABeeZee', 'Roboto', 'Lato', 'Roboto Condensed', 'PT Sans', sans-serif;
+	font-family: 'ABeeZee', 'Roboto', 'Lato', 'Roboto Condensed', 'PT Sans', sans-serif, sans-serif;
 }
+
+
+/*
+ * Nav bar 
+*/
+nav#fixedNavbar {
+	-webkit-box-shadow: 0px 10px 11px 0px rgba(0,0,0,0.27);
+	-moz-box-shadow: 0px 10px 11px 0px rgba(0,0,0,0.27);
+	box-shadow: 0px 10px 11px 0px rgba(0,0,0,0.27);
+	z-index: -1000;
+}
+
+nav#fixedNavbar ul li a, nav#standardNavbar ul li a {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+nav#fixedNavbar ul li.active a {
+	color: #627BED;
+}
+
+nav#standardNavbar {
+	background-color: rgba(0,0,0,0) !important;z-index: 1;
+}
+
+nav#standardNavbar *, nav#standardNavbar ul li.active a:hover {
+	color: #fff;
+}
+
+nav#standardNavbar ul > li.active > a {
+	color: #ccc !important;
+}
+/* end nav bar */
+
+/*
+ * Footer
+*/
+footer#footer {
+	background: #233142 !important;
+}
+footer#footer, footer#footer p, footer#footer a {
+	color: #cecece !important;
+}
+footer#footer h2{
+	font-size: 1.4em;
+}
+
+footer#footer a {
+	text-decoration: none;
+}
+
+footer#footer a:hover {
+	color: white !important;
+}
+/* end footer */
+
+
+
+/*
+ * Tablet and Mobile device 
+*/
+@media only screen and (max-width: 992px) {
+	nav#standardNavbar {
+		background-image: linear-gradient(to right, #e87bc0, #e16dcb, #d362da, #be5bea, #9e59fd) !important;
+		-webkit-box-shadow: 0px 10px 11px 0px rgba(0,0,0,0.27);
+		-moz-box-shadow: 0px 10px 11px 0px rgba(0,0,0,0.27);
+		box-shadow: 0px 10px 11px 0px rgba(0,0,0,0.27);
+		z-index: 1;
+	}
+
+	nav#standardNavbar *, nav#standardNavbar ul li.active a:hover {
+		color: #fff;
+	}
+
+	nav#standardNavbar ul li.active a {
+		color: dodgerblue !important;
+	}
+}
+

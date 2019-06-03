@@ -1,23 +1,3 @@
-<style>
-    footer#footer {
-        background: #233142 !important;
-    }
-    footer#footer, footer#footer p, footer#footer a {
-        color: #cecece !important;
-    }
-    footer#footer h2{
-        font-size: 1.4em;
-    }
-
-    footer#footer a {
-        text-decoration: none;
-    }
-
-    footer#footer a:hover {
-        color: white !important;
-    }
-</style>
-
 <footer id="footer" class="bg-dark text-light pt-md-5 pb-md-5">
     <div class="container">
     <div class="row mb-5">

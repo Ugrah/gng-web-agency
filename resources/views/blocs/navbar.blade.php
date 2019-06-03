@@ -1,29 +1,11 @@
-<style>
-    nav#fixedNavbar {
-        -webkit-box-shadow: 0px 10px 11px 0px rgba(0,0,0,0.27);
-        -moz-box-shadow: 0px 10px 11px 0px rgba(0,0,0,0.27);
-        box-shadow: 0px 10px 11px 0px rgba(0,0,0,0.27);
-        z-index: -1000;
-    }
-
-    nav#fixedNavbar ul li a {
-        text-transform: uppercase;
-        font-weight: bold;
-    }
-
-    nav#fixedNavbar ul li.active a {
-        color: #627BED;
-    }
-</style>
-
-<nav id="fixedNavbar" class="navbar navbar-expand-md navbar-light fixed-top bg-light p-3">
+<nav id="fixedNavbar" class="navbar navbar-expand-md navbar-light fixed-top bg-light px-xl-5">
     <a class="navbar-brand" href="{{url('/')}}"><h4>GnG Web Agency</h4></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#fixedNavbarCollapse" aria-controls="fixedNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="fixedNavbarCollapse">
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
+        <li class="nav-item">
         <a class="nav-link" href="#">{{ trans('front/navBar.menu-items.home') }} <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">

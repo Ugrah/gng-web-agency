@@ -16,7 +16,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/global.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/global.css') }}" rel="stylesheet" type="text/css" >
 
     @yield('styles')
 
@@ -25,7 +25,7 @@
 
     @yield('scriptsBefore')
   </head>
-  <body style="position: relative;">
+  <body>
 
     @include('blocs.navbar')
 
