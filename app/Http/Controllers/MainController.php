@@ -18,7 +18,7 @@ class MainController extends Controller
     /**
      * Change language.
      *
-     * @param  String $lang 
+     * @param  String $lang
      * @param  App\Jobs\ChangeLocale $changeLocale
      * @return Response
      */
@@ -33,7 +33,7 @@ class MainController extends Controller
         return redirect()->back();
     }
 
-    public function index() 
+    public function index()
     {
         //SEO::setTitle('Home Page');
         //SEO::setDescription('This is my page description');
@@ -49,12 +49,50 @@ class MainController extends Controller
     {
         /*
         Mail::send('emails.test', [], function ($m) {
-            $m->from('infos@gngdev.com', 'GnG App');
+            $m->from('contact@gngdev.com', 'GnG Web Agency');
 
-            $m->to('grulog23@gmail.com', 'Ulrich Grah')->subject('Your Reminder!');
+            $m->to('grulog23@gmail.com', 'Ulrich Grah')->subject('Test Template Email');
         });
         */
+
+        //SEO::opengraph()->addProperty('locale', app()->getLocale());
+        return view('emails.test');
+    }
+    public function getContact()
+    {
+        //SEO::setTitle('Home Page');
+        //SEO::setDescription('This is my page description');
+        //SEO::opengraph()->setUrl($request->fullUrl());
+        //SEO::setCanonical($request->fullUrl());
+        //SEO::opengraph()->addProperty('type', 'articles');
         SEO::opengraph()->addProperty('locale', app()->getLocale());
-        return view('test');
+
+        return view('statics.contact');
+    }
+
+    public function postContact(ContactRequest $request)
+    {
+        //SEO::setTitle('Home Page');
+        //SEO::setDescription('This is my page description');
+        //SEO::opengraph()->setUrl($request->fullUrl());
+        //SEO::setCanonical($request->fullUrl());
+        //SEO::opengraph()->addProperty('type', 'articles');
+        SEO::opengraph()->addProperty('locale', app()->getLocale());
+
+
+        Mail::send('emails.email_contact', $request->all(), function ($m) use ($request) {
+            $m->from('contact@gngdev.com', 'GnG Dev');
+
+            $m->to( 'infos@gngdev.com', 'GnG Dev')->subject($request->input('subject'));
+        });
+
+
+        Mail::send( 'emails.email_contact', $request->all(), function ($m) use ($request) {
+            $m->from('contact@gngdev.com', 'GnG Dev');
+
+            $m->to($request->input('email'), $request->input('nom'))->subject($request->input('subject'));
+        });
+
+        return view('statics.contact')->withOk( 'Merci. Votre message a été transmis à l\'administrateur du site. Vous recevrez une réponse rapidement.');
     }
 }

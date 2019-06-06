@@ -12,7 +12,7 @@
     <a class="nav-link" href="#">{{ trans('front/navBar.menu-items.about') }}</a>
     </li>
     <li class="nav-item">
-    <a class="nav-link" href="#">{{ trans('front/navBar.menu-items.contact') }}</a>
+    <a class="nav-link" href="{{url('/contact')}}">{{ trans('front/navBar.menu-items.contact') }}</a>
     </li>
 
     <!-- language links -->

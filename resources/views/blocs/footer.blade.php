@@ -24,9 +24,9 @@
             <div class="mb-4">
             <h2 class="text-light">{{ trans('front/footer.title-items.navigational') }}</h2>
             <ul class="list-unstyled">
-            <li><a href="#" class="py-2 d-block">{{ trans('front/navBar.menu-items.home') }}</a></li>
+            <li><a href="{{url('/')}}" class="py-2 d-block">{{ trans('front/navBar.menu-items.home') }}</a></li>
             <li><a href="#" class="py-2 d-block">{{ trans('front/navBar.menu-items.about') }}</a></li>
-            <li><a href="#" class="py-2 d-block">{{ trans('front/navBar.menu-items.contact') }}</a></li>
+            <li><a href="{{url('/contact')}}" class="py-2 d-block">{{ trans('front/navBar.menu-items.contact') }}</a></li>
             </ul>
         </div>
         </div>
@@ -37,7 +37,7 @@
                 <ul class="list-unstyled">
                 <li class="mb-3"><i class="fas fa-map-marker-alt fa-lg text-light"></i> <span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
                 <li class="mb-3"><a href="#"><i class="fas fa-phone fa-lg text-light"></i> <span class="text">+212 6 45 71 71 87</span></a></li>
-                <li class="mb-3"><a href="mailto:grulogdev@gmail.com"><i class="fas fa-envelope fa-lg text-light"></i> <span class="text"><span >grulogdev@gmail.com</span></span></a></li>
+                <li class="mb-3"><a href="mailto:infos@gngdev.com"><i class="fas fa-envelope fa-lg text-light"></i> <span class="text"><span >infos@gngdev.com</span></span></a></li>
                 </ul>
             </div>
         </div>

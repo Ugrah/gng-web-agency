@@ -2,6 +2,32 @@ body * {
 	font-family: 'ABeeZee', 'Roboto', 'Lato', 'Roboto Condensed', 'PT Sans', sans-serif, sans-serif;
 }
 
+.nopadding {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.rounded {
+	border-radius: 99px !important;
+}
+
+
+/*
+ * Backgroung
+*/
+section.main-background {
+	background-image: linear-gradient(to right top, rgba(232, 123, 192,0.7), rgba(225, 109, 203,0.7), rgba(211, 98, 218,0.7), rgba(190, 91, 234,0.7), rgba(158, 89, 253,0.7)), url(https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80);
+	background-position: center center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;	
+}
+
+/*
+ * Typographie
+*/
+section h1, section h2, section h3, section h4, section h5 { color: dodgerblue !important; }
+p{ font-size: 1rem; }
 
 /*
  * Nav bar 

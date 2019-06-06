@@ -1,14 +1,19 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="fr">
 
-@section('content')
-    <div class="container">
-        <h1>Test page</h1>
-    </div>
-@endsection
+<head>
+    <meta charset="utf-8">
+</head>
 
-@section('scripts')
-    <script type="text/javascript">
-        $(function(){
-        });
-    </script>
-@endsection
+<body>
+    <h2>prise de contact sur GnG Dev</h2>
+    <p>Réception d'une prise de contact avec les éléments suivants :</p>
+    <ul>
+        <li><strong>Name</strong> : Ulrich Grah</li>
+        <li><strong>Email</strong> : grulog@live.com</li>
+        <li><strong>Subject</strong> : The subject</li>
+        <li><strong>message</strong> : Lorem ipsum</li>
+    </ul>
+</body>
+
+</html>

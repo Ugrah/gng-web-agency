@@ -1,5 +1,5 @@
 <nav id="fixedNavbar" class="navbar navbar-expand-md navbar-light fixed-top bg-light px-xl-5">
-    <a class="navbar-brand" href="{{url('/')}}"><h4>GnG Web Agency</h4></a>
+    <a class="navbar-brand" href="{{url('/')}}"><h4>{{ config('app.name') }}</h4></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#fixedNavbarCollapse" aria-controls="fixedNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,7 +12,7 @@
         <a class="nav-link" href="#">{{ trans('front/navBar.menu-items.about') }}</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="#">{{ trans('front/navBar.menu-items.contact') }}</a>
+        <a class="nav-link" href="{{url('/contact')}}">{{ trans('front/navBar.menu-items.contact') }}</a>
         </li>
 
         <!-- language links -->

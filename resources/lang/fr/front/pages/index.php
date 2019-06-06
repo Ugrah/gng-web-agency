@@ -2,15 +2,6 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | Index Page
-    |--------------------------------------------------------------------------
-    |
-    |
-    */
-
-
-    /*
-    |--------------------------------------------------------------------------
     | Carousel
     |--------------------------------------------------------------------------
     |
@@ -30,5 +21,80 @@ return [
             'button1' => 'Nous contacter',
             'button2' => 'En savoir plus',
         ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Index Page
+    |--------------------------------------------------------------------------
+    |
+    |
+    */
+    'section0' => [
+        'title' => 'Agence web et de Marketing Digital',
+        'description' => 'GnG vous accompagne dans la création de sites internet modernes et personnalisable. Notre agence web prend la peine d\'étudier votre projet afin de vous proposer les solutions adaptées à vos besoins.',
+        'item0' => [
+            'title' => 'Création de site internet',
+            'content' => 'Site internet moderne et responsive, avec des thèmes personnalisable.',
+        ],
+        'item1' => [
+            'title' => 'Création de site eCommerce',
+            'content' => 'Présenter vos produits à travers une interface simple ergonomique, pour une expérience utilisateur optisée.',
+        ],
+        'item2' => [
+            'title' => 'Référencement Naturle - SEO',
+            'content' => 'Optimiser votre référencement SEO afin de mieux vous position dans les résultats de recherches.',
+        ],
+        'item3' => [
+            'title' => 'Création d\'Application Mobile',
+            'content' => 'Réaliser vos projet d\'application mobile avec des interfaces moderne et une expérience utilisateur exceptionnelle.',
+        ],
+        'item4' => [
+            'title' => 'Rédation de contenu',
+            'content' => 'Confier nous la rédaction de vos contenu : campagne commercial, site internet, réseau social.',
+        ],
+        'item5' => [
+            'title' => 'Digital Marketing',
+            'content' => 'Booster votre image sur le réseaux internet mais aussi à travers les réseaux sociaux les plus populaire.',
+        ],
+    ],
+
+    'section1' => [
+        'title' => 'This is the title of the section',
+        'content' => [
+            'para0' => 'First Para.',
+            'para1' => 'Second Para.',
+            'para2' => 'Third Para.',
+        ],
+    ],
+
+    'section2' => [
+        'title' => 'This is the title of the section',
+        'description' => 'This is description',
+        'price0' => [
+            'name' => 'Pack name',
+            'item0' => 'Item0',
+            'item1' => 'Item1',
+            'item2' => 'Item2',
+        ],
+        'price1' => [
+            'name' => 'Pack name',
+            'item0' => 'Item0',
+            'item1' => 'Item1',
+            'item2' => 'Item2',
+        ],
+        'price2' => [
+            'name' => 'Pack name',
+            'item0' => 'Item0',
+            'item1' => 'Item1',
+            'item2' => 'Item2',
+        ],
+    ],
+
+    'section3' => [],
+
+    'section4' => [
+        'title' => 'This is the title of the section',
+        'description' => 'This is description',
     ],
 ];
