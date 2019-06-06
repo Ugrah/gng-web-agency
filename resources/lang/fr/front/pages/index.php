@@ -67,18 +67,8 @@ return [
     'section2' => [
         'title' => 'Des offres étudiées et adaptées à vos besoins',
         'description' => 'Montius nos tumore inusitato quodam et novo ut rebellis et maiestati recalcitrantes Augustae per haec quae strepit incusat iratus nimirum quod contumacem praefectum, quid rerum ordo postulat ignorare dissimulantem formidine tenus iusserim custodiri.',
-        'price0' => [
-            'name' => 'Pack name',
-            'items' => ['Item1', 'Item2'],
-        ],
-        'price1' => [
-            'name' => 'Pack name',
-            'items' => ['Item1', 'Item2'],
-        ],
-        'price2' => [
-            'name' => 'Pack name',
-            'items' => ['Item1', 'Item2'],
-        ],
+        'from' => 'Tarif à partir de',
+        'button' => 'Voir tous les packs',
     ],
 
     'section3' => [],

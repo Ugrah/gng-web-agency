@@ -35,6 +35,8 @@ class MainController extends Controller
 
     public function index()
     {
+        $prices = config('pricing.'.app()->getLocale().'.home');
+
         //SEO::setTitle('Home Page');
         //SEO::setDescription('This is my page description');
         //SEO::opengraph()->setUrl($request->fullUrl());
@@ -42,7 +44,7 @@ class MainController extends Controller
         //SEO::opengraph()->addProperty('type', 'articles');
         SEO::opengraph()->addProperty('locale', app()->getLocale());
 
-        return view('statics.index');
+        return view('statics.index', compact('prices'));
     }
 
     public function test()

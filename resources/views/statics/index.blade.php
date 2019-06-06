@@ -95,37 +95,25 @@
         <h2 class="wow bounceInLeft">{{ trans('front/pages/index.section2.title')}}</h2>
         <p class="col-10 col-md-8 mx-auto wow bounceInRight">{{ trans('front/pages/index.section2.description')}}</p>
         <div class="container mt-5">
-            <div class="card-deck">
-                <div class="card bg-danger">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body bg-warning w-100 nopadding">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text display-4 bg-light py-3">99 <span>dh</span></p>
-                    </div>
-                    <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
+            <div class="card-columns">
+                @foreach($prices as $price)
                 <div class="card">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <div class="card-header bg-primary">
+                    <h4 class="text-white nopadding">{{$price['title']}} {{$price['unity']}}</h4>
                     </div>
-                    <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    </div>
-                    <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                    <div class="card-body nopadding bg-light">
+                    <small class="text-muted">{{ trans('front/pages/index.section2.from')}}</small>
+                    <p class="card-text display-4">{{$price['amount']}} <span style="font-size: 0.5em">Dh</span></p>
+
+                    <ul class="list-group mb-3">
+                        @foreach($price['options'] as $option)
+                        <li class="list-group-item">{{$option}}</li>
+                        @endforeach
+                    </ul>
+                    <a href="#" class="btn btn-primary rounded px-4 py-2 mb-3">{{ trans('front/pages/index.section2.button')}}</a>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </section>
