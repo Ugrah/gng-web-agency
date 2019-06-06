@@ -19,7 +19,7 @@
         </div>
         <div class="container mt-5">
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-4 fadeInLeft wow" data-wow-delay="0.5s">
+                <div class="col-8 col-md-6 col-lg-4 fadeInLeft wow" data-wow-delay="0.5s">
                     <div class="card p-4 mb-4">
                     <div class="card-body">
                         <i class="fas fa-window-restore fa-3x mb-4 text-success"></i>
@@ -84,10 +84,8 @@
                     <p>For image illustration</p>
                 </div>
                 <div class="col-6 wow bounceInRight">
-                <h3 class="text-light">{{ trans('front/pages/index.section1.title') }}</h3>
-                    <p>{{ trans('front/pages/index.section1.content.para0') }}</p>
-                    <p>{{ trans('front/pages/index.section1.content.para1') }}</p>
-                    <p>{{ trans('front/pages/index.section1.content.para2') }}</p>
+                <h3 class="text-light">{{ trans('front/pages/index.section1.title', ['app_name' => config('infos.name')]) }}</h3>
+                    <p>{!! trans('front/pages/index.section1.content') !!}</p>
                 </div>
             </div>
         </div>
@@ -95,14 +93,14 @@
 
     <section class="text-center py-5 bg-medium">
         <h2 class="wow bounceInLeft">{{ trans('front/pages/index.section2.title')}}</h2>
-        <p class="wow bounceInRight">{{ trans('front/pages/index.section2.description')}}</p>
+        <p class="col-10 col-md-8 mx-auto wow bounceInRight">{{ trans('front/pages/index.section2.description')}}</p>
         <div class="container mt-5">
             <div class="card-deck">
-                <div class="card">
+                <div class="card bg-danger">
                     <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
+                    <div class="card-body bg-warning w-100 nopadding">
                     <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text display-4 bg-light py-3">99 <span>dh</span></p>
                     </div>
                     <div class="card-footer">
                     <small class="text-muted">Last updated 3 mins ago</small>

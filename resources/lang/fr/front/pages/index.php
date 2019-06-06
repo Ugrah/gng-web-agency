@@ -60,34 +60,24 @@ return [
     ],
 
     'section1' => [
-        'title' => 'This is the title of the section',
-        'content' => [
-            'para0' => 'First Para.',
-            'para1' => 'Second Para.',
-            'para2' => 'Third Para.',
-        ],
+        'title' => ':app_name',
+        'content' => 'The short description about agency.<br>Here again',
     ],
 
     'section2' => [
-        'title' => 'This is the title of the section',
-        'description' => 'This is description',
+        'title' => 'Des offres étudiées et adaptées à vos besoins',
+        'description' => 'Montius nos tumore inusitato quodam et novo ut rebellis et maiestati recalcitrantes Augustae per haec quae strepit incusat iratus nimirum quod contumacem praefectum, quid rerum ordo postulat ignorare dissimulantem formidine tenus iusserim custodiri.',
         'price0' => [
             'name' => 'Pack name',
-            'item0' => 'Item0',
-            'item1' => 'Item1',
-            'item2' => 'Item2',
+            'items' => ['Item1', 'Item2'],
         ],
         'price1' => [
             'name' => 'Pack name',
-            'item0' => 'Item0',
-            'item1' => 'Item1',
-            'item2' => 'Item2',
+            'items' => ['Item1', 'Item2'],
         ],
         'price2' => [
             'name' => 'Pack name',
-            'item0' => 'Item0',
-            'item1' => 'Item1',
-            'item2' => 'Item2',
+            'items' => ['Item1', 'Item2'],
         ],
     ],
 
