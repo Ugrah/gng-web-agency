@@ -97,7 +97,7 @@
         <div class="container mt-5">
             <div class="card-columns">
                 @foreach($prices as $price)
-                <div class="card">
+                <div class="card wow bounceIn">
                     <div class="card-header bg-primary">
                     <h4 class="text-white nopadding">{{$price['title']}} {{$price['unity']}}</h4>
                     </div>
@@ -120,28 +120,41 @@
 
     <section class="main-background py-5 text-center">
         <div class="container text-light">
-            <h4 class="text-light mb-5">This is a title</h4>
+            <h4 class="text-light mb-5">{{trans('front/pages/index.section3.title')}}</h4>
             <div class="row">
                 <div class="col-3 wow bounceInUp">
                     <span class="counter display-4">100</span>
-                    <p>Value Name</p>
+                    <p>{{trans('front/pages/index.section3.customers')}}</p>
                 </div>
                 <div class="col-3 wow bounceInUp">
                     <span class="counter display-4">100</span>
-                    <p>Value Name</p>
+                    <p>{{trans('front/pages/index.section3.projects')}}</p>
                 </div>
                 <div class="col-3 wow bounceInUp">
                     <span class="counter display-4">100</span>
-                    <p>Value Name</p>
+                    <p>{{trans('front/pages/index.section3.satisfaction')}}</p>
                 </div>
                 <div class="col-3 wow bounceInUp">
                     <span class="counter display-4">100</span>
-                    <p>Value Name</p>
+                    <p>{{trans('front/pages/index.section3.experience')}}</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col my-auto">
+                    <h4 class="text-white" style="font-size: 2rem">{{trans('front/pages/index.section4.title')}}</h4>
+                    <p>{{trans('front/pages/index.section4.title')}}</p>
+                </div>
+                <div class="col my-auto text-right"><a href="#" class="btn btn-dark rounded">Contactez-nous</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section to portfolio | Create user space before
     <section class="text-center py-5 bg-medium">
         <h2 class="wow bounceInLeft">{{ trans('front/pages/index.section4.title')}}</h2>
         <p class="wow bounceInRight">{{ trans('front/pages/index.section4.description')}}</p>
@@ -180,6 +193,7 @@
             </div>
         </div>
     </section>
+    -->
 
 @endsection
 

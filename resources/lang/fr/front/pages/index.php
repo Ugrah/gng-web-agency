@@ -71,7 +71,13 @@ return [
         'button' => 'Voir tous les packs',
     ],
 
-    'section3' => [],
+    'section3' => [
+        'title' => 'Notre bilan',
+        'customers' => 'Clients',
+        'projects' => 'Projets',
+        'satisfaction' => 'Satisfaction',
+        'experience' => 'Années d\'expérience',
+    ],
 
     'section4' => [
         'title' => 'This is the title of the section',

@@ -12,7 +12,8 @@ return [
                     'Option 1',
                     'Option 2',
                     'Option 3',
-                ]
+                ],
+                'url' => '',
             ],
             [
                 'title' => 'Price name',
@@ -23,7 +24,8 @@ return [
                     'Option 1',
                     'Option 2',
                     'Option 3',
-                ]
+                ],
+                'url' => '',
             ],
             [
                 'title' => 'Price name',
@@ -34,7 +36,8 @@ return [
                     'Option 1',
                     'Option 2',
                     'Option 3',
-                ]
+                ],
+                'url' => '',
             ],
         ],
     ],
@@ -50,6 +53,7 @@ return [
                     'Option 2',
                     'Option 3',
                 ],
+                'url' => '',
             ],
             [
                 'title' => 'Price name',
@@ -61,6 +65,7 @@ return [
                     'Option 2',
                     'Option 3',
                 ],
+                'url' => '',
             ],
             [
                 'title' => 'Price name',
@@ -72,6 +77,7 @@ return [
                     'Option 2',
                     'Option 3',
                 ],
+                'url' => '',
             ],
         ],
     ],
