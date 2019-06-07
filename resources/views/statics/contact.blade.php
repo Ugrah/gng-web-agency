@@ -1,15 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<div style="height: 60vh; background-image: linear-gradient(to right top, #e87bc0, #e16dcb, #d362da, #be5bea, #9e59fd);" class="position-relative">
-
+<div style="height: 70vh; background-image: linear-gradient(to right top, rgba(232, 123, 192, 0.9), rgba(225, 109, 203, 0.9), rgba(211, 98, 218, 0.9), rgba(190, 91, 234, 0.9), rgba(158, 89, 253, 0.9)), url('https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'); background-repeat: no-repeat; background-size: cover; background-position: center center;" class="position-relative">
     @include('blocs.navbar2')
 
+    <div class="position-absolute w-100 text-center text-white" style="top: 45%;">
+        <h1>{{ trans('front/pages/contact.title') }}</h1>
+    </div>
 </div>
 
 <section class="py-5">
     <div class="container">
-        <h2 class="text-dark">Contact Information</h2><br>
+        <h2>Contact Information</h2><br>
         <div class="row">
             <div class="col">
                 <p>adresse</p>
@@ -24,7 +26,7 @@
                 <p>website</p>
             </div>
 
-        </div><br>
+        </div>
 
         @if(!empty($ok))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -35,8 +37,8 @@
             </div>
         @endif
 
-        <div class="row py-5">
-            <div class="col">
+        <div class="row justify-content-around py-5">
+            <div class="col-10 col-md-6">
                 {!! Form::open(['url' => 'contact']) !!}
                 <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!}">
                     {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Votre nom', 'required' =>'required']) !!}
@@ -57,7 +59,9 @@
                 {!! Form::submit('Envoyer !', ['class' => 'btn btn-info pull-right']) !!}
                 {!! Form::close() !!}
             </div>
-            <div class="col"> for map</map></div>
+            <div class="col-10 col-md-6">
+                <map>for map</map>
+            </div>
         </div>
     </div>
 </section>

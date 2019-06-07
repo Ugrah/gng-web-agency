@@ -47,19 +47,11 @@ class MainController extends Controller
         return view('statics.index', compact('prices'));
     }
 
-    public function test()
+    public function about()
     {
-        /*
-        Mail::send('emails.test', [], function ($m) {
-            $m->from('contact@gngdev.com', 'GnG Web Agency');
-
-            $m->to('grulog23@gmail.com', 'Ulrich Grah')->subject('Test Template Email');
-        });
-        */
-
-        //SEO::opengraph()->addProperty('locale', app()->getLocale());
-        return view('emails.test');
+        return view('statics.about');
     }
+
     public function getContact()
     {
         //SEO::setTitle('Home Page');
@@ -88,7 +80,6 @@ class MainController extends Controller
             $m->to( 'infos@gngdev.com', 'GnG Dev')->subject($request->input('subject'));
         });
 
-
         Mail::send( 'emails.email_contact', $request->all(), function ($m) use ($request) {
             $m->from('contact@gngdev.com', 'GnG Dev');
 
@@ -96,5 +87,19 @@ class MainController extends Controller
         });
 
         return view('statics.contact')->withOk( 'Merci. Votre message a été transmis à l\'administrateur du site. Vous recevrez une réponse rapidement.');
+    }
+
+    public function test()
+    {
+        /*
+        Mail::send('emails.test', [], function ($m) {
+            $m->from('contact@gngdev.com', 'GnG Web Agency');
+
+            $m->to('grulog23@gmail.com', 'Ulrich Grah')->subject('Test Template Email');
+        });
+        */
+
+        //SEO::opengraph()->addProperty('locale', app()->getLocale());
+        return view('emails.test');
     }
 }

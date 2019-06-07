@@ -9,7 +9,7 @@
     <a class="nav-link" href="{{url('/')}}">{{ trans('front/navBar.menu-items.home') }} <span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item">
-    <a class="nav-link" href="#">{{ trans('front/navBar.menu-items.about') }}</a>
+    <a class="nav-link" href="{{url('/about')}}">{{ trans('front/navBar.menu-items.about') }}</a>
     </li>
     <li class="nav-item">
     <a class="nav-link" href="{{url('/contact')}}">{{ trans('front/navBar.menu-items.contact') }}</a>

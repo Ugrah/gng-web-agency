@@ -40,7 +40,7 @@ nav#fixedNavbar {
 }
 
 nav#fixedNavbar ul li a, nav#standardNavbar ul li a {
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	font-weight: bold;
 }
 

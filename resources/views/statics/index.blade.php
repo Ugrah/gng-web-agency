@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div style="height: 100vh; background-image: linear-gradient(to right top, #e87bc0, #e16dcb, #d362da, #be5bea, #9e59fd);" class="position-relative">
+    <div style="height: 100vh; background-image: linear-gradient(to right top, #e87bc0, #e16dcb, #d362da, #be5bea, #9e59fd); overflow: hidden;" class="position-relative">
 
         @include('blocs.navbar2')
 

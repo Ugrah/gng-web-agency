@@ -14,12 +14,14 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('language/{lang}', 'MainController@language')->where('lang', '[A-Za-z_-]+');
 
     Route::get('/', 'MainController@index')->name('home');
+    Route::get('/about', 'MainController@about')->name('about');
+    Route::get('/contact', 'MainController@getContact')->name('contact');
+    Route::post('/contact', 'MainController@postContact')->name('contact');
 
     /*
      * Testing page
     */
     Route::get('/test', 'MainController@test')->name('test');
-    Route::get('/contact', 'MainController@getContact')->name('contact');
-    Route::post('/contact', 'MainController@postContact')->name('contact');
+    
 
 });
