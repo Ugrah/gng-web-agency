@@ -7,7 +7,7 @@
     }
 
     ul.nav-pills li.nav-item a.nav-link.active {
-        border: none;
+        border-image: linear-gradient(to right top, #1ee6bf, #36e7ac, #4fe798, #67e681, #7fe569);
         background-image: linear-gradient(to right top, #1ee6bf, #36e7ac, #4fe798, #67e681, #7fe569);
     }
 </style>

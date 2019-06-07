@@ -32,10 +32,10 @@
                     <p>{{ trans('front/pages/index.carousel.item2.description') }}</p>
                     <div class="row">
                         <div class="col">
-                            <button type="button" class="btn btn-primary btn-lg btn-block">{{ trans('front/pages/index.carousel.item2.button1') }}</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block rounded">{{ trans('front/pages/index.carousel.item2.button1') }}</button>
                         </div>
                         <div class="col">
-                            <button type="button" class="btn btn-success btn-lg btn-block">{{ trans('front/pages/index.carousel.item2.button2') }}</button>
+                            <button type="button" class="btn btn-success btn-lg btn-block rounded">{{ trans('front/pages/index.carousel.item2.button2') }}</button>
                         </div>
                     </div>
                 </div>

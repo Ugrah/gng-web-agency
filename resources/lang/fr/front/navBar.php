@@ -10,7 +10,8 @@ return [
 
     'menu-items' => [
         'home' => 'Accueil',
-        'about' => 'A propos',
+        'about' => 'A Propos',
+        'website' => 'Site Internet',
         'contact' => 'Contact',
     ]
 ];

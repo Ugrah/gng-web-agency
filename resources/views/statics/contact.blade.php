@@ -73,8 +73,8 @@
 <script type="text/javascript">
     $(function() {
         // Navbar active links
-        $('#standardNavbarCollapse ul.navbar-nav > li.nav-item:eq(2)').addClass('active');
-        $('#fixedNavbarCollapse ul.navbar-nav > li.nav-item:eq(2)').addClass('active');
+        $('#standardNavbarCollapse ul.navbar-nav > li.nav-item:eq(3)').addClass('active');
+        $('#fixedNavbarCollapse ul.navbar-nav > li.nav-item:eq(3)').addClass('active');
     });
 </script>
 @endsection

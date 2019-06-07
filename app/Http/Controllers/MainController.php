@@ -5,10 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Jobs\ChangeLocale;
 use SEO;
-
-/*
- * For test
-*/
 use Mail;
 
 class MainController extends Controller
@@ -49,7 +45,14 @@ class MainController extends Controller
 
     public function about()
     {
+        SEO::opengraph()->addProperty('locale', app()->getLocale());
         return view('statics.about');
+    }
+
+    public function website()
+    {
+        SEO::opengraph()->addProperty('locale', app()->getLocale());
+        return view('statics.website');
     }
 
     public function getContact()
@@ -87,6 +90,11 @@ class MainController extends Controller
         });
 
         return view('statics.contact')->withOk( 'Merci. Votre message a été transmis à l\'administrateur du site. Vous recevrez une réponse rapidement.');
+    }
+
+    public function privacyPolicy()
+    {
+        return view('statics.privacyPolicy');
     }
 
     public function test()

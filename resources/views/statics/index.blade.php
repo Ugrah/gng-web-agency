@@ -10,13 +10,7 @@
 
     <section class="text-center py-5 bg-medium">
         <h2 class="wow bounceInLeft display-4">{{ trans('front/pages/index.section0.title')}}</h2>
-        <div class="container">
-            <div class="row">
-                <div class="col-8 mx-auto">
-                    <p class="wow bounceInRight">{{ trans('front/pages/index.section0.description')}}</p>
-                </div>
-            </div>
-        </div>
+        <p class="col-10 col-md-8 mx-auto wow bounceInRight">{{ trans('front/pages/index.section0.description')}}</p>
         <div class="container mt-5">
             <div class="row">
                 <div class="col-8 col-md-6 col-lg-4 fadeInLeft wow" data-wow-delay="0.5s">

@@ -15,8 +15,12 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', 'MainController@index')->name('home');
     Route::get('/about', 'MainController@about')->name('about');
+    Route::get('/website', 'MainController@website')->name('website');
     Route::get('/contact', 'MainController@getContact')->name('contact');
     Route::post('/contact', 'MainController@postContact')->name('contact');
+
+    Route::get('/privacy-policy', 'MainController@privacyPolicy')->name('policy');
+
 
     /*
      * Testing page

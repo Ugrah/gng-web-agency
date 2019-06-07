@@ -13,7 +13,7 @@ return [
     */
 
     'name' => 'GnG Dev Agency',
-    'address' => '',
+    'address' => '203 Fake St. Mountain View, San Francisco, California, USA',
     'phones' => [
         '+212 6 45 71 71 87',
         '+212 6'
