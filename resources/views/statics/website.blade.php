@@ -6,14 +6,22 @@
         border: 1px solid #428bca; margin: 0.5em;
     }
 
-    ul.nav-pills li.nav-item a.nav-link.active {
+    ul.nav-pills li.nav-item a.nav-link.active, a.price {
         border-image: linear-gradient(to right top, #1ee6bf, #36e7ac, #4fe798, #67e681, #7fe569);
         background-image: linear-gradient(to right top, #1ee6bf, #36e7ac, #4fe798, #67e681, #7fe569);
     }
 
-    .gradient-blue {
+    .gradient-blue, a.price:hover {
         background-image: linear-gradient(to right top, #56c7fb, #3eb7fc, #38a5fc, #4892f7, #617ced);
         color: #fff;
+    }
+
+    .gradient-and-image {
+        background-image: linear-gradient(to right top, rgba(232, 123, 192,0.9), rgba(225, 109, 203,0.9), rgba(211, 98, 218,0.9), rgba(190, 91, 234,0.9), rgba(158, 89, 253,0.9)), url(https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 </style>
 @endsection
@@ -98,9 +106,9 @@
     </div>
 </section>
 
-<section class="py-5 bg-light gradient-blue">
-    <h2 class="text-center text-white wow bounceInLeft display-4">{{ trans('front/pages/website.section1.title')}}</h2>
-    <p class="col-10 col-md-8 mx-auto text-center wow bounceInRight">{{ trans('front/pages/website.section1.description')}}</p>
+<section class="py-5 gradient-blue">
+    <h2 class="text-center text-light wow bounceInLeft display-4">{{ trans('front/pages/website.section1.title')}}</h2>
+    <p class="col-10 col-md-8 mx-auto text-center text-light wow bounceInRight">{{ trans('front/pages/website.section1.description')}}</p>
 
     <div class="container mt-5">
         <div class="row justify-content-center">
@@ -108,7 +116,61 @@
                 <img class="img-fluid" src="https://stonemedia.ch/wp-content/uploads/2018/04/programmation-logiciel.png" alt="">
             </div>
             <div class="col-10 col-md-6 mt-4 mt-md-0">
-                <p>{{ trans('front/pages/website.section1.content')}}</p>
+                <p class="text-light">{{ trans('front/pages/website.section1.content')}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <h2 class="text-center wow bounceInLeft display-4">{{ trans('front/pages/website.section2.title')}}</h2>
+    <p class="col-10 col-md-8 mx-auto text-center wow bounceInRight">{{ trans('front/pages/website.section2.description')}}</p>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-4 text-center text-md-right mt-4 mt-md-0 wow bounceInLeft">
+                {!! trans('front/pages/website.section2.content1')!!}
+            </div>
+
+            <div class="col-10 col-md-4 mb-2 wow bounceInUp">
+                <img class="img-fluid" src="https://stonemedia.ch/wp-content/uploads/2018/04/programmation-logiciel.png" alt="">
+            </div>
+
+            <div class="col-10 col-md-4 text-center text-md-left mt-4 mt-md-0 wow bounceInRight">
+                {!! trans('front/pages/website.section2.content2')!!}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 gradient-and-image">
+    <h2 class="text-center text-light wow bounceInLeft display-4">{{ trans('front/pages/website.section3.title')}}</h2>
+    <p class="col-10 col-md-8 mx-auto text-center text-light wow bounceInRight">{{ trans('front/pages/website.section3.description')}}</p>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-6 mb-2">
+                <img class="img-fluid" src="https://stonemedia.ch/wp-content/uploads/2018/04/programmation-logiciel.png" alt="">
+            </div>
+            <div class="col-10 col-md-6 mt-4 mt-md-0">
+                <p class="text-light">{{ trans('front/pages/website.section3.content')}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <h2 class="text-center wow bounceInLeft display-4">{{ trans('front/pages/website.section4.title')}}</h2>
+    <p class="col-10 col-md-8 mx-auto text-center  wow bounceInRight">{{ trans('front/pages/website.section4.description')}}</p>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-6 mt-4 mt-md-0">
+                <p class="">{{ trans('front/pages/website.section4.content')}}</p>
+                <a href="#" class="btn btn-primary px-4 py-2 mt-xl-5 rounded price">Voir nos tarifs</a>
+            </div>
+            <div class="col-10 col-md-6 mb-2">
+                <img class="img-fluid" src="https://stonemedia.ch/wp-content/uploads/2018/04/programmation-logiciel.png" alt="">
             </div>
         </div>
     </div>

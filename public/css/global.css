@@ -26,14 +26,15 @@ section.main-background {
 	background-position: center center;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	background-size: cover;	
+	background-size: cover;
 }
 
 /*
  * Typographie
 */
 section h1, section h2, section h3, section h4, section h5 { color: dodgerblue !important; }
-p{ font-size: 1rem; }
+section p { color: #868e96; }
+p{ font-size: 1rem;}
 
 /*
  * Nav bar 
