@@ -16,6 +16,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/', 'MainController@index')->name('home');
     Route::get('/about', 'MainController@about')->name('about');
     Route::get('/website', 'MainController@website')->name('website');
+    Route::get('/mobile-app', 'MainController@mobileApp')->name('mobileApp');
     Route::get('/contact', 'MainController@getContact')->name('contact');
     Route::post('/contact', 'MainController@postContact')->name('contact');
 

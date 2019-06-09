@@ -55,6 +55,12 @@ class MainController extends Controller
         return view('statics.website');
     }
 
+    public function mobileApp()
+    {
+        SEO::opengraph()->addProperty('locale', app()->getLocale());
+        return view('statics.mobileApp');
+    }
+
     public function getContact()
     {
         //SEO::setTitle('Home Page');

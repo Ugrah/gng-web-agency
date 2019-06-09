@@ -15,6 +15,9 @@
         <a class="nav-link" href="{{url('/website')}}">{{ trans('front/navBar.menu-items.website') }}</a>
         </li>
         <li class="nav-item">
+        <a class="nav-link" href="{{url('/mobile-app')}}">{{ trans('front/navBar.menu-items.mobile_app') }}</a>
+        </li>
+        <li class="nav-item">
         <a class="nav-link" href="{{url('/contact')}}">{{ trans('front/navBar.menu-items.contact') }}</a>
         </li>
 
