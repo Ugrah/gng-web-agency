@@ -61,6 +61,14 @@ class MainController extends Controller
         return view('statics.mobileApp');
     }
 
+    public function prices()
+    {
+        $prices = config('pricing.'.app()->getLocale().'.prices');
+
+        SEO::opengraph()->addProperty('locale', app()->getLocale());
+        return view('statics.prices', compact('prices'));
+    }
+
     public function getContact()
     {
         //SEO::setTitle('Home Page');
