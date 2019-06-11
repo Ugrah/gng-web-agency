@@ -48,33 +48,6 @@
 
 <div class="container py-5">
     <form id="dynamic-app-price" action="">
-        <div class="text-center">
-            <h4>Quel niveau de qualité recherchez-vous?</h4>
-            <div class="text-center form-check form-check-inline">
-                <label class="form-check-label" for="inlineRadio1">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required>
-                    <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=A">
-                    <p>Qualité optimale</p>
-                </label>
-            </div>
-            <div class="text-center form-check form-check-inline">
-                <label class="form-check-label" for="inlineRadio2">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=B">
-                    <p>Bon rapport qualité/prix</p>
-                </label>
-            </div>
-            <div class="text-center form-check form-check-inline">
-                <label class="form-check-label" for="inlineRadio3">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                    <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=C">
-                    <p>Bon rapport qualité/prix</p>
-                </label>
-            </div>
-        </div>  
-
-
-
         <div class="form-group row">
             <div class="col">
                 <a href="#" class="">
@@ -83,7 +56,57 @@
             <div class="col text-right amount">
                 amount
             </div>
-        </div>      
+        </div> 
+
+        <div class="text-center">
+            <h4>Quel niveau de qualité recherchez-vous?</h4>
+            <div class="text-center form-check form-check-inline">
+                <label class="form-check-label" for="qualityOptionRadio1">
+                    <input class="form-check-input" type="radio" name="qualityOption" id="qualityOptionRadio1" value="option1" required>
+                    <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=A">
+                    <p>Qualité optimale</p>
+                </label>
+            </div>
+            <div class="text-center form-check form-check-inline">
+                <label class="form-check-label" for="qualityOptionRadio2">
+                    <input class="form-check-input" type="radio" name="qualityOption" id="qualityOptionRadio2" value="option2">
+                    <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=B">
+                    <p>Bon rapport qualité/prix</p>
+                </label>
+            </div>
+            <div class="text-center form-check form-check-inline">
+                <label class="form-check-label" for="qualityOptionRadio3">
+                    <input class="form-check-input" type="radio" name="qualityOption" id="qualityOptionRadio3" value="option3">
+                    <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=C">
+                    <p>Bon rapport qualité/prix</p>
+                </label>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <h4>De quel type d'application mobile avez-vous besoin?</h4>
+            <div class="text-center form-check form-check-inline">
+                <label class="form-check-label" for="typeOptionRadio1">
+                    <input class="form-check-input" type="radio" name="typeOption" id="typeOptionRadio1" value="option1" required>
+                    <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=A">
+                    <p>Application Android</p>
+                </label>
+            </div>
+            <div class="text-center form-check form-check-inline">
+                <label class="form-check-label" for="typeOptionRadio2">
+                    <input class="form-check-input" type="radio" name="typeOption" id="typeOptionRadio2" value="option2">
+                    <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=B">
+                    <p>Application iPhone</p>
+                </label>
+            </div>
+            <div class="text-center form-check form-check-inline">
+                <label class="form-check-label" for="typeOptionRadio3">
+                    <input class="form-check-input" type="radio" name="typeOption" id="typeOptionRadio3" value="option3">
+                    <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=C">
+                    <p>Application Android + iPhone</p>
+                </label>
+            </div>
+        </div> 
     </form>
 </div>
 
