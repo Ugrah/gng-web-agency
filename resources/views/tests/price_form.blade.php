@@ -54,7 +54,7 @@
                 <i class="text-primary fas fa-arrow-left"></i> Precedent</a>
             </div>
             <div class="col text-right amount">
-                amount
+                0
             </div>
         </div> 
 
@@ -62,23 +62,23 @@
             <h4>Quel niveau de qualité recherchez-vous?</h4>
             <div class="text-center form-check form-check-inline">
                 <label class="form-check-label" for="qualityOptionRadio1">
-                    <input class="form-check-input" type="radio" name="qualityOption" id="qualityOptionRadio1" value="option1" required>
+                    <input class="form-check-input" type="radio" name="qualityOption" id="qualityOptionRadio1" value="option1" data-cost="550" required>
                     <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=A">
                     <p>Qualité optimale</p>
                 </label>
             </div>
             <div class="text-center form-check form-check-inline">
                 <label class="form-check-label" for="qualityOptionRadio2">
-                    <input class="form-check-input" type="radio" name="qualityOption" id="qualityOptionRadio2" value="option2">
+                    <input class="form-check-input" type="radio" name="qualityOption" id="qualityOptionRadio2" value="option2" data-cost="350">
                     <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=B">
                     <p>Bon rapport qualité/prix</p>
                 </label>
             </div>
             <div class="text-center form-check form-check-inline">
                 <label class="form-check-label" for="qualityOptionRadio3">
-                    <input class="form-check-input" type="radio" name="qualityOption" id="qualityOptionRadio3" value="option3">
+                    <input class="form-check-input" type="radio" name="qualityOption" id="qualityOptionRadio3" value="option3" data-cost="200">
                     <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=C">
-                    <p>Bon rapport qualité/prix</p>
+                    <p>La qualité importe peu</p>
                 </label>
             </div>
         </div>
@@ -87,21 +87,21 @@
             <h4>De quel type d'application mobile avez-vous besoin?</h4>
             <div class="text-center form-check form-check-inline">
                 <label class="form-check-label" for="typeOptionRadio1">
-                    <input class="form-check-input" type="radio" name="typeOption" id="typeOptionRadio1" value="option1" required>
+                    <input class="form-check-input" type="radio" name="typeOption" id="typeOptionRadio1" value="option1" data-cost="250" required>
                     <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=A">
                     <p>Application Android</p>
                 </label>
             </div>
             <div class="text-center form-check form-check-inline">
                 <label class="form-check-label" for="typeOptionRadio2">
-                    <input class="form-check-input" type="radio" name="typeOption" id="typeOptionRadio2" value="option2">
+                    <input class="form-check-input" type="radio" name="typeOption" id="typeOptionRadio2" value="option2" data-cost="250">
                     <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=B">
                     <p>Application iPhone</p>
                 </label>
             </div>
             <div class="text-center form-check form-check-inline">
                 <label class="form-check-label" for="typeOptionRadio3">
-                    <input class="form-check-input" type="radio" name="typeOption" id="typeOptionRadio3" value="option3">
+                    <input class="form-check-input" type="radio" name="typeOption" id="typeOptionRadio3" value="option3" data-cost="450">
                     <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=C">
                     <p>Application Android + iPhone</p>
                 </label>
@@ -116,10 +116,44 @@
 @section('scripts')
 <script type="text/javascript">
     $(function() {
-        $('#dynamic-app-price .form-check-input').change(function() {
-            console.log( $(this).attr('value') );
-            $('.amount').text($(this).attr('value'));
-        });
+        var options = [];
+
+        // Represente an option of the form
+        class Option {
+            constructor(name, choise, cost) {
+                this.name = name;
+                this.choise = choise;
+                this.cost = cost;
+            }
+        }
+
+        // Calculate the total amount from the options array
+        function getTotalAmount() {
+            var totalAmount = 0;
+            for (let i = 0; i < options.length; ++i){
+                totalAmount += parseInt(options[i].cost);
+            }
+            $('.amount').text(totalAmount);
+        }
+
+        function InitDynamicForm() {
+            $('#dynamic-app-price .form-check-input').change(function() {
+                var newOption = options.find(item => item.name === $(this).attr('name'));
+
+                if(newOption){
+                    console.log('Option present in array. Update value.');
+                    newOption.choise = $(this).attr('value');
+                    newOption.cost = $(this).attr('data-cost');
+                    console.log(options);
+                } else {
+                    console.log('Option is not present in array. Add new option.');
+                    options.push( new Option($(this).attr('name'), $(this).attr('value'), $(this).attr('data-cost')) );
+                }
+                getTotalAmount();
+            });
+        }
+
+        InitDynamicForm();
     });
 </script>
 @endsection
