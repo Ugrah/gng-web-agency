@@ -122,6 +122,6 @@ class MainController extends Controller
         */
 
         //SEO::opengraph()->addProperty('locale', app()->getLocale());
-        return view('emails.test');
+        return view('tests.price_form');
     }
 }
