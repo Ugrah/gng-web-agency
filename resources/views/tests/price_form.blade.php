@@ -24,6 +24,10 @@
         background-size: cover;
     }
 
+    div.form-step {
+        display: none;
+    }
+
     div.result, div.question, div.restart {
         display: none;
     }
@@ -46,18 +50,29 @@
 
 @section('content')
 
-<div class="container py-5">
+<div id="start-form" class="container py-5">
+    <div class="text-center start">
+        <h3>Combien coûte la création de mon application ?</h3>
+        <p class="mt-3">Calculez rapidement le coût pour créer votre application en répondant à ces questions.</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <button id="start-button" type="submit" class="btn py-2 px-4 text-light submit rounded">Calculer</button>
+    </div>
+</div>
+
+<div id="form-step" class="container py-5">
     {!! Form::open(['url' => 'test', 'id' => 'dynamic-app-price']) !!}
         <div class="row previous">
             <div class="col">
-                <a id="previous-button" href="#" class="">
+                <a id="previous-button" href="#">
                 <i class="text-primary fas fa-arrow-left"></i> Precedent</a>
             </div>
             <div class="col text-center">
                 <span class="question-count"></span>
             </div>
-            <div class="col text-right amount">
-                0
+            <div class="col text-right">
+                <span class="amount"></span>
             </div>
         </div> 
 
@@ -134,7 +149,6 @@
             
         </div>
     {!! Form::close() !!}
-    
 </div>
 
 @endsection
@@ -143,6 +157,20 @@
 @section('scripts')
 <script type="text/javascript">
     $(function() {
+        // Initial values
+        var options = [];
+        var $activeQuestionIndex = 0;
+
+        // Represente an option of the form
+        class Option {
+            constructor(name, choise, cost) {
+                this.name = name;
+                this.choise = choise;
+                this.cost = cost;
+            }
+        }
+
+        $('div.previous').hide();
 
         $('#dynamic-app-price div.form-check.form-check-inline')
         .mouseenter(function(){
@@ -160,20 +188,6 @@
                 $(this).parent().css( 'background-color', 'rgba(224, 224, 224, 1)' );
             }
         });
-
-        // Initial values
-        var options = [];
-        var $activeQuestionIndex = 0;
-
-        // Represente an option of the form
-        class Option {
-            constructor(name, choise, cost) {
-                this.name = name;
-                this.choise = choise;
-                this.cost = cost;
-            }
-        }
-
 
         // Previous button
         $('#previous-button').click(function(e){
@@ -195,6 +209,7 @@
             $('div.previous').show();
 
             displayActiveQuestion();
+            getTotalAmount();
         });
 
         // Calculate the total amount from the options array
@@ -214,16 +229,22 @@
         function displayActiveQuestion() {
             $('div.question').hide();
             $('div[data-question="'+ $activeQuestionIndex +'"]').show();
-            if($activeQuestionIndex < 1)
+            if($activeQuestionIndex <= 0){
                 $('#previous-button').hide();
-            else
+                $('.amount').hide();
+            }
+            else{
                 $('#previous-button').show();
+                $('.amount').show();
+            }
 
             getQuestionRang();
         }
 
         //Init the form
         function InitDynamicForm() {
+            $('#form-step').fadeIn();
+            $('div.previous').fadeIn();
             displayActiveQuestion();
             $('#dynamic-app-price .form-check-input').click(function() {
                 var newOption = options.find(item => item.name === $(this).attr('name'));
@@ -249,7 +270,10 @@
         }
 
         // Run the dynamic form
-        InitDynamicForm();
+        $('#start-button').click(function(){
+            $('#start-form').hide();
+            InitDynamicForm();
+        });
 
     });
 </script>
