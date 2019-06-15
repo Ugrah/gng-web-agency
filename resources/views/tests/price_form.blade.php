@@ -37,12 +37,8 @@
     height: 0;
     }
     /* IMAGE STYLES */
-    #dynamic-app-price [type=radio] + img, #dynamic-app-price label {
-    cursor: pointer;
-    }
-    /* CHECKED STYLES */
-    #dynamic-app-price [type=radio]:checked + img {
-    outline: 2px solid #f00;
+    #dynamic-app-price label {
+        cursor: pointer;
     }
 
 </style>
@@ -68,24 +64,24 @@
         <div class="text-center question" data-question="0">
             <h4>Quel niveau de qualité recherchez-vous?</h4>
             <div class="text-center form-check form-check-inline">
-                <label class="form-check-label" for="qualityOptionRadio1">
+                <label class="form-check-label px-4 pt-3 pb-0" for="qualityOptionRadio1">
                     <input class="form-check-input" type="radio" name="qualityOption" id="qualityOptionRadio1" value="option1" data-question="0" data-cost="550" required>
                     <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=A">
-                    <p>Qualité optimale</p>
+                    <p class="mt-3">Qualité optimale</p>
                 </label>
             </div>
             <div class="text-center form-check form-check-inline">
-                <label class="form-check-label" for="qualityOptionRadio2">
+                <label class="form-check-label px-4 pt-3 pb-0" for="qualityOptionRadio2">
                     <input class="form-check-input" type="radio" name="qualityOption" id="qualityOptionRadio2" value="option2" data-question="0" data-cost="350">
                     <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=B">
-                    <p>Bon rapport qualité/prix</p>
+                    <p class="mt-3">Bon rapport qualité/prix</p>
                 </label>
             </div>
             <div class="text-center form-check form-check-inline">
-                <label class="form-check-label" for="qualityOptionRadio3">
+                <label class="form-check-label px-4 pt-3 pb-0" for="qualityOptionRadio3">
                     <input class="form-check-input" type="radio" name="qualityOption" id="qualityOptionRadio3" value="option3" data-question="0" data-cost="200">
                     <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=C">
-                    <p>La qualité importe peu</p>
+                    <p class="mt-3">La qualité importe peu</p>
                 </label>
             </div>
         </div>
@@ -93,24 +89,24 @@
         <div class="text-center question" data-question="1">
             <h4>De quel type d'application mobile avez-vous besoin?</h4>
             <div class="text-center form-check form-check-inline">
-                <label class="form-check-label" for="typeOptionRadio1">
+                <label class="form-check-label px-4 pt-3 pb-0" for="typeOptionRadio1">
                     <input class="form-check-input" type="radio" name="typeOption" id="typeOptionRadio1" value="option1" data-question="1" data-cost="250" required>
                     <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=A">
-                    <p>Application Android</p>
+                    <p class="mt-3">Application Android</p>
                 </label>
             </div>
             <div class="text-center form-check form-check-inline">
-                <label class="form-check-label" for="typeOptionRadio2">
+                <label class="form-check-label px-4 pt-3 pb-0" for="typeOptionRadio2">
                     <input class="form-check-input" type="radio" name="typeOption" id="typeOptionRadio2" value="option2" data-question="1" data-cost="250">
                     <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=B">
-                    <p>Application iPhone</p>
+                    <p class="mt-3">Application iPhone</p>
                 </label>
             </div>
             <div class="text-center form-check form-check-inline">
-                <label class="form-check-label" for="typeOptionRadio3">
+                <label class="form-check-label px-4 pt-3 pb-0" for="typeOptionRadio3">
                     <input class="form-check-input" type="radio" name="typeOption" id="typeOptionRadio3" value="option3" data-question="1" data-cost="450">
                     <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=C">
-                    <p>Application Android + iPhone</p>
+                    <p class="mt-3">Application Android + iPhone</p>
                 </label>
             </div>
         </div> 
@@ -147,6 +143,23 @@
 @section('scripts')
 <script type="text/javascript">
     $(function() {
+
+        $('#dynamic-app-price div.form-check.form-check-inline')
+        .mouseenter(function(){
+            $(this).css('background-color', 'rgba(224, 224, 224, 0.7)');
+            $(this).animate({ bottom: '+=10px'}, 'fast' );
+        }).mouseleave(function(){
+            $(this).css('background-color', 'transparent');
+            $(this).animate({ bottom: '-=10px' }, 'fast' );
+        });
+
+        $('#dynamic-app-price input.form-check-input').on('change', function() {
+            $('#dynamic-app-price input.form-check-input').parent().css( 'background-color', 'transparent' );
+
+            if( $(this).is(':checked') ) {
+                $(this).parent().css( 'background-color', 'rgba(224, 224, 224, 1)' );
+            }
+        });
 
         // Initial values
         var options = [];
@@ -237,8 +250,6 @@
 
         // Run the dynamic form
         InitDynamicForm();
-
-        //console.log($questions[0]);
 
     });
 </script>
