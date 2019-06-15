@@ -24,7 +24,7 @@
         background-size: cover;
     }
 
-    div.form-step {
+    div#form-step, a#previous-button {
         display: none;
     }
 
@@ -35,10 +35,10 @@
     /* DYNAMIC FORM */ 
     /* HIDE RADIO */
     #dynamic-app-price [type=radio] { 
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
     }
     /* IMAGE STYLES */
     #dynamic-app-price label {
@@ -157,122 +157,149 @@
 @section('scripts')
 <script type="text/javascript">
     $(function() {
-        // Initial values
-        var options = [];
-        var $activeQuestionIndex = 0;
 
-        // Represente an option of the form
-        class Option {
-            constructor(name, choise, cost) {
-                this.name = name;
-                this.choise = choise;
-                this.cost = cost;
-            }
-        }
+        // Run the dynamic form (The function contains all the necessary variables)
+        $('#start-button').click(function(){
+            // Initial values
+            var options = [];
+            var $activeQuestionIndex = 0;
 
-        $('div.previous').hide();
-
-        $('#dynamic-app-price div.form-check.form-check-inline')
-        .mouseenter(function(){
-            $(this).css('background-color', 'rgba(224, 224, 224, 0.7)');
-            $(this).animate({ bottom: '+=10px'}, 'fast' );
-        }).mouseleave(function(){
-            $(this).css('background-color', 'transparent');
-            $(this).animate({ bottom: '-=10px' }, 'fast' );
-        });
-
-        $('#dynamic-app-price input.form-check-input').on('change', function() {
-            $('#dynamic-app-price input.form-check-input').parent().css( 'background-color', 'transparent' );
-
-            if( $(this).is(':checked') ) {
-                $(this).parent().css( 'background-color', 'rgba(224, 224, 224, 1)' );
-            }
-        });
-
-        // Previous button
-        $('#previous-button').click(function(e){
-            e.preventDefault();
-            if($activeQuestionIndex > 0) {
-                $activeQuestionIndex--;
-                displayActiveQuestion();
-            }
-        });
-
-        // Restart button
-        $('#restart-button').click(function(e){
-            e.preventDefault();
-            options = [];
-            $activeQuestionIndex = 0;
-
-            $('div.restart').hide();
-            $('div.result').hide();
-            $('div.previous').show();
-
-            displayActiveQuestion();
-            getTotalAmount();
-        });
-
-        // Calculate the total amount from the options array
-        function getTotalAmount() {
-            var totalAmount = 0;
-            for (let i = 0; i < options.length; ++i){
-                totalAmount += parseInt(options[i].cost);
-            }
-            $('.amount').text(totalAmount);
-        }
-
-        function getQuestionRang() {
-            $('span.question-count').text($activeQuestionIndex+1+'/'+$('div.question').length);
-        }
-
-        // Display the active question from active index 
-        function displayActiveQuestion() {
-            $('div.question').hide();
-            $('div[data-question="'+ $activeQuestionIndex +'"]').show();
-            if($activeQuestionIndex <= 0){
-                $('#previous-button').hide();
-                $('.amount').hide();
-            }
-            else{
-                $('#previous-button').show();
-                $('.amount').show();
-            }
-
-            getQuestionRang();
-        }
-
-        //Init the form
-        function InitDynamicForm() {
-            $('#form-step').fadeIn();
-            $('div.previous').fadeIn();
-            displayActiveQuestion();
-            $('#dynamic-app-price .form-check-input').click(function() {
-                var newOption = options.find(item => item.name === $(this).attr('name'));
-
-                if(newOption){
-                    newOption.choise = $(this).attr('value');
-                    newOption.cost = $(this).attr('data-cost');
-                } else {
-                    options.push( new Option($(this).attr('name'), $(this).attr('value'), $(this).attr('data-cost')) );
+            // Represente an option of the form
+            class Option {
+                constructor(name, choise, cost) {
+                    this.name = name;
+                    this.choise = choise;
+                    this.cost = cost;
                 }
+            }
 
-                if($activeQuestionIndex < $('div.question').length - 1) {
-                    $activeQuestionIndex = parseInt($(this).attr('data-question') + 1);
+            $('div.previous').hide();
+
+            $('#dynamic-app-price div.form-check.form-check-inline')
+            .mouseenter(function(){
+                $(this).css('background-color', 'rgba(224, 224, 224, 0.7)');
+                $(this).animate({ bottom: '+=10px'}, 'fast' );
+            }).mouseleave(function(){
+                $(this).css('background-color', 'transparent');
+                $(this).animate({ bottom: '-=10px' }, 'fast' );
+            });
+
+            $('#dynamic-app-price input.form-check-input').on('change', function() {
+                $('#dynamic-app-price input.form-check-input').parent().css( 'background-color', 'transparent' );
+
+                if( $(this).is(':checked') ) {
+                    $(this).parent().css( 'background-color', 'rgba(224, 224, 224, 1)' );
+                }
+            });
+
+            // Previous button
+            $('#previous-button').click(function(e){
+                e.preventDefault();
+                if($activeQuestionIndex > 0) {
+                    $activeQuestionIndex--;
                     displayActiveQuestion();
-                } else {
-                    $('div.question').hide();
-                    $('div.previous').hide();
-                    $('div.result').show();
-                    $('div.restart').show();
                 }
+            });
+
+            // Restart button
+            $('#restart-button').click(function(e){
+                e.preventDefault();
+                options = [];
+                $activeQuestionIndex = 0;
+
+                $('div.restart').hide();
+                $('div.result').hide();
+                $('div.previous').show();
+
+                displayActiveQuestion();
                 getTotalAmount();
             });
-        }
 
-        // Run the dynamic form
-        $('#start-button').click(function(){
+            // Calculate the total amount from the options array
+            function getTotalAmount() {
+                var totalAmount = 0;
+                for (let i = 0; i < options.length; ++i){
+                    totalAmount += parseInt(options[i].cost);
+                }
+                $('.amount').text(totalAmount);
+            }
+
+            function getQuestionRang() {
+                $('span.question-count').text($activeQuestionIndex+1+'/'+$('div.question').length);
+            }
+
+            // Display the active question from active index 
+            function displayActiveQuestion() {
+                $('div.question').hide();
+                $('div[data-question="'+ $activeQuestionIndex +'"]').show();
+                if($activeQuestionIndex <= 0){
+                    $('#previous-button').hide();
+                    $('.amount').hide();
+                }
+                else{
+                    $('#previous-button').show();
+                    $('.amount').show();
+                }
+
+                getQuestionRang();
+            }
+
+            //Init the form
+            function InitDynamicForm() {
+                $('#form-step').fadeIn();
+                $('div.previous').fadeIn();
+                displayActiveQuestion();
+                $('#dynamic-app-price .form-check-input').click(function() {
+                    var newOption = options.find(item => item.name === $(this).attr('name'));
+
+                    if(newOption){
+                        newOption.choise = $(this).attr('value');
+                        newOption.cost = $(this).attr('data-cost');
+                    } else {
+                        options.push( new Option($(this).attr('name'), $(this).attr('value'), $(this).attr('data-cost')) );
+                    }
+
+                    if($activeQuestionIndex < $('div.question').length - 1) {
+                        $activeQuestionIndex = parseInt($(this).attr('data-question') + 1);
+                        displayActiveQuestion();
+                    } else {
+                        $('div.question').hide();
+                        $('div.previous').hide();
+                        $('div.result').show();
+                        $('div.restart').show();
+                    }
+                    getTotalAmount();
+                });
+            }
+
             $('#start-form').hide();
             InitDynamicForm();
+        });
+
+        // Submit dynamic form price
+        $(document).on('submit', '#dynamic-app-price', function(e) {  
+            e.preventDefault();
+            
+            $('input+small').text('');
+            $('input').parent().removeClass('has-error');
+            
+            $.ajax({
+                method: $(this).attr('method'),
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
+                dataType: "json"
+            })
+            .done(function(data) {
+                $('.alert-success').removeClass('hidden');
+                $('#myModal').modal('hide');
+            })
+            .fail(function(data) {
+                $.each(data.responseJSON, function (key, value) {
+                    var input = '#formRegister input[name=' + key + ']';
+                    $(input + '+small').text(value);
+                    $(input).parent().addClass('has-error');
+                });
+            });
         });
 
     });

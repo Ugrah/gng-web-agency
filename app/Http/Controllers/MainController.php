@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 use App\Jobs\ChangeLocale;
 use SEO;
 use Mail;
@@ -100,7 +101,7 @@ class MainController extends Controller
         Mail::send( 'emails.email_contact', $request->all(), function ($m) use ($request) {
             $m->from('contact@gngdev.com', 'GnG Dev');
 
-            $m->to($request->input('email'), $request->input('nom'))->subject($request->input('subject'));
+            $m->to($request->input('email'), $request->input('name'))->subject($request->input('subject'));
         });
 
         return view('statics.contact')->withOk( 'Merci. Votre message a été transmis à l\'administrateur du site. Vous recevrez une réponse rapidement.');

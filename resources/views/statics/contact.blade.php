@@ -40,23 +40,16 @@
         <div class="row justify-content-around py-5">
             <div class="col-10 col-md-6">
                 {!! Form::open(['url' => 'contact']) !!}
-                <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!}">
-                    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Votre nom', 'required' =>'required']) !!}
-                    {!! $errors->first('name', '<small class="help-block text-danger">:message</small>') !!}
-                </div>
-                <div class="form-group {!! $errors->has('email') ? 'has-error' : '' !!}">
-                    {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Votre email', 'required'=> 'email']) !!}
-                    {!! $errors->first('email', '<small class="help-block text-danger">:message</small>') !!}
-                </div>
-                <div class="form-group {!! $errors->has('subject') ? 'has-error' : '' !!}">
-                    {!! Form::text('subject', null, ['class' => 'form-control', 'placeholder' => 'Sujet de votre message', 'required'=> 'required']) !!}
-                    {!! $errors->first('subject', '<small class="help-block text-danger">:message</small>') !!}
-                </div>
-                <div class="form-group {!! $errors->has('text') ? 'has-error' : '' !!}">
-                    {!! Form::textarea ('text', null, ['class' => 'form-control', 'placeholder' => 'Votre message', 'required'=> 'required']) !!}
-                    {!! $errors->first('text', '<small class="help-block text-danger">:message</small>') !!}
-                </div>
-                {!! Form::submit('Envoyer !', ['class' => 'btn btn-info pull-right']) !!}
+                    {!! Form::control('text', $errors, 'name', ['class' => 'form-control rounded', 'placeholder' => 'Votre nom', 'required' =>'required']) !!}
+
+                    {!! Form::control('text', $errors, 'email', ['class' => 'form-control rounded', 'placeholder' => 'Votre email', 'required'=> 'required']) !!}
+
+                    {!! Form::control('text', $errors, 'subject', ['class' => 'form-control rounded', 'placeholder' => 'Sujet de votre message', 'required'=> 'required']) !!}
+
+                    {!! Form::control('textarea', $errors, 'content', ['class' => 'form-control rounded-soft', 'placeholder' => 'Votre message', 'required'=> 'required']) !!}
+
+                    {!! Form::button_submit('Envoyer !') !!}
+
                 {!! Form::close() !!}
             </div>
             <div class="col-10 col-md-6">

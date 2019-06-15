@@ -10,12 +10,24 @@ body * {
 .rounded {
 	border-radius: 99px !important;
 }
+.rounded-soft{
+	border-radius: 20px !important;
+}
 
 /* buttons */
-.special-button {
+.special-button, .btn-custom-gradient {
+	color: white;
 	border: 1px solid;
 	border-image: linear-gradient(to right top, #1ee6bf, #36e7ac, #4fe798, #67e681, #7fe569);
     background-image: linear-gradient(to right top, #1ee6bf, #36e7ac, #4fe798, #67e681, #7fe569);
+}
+
+.btn-custom-gradient:hover {
+	border: 1px solid;
+	border-image: linear-gradient(to right top, #56c7fb, #3eb7fc, #38a5fc, #4892f7, #617ced);
+	color: #fff;
+    background-image: linear-gradient(to right top, #56c7fb, #3eb7fc, #38a5fc, #4892f7, #617ced);
+        color: #fff;
 }
 
 /*
