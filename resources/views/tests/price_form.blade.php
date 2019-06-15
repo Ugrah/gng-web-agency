@@ -51,7 +51,7 @@
 @section('content')
 
 <div class="container py-5">
-    <form id="dynamic-app-price" action="">
+    {!! Form::open(['url' => 'test', 'id' => 'dynamic-app-price']) !!}
         <div class="row previous">
             <div class="col">
                 <a id="previous-button" href="#" class="">
@@ -137,7 +137,8 @@
             </div>
             
         </div>
-    </form>
+    {!! Form::close() !!}
+    
 </div>
 
 @endsection
