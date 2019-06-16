@@ -78,52 +78,20 @@
 
         <div class="text-center question" data-question="0">
             <h4>Quel niveau de qualité recherchez-vous?</h4>
-            <div class="text-center form-check form-check-inline">
-                <label class="form-check-label px-4 pt-3 pb-0" for="qualityOptionRadio1">
-                    <input class="form-check-input" type="radio" name="qualityOption" id="qualityOptionRadio1" value="option1" data-question="0" data-cost="550" required>
-                    <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=A">
-                    <p class="mt-3">Qualité optimale</p>
-                </label>
-            </div>
-            <div class="text-center form-check form-check-inline">
-                <label class="form-check-label px-4 pt-3 pb-0" for="qualityOptionRadio2">
-                    <input class="form-check-input" type="radio" name="qualityOption" id="qualityOptionRadio2" value="option2" data-question="0" data-cost="350">
-                    <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=B">
-                    <p class="mt-3">Bon rapport qualité/prix</p>
-                </label>
-            </div>
-            <div class="text-center form-check form-check-inline">
-                <label class="form-check-label px-4 pt-3 pb-0" for="qualityOptionRadio3">
-                    <input class="form-check-input" type="radio" name="qualityOption" id="qualityOptionRadio3" value="option3" data-question="0" data-cost="200">
-                    <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=C">
-                    <p class="mt-3">La qualité importe peu</p>
-                </label>
-            </div>
+            {{ Form::radio_label_img('qualityOptionRadio1', 'qualityOption','option1', 0, 550, 'http://placehold.it/150/ccc/fff&text=A', 'Qualité optimale') }}
+
+            {{ Form::radio_label_img('qualityOptionRadio2', 'qualityOption','option2', 0, 350, 'http://placehold.it/150/ccc/fff&text=B', 'Bon rapport qualité/prix') }}
+
+            {{ Form::radio_label_img('qualityOptionRadio3', 'qualityOption','option3', 0, 200, 'http://placehold.it/150/ccc/fff&text=C', 'La qualité importe peu') }}
         </div>
 
         <div class="text-center question" data-question="1">
             <h4>De quel type d'application mobile avez-vous besoin?</h4>
-            <div class="text-center form-check form-check-inline">
-                <label class="form-check-label px-4 pt-3 pb-0" for="typeOptionRadio1">
-                    <input class="form-check-input" type="radio" name="typeOption" id="typeOptionRadio1" value="option1" data-question="1" data-cost="250" required>
-                    <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=A">
-                    <p class="mt-3">Application Android</p>
-                </label>
-            </div>
-            <div class="text-center form-check form-check-inline">
-                <label class="form-check-label px-4 pt-3 pb-0" for="typeOptionRadio2">
-                    <input class="form-check-input" type="radio" name="typeOption" id="typeOptionRadio2" value="option2" data-question="1" data-cost="250">
-                    <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=B">
-                    <p class="mt-3">Application iPhone</p>
-                </label>
-            </div>
-            <div class="text-center form-check form-check-inline">
-                <label class="form-check-label px-4 pt-3 pb-0" for="typeOptionRadio3">
-                    <input class="form-check-input" type="radio" name="typeOption" id="typeOptionRadio3" value="option3" data-question="1" data-cost="450">
-                    <img class="img-fluid" src="http://placehold.it/40x60/0bf/fff&text=C">
-                    <p class="mt-3">Application Android + iPhone</p>
-                </label>
-            </div>
+            {{ Form::radio_label_img('typeOptionRadio1', 'typeOption','option1', 1, 250, 'http://placehold.it/150/ccc/fff&text=A', 'Application Android') }}
+
+            {{ Form::radio_label_img('typeOptionRadio2', 'typeOption','option2', 1, 250, 'http://placehold.it/150/ccc/fff&text=B', 'Application iPhone') }}
+
+            {{ Form::radio_label_img('typeOptionRadio3', 'typeOption','option3', 1, 200, 'http://placehold.it/150/ccc/fff&text=C', 'Application Android + iPhone') }}
         </div> 
 
 

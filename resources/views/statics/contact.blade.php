@@ -61,8 +61,6 @@
             </div>
         </div>
     </div>
-
-    {{ Html::navbar_fixed() }}
 </section>
 @endsection
 

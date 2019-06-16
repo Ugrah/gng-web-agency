@@ -5,10 +5,15 @@ namespace App\Providers\Html;
 use Illuminate\Support\ServiceProvider;
 use Collective\Html\FormBuilder as CollectiveFormbuilder;
 use App\Providers\Html\FormBuilder;
+use App\Traits\FormBuilderTrait;
+use App\Traits\HtmlBuilderTrait;
 use Html;
+use Form;
 
 class HtmlServiceProvider extends ServiceProvider
 {
+    use FormBuilderTrait;
+    use HtmlBuilderTrait;
 
     /**
      * Bootstrap services.
@@ -21,6 +26,8 @@ class HtmlServiceProvider extends ServiceProvider
         Html::component('navbar_default', 'components.html.navbar_default', []);
         Html::component('footer_main', 'components.html.footer_main', []);
         Html::component('carousel_home', 'components.html.carousel_home', []);
+
+        Form::component('radio_label_img', 'components.form.radio_label_img' ,['idLabel', 'optionName', 'optionValue', 'dataQuestion', 'dataCost', 'imgPath', 'title']);
     }
 
     /**
@@ -36,6 +43,7 @@ class HtmlServiceProvider extends ServiceProvider
 
         $this->registerFormControl();
         $this->registerFormSubmit();
+        $this->registerHtmlButtonBack();
     }
 
     protected function registerHtmlBuilder()
@@ -61,35 +69,4 @@ class HtmlServiceProvider extends ServiceProvider
 			return new CardBuilder;
 		});
     }
-
-    private function registerFormControl()
-	{
-		CollectiveFormbuilder::macro('control', function($type, $errors, $name, $attributes)
-        {
-            $value = \Request::old($name) ? \Request::old($name) : null;
-            if(is_string($attributes))
-            {
-                $attributes = ['class' => 'form-control', 'placeholder' => $attributes];
-            }
-			
-			return sprintf('
-				<div class="form-group %s">
-					%s
-					%s
-				</div>',
-				$errors->has($name) ? 'has-error' : '',
-				call_user_func_array(['Form', $type], [$name, $value, $attributes]),
-				$errors->first($name, '<small class="help-block text-danger">:message</small>')
-			);
-        });		
-    }
-    
-    private function registerFormSubmit()
-	{
-		CollectiveFormbuilder::macro('button_submit', function($texte)
-        {
-            return CollectiveFormbuilder::submit($texte, ['class' => 'btn btn-custom-gradient rounded px-3']);
-        });		
-	}
-    
 }
