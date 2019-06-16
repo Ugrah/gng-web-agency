@@ -7,10 +7,13 @@ use App\Http\Requests\ContactRequest;
 use App\Jobs\ChangeLocale;
 use SEO;
 use Mail;
+use Validator;
 
 class MainController extends Controller
 {
-    public function __construct(){}
+    public function __construct(){
+        $this->middleware('ajax', ['only' => 'testPost']);
+    }
 
     /**
      * Change language.
@@ -124,5 +127,34 @@ class MainController extends Controller
 
         //SEO::opengraph()->addProperty('locale', app()->getLocale());
         return view('tests.price_form');
+    }
+
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validatorPriceForm(array $data)
+    {
+        return Validator::make($data, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|confirmed|min:6',
+        ]);
+    }
+
+    public function testPost(Request $request)
+    {
+        $validator = $this->validatorPriceForm($request->all());
+        /*
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+        */
+        //$this->create($request->all());
+        return response()->json();
     }
 }

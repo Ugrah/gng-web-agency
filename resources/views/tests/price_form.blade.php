@@ -24,11 +24,7 @@
         background-size: cover;
     }
 
-    div#form-step, a#previous-button {
-        display: none;
-    }
-
-    div.result, div.question, div.restart {
+    div#form-step, a#previous-button, div.result, div.question, div.restart {
         display: none;
     }
 
@@ -50,6 +46,13 @@
 
 @section('content')
 
+<div class="alert alert-success alert-dismissible fade show text-center d-none" role="alert">
+  Votre Devis estimatif a été envoyé avec succès !
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
 <div id="start-form" class="container py-5">
     <div class="text-center start">
         <h3>Combien coûte la création de mon application ?</h3>
@@ -62,7 +65,7 @@
 </div>
 
 <div id="form-step" class="container py-5">
-    {!! Form::open(['url' => 'test', 'id' => 'dynamic-app-price']) !!}
+    {!! Form::open(['url' => 'test', 'id' => 'dynamic-app-price', 'method' => 'POST']) !!}
         <div class="row previous">
             <div class="col">
                 <a id="previous-button" href="#">
@@ -104,15 +107,10 @@
         <div class="text-center result">
             <h4>Le coût estimé de votre application est</h4>
             <span class="display-4 amount"></span>
-
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
+            {!! Form::control('text', $errors, 'email', ['class' => 'form-control rounded', 'placeholder' => 'Votre email', 'required'=> 'required']) !!}
 
             <div class="row justify-content-center">
-                <button type="submit" class="btn py-2 px-4 text-light submit rounded">Submit</button>
+                <button type="submit" class="btn py-2 px-4 text-light submit rounded">Envoyer votre devis</button>
             </div>
             
         </div>
@@ -125,6 +123,17 @@
 @section('scripts')
 <script type="text/javascript">
     $(function() {
+
+        // Reset Status
+        function resetStatus(){  
+            $('div#form-step').hide();
+            $('a#previous-button').hide();
+            $('div.result').hide();
+            $('div.question').hide();
+            $('div.restart').hide();
+            $('#start-form').show();
+
+        }
 
         // Run the dynamic form (The function contains all the necessary variables)
         $('#start-button').click(function(){
@@ -245,28 +254,22 @@
         });
 
         // Submit dynamic form price
-        $(document).on('submit', '#dynamic-app-price', function(e) {  
+        $('#dynamic-app-price').on('submit', function(e) {  
             e.preventDefault();
-            
-            $('input+small').text('');
-            $('input').parent().removeClass('has-error');
             
             $.ajax({
                 method: $(this).attr('method'),
                 url: $(this).attr('action'),
                 data: $(this).serialize(),
-                dataType: "json"
+                dataType: 'json'
             })
             .done(function(data) {
-                $('.alert-success').removeClass('hidden');
-                $('#myModal').modal('hide');
+                $('#restart-button').trigger('click');
+                $('.alert-success').removeClass('d-none');
+                resetStatus();
             })
             .fail(function(data) {
-                $.each(data.responseJSON, function (key, value) {
-                    var input = '#formRegister input[name=' + key + ']';
-                    $(input + '+small').text(value);
-                    $(input).parent().addClass('has-error');
-                });
+                console.log('Error, Please retry');
             });
         });
 

@@ -29,6 +29,7 @@ Route::group(['middleware' => ['web']], function () {
      * Testing page
     */
     Route::get('/test', 'MainController@test')->name('test');
+    Route::post('/test', 'MainController@testPost')->name('test');
     
 
 });
