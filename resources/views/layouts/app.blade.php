@@ -28,11 +28,11 @@
   </head>
   <body>
 
-    @include('blocs.navbar')
+    {{ Html::navbar_fixed() }}
 
     @yield('content')
 
-    @include('blocs.footer')
+    {{ Html::footer_main() }}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

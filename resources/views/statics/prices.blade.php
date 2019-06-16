@@ -29,7 +29,8 @@
 @section('content')
 
 <div style="height: 70vh; background-image: linear-gradient(to right top, rgba(232, 123, 192, 0.9), rgba(225, 109, 203, 0.9), rgba(211, 98, 218, 0.9), rgba(190, 91, 234, 0.9), rgba(158, 89, 253, 0.9)), url('https://images.unsplash.com/photo-1459257831348-f0cdd359235f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'); background-repeat: no-repeat; background-size: cover; background-position: center bottom; background-attachment: fixed;" class="position-relative">
-    @include('blocs.navbar2')
+    {{ Html::navbar_default() }}
+
 
     <div class="position-absolute w-100 text-center text-white px-2" style="top: 45%;">
         <h1>{{ trans('front/pages/prices.title') }}</h1>

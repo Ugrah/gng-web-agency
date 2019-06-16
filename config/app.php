@@ -188,12 +188,13 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        App\Providers\HtmlMacrosServiceProvider::class,
+        App\Providers\Html\HtmlServiceProvider::class,
+        //App\Providers\HtmlMacrosServiceProvider::class,
 
         /* 
          * Package added 
          */
-        Collective\Html\HtmlServiceProvider::class,
+        // Collective\Html\HtmlServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
     ],
@@ -248,12 +249,18 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         /*
+         * Personal Facade
+         */
+        'Card' => App\Providers\Html\CardFacade::class,
+
+        /*
          * Aliases added
          */
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
+
     ],
 
 ];
