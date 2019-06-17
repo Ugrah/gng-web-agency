@@ -23,6 +23,17 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+
+    div.card { overflow: hidden; }
+    img.card-img{ 
+        transform: scale(1);
+        transition: all 0.8s;
+    }
+    img.card-img.animate {
+        transform: scale(1.3);
+        opacity: 0.7;
+    }
+    div.card-footer { z-index: 1; background-color: #f7f7f7; }
 </style>
 @endsection
 
@@ -56,39 +67,12 @@
                         <div class="row justify-content-center">
                             
                             <div class="card-deck">
-                                <div class="card">
-                                    <img class="card-img-top" src="https://image.freepik.com/free-photo/executive-with-light-bulb-surrounded-by-icons_1232-162.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <div class="row card-text">
-                                            <div class="col">Socity here</div>
-                                            <div class="col text-right">Date here</div>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                    </div>
-                                    <div class="card-footer">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
-                                    <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                                    </div>
-                                    <div class="card-footer">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
+
+                                {{ Html::card_img('https://image.freepik.com/free-photo/executive-with-light-bulb-surrounded-by-icons_1232-162.jpg', 'Title', 'Text Right', 'Text Left', 'Footer') }}
+
+                                {{ Html::card_img('https://image.freepik.com/free-photo/executive-with-light-bulb-surrounded-by-icons_1232-162.jpg', 'Title', 'Text Right', 'Text Left', 'Footer') }}
+
+                                {{ Html::card_img('https://image.freepik.com/free-photo/executive-with-light-bulb-surrounded-by-icons_1232-162.jpg', 'Title', 'Text Right', 'Text Left', 'Footer') }}
                             </div>
 
                         </div>
@@ -123,11 +107,9 @@
         //Card
         $('div.card')
             .mouseenter(function(){
-                $(this).children('img').removeClass('card-img-top').addClass('card-img');
-                $(this).children('div.card-body').removeClass('card-body').addClass('card-img-overlay');
+                $(this).children('img.card-img').addClass('animate')
             }).mouseleave(function(){
-                $(this).children('img').addClass('card-img-top').removeClass('card-img');
-                $(this).children('div.card-img-overlay').removeClass('card-img-overlay').addClass('card-body');
+                $(this).children('img.card-img').removeClass('animate')
             });
     });
 </script>

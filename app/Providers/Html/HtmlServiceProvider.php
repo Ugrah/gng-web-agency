@@ -27,6 +27,7 @@ class HtmlServiceProvider extends ServiceProvider
         Html::component('footer_main', 'components.html.footer_main', []);
         Html::component('carousel_home', 'components.html.carousel_home', []);
         Html::component('go_to_home', 'components.html.go_to_home', ['url','text']);
+        Html::component('card_img', 'components.html.card_img', ['imgPath','title', 'textRight', 'textLeft', 'footer']);
 
         Form::component('radio_label_img', 'components.form.radio_label_img' ,['idLabel', 'optionName', 'optionValue', 'dataQuestion', 'dataCost', 'imgPath', 'title']);
     }
