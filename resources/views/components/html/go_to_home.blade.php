@@ -1,0 +1,1 @@
+<a href="{{ $url }}" class="btn py-2 px-4 btn-custom-gradient rounded">{{ $text }}</a>

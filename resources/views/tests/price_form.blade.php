@@ -266,6 +266,7 @@
             .done(function(data) {
                 $('#restart-button').trigger('click');
                 $('.alert-success').removeClass('d-none');
+                setTimeout(function(){$('.alert-success').addClass('d-none');}, 4000);
                 resetStatus();
             })
             .fail(function(data) {
