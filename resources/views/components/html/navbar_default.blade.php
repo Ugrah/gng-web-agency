@@ -21,15 +21,18 @@
     <a class="nav-link" href="{{url('/prices')}}">{{ trans('front/navBar.menu-items.prices') }}</a>
     </li>
     <li class="nav-item">
+    <a class="nav-link" href="{{url('/realisations')}}">{{ trans('front/navBar.menu-items.realisations') }}</a>
+    </li>
+    <li class="nav-item">
     <a class="nav-link" href="{{url('/contact')}}">{{ trans('front/navBar.menu-items.contact') }}</a>
     </li>
 
     <!-- language links -->
     <li class="nav-item">
-        <a class="{{ app()->getLocale() == 'en' ? 'nav-link disabled' : 'nav-link' }}" href="{{url('/language/en')}}">en</a>
+        <a class="{{ app()->getLocale() == 'en' ? 'nav-link disabled active-locale' : 'nav-link text-muet' }}" href="{{url('/language/en')}}">en</a>
     </li>
     <li class="nav-item">
-        <a class="{{ app()->getLocale() == 'fr' ? 'nav-link disabled' : 'nav-link' }}" href="{{url('/language/fr')}}">fr</a>
+        <a class="{{ app()->getLocale() == 'fr' ? 'nav-link disabled active-locale' : 'nav-link text-muet' }}" href="{{url('/language/fr')}}">fr</a>
     </li>
 </ul>
 

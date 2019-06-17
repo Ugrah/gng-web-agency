@@ -73,6 +73,12 @@ class MainController extends Controller
         return view('statics.prices', compact('prices'));
     }
 
+    public function realisations()
+    {
+        SEO::opengraph()->addProperty('locale', app()->getLocale());
+        return view('statics.realisations');
+    }
+
     public function getContact()
     {
         //SEO::setTitle('Home Page');

@@ -14,6 +14,9 @@ body * {
 	border-radius: 20px !important;
 }
 
+/* Active local */
+ul.navbar-nav a.active-locale { color: #e0e0e0 !important; }
+
 /* buttons */
 .special-button, .btn-custom-gradient {
 	color: white;
