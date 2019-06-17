@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use App\Jobs\ChangeLocale;
 
 class Handler extends ExceptionHandler
 {
@@ -46,12 +47,16 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if($request->hasCookie('language')) {
+            app()->setLocale($request->cookie('language'));
+        }
+
         if ($this->isHttpException($exception)) {
             if ($exception->getStatusCode() == 404) {
                 return response()->view('errors.' . '404', [], 404);
             }
         }
-        
+
         return parent::render($request, $exception);
     }
 }
