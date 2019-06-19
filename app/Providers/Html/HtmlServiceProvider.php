@@ -27,7 +27,9 @@ class HtmlServiceProvider extends ServiceProvider
         Html::component('footer_main', 'components.html.footer_main', []);
         Html::component('carousel_home', 'components.html.carousel_home', []);
         Html::component('go_to_url', 'components.html.go_to_url', ['url','text']);
+        Html::component('div_card_icon', 'components.html.div_card_icon', [ 'wowEffect', 'wowDelay','iconClass', 'title', 'content']);
         Html::component('card_img', 'components.html.card_img', ['imgPath','title', 'textRight', 'textLeft', 'footer']);
+        Html::component('price_box', 'components.html.price_box', ['name', 'amount', 'options', 'urlButton']);
 
         Form::component('radio_label_img', 'components.form.radio_label_img' ,['idLabel', 'optionName', 'optionValue', 'dataQuestion', 'dataCost', 'imgPath', 'title']);
     }

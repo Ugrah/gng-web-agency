@@ -25,7 +25,7 @@ ul.navbar-nav a.active-locale { color: #e0e0e0 !important; }
     background-image: linear-gradient(to right top, #1ee6bf, #36e7ac, #4fe798, #67e681, #7fe569);
 }
 
-.btn-custom-gradient:hover {
+.btn-custom-gradient:hover, div.price-title {
 	border: 1px solid;
 	border-image: linear-gradient(to right top, #56c7fb, #3eb7fc, #38a5fc, #4892f7, #617ced);
 	color: #fff;

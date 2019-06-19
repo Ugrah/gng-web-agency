@@ -13,60 +13,54 @@
         <p class="col-10 col-md-8 mx-auto wow bounceInRight">{{ trans('front/pages/index.section0.description')}}</p>
         <div class="container mt-5">
             <div class="row">
-                <div class="col-8 col-md-6 col-lg-4 fadeInLeft wow" data-wow-delay="0.5s">
-                    <div class="card p-4 mb-4">
-                    <div class="card-body">
-                        <i class="fas fa-window-restore fa-3x mb-4 text-success"></i>
-                        <h5 class="card-title">{{ trans('front/pages/index.section0.item0.title')}}</h5>
-                        <p class="card-text">{{ trans('front/pages/index.section0.item0.content')}}</p>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 fadeInLeft wow" data-wow-delay="0.3s">
-                    <div class="card p-4 mb-4">
-                    <div class="card-body">
-                        <i class="fas fa-window-restore fa-3x mb-4 text-success"></i>
-                        <h5 class="card-title">{{ trans('front/pages/index.section0.item1.title')}}</h5>
-                        <p class="card-text">{{ trans('front/pages/index.section0.item1.content')}}</p>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 fadeInLeft wow" data-wow-delay="0.1s">
-                    <div class="card p-4 mb-4">
-                    <div class="card-body">
-                        <i class="fas fa-window-restore fa-3x mb-4 text-success"></i>
-                        <h5 class="card-title">{{ trans('front/pages/index.section0.item2.title')}}</h5>
-                        <p class="card-text">{{ trans('front/pages/index.section0.item2.content')}}</p>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 fadeInRight wow" data-wow-delay="0.1s">
-                    <div class="card p-4 mb-4">
-                    <div class="card-body">
-                        <i class="fas fa-window-restore fa-3x mb-4 text-success"></i>
-                        <h5 class="card-title">{{ trans('front/pages/index.section0.item3.title')}}</h5>
-                        <p class="card-text">{{ trans('front/pages/index.section0.item3.content')}}</p>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 fadeInRight wow" data-wow-delay="0.3s">
-                    <div class="card p-4 mb-4">
-                    <div class="card-body">
-                        <i class="fas fa-window-restore fa-3x mb-4 text-success"></i>
-                        <h5 class="card-title">{{ trans('front/pages/index.section0.item4.title')}}</h5>
-                        <p class="card-text">{{ trans('front/pages/index.section0.item4.content')}}</p>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 fadeInRight wow" data-wow-delay="0.5s">
-                    <div class="card p-4 mb-4">
-                    <div class="card-body">
-                        <i class="fas fa-window-restore fa-3x mb-4 text-success"></i>
-                        <h5 class="card-title">{{ trans('front/pages/index.section0.item5.title')}}</h5>
-                        <p class="card-text">{{ trans('front/pages/index.section0.item5.content')}}</p>
-                    </div>
-                    </div>
-                </div>
+
+                {{ Html::div_card_icon(
+                    'fadeInLeft',
+                    '0.5s',
+                    'fas fa-window-restore fa-3x',
+                    trans('front/pages/index.section0.item0.title'),
+                    trans('front/pages/index.section0.item0.content')
+                ) }}
+
+                {{ Html::div_card_icon(
+                    'fadeInLeft',
+                    '0.3s',
+                    'fas fa-window-restore',
+                    trans('front/pages/index.section0.item1.title'),
+                    trans('front/pages/index.section0.item1.content')
+                ) }}
+
+                {{ Html::div_card_icon(
+                    'fadeInLeft',
+                    '0.1s',
+                    'fas fa-window-restore',
+                    trans('front/pages/index.section0.item2.title'),
+                    trans('front/pages/index.section0.item2.content')
+                ) }}
+
+                {{ Html::div_card_icon(
+                    'fadeInRight',
+                    '0.1s',
+                    'fas fa-window-restore',
+                    trans('front/pages/index.section0.item3.title'),
+                    trans('front/pages/index.section0.item3.content')
+                ) }}
+
+                {{ Html::div_card_icon(
+                    'fadeInRight',
+                    '0.3s',
+                    'fas fa-window-restore',
+                    trans('front/pages/index.section0.item3.title'),
+                    trans('front/pages/index.section0.item3.content')
+                ) }}
+
+                {{ Html::div_card_icon(
+                    'fadeInRight',
+                    '0.5s',
+                    'fas fa-window-restore',
+                    trans('front/pages/index.section0.item5.title'),
+                    trans('front/pages/index.section0.item5.content')
+                ) }}
             </div>
         </div>
     </section>
@@ -90,23 +84,16 @@
         <p class="col-10 col-md-8 mx-auto wow bounceInRight">{{ trans('front/pages/index.section2.description')}}</p>
         <div class="container mt-5">
             <div class="card-columns">
+                
                 @foreach($prices as $price)
-                <div class="card wow bounceIn">
-                    <div class="card-header bg-primary">
-                    <h4 class="text-white nopadding">{{$price['title']}} {{$price['unity']}}</h4>
-                    </div>
-                    <div class="card-body nopadding bg-light">
-                    <small class="text-muted">{{ trans('front/pages/index.section2.from')}}</small>
-                    <p class="card-text display-4">{{$price['amount']}} <span style="font-size: 0.5em">Dh</span></p>
 
-                    <ul class="list-group mb-3">
-                        @foreach($price['options'] as $option)
-                        <li class="list-group-item">{{$option}}</li>
-                        @endforeach
-                    </ul>
-                    <a href="#" class="btn btn-primary rounded px-4 py-2 mb-3">{{ trans('front/pages/index.section2.button')}}</a>
-                    </div>
-                </div>
+                    {{ Html::price_box(
+                        $price['title'],
+                        $price['amount'],
+                        $price['options'],
+                        url('/prices')
+                    ) }}
+                
                 @endforeach
             </div>
         </div>

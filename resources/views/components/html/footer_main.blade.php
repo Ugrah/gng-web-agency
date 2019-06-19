@@ -29,6 +29,7 @@
             <li><a href="{{ url('/website') }}" class="py-2 d-block">{{ trans('front/navBar.menu-items.website') }}</a></li>
             <li><a href="{{ url('/mobile-app') }}" class="py-2 d-block">{{ trans('front/navBar.menu-items.mobile_app') }}</a></li>
             <li><a href="{{ url('/prices') }}" class="py-2 d-block">{{ trans('front/navBar.menu-items.prices') }}</a></li>
+            <li><a href="{{ url('/realisations') }}" class="py-2 d-block">{{ trans('front/navBar.menu-items.realisations') }}</a></li>
             <li><a href="{{url('/contact')}}" class="py-2 d-block">{{ trans('front/navBar.menu-items.contact') }}</a></li>
             </ul>
         </div>

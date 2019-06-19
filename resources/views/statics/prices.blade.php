@@ -76,21 +76,11 @@
                             <div class="container">
                                 <div class="card-columns text-center">
                                     @foreach($prices['showcase'] as $price)
-                                    <div class="card wow bounceIn">
-                                        <div class="card-header bg-primary">
-                                        <h4 class="text-white nopadding">{{$price['title']}}</h4>
-                                        </div>
-                                        <div class="card-body nopadding bg-light">
-                                        <small class="text-muted">{{ trans('front/pages/index.section2.from')}}</small>
-                                        <p class="card-text display-4">{{$price['amount']}} <span style="font-size: 0.5em">Dh</span></p>
-
-                                        <ul class="list-group mb-3">
-                                            @foreach($price['options'] as $option)
-                                            <li class="list-group-item">{{$option}}</li>
-                                            @endforeach
-                                        </ul>
-                                        </div>
-                                    </div>
+                                        {{ Html::price_box(
+                                            $price['title'],
+                                            $price['amount'],
+                                            $price['options']
+                                        ) }}
                                     @endforeach
                                 </div>
                             </div>
@@ -102,21 +92,11 @@
                             <div class="container">
                                 <div class="card-columns text-center">
                                     @foreach($prices['portfolio'] as $price)
-                                    <div class="card wow bounceIn">
-                                        <div class="card-header bg-primary">
-                                        <h4 class="text-white nopadding">{{$price['title']}}</h4>
-                                        </div>
-                                        <div class="card-body nopadding bg-light">
-                                        <small class="text-muted">{{ trans('front/pages/index.section2.from')}}</small>
-                                        <p class="card-text display-4">{{$price['amount']}} <span style="font-size: 0.5em">Dh</span></p>
-
-                                        <ul class="list-group mb-3">
-                                            @foreach($price['options'] as $option)
-                                            <li class="list-group-item">{{$option}}</li>
-                                            @endforeach
-                                        </ul>
-                                        </div>
-                                    </div>
+                                        {{ Html::price_box(
+                                            $price['title'],
+                                            $price['amount'],
+                                            $price['options']
+                                        ) }}
                                     @endforeach
                                 </div>
                             </div>
@@ -128,21 +108,11 @@
                             <div class="container">
                                 <div class="card-columns text-center">
                                     @foreach($prices['e_commerce'] as $price)
-                                    <div class="card wow bounceIn">
-                                        <div class="card-header bg-primary">
-                                        <h4 class="text-white nopadding">{{$price['title']}}</h4>
-                                        </div>
-                                        <div class="card-body nopadding bg-light">
-                                        <small class="text-muted">{{ trans('front/pages/index.section2.from')}}</small>
-                                        <p class="card-text display-4">{{$price['amount']}} <span style="font-size: 0.5em">Dh</span></p>
-
-                                        <ul class="list-group mb-3">
-                                            @foreach($price['options'] as $option)
-                                            <li class="list-group-item">{{$option}}</li>
-                                            @endforeach
-                                        </ul>
-                                        </div>
-                                    </div>
+                                        {{ Html::price_box(
+                                            $price['title'],
+                                            $price['amount'],
+                                            $price['options']
+                                        ) }}
                                     @endforeach
                                 </div>
                             </div>
@@ -154,21 +124,11 @@
                             <div class="container">
                                 <div class="card-columns text-center">
                                     @foreach($prices['catalog'] as $price)
-                                    <div class="card wow bounceIn">
-                                        <div class="card-header bg-primary">
-                                        <h4 class="text-white nopadding">{{$price['title']}}</h4>
-                                        </div>
-                                        <div class="card-body nopadding bg-light">
-                                        <small class="text-muted">{{ trans('front/pages/index.section2.from')}}</small>
-                                        <p class="card-text display-4">{{$price['amount']}} <span style="font-size: 0.5em">Dh</span></p>
-
-                                        <ul class="list-group mb-3">
-                                            @foreach($price['options'] as $option)
-                                            <li class="list-group-item">{{$option}}</li>
-                                            @endforeach
-                                        </ul>
-                                        </div>
-                                    </div>
+                                        {{ Html::price_box(
+                                            $price['title'],
+                                            $price['amount'],
+                                            $price['options']
+                                        ) }}
                                     @endforeach
                                 </div>
                             </div>
