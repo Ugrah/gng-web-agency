@@ -32,6 +32,8 @@
 
     @yield('content')
 
+    @include('cookieConsent::index')
+
     {{ Html::footer_main() }}
 
     <!-- Optional JavaScript -->
