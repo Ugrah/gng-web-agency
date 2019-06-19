@@ -79,13 +79,16 @@
                     </div>
                     <div class="tab-pane fade" id="pills-mobileApp" role="tabpanel" aria-labelledby="pills-mobileApp-tab">
                         <div class="row justify-content-center">
-                            <div class="col-10 col-md-7">
-                                <h3>{{trans('front/pages/realisations.section0.mobileApp.title')}}</h3>
-                                <p>{{trans('front/pages/realisations.section0.mobileApp.content')}}</p>
+                        
+                            <div class="card-deck">
+
+                                {{ Html::card_img('https://image.freepik.com/free-photo/executive-with-light-bulb-surrounded-by-icons_1232-162.jpg', 'Title', 'Text Right', 'Text Left', 'Footer') }}
+
+                                {{ Html::card_img('https://image.freepik.com/free-photo/executive-with-light-bulb-surrounded-by-icons_1232-162.jpg', 'Title', 'Text Right', 'Text Left', 'Footer') }}
+
+                                {{ Html::card_img('https://image.freepik.com/free-photo/executive-with-light-bulb-surrounded-by-icons_1232-162.jpg', 'Title', 'Text Right', 'Text Left', 'Footer') }}
                             </div>
-                            <div class="col-10 col-md-5">
-                                <img src="https://images.unsplash.com/photo-1494366222322-387658a1a976?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80" class="img-fluid float-right" alt="">
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -104,7 +107,7 @@
         $('#standardNavbarCollapse ul.navbar-nav > li.nav-item:eq(5)').addClass('active text-muet');
         $('#fixedNavbarCollapse ul.navbar-nav > li.nav-item:eq(5)').addClass('active');
 
-        //Card
+        //Card hover effect
         $('div.card')
             .mouseenter(function(){
                 $(this).children('img.card-img').addClass('animate')

@@ -9,7 +9,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=ABeeZee|Lato|PT+Sans|Roboto|Roboto+Condensed" rel="stylesheet">
 
-    <!-- Styles -->
+    <!-- Styles | Reset css -->
     <style type="text/css" rel="stylesheet">
         /* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126
         License: none (public domain)
@@ -59,21 +59,43 @@
         }
     </style>
 
-
+    <!-- Styles | Global -->
     <style type="text/css" rel="stylesheet">
         body { width: 100%; font-family: 'ABeeZee', 'Roboto', 'Lato', 'Roboto Condensed', 'PT Sans', sans-serif; line-height: 1.6; }
         section div { padding: 2em; width: 60%; margin-left: auto; margin-right: auto; }
-        p { font-family: sans-serif; font-weight: 100; }
+        p, ul li span { font-family: sans-serif; font-weight: 100; }
         a { text-decoration: none; }
         .text-center{ text-align: center; }
         .text-light { color: white; }
         .social-icon { margin: 0 0.5em; }
+        .rounded { border-radius: 99px !important; }
+        span.bold{ font-weight: bold; }
+
+        .btn-custom-gradient {
+            color: white;
+            border: 1px solid;
+            border-image: linear-gradient(to right top, #1ee6bf, #36e7ac, #4fe798, #67e681, #7fe569);
+            background-image: linear-gradient(to right top, #1ee6bf, #36e7ac, #4fe798, #67e681, #7fe569);
+        }
+
+        .btn-custom-gradient:hover {
+            border: 1px solid;
+            border-image: linear-gradient(to right top, #56c7fb, #3eb7fc, #38a5fc, #4892f7, #617ced);
+            color: #fff;
+            background-image: linear-gradient(to right top, #56c7fb, #3eb7fc, #38a5fc, #4892f7, #617ced);
+                color: #fff;
+        }
+
+        a.btn-custom-gradient {
+            display: inline-block;
+            padding: 5px 20px;
+        }
 
         /*
         * Tablet and Mobile device 
         */
         @media only screen and (max-width: 992px) {
-        section div { width: 90%; margin-left: auto; margin-right: auto; }            
+            section div { width: 90%; margin-left: auto; margin-right: auto; }
         }
     </style>
 

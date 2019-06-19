@@ -12,7 +12,7 @@
                 <p class="px-5">{!! trans('front/pages/404.content') !!}</p>
 
                 <div class="px-5 py-4">
-                    {!! Html::go_to_home(url('/'), 'Revenir à l\'accueil') !!}
+                    {!! Html::go_to_url(url('/'), 'Revenir à l\'accueil') !!}
                 </div>
                 
 

@@ -12,7 +12,7 @@ use Validator;
 class MainController extends Controller
 {
     public function __construct(){
-        $this->middleware('ajax', ['only' => 'testPost']);
+        $this->middleware('ajax', ['only' => ['testPost', 'pricesPost']]);
     }
 
     /**
@@ -73,6 +73,20 @@ class MainController extends Controller
         return view('statics.prices', compact('prices'));
     }
 
+    public function ajaxPrices(Request $request)
+    {
+        $validator = $this->validatorPriceForm($request->all());
+        /*
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+        */
+        //Send email to admn and user 
+        return response()->json();
+    }
+
     public function realisations()
     {
         SEO::opengraph()->addProperty('locale', app()->getLocale());
@@ -130,9 +144,11 @@ class MainController extends Controller
             $m->to('grulog23@gmail.com', 'Ulrich Grah')->subject('Test Template Email');
         });
         */
+        $amount = 3000;
+        $estimateCode = 'XXX-CODE';
 
         //SEO::opengraph()->addProperty('locale', app()->getLocale());
-        return view('errors.404');
+        return view('emails.estimateToAdmin', compact('amount', 'estimateCode'));
     }
 
     /**
