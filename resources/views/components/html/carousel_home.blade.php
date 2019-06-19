@@ -12,10 +12,10 @@
                     <p>{{ trans('front/pages/index.carousel.item1.description') }}</p>
                     <div class="row">
                         <div class="col wow bounceInLeft">
-                            <button type="button" class="btn btn-primary btn-lg btn-block rounded">{{ trans('front/pages/index.carousel.item1.button1') }}</button>
+                            <a href="{{url('/contact')}}" class="btn btn-primary btn-lg btn-block rounded">{{ trans('front/pages/index.carousel.item1.button1') }}</a>
                         </div>
                         <div class="col wow bounceInRight">
-                            <button type="button" class="btn btn-success btn-lg btn-block rounded">{{ trans('front/pages/index.carousel.item1.button2') }}</button>
+                            <a href="{{url('/website')}}" class="btn btn-success btn-lg btn-block rounded">{{ trans('front/pages/index.carousel.item1.button2') }}</a>
                         </div>
                     </div>
                 </div>

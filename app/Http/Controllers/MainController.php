@@ -107,6 +107,24 @@ class MainController extends Controller
 
     public function postContact(ContactRequest $request)
     {
+
+        /*
+        Mail::send('emails.email_contact', $request->all(), function ($m) use ($request) {
+            $m->from('contact@gngdev.com', 'GnG Dev');
+
+            $m->to( 'infos@gngdev.com', 'GnG Dev')->subject($request->input('subject'));
+        });
+        
+
+        $this->sendMail('emails.email_contact', $request->all(), $request, 'contact@gngdev.com', $request->input('email'), $request->input('subject'), 'GnG Dev');
+        */
+        
+        Mail::send( 'emails.email_contact', $request->all(), function ($m) use ($request) {
+            $m->from('contact@gngdev.com', 'GnG Dev - '.$request->input('subject'));
+
+            $m->to($request->input('email'), $request->input('name'))->subject($request->input('subject'));
+        });
+
         //SEO::setTitle('Home Page');
         //SEO::setDescription('This is my page description');
         //SEO::opengraph()->setUrl($request->fullUrl());
@@ -114,25 +132,21 @@ class MainController extends Controller
         //SEO::opengraph()->addProperty('type', 'articles');
         SEO::opengraph()->addProperty('locale', app()->getLocale());
 
-
-        Mail::send('emails.email_contact', $request->all(), function ($m) use ($request) {
-            $m->from('contact@gngdev.com', 'GnG Dev');
-
-            $m->to( 'infos@gngdev.com', 'GnG Dev')->subject($request->input('subject'));
-        });
-
-        Mail::send( 'emails.email_contact', $request->all(), function ($m) use ($request) {
-            $m->from('contact@gngdev.com', 'GnG Dev');
-
-            $m->to($request->input('email'), $request->input('name'))->subject($request->input('subject'));
-        });
-
         return view('statics.contact')->withOk( 'Merci. Votre message a été transmis à l\'administrateur du site. Vous recevrez une réponse rapidement.');
     }
 
     public function privacyPolicy()
     {
         return view('statics.privacyPolicy');
+    }
+
+    private function sendMail($view, $variables = [], Request $request, $from, $to, $subject, $mailName)
+    {
+        Mail::send($view, $variables, function ($m) use ($request, $from, $to, $subject, $mailName) {
+            $m->from($from, $mailName);
+
+            $m->to($to, $mailName)->subject($subject);
+        });
     }
 
     public function test()
