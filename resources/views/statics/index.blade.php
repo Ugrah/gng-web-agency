@@ -94,20 +94,86 @@
     <section class="text-center py-5 bg-medium">
         <h2 class="wow bounceInLeft">{{ trans('front/pages/index.section2.title')}}</h2>
         <p class="col-10 col-md-8 mx-auto wow bounceInRight">{{ trans('front/pages/index.section2.description')}}</p>
-        <div class="container mt-5">
-            <div class="card-columns">
-                
-                @foreach($prices as $price)
-
-                    {{ Html::price_box(
-                        $price['title'],
-                        $price['amount'],
-                        $price['options'],
-                        url('/prices')
-                    ) }}
-                
-                @endforeach
+        <div class="container">
+            <div class="row justify-content-center mt-5">
+                 <div class="card-group">
+                    {{ Html::prod_step(
+                        'fadeInUp',
+                        '0.1s',
+                        'far fa-comment-dots',
+                        trans('front/pages/index.section2.item0.content'),
+                    )}}
+                    {{ Html::prod_step(
+                        'fadeInUp',
+                        '0.1s',
+                        'far fa-file-pdf',
+                        trans('front/pages/index.section2.item1.content')
+                    )}}
+                    {{ Html::prod_step(
+                        'fadeInUp',
+                        '0.1s',
+                        'fas fa-hand-holding-usd',
+                        trans('front/pages/index.section2.item2.content')
+                    )}}
+                    {{ Html::prod_step(
+                        'fadeInUp',
+                        '0.1s',
+                        'fas fa-cogs',
+                        trans('front/pages/index.section2.item3.content')
+                    )}}
+                    {{ Html::prod_step(
+                        'fadeInUp',
+                        '0.3s',
+                        'fas fa-file-invoice-dollar',
+                        trans('front/pages/index.section2.item4.content')
+                    )}}
+                    {{ Html::prod_step(
+                        'fadeInUp',
+                        '0.3s',
+                        'fas fa-file-invoice-dollar',
+                        trans('front/pages/index.section2.item5.content'),
+                        'fas fa-check'
+                    )}}
+                    {{ Html::prod_step(
+                        'fadeInUp',
+                        '0.3s',
+                        'fas fa-chart-pie',
+                        trans('front/pages/index.section2.item6.content')
+                    )}}
+                    {{ Html::prod_step(
+                        'fadeInUp',
+                        '0.3s',
+                        'fas fa-chart-pie',
+                        trans('front/pages/index.section2.item7.content'),
+                        'fas fa-check'
+                    )}}
+                    {{ Html::prod_step(
+                        'fadeInUp',
+                        '0.5s',
+                        'fas fa-laptop-code',
+                        trans('front/pages/index.section2.item8.content')
+                    )}}
+                    {{ Html::prod_step(
+                        'fadeInUp',
+                        '0.5s',
+                        'far fa-file-alt',
+                        trans('front/pages/index.section2.item9.content')
+                    )}}
+                    {{ Html::prod_step(
+                        'fadeInUp',
+                        '0.5s',
+                        'far fa-check-circle',
+                        trans('front/pages/index.section2.item10.content')
+                    )}}
+                    {{ Html::prod_step(
+                        'fadeInUp',
+                        '0.5s',
+                        'fas fa-globe',
+                        trans('front/pages/index.section2.item11.content')
+                    )}}
+                </div>
             </div>
+           
         </div>
     </section>
 

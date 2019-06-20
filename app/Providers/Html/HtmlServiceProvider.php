@@ -28,6 +28,7 @@ class HtmlServiceProvider extends ServiceProvider
         Html::component('carousel_home', 'components.html.carousel_home', []);
         Html::component('go_to_url', 'components.html.go_to_url', ['url','text']);
         Html::component('div_card_icon', 'components.html.div_card_icon', [ 'wowEffect', 'wowDelay','iconClass', 'title', 'content']);
+        Html::component('prod_step', 'components.html.prod_step', [ 'wowEffect', 'wowDelay', 'iconClass', 'content', 'iconClassSecond']);
         Html::component('card_img', 'components.html.card_img', ['imgPath','title', 'textRight', 'textLeft', 'footer']);
         Html::component('price_box', 'components.html.price_box', ['name', 'amount', 'options', 'urlButton']);
 

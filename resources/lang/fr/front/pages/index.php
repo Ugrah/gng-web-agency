@@ -1,5 +1,6 @@
 <?php
 return [
+
     /*
     |--------------------------------------------------------------------------
     | Carousel
@@ -69,10 +70,20 @@ return [
     ],
 
     'section2' => [
-        'title' => 'Des offres étudiées et adaptées à vos besoins',
-        'description' => 'Ne soyez pas limité par votre budget. Nos offres sont faites pour vous permettre de profiter des meilleures opportunités à coût réduit.',
-        'from' => 'Tarif à partir de',
-        'button' => 'Voir tous les packs',
+        'title' => 'Comment ça marche ?',
+        'description' => 'Prenez connaissance de notre méthode de travail pour la réalisation de votre projet web ou mobile.',
+        'item0' => ['content' => 'Ecoute de votre besoin'],
+        'item1' => ['content' => 'Vous fournissez votre contenu (textes, images etc ...'],
+        'item2' => ['content' => 'Devis estimatif'],
+        'item3' => ['content' => 'Affinage selon votre budget et conseils'],
+        'item4' => ['content' => 'Devis détaillé'],
+        'item5' => ['content' => 'Validation du devis'],
+        'item6' => ['content' => 'Propositions graphique'],
+        'item7' => ['content' => 'Validation de la charte graphique'],
+        'item8' => ['content' => 'Phase de développement du projet'],
+        'item9' => ['content' => 'Intégration des contenus'],
+        'item10' => ['content' => 'Validations'],
+        'item11' => ['content' => 'Publication du projet'],
     ],
 
     'section3' => [
