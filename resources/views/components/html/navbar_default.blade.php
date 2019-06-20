@@ -1,4 +1,4 @@
-<nav id="standardNavbar" class="navbar navbar-expand-lg navbar-dark bg-dark px-xl-5" style="">
+<nav id="standardNavbar" class="navbar navbar-expand-lg navbar-dark bg-dark px-xl-5"> 
     <a class="navbar-brand" href="{{url('/')}}"><h4>{{ config('infos.name') }}</h4></a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#standardNavbarCollapse" aria-controls="standardNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>

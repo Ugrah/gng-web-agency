@@ -1,5 +1,17 @@
 @extends('layouts.app')
 
+@section('styles')
+    <style>
+        .short-about {
+            background-image: linear-gradient(to right top, rgba(232, 123, 192,0.7), rgba(225, 109, 203,0.8), rgba(211, 98, 218,0.8), rgba(190, 91, 234,0.8), rgba(158, 89, 253,0.8)), url(https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+            background-position: center center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div style="height: 100vh; background-image: linear-gradient(to right top, #e87bc0, #e16dcb, #d362da, #be5bea, #9e59fd); overflow: hidden;" class="position-relative">
 
@@ -9,15 +21,15 @@
     </div>
 
     <section class="text-center py-5 bg-medium">
-        <h2 class="wow bounceInLeft display-4">{{ trans('front/pages/index.section0.title')}}</h2>
+        <h2 class="wow bounceInLeft display-4 px-3">{{ trans('front/pages/index.section0.title')}}</h2>
         <p class="col-10 col-md-8 mx-auto wow bounceInRight">{{ trans('front/pages/index.section0.description')}}</p>
         <div class="container mt-5">
-            <div class="row">
+            <div class="row justify-content-center">
 
                 {{ Html::div_card_icon(
                     'fadeInLeft',
                     '0.5s',
-                    'fas fa-window-restore fa-3x',
+                    'far fa-window-restore fa-3x',
                     trans('front/pages/index.section0.item0.title'),
                     trans('front/pages/index.section0.item0.content')
                 ) }}
@@ -25,7 +37,7 @@
                 {{ Html::div_card_icon(
                     'fadeInLeft',
                     '0.3s',
-                    'fas fa-window-restore',
+                    'fas fa-cart-arrow-down',
                     trans('front/pages/index.section0.item1.title'),
                     trans('front/pages/index.section0.item1.content')
                 ) }}
@@ -33,7 +45,7 @@
                 {{ Html::div_card_icon(
                     'fadeInLeft',
                     '0.1s',
-                    'fas fa-window-restore',
+                    'fas fa-bullseye',
                     trans('front/pages/index.section0.item2.title'),
                     trans('front/pages/index.section0.item2.content')
                 ) }}
@@ -41,7 +53,7 @@
                 {{ Html::div_card_icon(
                     'fadeInRight',
                     '0.1s',
-                    'fas fa-window-restore',
+                    'fas fa-mobile-alt',
                     trans('front/pages/index.section0.item3.title'),
                     trans('front/pages/index.section0.item3.content')
                 ) }}
@@ -49,15 +61,15 @@
                 {{ Html::div_card_icon(
                     'fadeInRight',
                     '0.3s',
-                    'fas fa-window-restore',
-                    trans('front/pages/index.section0.item3.title'),
-                    trans('front/pages/index.section0.item3.content')
+                    'fas fa-newspaper',
+                    trans('front/pages/index.section0.item4.title'),
+                    trans('front/pages/index.section0.item4.content')
                 ) }}
 
                 {{ Html::div_card_icon(
                     'fadeInRight',
                     '0.5s',
-                    'fas fa-window-restore',
+                    'fas fa-poll',
                     trans('front/pages/index.section0.item5.title'),
                     trans('front/pages/index.section0.item5.content')
                 ) }}
@@ -65,15 +77,15 @@
         </div>
     </section>
 
-    <section class="main-background py-5">
+    <section class="short-about py-5">
         <div class="container text-light">
-            <div class="row">
-                <div class="col-6 wow bounceInLeft text-center">
-                    <p>For image illustration</p>
+            <div class="row justify-content-center">
+                <div class="col-10 col-md-6 d-none d-sm-block my-auto wow bounceInLeft text-center">
+                    <img src="{{ asset('img/web-development.jpg') }}" alt="Web development illustration" class="img-fluid">
                 </div>
-                <div class="col-6 wow bounceInRight">
+                <div class="col-10 col-md-6 text-center text-md-left my-auto wow bounceInRight">
                 <h3 class="text-light">{{ trans('front/pages/index.section1.title', ['app_name' => config('infos.name')]) }}</h3>
-                    <p>{!! trans('front/pages/index.section1.content') !!}</p>
+                    {!! trans('front/pages/index.section1.content') !!}
                 </div>
             </div>
         </div>
@@ -99,6 +111,7 @@
         </div>
     </section>
 
+    <!--
     <section class="main-background py-5 text-center">
         <div class="container text-light">
             <h4 class="text-light mb-5">{{trans('front/pages/index.section3.title')}}</h4>
@@ -122,15 +135,16 @@
             </div>
         </div>
     </section>
+    -->
 
-    <section class="py-5 bg-primary text-white">
+    <section class="py-5 text-white custom-gradient-blue">
         <div class="container">
-            <div class="row">
-                <div class="col my-auto">
+            <div class="row text-center text-md-left justify-content-center">
+                <div class="col-10 col-md-6 my-auto">
                     <h4 class="text-white" style="font-size: 2rem">{{trans('front/pages/index.section4.title')}}</h4>
-                    <p>{{trans('front/pages/index.section4.title')}}</p>
+                    <p class="text-light">{{trans('front/pages/index.section4.title')}}</p>
                 </div>
-                <div class="col my-auto text-right"><a href="#" class="btn btn-dark rounded">Contactez-nous</a></div>
+                <div class="col-10 col-md-6 my-auto text-center text-md-right"><a href="{{ url('/contact') }}" class="btn btn-dark py-3 px-4 rounded">{{ trans('front/pages/index.section4.link') }}</a></div>
             </div>
         </div>
     </section>

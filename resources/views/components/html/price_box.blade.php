@@ -1,4 +1,4 @@
-<div class="card wow bounceIn">
+<div class="card wow fadeInUpBig">
     <div class="card-header price-title">
     <h4 class="text-white nopadding">{{$name}}</h4>
     </div>
@@ -8,7 +8,7 @@
 
     <ul class="list-group mb-3">
         @foreach($options as $option)
-        <li class="list-group-item">{{$option}}</li>
+            {!! $option !!}
         @endforeach
     </ul>
 

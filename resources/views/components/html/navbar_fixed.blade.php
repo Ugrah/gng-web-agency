@@ -1,4 +1,4 @@
-<nav id="fixedNavbar" class="navbar navbar-expand-md navbar-light fixed-top bg-light px-xl-5">
+<nav id="fixedNavbar" class="navbar navbar-expand-lg navbar-light fixed-top bg-light px-xl-5">
     <a class="navbar-brand" href="{{url('/')}}"><h4>{{ config('infos.name') }}</h4></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#fixedNavbarCollapse" aria-controls="fixedNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

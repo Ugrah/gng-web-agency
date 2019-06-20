@@ -17,21 +17,24 @@ body * {
 /* Active local */
 ul.navbar-nav a.active-locale { color: #e0e0e0 !important; }
 
+
 /* buttons */
-.special-button, .btn-custom-gradient, .btn-custom-gradient-blue:hover {
+.special-button, .btn-custom-gradient, #home-carousel a.btn-primary, .btn-custom-gradient-blue:hover {
 	color: white;
 	border: 1px solid;
 	border-image: linear-gradient(to right top, #1ee6bf, #36e7ac, #4fe798, #67e681, #7fe569);
     background-image: linear-gradient(to right top, #1ee6bf, #36e7ac, #4fe798, #67e681, #7fe569);
 }
 
-.btn-custom-gradient:hover, .btn-custom-gradient-blue, div.price-title, div.cookie-consent {
+.btn-custom-gradient:hover, #home-carousel a.btn-success, .btn-custom-gradient-blue, div.price-title, div.cookie-consent, section.custom-gradient-blue {
 	border: 1px solid;
 	border-image: linear-gradient(to right top, #56c7fb, #3eb7fc, #38a5fc, #4892f7, #617ced);
 	color: #fff;
     background-image: linear-gradient(to right top, #56c7fb, #3eb7fc, #38a5fc, #4892f7, #617ced);
         color: #fff;
 }
+
+#home-carousel a.btn-primary:hover, #home-carousel a.btn-success:hover { color: dodgerblue; }
 
 /*
  * Backgroung

@@ -15,5 +15,5 @@ return [
         'office' => 'Bureau',
     ],
 
-    'gng-description' => 'Au loin, derrière le mot montagnes, loin des pays Vokalia et Consonantia, vivent les textes aveugles.',
+    'gng-description' => 'L\'agence des experts par excellence des technologies du web et du développement mobile.',
 ];

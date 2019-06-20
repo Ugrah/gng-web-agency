@@ -1,9 +1,9 @@
-<footer id="footer" class="bg-dark text-light pt-md-5 pb-md-5">
+<footer id="footer" class="bg-dark text-light py-5">
     <div class="container">
     <div class="row mb-5">
         <div class="col-md">
         <div class="">
-            <h2 class="text-light">{{config('infos.name')}}</h2>
+            <h2 class="text-light"><a href="{{ url('/') }}">{{config('infos.name')}}</a></h2>
             <p>{{ trans('front/footer.gng-description') }}</p>
         </div>
         </div>
