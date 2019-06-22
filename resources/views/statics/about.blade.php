@@ -24,7 +24,7 @@
 
 <section class="py-5">
     <div class="container">
-        <div class="row justify-content-around py-5">
+        <div class="row justify-content-center py-5">
             <div class="col-10 col-md-6">
                 <img class="img-fluid" width="100%" src="https://images.unsplash.com/photo-1559163263-e31c2a5e1895?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="About illustration">
             </div>
@@ -43,15 +43,15 @@
                     <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-do" role="tabpanel" aria-labelledby="pills-do-tab">
                         <h3>{{trans('front/pages/about.section0.do.title')}}</h3>
-                        <p>{{trans('front/pages/about.section0.do.content')}}</p>
+                        {!! trans('front/pages/about.section0.do.content') !!}
                     </div>
                     <div class="tab-pane fade" id="pills-mission" role="tabpanel" aria-labelledby="pills-mission-tab">
-                        <h3>{{trans('front/pages/about.section0.mission.title')}}</h3>
-                        <p>{{trans('front/pages/about.section0.mission.content')}}</p>
+                        <h3>{{trans('front/pages/about.section0.mission.title', ['app_name' => config('infos.name')])}}</h3>
+                        {!! trans('front/pages/about.section0.mission.content', ['app_name' => config('infos.name')]) !!}
                     </div>
                     <div class="tab-pane fade" id="pills-goal" role="tabpanel" aria-labelledby="pills-goal-tab">
                         <h3>{{trans('front/pages/about.section0.goal.title')}}</h3>
-                        <p>{{trans('front/pages/about.section0.goal.content')}}</p>
+                        {!! trans('front/pages/about.section0.goal.content') !!}
                     </div>
                 </div>
             </div>

@@ -11,33 +11,33 @@ return [
     */
     'section0' => [
         'title' => 'Une pallette de possibilités',
-        'description' => 'Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi. De quibus tres video sententias ferri, quarum nullam probo, unam, ut eodem modo erga amicum adfecti simus, quo erga nosmet ipsos, alteram, ut nostra in amicos benevolentia illorum erga nos benevolentiae pariter aequaliterque respondeat, tertiam, ut, quanti quisque se ipse facit, tanti fiat ab amicis.',
+        'description' => '<p>Vous désirez avoir un site qui correspond à votre image ? Vous aimeriez savoir quelle solution conviendrait le mieux à votre aspiration ?</p><p>La création ou la refonte d\'un Site internet est plus ou moins complexe. C\'est pourquoi notre agence vous propose une multitude de possibilités vous permettant d\'obtenir la meilleure des solutions pour vous. La solution adaptée à vos besoins, respectant votre budget et la plus rapide à mettre en place.</p>',
         'showcase' => [
             'name' => 'Site Vitrine',
-            'title' => 'Service_title',
-            'content' => 'Haec igitur Epicuri non probo, inquam. De cetero vellem equidem aut ipse doctrinis fuisset instructior est enim, quod tibi ita videri necesse est, non satis politus iis artibus, quas qui tenent, eruditi appellantur aut ne deterruisset alios a studiis. quamquam te quidem video minime esse deterritum.',
-            'img_alt' => '',
+            'title' => 'Présentez votre entreprise, votre activité.',
+            'content' => '<p>Généralement lorsque vous décidez d\'attaquer le web, vous voudriez avant tout présenter votre activité. Un site vitrine est parfait pour présenter votre entretprise. Avec un bon référencement naturel, vous pourrai obtenir de nouveaux clients et leur permettre de découvrir votre entreprise sous toutes ses forme.</p><p>Rapide à mettre en place, vous serai efficacement présenté sur le web.</p>',
+            'img_alt' => 'Site vitrine illustration',
 
         ],
         'e_commerce' => [
             'name' => 'E-Commerce',
-            'title' => 'Service_title',
-            'content' => 'Haec igitur Epicuri non probo, inquam. De cetero vellem equidem aut ipse doctrinis fuisset instructior est enim, quod tibi ita videri necesse est, non satis politus iis artibus, quas qui tenent, eruditi appellantur aut ne deterruisset alios a studiis. quamquam te quidem video minime esse deterritum.',
-            'img_alt' => '',
+            'title' => 'Vendez vos produits via internet en toute sécurité.',
+            'content' => '<p>Vous avez un commerce ? Vous souhaiteriez accroitre vos vendes ?</p><p>Voici une façon efficace de présntez et de vendre vos produits à travers le net.</p><p>Mise en place d\'un système de paiement en ligne sécurisé, vous pouvez gérer vos ventes en toute sérénité.</p>',
+            'img_alt' => 'E-Commerce illustration',
 
         ],
         'portfolio' => [
             'name' => 'Porfolio',
-            'title' => 'Service_title',
-            'content' => 'Haec igitur Epicuri non probo, inquam. De cetero vellem equidem aut ipse doctrinis fuisset instructior est enim, quod tibi ita videri necesse est, non satis politus iis artibus, quas qui tenent, eruditi appellantur aut ne deterruisset alios a studiis. quamquam te quidem video minime esse deterritum.',
-            'img_alt' => '',
+            'title' => 'Faites découvrir vos réalisations.',
+            'content' => '<p>Afficher vos réalisations artisatiques ou professionnelles relatives à votre métier, et faites valoir votre expérience selon votre domaine.</p><p>Voici le format adéquat pour montrer votre savoir faire.</p>',
+            'img_alt' => 'Portfolio illustration',
 
         ],
         'catalog' => [
             'name' => 'Catalogue',
-            'title' => 'Service_title',
-            'content' => 'Haec igitur Epicuri non probo, inquam. De cetero vellem equidem aut ipse doctrinis fuisset instructior est enim, quod tibi ita videri necesse est, non satis politus iis artibus, quas qui tenent, eruditi appellantur aut ne deterruisset alios a studiis. quamquam te quidem video minime esse deterritum.',
-            'img_alt' => '',
+            'title' => 'Présentez votre gamme de produits.',
+            'content' => '<p>Vous pouvai présenter vos produits sans vouloir forcement proposer à vos clients d\'acheter en ligne. Et donc voici le format qui respecte ce choix.</p><p>Un Catalogue ergonomique qui présentement fidellement vos produits.</p>',
+            'img_alt' => 'Catalogue illustration',
 
         ],
     ],
@@ -45,26 +45,29 @@ return [
     'section1' => [
         'title' => 'Application web',
         'description' => 'Il existe des sites plus avancés qui méritent un traitement particulier. Ces derniers ne peuvent être rangés dans les catégories citées plus haut. Nous en parlons ici.',
-        'content' => 'Cum saepe multa, tum memini domi in hemicyclio sedentem, ut solebat, cum et ego essem una et pauci admodum familiares, in eum sermonem illum incidere qui tum forte multis erat in ore. Meministi enim profecto, Attice, et eo magis, quod P. Sulpicio utebare multum, cum is tribunus plebis capitali odio a Q. Pompeio, qui tum erat consul, dissideret, quocum coniunctissime et amantissime vixerat, quanta esset hominum vel admiratio vel querella.',
-        'img_alt' => '',
+        'content' => '<p class="text-light">Si vous voulez avoir une système de gestion, ou effectuer des manipulation avancées via une application internet ou internet, vous avez ici le parfait allié.</p><p class="text-light">Ce type de site internet vous permettra d\'obtenir des fonctionnalités tout aussi complexes que variées, accessible et disponble sur tout type de support (Ordinateur, téléphone et tablette).</p>',
+        'img_alt' => 'Web application illustration',
     ],
 
     'section2' => [
         'title' => 'Site modernes et supports multiples',
-        'description' => 'Hanc regionem praestitutis celebritati diebus invadere parans dux ante edictus per solitudines Aboraeque amnis herbidas ripas, suorum indicio proditus, qui admissi flagitii metu exagitati ad praesidia descivere Romana. absque ullo egressus effectu deinde tabescebat immobilis.',
-        'content1' => '<h5>HTML5 &amp; CSS3</h5><p class="text-secondary">content_para</p><h5>RESPONSIVE DESIGN</h5><p class="text-secondary">content_para</p><h5>ANIMATIONS ET EFFETS</h5><p class="text-secondary">content_para</p>',
-        'content2' => '<h5>GOOGLE SPEED TEST</h5><p class="text-secondary">content_para</p><h5>CMS WORDPRESS</h5><p class="text-secondary">content_para</p><h5>OPTIMISATION SEO</h5><p class="text-secondary">content_para</p>',
+        'description' => 'Des site web optimisés pour téléphone mobile et tablette. Votre site web développé avec les outils les avancés.',
+        'content1' => '<h5>HTML5 &amp; CSS3</h5><p>Utilisation d\'un système de mise en page récent et efficace. Validation W3C.</p><h5>RESPONSIVE DESIGN</h5><p>Aujourd\'hui la navigation mobile et tablette est très développée. Optez pour un design qui s\'adapte dynamiquement aux écrans de vos utilisateurs.</p><h5>ANIMATIONS ET EFFETS</h5><p>Rajoutez des animations à vos contenu pour offrir un plaisir de navigation et d\'utilisation.</p>',
+        'content2' => '<h5>GOOGLE SPEED TEST</h5><p>Optimisez vos temps de chargement afin de vous assuer d\'être classé par les moteurs de recherche.</p><h5>CMS WORDPRESS</h5><p>Gardez le controle de votre site avec un CMS simple à maintenir et à mettre à jour.</p><h5>OPTIMISATION SEO</h5><p>L\'un des points les plus important du référensement.Positionnez vous en top des résultats de recherche Google.</p>',
+        'img_alt' => 'Site web design - construction',
     ],
 
     'section3' => [
         'title' => 'Choisir l\'outil adapté à ses besoins',
-        'description' => 'Emensis itaque difficultatibus multis et nive obrutis callibus plurimis ubi prope Rauracum ventum est ad supercilia fluminis Rheni, resistente multitudine Alamanna pontem suspendere navium conpage Romani vi nimia vetabantur ritu grandinis undique convolantibus telis, et cum id inpossibile videretur, imperator cogitationibus magnis attonitus, quid capesseret ambigebat.',
-        'content' => 'Equitis Romani autem esse filium criminis loco poni ab accusatoribus neque his iudicantibus oportuit neque defendentibus nobis. Nam quod de pietate dixistis, est quidem ista nostra existimatio, sed iudicium certe parentis; quid nos opinemur, audietis ex iuratis; quid parentes sentiant, lacrimae matris incredibilisque maeror, squalor patris et haec praesens maestitia, quam cernitis, luctusque declarat.',
+        'description' => 'Avec tous les outils proposés vous avez peut être l\'embara du choix. Ne vous inquiétez pas nous saurons vous guider à choisir la technologie qui vous conviendrait le mieux.',
+        'content' => '<p class="text-light">Si vous désirez modifier régulièrement les contenus de vos pages, vos menus, nous vous proposerons l\'utilisation d\'un CMS tel que Wordpress. Un système de site web modulaire, personnalisable a souhait. Ces avantages les plus significatifs sont sa facilité d\'utilisation et de maintien.</p><p class="text-light">Cependant, l\'ajout de fonctionnalité beaucoup plus avancé reste plus difficile à mettre en place.</p><p class="text-light">Mais rassurez à chaque besoin correspond une solution.</p><p class="text-light">Ne soyez pas frené par votre budget. Pour réduit vos coût et pour répondre à votre demande nous vous proposerons la solution qui lie efficacement perfomance, qualité et prix.</p>',
+        'img_alt' => 'Ordinateur et langage de programmations multiple illustration',
     ],
 
     'section4' => [
         'title' => 'Combien coûte un site internet ?',
-        'description' => 'Quod si rectum statuerimus vel concedere amicis, quidquid velint, vel impetrare ab iis, quidquid velimus, perfecta quidem sapientia si simus, nihil habeat res vitii; sed loquimur de iis amicis qui ante oculos sunt, quos vidimus aut de quibu.',
+        'description' => '',
         'content' => 'Ac ne quis a nobis hoc ita dici forte miretur, quod alia quaedam in hoc facultas sit ingeni, neque haec dicendi ratio aut disciplina, ne nos quidem huic uni studio penitus umquam dediti fuimus. Etenim omnes artes, quae ad humanitatem pertinent, habent quoddam commune vinculum, et quasi cognatione quadam inter se continentur.',
+        'img_alt' => '',
     ],
 ];

@@ -37,7 +37,7 @@
 
 <section class="py-5">
     <h2 class="text-center wow bounceInLeft display-4">{{ trans('front/pages/website.section0.title')}}</h2>
-    <p class="col-10 col-md-8 mx-auto text-center wow bounceInRight">{{ trans('front/pages/website.section0.description')}}</p>
+    <div class="col-10 col-md-8 mx-auto text-center wow bounceInRight">{!! trans('front/pages/website.section0.description') !!}</div>
     <div class="container">
         <div class="row justify-content-around py-5">
             <div class="col">
@@ -60,10 +60,10 @@
                         <div class="row justify-content-center">
                             <div class="col-10 col-md-7">
                                 <h3>{{trans('front/pages/website.section0.showcase.title')}}</h3>
-                                <p>{{trans('front/pages/website.section0.showcase.content')}}</p>
+                                {!! trans('front/pages/website.section0.showcase.content') !!}
                             </div>
                             <div class="col-10 col-md-5">
-                                <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="img-fluid float-right" alt="">
+                                <img src="{{ asset('img/website/website-showcase.jpg') }}" class="img-fluid float-right" alt="{{trans('front/pages/website.section0.showcase.img_alt')}}">
                             </div>
                         </div>
                     </div>
@@ -71,10 +71,10 @@
                         <div class="row justify-content-center">
                             <div class="col-10 col-md-7">
                                 <h3>{{trans('front/pages/website.section0.e_commerce.title')}}</h3>
-                                <p>{{trans('front/pages/website.section0.e_commerce.content')}}</p>
+                                {!! trans('front/pages/website.section0.e_commerce.content') !!}</p>
                             </div>
                             <div class="col-10 col-md-5">
-                                <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="img-fluid float-right" alt="">
+                                <img src="{{ asset('img/website/website-eCommerce.jpg') }}" class="img-fluid float-right" alt="{{trans('front/pages/website.section0.e_commerce.img_alt')}}">
                             </div>
                         </div>
                     </div>
@@ -82,10 +82,10 @@
                         <div class="row">
                             <div class="col-10 col-md-7">
                                 <h3>{{trans('front/pages/website.section0.portfolio.title')}}</h3>
-                                <p>{{trans('front/pages/website.section0.portfolio.content')}}</p>
+                                {!! trans('front/pages/website.section0.portfolio.content') !!}</p>
                             </div>
                             <div class="col-10 col-md-5">
-                                <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="img-fluid float-right" alt="">
+                                <img src="{{ asset('img/website/website-portfofio.jpeg') }}" class="img-fluid float-right" alt="{{trans('front/pages/website.section0.portfolio.img_alt')}}">
                             </div>
                         </div>
                     </div>
@@ -93,10 +93,10 @@
                         <div class="row">
                             <div class="col-10 col-md-7">
                                 <h3>{{trans('front/pages/website.section0.catalog.title')}}</h3>
-                                <p>{{trans('front/pages/website.section0.catalog.content')}}</p>
+                                {!! trans('front/pages/website.section0.catalog.content') !!}</p>
                             </div>
                             <div class="col-10 col-md-5">
-                                <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="img-fluid float-right" alt="">
+                                <img src="{{ asset('img/website/website-catalog.jpg') }}" class="img-fluid float-right" alt="{{trans('front/pages/website.section0.catalog.img_alt')}}">
                             </div>
                         </div>
                     </div>
@@ -113,10 +113,10 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-10 col-md-6 mb-2">
-                <img class="img-fluid" src="https://stonemedia.ch/wp-content/uploads/2018/04/programmation-logiciel.png" alt="">
+                <img class="img-fluid" src="{{ asset('img/website/website-app.png') }}" alt="{{trans('front/pages/website.section1.img_alt')}}">
             </div>
             <div class="col-10 col-md-6 mt-4 mt-md-0">
-                <p class="text-light">{{ trans('front/pages/website.section1.content')}}</p>
+                {!! trans('front/pages/website.section1.content') !!}
             </div>
         </div>
     </div>
@@ -128,15 +128,15 @@
 
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-10 col-md-4 text-center text-md-right mt-4 mt-md-0 wow bounceInLeft">
+            <div class="col-10 col-md-3 text-center text-md-right mt-4 mt-md-0 wow bounceInLeft">
                 {!! trans('front/pages/website.section2.content1')!!}
             </div>
 
-            <div class="col-10 col-md-4 mb-2 wow bounceInUp">
-                <img class="img-fluid" src="https://stonemedia.ch/wp-content/uploads/2018/04/programmation-logiciel.png" alt="">
+            <div class="col-10 col-md-6 mb-2 wow bounceInUp">
+                <img class="img-fluid" src="{{asset('img/website/multi-support.png')}}" alt="{{trans('front/pages/website.section2.img_alt')}}">
             </div>
 
-            <div class="col-10 col-md-4 text-center text-md-left mt-4 mt-md-0 wow bounceInRight">
+            <div class="col-10 col-md-3 text-center text-md-left mt-4 mt-md-0 wow bounceInRight">
                 {!! trans('front/pages/website.section2.content2')!!}
             </div>
         </div>
@@ -150,10 +150,10 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-10 col-md-6 mb-2">
-                <img class="img-fluid" src="https://stonemedia.ch/wp-content/uploads/2018/04/programmation-logiciel.png" alt="">
+                <img class="img-fluid" src="{{asset('img/website/chose-your-tool.png')}}" alt="{{trans('front/pages/website.section3.img_alt')}}">
             </div>
             <div class="col-10 col-md-6 mt-4 mt-md-0">
-                <p class="text-light">{{ trans('front/pages/website.section3.content')}}</p>
+                {!! trans('front/pages/website.section3.content') !!}
             </div>
         </div>
     </div>
@@ -170,7 +170,7 @@
                 <a href="#" class="btn btn-primary px-4 py-2 mt-xl-5 rounded price">Voir nos tarifs</a>
             </div>
             <div class="col-10 col-md-6 mb-2">
-                <img class="img-fluid" src="https://stonemedia.ch/wp-content/uploads/2018/04/programmation-logiciel.png" alt="">
+                <img class="img-fluid" src="https://stonemedia.ch/wp-content/uploads/2018/04/programmation-logiciel.png" alt="{{trans('front/pages/website.section4.img_alt')}}">
             </div>
         </div>
     </div>
