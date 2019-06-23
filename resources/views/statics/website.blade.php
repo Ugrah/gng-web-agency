@@ -166,11 +166,11 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-10 col-md-6 mt-4 mt-md-0">
-                <p class="">{{ trans('front/pages/website.section4.content')}}</p>
-                <a href="#" class="btn btn-primary px-4 py-2 mt-xl-5 rounded price">Voir nos tarifs</a>
+                {!! trans('front/pages/website.section4.content') !!}</p>
+                <a href="#" class="btn btn-primary px-4 py-2 mt-2 rounded price">{!! trans('front/pages/website.section4.show_price') !!}</a>
             </div>
             <div class="col-10 col-md-6 mb-2">
-                <img class="img-fluid" src="https://stonemedia.ch/wp-content/uploads/2018/04/programmation-logiciel.png" alt="{{trans('front/pages/website.section4.img_alt')}}">
+                <img class="img-fluid" src="{{ asset('img/website/website-cost.png') }}" alt="{{trans('front/pages/website.section4.img_alt')}}">
             </div>
         </div>
     </div>

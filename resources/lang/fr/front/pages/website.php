@@ -66,8 +66,9 @@ return [
 
     'section4' => [
         'title' => 'Combien coûte un site internet ?',
-        'description' => '',
-        'content' => 'Ac ne quis a nobis hoc ita dici forte miretur, quod alia quaedam in hoc facultas sit ingeni, neque haec dicendi ratio aut disciplina, ne nos quidem huic uni studio penitus umquam dediti fuimus. Etenim omnes artes, quae ad humanitatem pertinent, habent quoddam commune vinculum, et quasi cognatione quadam inter se continentur.',
+        'description' => 'Vous vous demandez combien coute un site internet ?',
+        'content' => '<p>C\'est la question qui revient le plus souvent. Toutefois, c\'est une question complexe à laquelle on ne pourrait pas donné de reponse unique.</p><p>En effet le coût d\'un site internet dépend de la puissance, de la puissance et des fonctionnalités de ce site.</p><p>Afin de vous donner une idée du budget nécessaire à la création de votre site internet vous pouvez consulter la page de tarifs, rédigée pour répondre à la question.</p>',
+        'show_price' => 'Consulter nos tarifs',
         'img_alt' => '',
     ],
 ];
