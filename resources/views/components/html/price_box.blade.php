@@ -1,9 +1,9 @@
-<div class="card wow fadeInUpBig">
+<div class="card">
     <div class="card-header price-title">
     <h4 class="text-white nopadding">{{$name}}</h4>
     </div>
     <div class="card-body nopadding bg-light">
-    <small class="text-muted">{{ trans('front/pages/index.section2.from')}}</small>
+    <small class="text-muted">{{ trans('front/pages/prices.from')}}</small>
     <p class="card-text display-4">{{$amount}} <span style="font-size: 0.5em">Dh</span></p>
 
     <ul class="list-group mb-3">

@@ -70,77 +70,14 @@
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-website" role="tabpanel" aria-labelledby="pills-website-tab">
-                        <div class="row justify-content-center mt-3">
-                            <h3 class="col-10 col-md-8 text-center">{{ trans('front/pages/prices.section0.website.showcase.title')}}</h3>
-                            <p class="col-10 col-md-8 text-center">{{ trans('front/pages/prices.section0.website.showcase.description')}}</p>
-                            <div class="container">
-                                <div class="card-columns text-center">
-                                    @foreach($prices['showcase'] as $price)
-                                        {{ Html::price_box(
-                                            $price['title'],
-                                            $price['amount'],
-                                            $price['options']
-                                        ) }}
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row justify-content-center mt-3">
-                            <h3 class="col-10 col-md-8 text-center">{{ trans('front/pages/prices.section0.website.portfolio.title')}}</h3>
-                            <p class="col-10 col-md-8 text-center">{{ trans('front/pages/prices.section0.website.portfolio.description')}}</p>
-                            <div class="container">
-                                <div class="card-columns text-center">
-                                    @foreach($prices['portfolio'] as $price)
-                                        {{ Html::price_box(
-                                            $price['title'],
-                                            $price['amount'],
-                                            $price['options']
-                                        ) }}
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row justify-content-center mt-3">
-                            <h3 class="col-10 col-md-8 text-center">{{ trans('front/pages/prices.section0.website.e_commerce.title')}}</h3>
-                            <p class="col-10 col-md-8 text-center">{{ trans('front/pages/prices.section0.website.e_commerce.description')}}</p>
-                            <div class="container">
-                                <div class="card-columns text-center">
-                                    @foreach($prices['e_commerce'] as $price)
-                                        {{ Html::price_box(
-                                            $price['title'],
-                                            $price['amount'],
-                                            $price['options']
-                                        ) }}
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row justify-content-center mt-3">
-                            <h3 class="col-10 col-md-8 text-center">{{ trans('front/pages/prices.section0.website.catalog.title')}}</h3>
-                            <p class="col-10 col-md-8 text-center">{{ trans('front/pages/prices.section0.website.catalog.description')}}</p>
-                            <div class="container">
-                                <div class="card-columns text-center">
-                                    @foreach($prices['catalog'] as $price)
-                                        {{ Html::price_box(
-                                            $price['title'],
-                                            $price['amount'],
-                                            $price['options']
-                                        ) }}
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-
+                        {{ Html::carousel_prices($prices) }}
                     </div>
 
                     <div class="tab-pane fade" id="pills-mobile_app" role="tabpanel" aria-labelledby="pills-mobile_app-tab">
                         <div class="row justify-content-center">
                             
                             <div class="alert alert-success alert-dismissible fade show text-center d-none" role="alert">
-                                Votre Devis estimatif a été envoyé avec succès !
+                                {{trans('front/pages/prices.section0.mobile_app.success_notif')}}
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -148,21 +85,21 @@
 
                             <div id="start-form" class="container py-5">
                                 <div class="text-center start">
-                                    <h3>Combien coûte la création de mon application ?</h3>
-                                    <p class="mt-3">Calculez rapidement le coût pour créer votre application en répondant à ces questions.</p>
+                                    <h3>{{trans('front/pages/prices.section0.mobile_app.start_title')}}</h3>
+                                    <p class="mt-3">{{trans('front/pages/prices.section0.mobile_app.start_descr')}}</p>
                                 </div>
 
                                 <div class="row justify-content-center">
-                                    <button id="start-button" type="submit" class="btn py-2 px-4 text-light submit rounded">Calculer</button>
+                                    <button id="start-button" type="submit" class="btn py-2 px-4 text-light submit rounded">{{trans('front/pages/prices.section0.mobile_app.start_button')}}</button>
                                 </div>
                             </div>
 
                             <div id="form-step" class="container py-5">
-                                {!! Form::open(['url' => 'test', 'id' => 'dynamic-app-price', 'method' => 'POST']) !!}
+                                {!! Form::open(['url' => 'prices', 'id' => 'dynamic-app-price', 'method' => 'POST']) !!}
                                     <div class="row previous">
                                         <div class="col">
                                             <a id="previous-button" href="#">
-                                            <i class="text-primary fas fa-arrow-left"></i> Precedent</a>
+                                            <i class="text-primary fas fa-arrow-left"></i> {{trans('front/pages/prices.section0.mobile_app.previous_button_form')}}</a>
                                         </div>
                                         <div class="col text-center">
                                             <span class="question-count"></span>
@@ -173,22 +110,31 @@
                                     </div> 
 
                                     <div class="text-center question" data-question="0">
-                                        <h4>Quel niveau de qualité recherchez-vous?</h4>
-                                        {{ Form::radio_label_img('qualityOptionRadio1', 'qualityOption','option1', 0, 550, 'http://placehold.it/150/ccc/fff&text=A', 'Qualité optimale') }}
+                                        <h4>{{trans('front/pages/prices.section0.mobile_app.questions.item0.title')}}</h4>
+                                        {{ Form::radio_label_img('qualityOptionRadio1', 'qualityOption','option1', 0, 550, 'http://placehold.it/150/ccc/fff&text=A', trans('front/pages/prices.section0.mobile_app.questions.item0.option0')) }}
 
-                                        {{ Form::radio_label_img('qualityOptionRadio2', 'qualityOption','option2', 0, 350, 'http://placehold.it/150/ccc/fff&text=B', 'Bon rapport qualité/prix') }}
+                                        {{ Form::radio_label_img('qualityOptionRadio2', 'qualityOption','option2', 0, 350, 'http://placehold.it/150/ccc/fff&text=B', trans('front/pages/prices.section0.mobile_app.questions.item0.option1')) }}
 
-                                        {{ Form::radio_label_img('qualityOptionRadio3', 'qualityOption','option3', 0, 200, 'http://placehold.it/150/ccc/fff&text=C', 'La qualité importe peu') }}
+                                        {{ Form::radio_label_img('qualityOptionRadio3', 'qualityOption','option3', 0, 200, 'http://placehold.it/150/ccc/fff&text=C', trans('front/pages/prices.section0.mobile_app.questions.item0.option2')) }}
                                     </div>
 
                                     <div class="text-center question" data-question="1">
-                                        <h4>De quel type d'application mobile avez-vous besoin?</h4>
-                                        {{ Form::radio_label_img('typeOptionRadio1', 'typeOption','option1', 1, 250, 'http://placehold.it/150/ccc/fff&text=A', 'Application Android') }}
+                                        <h4>{{trans('front/pages/prices.section0.mobile_app.questions.item1.title')}}</h4>
+                                        {{ Form::radio_label_img('typeOptionRadio1', 'typeOption','option1', 1, 250, 'http://placehold.it/150/ccc/fff&text=A', trans('front/pages/prices.section0.mobile_app.questions.item1.option0')) }}
 
-                                        {{ Form::radio_label_img('typeOptionRadio2', 'typeOption','option2', 1, 250, 'http://placehold.it/150/ccc/fff&text=B', 'Application iPhone') }}
+                                        {{ Form::radio_label_img('typeOptionRadio2', 'typeOption','option2', 1, 250, 'http://placehold.it/150/ccc/fff&text=B', trans('front/pages/prices.section0.mobile_app.questions.item1.option1')) }}
 
-                                        {{ Form::radio_label_img('typeOptionRadio3', 'typeOption','option3', 1, 200, 'http://placehold.it/150/ccc/fff&text=C', 'Application Android + iPhone') }}
-                                    </div> 
+                                        {{ Form::radio_label_img('typeOptionRadio3', 'typeOption','option3', 1, 200, 'http://placehold.it/150/ccc/fff&text=C', trans('front/pages/prices.section0.mobile_app.questions.item1.option2')) }}
+                                    </div>
+
+                                    <div class="text-center question" data-question="2">
+                                        <h4>{{trans('front/pages/prices.section0.mobile_app.questions.item1.title')}}</h4>
+                                        {{ Form::radio_label_img('designOptionRadio1', 'designOption','option1', 1, 250, 'http://placehold.it/150/ccc/fff&text=A', trans('front/pages/prices.section0.mobile_app.questions.item1.option0')) }}
+
+                                        {{ Form::radio_label_img('designOptionRadio2', 'designOption','option2', 1, 250, 'http://placehold.it/150/ccc/fff&text=B', trans('front/pages/prices.section0.mobile_app.questions.item1.option1')) }}
+
+                                        {{ Form::radio_label_img('designOptionRadio3', 'designOption','option3', 1, 200, 'http://placehold.it/150/ccc/fff&text=C', trans('front/pages/prices.section0.mobile_app.questions.item1.option2')) }}
+                                    </div>
 
 
                                     <div class="row restart">
@@ -247,7 +193,6 @@
             $('div.question').hide();
             $('div.restart').hide();
             $('#start-form').show();
-
         }
 
         // Run the dynamic form (The function contains all the necessary variables)
@@ -317,14 +262,14 @@
             }
 
             function getQuestionRang() {
-                $('span.question-count').text($activeQuestionIndex+1+'/'+$('div.question').length);
+                $('span.question-count').text( (parseInt($activeQuestionIndex)+1) + '/'+ parseInt($('div.question').length));
             }
 
             // Display the active question from active index 
             function displayActiveQuestion() {
                 $('div.question').hide();
-                $('div[data-question="'+ $activeQuestionIndex +'"]').show();
-                if($activeQuestionIndex <= 0){
+                $('div[data-question="'+ parseInt($activeQuestionIndex) +'"]').show();
+                if(parseInt($activeQuestionIndex) <= 0){
                     $('#previous-button').hide();
                     $('.amount').hide();
                 }
@@ -352,7 +297,7 @@
                     }
 
                     if($activeQuestionIndex < $('div.question').length - 1) {
-                        $activeQuestionIndex = parseInt($(this).attr('data-question') + 1);
+                        $activeQuestionIndex = parseInt($(this).attr('data-question')) + 1;
                         displayActiveQuestion();
                     } else {
                         $('div.question').hide();

@@ -2,6 +2,7 @@
 return [
 
     'title' => 'Nos Tarifs',
+    'from' => 'A partir de',
 
     /*
     |--------------------------------------------------------------------------
@@ -11,7 +12,7 @@ return [
     */
     'section0' => [
         'title' => 'Ce que GnG vous propose',
-        'description' => 'Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi. De quibus tres video sententias ferri, quarum nullam probo, unam, ut eodem modo erga amicum adfecti simus, quo erga nosmet ipsos, alteram, ut nostra in amicos benevolentia illorum erga nos benevolentiae pariter aequaliterque respondeat, tertiam, ut, quanti quisque se ipse facit, tanti fiat ab amicis.',
+        'description' => 'Consultez notre guille tarifaire pour la création de site web ou lancez une estimation de votre application mobile.',
         'website' => [
             'name' => 'Site Internet',
             'showcase' => [
@@ -33,9 +34,31 @@ return [
         ],
         'mobile_app' => [
             'name' => 'Application Mobile',
-            'title' => 'Service_title',
-            'content' => 'Haec igitur Epicuri non probo, inquam. De cetero vellem equidem aut ipse doctrinis fuisset instructior est enim, quod tibi ita videri necesse est, non satis politus iis artibus, quas qui tenent, eruditi appellantur aut ne deterruisset alios a studiis. quamquam te quidem video minime esse deterritum.',
-            'img_alt' => '',
+            'success_notif' => 'Votre Devis estimatif a été envoyé avec succès !',
+            'start_title' => 'Combien coûte la création de mon application ?',
+            'start_descr' => 'Calculez rapidement le coût pour créer votre application en répondant à ces questions.',
+            'start_button' => 'Calculer',
+            'previous_button_form' => 'Précedent',
+            'questions' => [
+                'item0' => [
+                    'title' => 'Quel niveau de qualité recherchez-vous?',
+                    'option0' => 'Qualité optimale',
+                    'option1' => 'Bon rapport qualité/prix',
+                    'option2' => 'La qualité importe peu',
+                ],
+                'item1' => [
+                    'title' => 'De quel type d\'application mobile avez-vous besoin?',
+                    'option0' => 'Application Android',
+                    'option1' => 'Application iPhone',
+                    'option2' => 'Application Android + iPhone',
+                ],
+                'item2' => [
+                    'title' => '',
+                    'option0' => '',
+                    'option1' => '',
+                    'option2' => '',
+                ]
+            ]
         ],
     ],
 ];
