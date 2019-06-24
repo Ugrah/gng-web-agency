@@ -28,7 +28,7 @@ return [
         ],
         'portfolio' => [
             'name' => 'Porfolio',
-            'title' => 'Faites découvrir vos réalisations.',
+            'title' => 'Faites connaitre vos réalisations.',
             'content' => '<p>Afficher vos réalisations artisatiques ou professionnelles relatives à votre métier, et faites valoir votre expérience selon votre domaine.</p><p>Voici le format adéquat pour montrer votre savoir faire.</p>',
             'img_alt' => 'Portfolio illustration',
 
@@ -69,6 +69,6 @@ return [
         'description' => 'Vous vous demandez combien coute un site internet ?',
         'content' => '<p>C\'est la question qui revient le plus souvent. Toutefois, c\'est une question complexe à laquelle on ne pourrait pas donné de reponse unique.</p><p>En effet le coût d\'un site internet dépend de la puissance, de la puissance et des fonctionnalités de ce site.</p><p>Afin de vous donner une idée du budget nécessaire à la création de votre site internet vous pouvez consulter la page de tarifs, rédigée pour répondre à la question.</p>',
         'show_price' => 'Consulter nos tarifs',
-        'img_alt' => '',
+        'img_alt' => 'Website cost illustration',
     ],
 ];

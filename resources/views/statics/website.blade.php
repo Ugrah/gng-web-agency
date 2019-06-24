@@ -58,7 +58,7 @@
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-showcase" role="tabpanel" aria-labelledby="pills-showcase-tab">
                         <div class="row justify-content-center">
-                            <div class="col-10 col-md-7">
+                            <div class="col-10 col-md-7 text-center text-md-left">
                                 <h3>{{trans('front/pages/website.section0.showcase.title')}}</h3>
                                 {!! trans('front/pages/website.section0.showcase.content') !!}
                             </div>
@@ -69,9 +69,9 @@
                     </div>
                     <div class="tab-pane fade" id="pills-e_commerce" role="tabpanel" aria-labelledby="pills-e_commerce-tab">
                         <div class="row justify-content-center">
-                            <div class="col-10 col-md-7">
+                            <div class="col-10 col-md-7 text-center text-md-left">
                                 <h3>{{trans('front/pages/website.section0.e_commerce.title')}}</h3>
-                                {!! trans('front/pages/website.section0.e_commerce.content') !!}</p>
+                                {!! trans('front/pages/website.section0.e_commerce.content') !!}
                             </div>
                             <div class="col-10 col-md-5">
                                 <img src="{{ asset('img/website/website-eCommerce.jpg') }}" class="img-fluid float-right" alt="{{trans('front/pages/website.section0.e_commerce.img_alt')}}">
@@ -79,10 +79,10 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-portfolio" role="tabpanel" aria-labelledby="pills-portfolio-tab">
-                        <div class="row">
-                            <div class="col-10 col-md-7">
+                        <div class="row justify-content-center">
+                            <div class="col-10 col-md-7 text-center text-md-left">
                                 <h3>{{trans('front/pages/website.section0.portfolio.title')}}</h3>
-                                {!! trans('front/pages/website.section0.portfolio.content') !!}</p>
+                                {!! trans('front/pages/website.section0.portfolio.content') !!}
                             </div>
                             <div class="col-10 col-md-5">
                                 <img src="{{ asset('img/website/website-portfofio.jpeg') }}" class="img-fluid float-right" alt="{{trans('front/pages/website.section0.portfolio.img_alt')}}">
@@ -90,10 +90,10 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-catalog" role="tabpanel" aria-labelledby="pills-catalog-tab">  
-                        <div class="row">
-                            <div class="col-10 col-md-7">
+                        <div class="row justify-content-center">
+                            <div class="col-10 col-md-7 text-center text-md-left">
                                 <h3>{{trans('front/pages/website.section0.catalog.title')}}</h3>
-                                {!! trans('front/pages/website.section0.catalog.content') !!}</p>
+                                {!! trans('front/pages/website.section0.catalog.content') !!}
                             </div>
                             <div class="col-10 col-md-5">
                                 <img src="{{ asset('img/website/website-catalog.jpg') }}" class="img-fluid float-right" alt="{{trans('front/pages/website.section0.catalog.img_alt')}}">
@@ -115,7 +115,7 @@
             <div class="col-10 col-md-6 mb-2">
                 <img class="img-fluid" src="{{ asset('img/website/website-app.png') }}" alt="{{trans('front/pages/website.section1.img_alt')}}">
             </div>
-            <div class="col-10 col-md-6 mt-4 mt-md-0">
+            <div class="col-10 col-md-6 text-center text-md-left mt-4 mt-md-0">
                 {!! trans('front/pages/website.section1.content') !!}
             </div>
         </div>
@@ -132,7 +132,7 @@
                 {!! trans('front/pages/website.section2.content1')!!}
             </div>
 
-            <div class="col-10 col-md-6 mb-2 wow bounceInUp">
+            <div class="col-10 col-md-6 text-center mb-2 wow bounceInUp">
                 <img class="img-fluid" src="{{asset('img/website/multi-support.png')}}" alt="{{trans('front/pages/website.section2.img_alt')}}">
             </div>
 
@@ -152,7 +152,7 @@
             <div class="col-10 col-md-6 mb-2">
                 <img class="img-fluid" src="{{asset('img/website/chose-your-tool.png')}}" alt="{{trans('front/pages/website.section3.img_alt')}}">
             </div>
-            <div class="col-10 col-md-6 mt-4 mt-md-0">
+            <div class="col-10 col-md-6 text-center text-md-left mt-4 mt-md-0">
                 {!! trans('front/pages/website.section3.content') !!}
             </div>
         </div>
@@ -165,7 +165,7 @@
 
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-10 col-md-6 mt-4 mt-md-0">
+            <div class="col-10 col-md-6 text-center text-md-left mt-4 mt-md-0">
                 {!! trans('front/pages/website.section4.content') !!}</p>
                 <a href="#" class="btn btn-primary px-4 py-2 mt-2 rounded price">{!! trans('front/pages/website.section4.show_price') !!}</a>
             </div>

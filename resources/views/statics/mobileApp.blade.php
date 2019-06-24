@@ -57,34 +57,34 @@
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-assistance" role="tabpanel" aria-labelledby="pills-assistance-tab">
                         <div class="row justify-content-center">
-                            <div class="col-10 col-md-7">
+                            <div class="col-10 col-md-7 text-center text-md-left">
                                 <h3>{{trans('front/pages/mobileApp.section0.assistance.title')}}</h3>
                                 <p>{{trans('front/pages/mobileApp.section0.assistance.content')}}</p>
                             </div>
                             <div class="col-10 col-md-5">
-                                <img src="https://images.unsplash.com/photo-1494366222322-387658a1a976?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80" class="img-fluid float-right" alt="">
+                                <img src="{{ asset('img/mobile-app/assistance.png') }}" class="img-fluid float-right" alt="{{ trans('front/pages/mobileApp.section0.assistance.img_alt') }}">
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-native" role="tabpanel" aria-labelledby="pills-native-tab">
                         <div class="row justify-content-center">
-                            <div class="col-10 col-md-7">
+                            <div class="col-10 col-md-7 text-center text-md-left">
                                 <h3>{{trans('front/pages/mobileApp.section0.native.title')}}</h3>
-                                <p>{{trans('front/pages/mobileApp.section0.native.content')}}</p>
+                                <p>{{trans('front/pages/mobileApp.section0.native.content', ['app_name' => config('infos.name')])}}</p>
                             </div>
                             <div class="col-10 col-md-5">
-                                <img src="https://images.unsplash.com/photo-1494366222322-387658a1a976?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80" class="img-fluid float-right" alt="">
+                                <img src="{{ asset('img/mobile-app/native-app.png') }}" class="img-fluid float-right" alt="{{ trans('front/pages/mobileApp.section0.native.img_alt') }}">
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-innovation" role="tabpanel" aria-labelledby="pills-innovation-tab">
-                        <div class="row">
-                            <div class="col-10 col-md-7">
+                        <div class="row justify-content-center">
+                            <div class="col-10 col-md-7 text-center text-md-left">
                                 <h3>{{trans('front/pages/mobileApp.section0.innovation.title')}}</h3>
                                 <p>{{trans('front/pages/mobileApp.section0.innovation.content')}}</p>
                             </div>
                             <div class="col-10 col-md-5">
-                                <img src="https://images.unsplash.com/photo-1494366222322-387658a1a976?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80" class="img-fluid float-right" alt="">
+                                <img src="{{ asset('img/mobile-app/innovation.png') }}" class="img-fluid float-right" alt="{{ trans('front/pages/mobileApp.section0.native.img_alt') }}">
                             </div>
                         </div>
                     </div>
@@ -101,10 +101,10 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-10 col-md-6 mb-2">
-                <img class="img-fluid" src="https://stonemedia.ch/wp-content/uploads/2018/04/programmation-logiciel.png" alt="">
+                <img class="img-fluid" src="{{ asset('img/mobile-app/multi-ui-design.png') }}" alt="{{trans('front/pages/mobileApp.section1.img_alt')}}">
             </div>
             <div class="col-10 col-md-6 mt-4 mt-md-0">
-                <p class="text-light">{{ trans('front/pages/mobileApp.section1.content')}}</p>
+                {!! trans('front/pages/mobileApp.section1.content') !!}
             </div>
         </div>
     </div>
@@ -116,16 +116,13 @@
 
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-10 col-md-4 text-center text-light text-md-right mt-4 mt-md-0 wow bounceInLeft">
+            <div class="col-10 col-md-6 text-center text-light text-md-left mt-4 mt-md-0 wow bounceInLeft">
                 {!! trans('front/pages/mobileApp.section2.content1')!!}
-            </div>
-
-            <div class="col-10 col-md-4 mb-2 wow bounceInUp">
-                <img class="img-fluid" src="https://stonemedia.ch/wp-content/uploads/2018/04/programmation-logiciel.png" alt="">
-            </div>
-
-            <div class="col-10 col-md-4 text-center text-light text-md-left mt-4 mt-md-0 wow bounceInRight">
                 {!! trans('front/pages/mobileApp.section2.content2')!!}
+            </div>
+
+            <div class="col-10 col-md-6 mb-2 wow bounceInRight">
+                <img class="img-fluid" src="{{asset('img/mobile-app/maintenance-mobile-app.png')}}" alt="{{trans('front/pages/mobileApp.section2.img_alt')}}">
             </div>
         </div>
     </div>
@@ -138,11 +135,11 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-10 col-md-6 mt-4 mt-md-0">
-                <p class="">{{ trans('front/pages/mobileApp.section3.content')}}</p>
-                <a href="#" class="btn btn-primary px-4 py-2 mt-xl-5 rounded price">Voir nos tarifs</a>
+                {!! trans('front/pages/mobileApp.section3.content') !!}
+                <a href="{{url('/prices')}}" class="btn btn-primary px-4 py-2 mt-xl-5 rounded price">{{ trans('front/pages/mobileApp.section3.estimate_link')}}</a>
             </div>
             <div class="col-10 col-md-6 mb-2">
-                <img class="img-fluid" src="https://stonemedia.ch/wp-content/uploads/2018/04/programmation-logiciel.png" alt="">
+                <img class="img-fluid" src="{{asset('img/mobile-app/app-cost.png')}}" alt="">
             </div>
         </div>
     </div>
