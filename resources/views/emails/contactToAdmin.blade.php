@@ -8,16 +8,26 @@
 
 <section>
     <div>
-        <p>Bonjour Admin<br>
-        Un utilisateur vous a contacté sur votre site web.</p>
+        {!! trans('emails/contactToAdmin.hello') !!}
         <ul>
-            @if(isset($name)) <li>Nom : <span>{{ $name }}</span></li> @endif
-            @if(isset($name)) <li>Email : <span>{{ $email }}</span></li>@endif
-            @if(isset($name)) <li>Sujet : <span>{{ $subject }}</span></li>@endif
             @if(isset($name))
-                <li>Message : 
-                    <span>{{ $message }}</span>
-                </li>
+                {!! trans('emails/contactToAdmin.name', ['name' => $name]) !!}
+            @endif
+
+            @if(isset($email))
+                {!! trans('emails/contactToAdmin.email', ['email' => $email]) !!}
+            @endif
+
+            @if(isset($numberPhone))
+                {!! trans('emails/contactToAdmin.number_phone', ['number_phone' => $numberPhone]) !!}
+            @endif
+
+            @if(isset($subject))
+                {!! trans('emails/contactToAdmin.subject', ['subject' => $subject]) !!}
+            @endif
+
+            @if(isset($content))
+                {!! trans('emails/contactToAdmin.message', ['message' => $content]) !!}
             @endif
         </ul>
     </div>

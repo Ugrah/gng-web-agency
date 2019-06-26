@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -119,14 +119,13 @@
     <!-- Footer -->
     <section>
         <div class="text-center" style="background-color: #f2f2f2">
-            <h4 class="text-center">Retrouvez-nous sur</h4>
+            <h4 class="text-center">{{ trans('emails/layout.footer.title') }}</h4>
 
             <a class="social-icon" href="#"><img src="{{asset('img/icons/facebook-logo.png')}}" width="50" /></a>
             <a class="social-icon" href="#"><img src="{{asset('img/icons/instagram-logo.png')}}" width="50" /></a>
             <a class="social-icon" href="#"><img src="{{asset('img/icons/twitter-logo.png')}}" width="50" /></a>
             
-            <p style="font-size: 0.8rem">Si vous avez une question ou souhaitez simplement nous dire bonjour, n'hésitez pas à répondre directement à cet email</p>
-            <p style="font-size: 0.8rem">Pour plus d’informations sur la gestion de vos données et vos droits, consultez notre <a href="{{url('privacy-policy')}}" target="_blank"> politique de confidentialité</a>.</p>
+            {!! trans('emails/layout.footer.content', ['url' => url('privacy-policy')]) !!}
         </div>
     </section>
 </body>

@@ -12,19 +12,47 @@
 
 <section class="py-5">
     <div class="container">
-        <h2>Contact Information</h2><br>
-        <div class="row">
+        <h2>{{trans('front/pages/contact.section0.title')}}</h2><br>
+        <div class="row justify-content-center text-center">
             <div class="col">
-                <p>adresse</p>
+                <div class="card bg-light p-2 mb-3 border-0" style="min-width: 16rem;">
+                    <div class="card-body">
+                        <span class="fa-stack mb-4">
+                            <i class="fas fa-phone fa-3x fa-stack-1x text-primary"></i>
+                        </span>
+                        <p class="text-card">
+                            <a class="btn btn-link" href="tel:+212645717187">+212 6 45 71 71 87</a>
+                            <a class="btn btn-link" href="tel:+212645717187">+212 6 45 71 71 87</a>
+                            <a class="btn btn-link" href="tel:+212645717187">+212 6 45 71 71 87</a>
+                        </p> 
+                    </div>
+                </div>
             </div>
+
             <div class="col">
-                <p>telephone</p>
+                <div class="card bg-light p-2 mb-3 border-0" style="min-width: 16rem;">
+                    <div class="card-body">
+                        <span class="fa-stack mb-4">
+                            <i class="far fa-envelope fa-3x fa-stack-1x text-primary"></i>
+                        </span>
+                        <p class="text-card">
+                            <a class="btn btn-link" href="mailto:contact@gngdev.com">contact@gngdev.com</a>
+                            <a class="btn btn-link" href="mailto:infos@gngdev.com">infos@gngdev.com</a>
+                            <a class="btn btn-link" href="mailto:recrutement@gngdev.com">recrutement@gngdev.com</a>
+                        </p>
+                    </div>
+                </div>
             </div>
+
             <div class="col">
-                <p>email</p>
-            </div>
-            <div class="col">
-                <p>website</p>
+                <div class="card bg-light p-2 mb-3 border-0" style="min-width: 16rem;">
+                    <div class="card-body">
+                        <span class="fa-stack mb-4">
+                            <i class="fas fa-map-marker-alt fa-3x fa-stack-1x text-primary"></i><br>
+                        </span>
+                        <p class="card-text">203 Fake St. Mountain View, San Francisco, California, USA</p>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -43,15 +71,17 @@
                 
                 {!! Form::open(['url' => 'contact']) !!}
                 
-                    {!! Form::control('text', $errors, 'name', ['class' => 'form-control rounded', 'placeholder' => 'Votre nom', 'required' =>'required']) !!}
+                    {!! Form::control('text', $errors, 'name', ['class' => 'form-control rounded', 'placeholder' => trans('front/pages/contact.form.placeholder.name'), 'required' =>'required']) !!}
 
-                    {!! Form::control('text', $errors, 'email', ['class' => 'form-control rounded', 'placeholder' => 'Votre email', 'required'=> 'required']) !!}
+                    {!! Form::control('email', $errors, 'email', ['class' => 'form-control rounded', 'placeholder' => trans('front/pages/contact.form.placeholder.email'), 'required'=> 'required']) !!}
 
-                    {!! Form::control('text', $errors, 'subject', ['class' => 'form-control rounded', 'placeholder' => 'Sujet de votre message', 'required'=> 'required']) !!}
+                    {!! Form::control('tel', $errors, 'phoneNumber', ['class' => 'form-control rounded', 'placeholder' => trans('front/pages/contact.form.placeholder.number_phone')]) !!}
 
-                    {!! Form::control('textarea', $errors, 'content', ['class' => 'form-control rounded-soft', 'placeholder' => 'Votre message', 'required'=> 'required']) !!}
+                    {!! Form::control('text', $errors, 'subject', ['class' => 'form-control rounded', 'placeholder' => trans('front/pages/contact.form.placeholder.subject'), 'required'=> 'required']) !!}
 
-                    {!! Form::button_submit('Envoyer !') !!}
+                    {!! Form::control('textarea', $errors, 'content', ['class' => 'form-control rounded-soft', 'placeholder' => trans('front/pages/contact.form.placeholder.message'), 'required'=> 'required']) !!}
+
+                    {!! Form::button_submit(trans('front/pages/contact.form.send_button')) !!}
 
                 {!! Form::close() !!}
 
@@ -70,8 +100,15 @@
 <script type="text/javascript">
     $(function() {
         // Navbar active links
-        $('#standardNavbarCollapse ul.navbar-nav > li.nav-item:eq(3)').addClass('active');
-        $('#fixedNavbarCollapse ul.navbar-nav > li.nav-item:eq(3)').addClass('active');
+        $('#standardNavbarCollapse ul.navbar-nav > li.nav-item:eq(5)').addClass('active');
+        $('#fixedNavbarCollapse ul.navbar-nav > li.nav-item:eq(5)').addClass('active');
+
+        // Dismissible alert
+        if($('div.alert-success').css('display') === 'block'){
+            setTimeout(function() { 
+                $('div.alert-success').fadeOut('slow');
+            }, 5000);
+        }
     });
 </script>
 @endsection

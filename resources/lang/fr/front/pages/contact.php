@@ -10,7 +10,7 @@ return [
     |
     */
     'section0' => [
-        'title' => 'Information de contact',
+        'title' => 'Laissez-nous un message',
         'adress' => 'Adresse :',
         'phone' => 'Téléphone :',
         'email' => 'Email :',
@@ -20,11 +20,12 @@ return [
     /* Form */
     'form' => [
         'placeholder' => [
-            'name' => 'Votre nom',
-            'email' => 'Votre email',
-            'subject' => 'Sujet',
-            'message' => 'Votre message',
+            'name' => 'Votre nom*',
+            'email' => 'Votre email*',
+            'number_phone' => 'Votre numéro de téléphone',
+            'subject' => 'Sujet de votre message*',
+            'message' => 'Votre message*',
         ],
-        'send_button' => 'Envoyer',
+        'send_button' => 'Envoyer !',
     ],
 ];

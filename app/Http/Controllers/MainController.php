@@ -105,22 +105,11 @@ class MainController extends Controller
     public function postContact(ContactRequest $request)
     {
 
-        /*
-        Mail::send('emails.email_contact', $request->all(), function ($m) use ($request) {
-            $m->from('contact@gngdev.com', 'GnG Dev');
+        // For User
+        $this->sendMail('emails.contactToUser', $request->all(), $request, 'contact@gngdev.com', $request->input('email'), $request->input('subject'), config('infos.name'));
 
-            $m->to( 'infos@gngdev.com', 'GnG Dev')->subject($request->input('subject'));
-        });
-        
-
-        $this->sendMail('emails.email_contact', $request->all(), $request, 'contact@gngdev.com', $request->input('email'), $request->input('subject'), 'GnG Dev');
-        */
-        
-        Mail::send( 'emails.email_contact', $request->all(), function ($m) use ($request) {
-            $m->from('contact@gngdev.com', 'GnG Dev - '.$request->input('subject'));
-
-            $m->to($request->input('email'), $request->input('name'))->subject($request->input('subject'));
-        });
+        // For Admin
+        $this->sendMail('emails.contactToAdmin', $request->all(), $request, 'contact@gngdev.com', 'infos@gngdev.com', $request->input('subject'), config('infos.name').' - Un utilisateur vous a contacté');
 
         //SEO::setTitle('Home Page');
         //SEO::setDescription('This is my page description');
@@ -137,29 +126,38 @@ class MainController extends Controller
         return view('statics.privacyPolicy');
     }
 
-    private function sendMail($view, $variables = [], Request $request, $from, $to, $subject, $mailName)
+    private function sendMail($view, $variables = [], Request $request, $from, $to, $subject, $mailTitle)
     {
-        Mail::send($view, $variables, function ($m) use ($request, $from, $to, $subject, $mailName) {
-            $m->from($from, $mailName);
+        Mail::send($view, $variables, function ($m) use ($request, $from, $to, $subject, $mailTitle) {
+            $m->from($from, config('infos.name'));
 
-            $m->to($to, $mailName)->subject($subject);
+            $m->to($to, $mailTitle)->subject($subject);
         });
     }
 
     public function test()
     {
-        /*
-        Mail::send('emails.test', [], function ($m) {
-            $m->from('contact@gngdev.com', 'GnG Web Agency');
-
-            $m->to('grulog23@gmail.com', 'Ulrich Grah')->subject('Test Template Email');
-        });
-        */
+       
+        /* Traitement to etimate to Admin 
         $amount = 3000;
         $estimateCode = 'XXX-CODE';
+        $numberSeparator = app()->getLocale() == 'fr' ? ' ' : ',';
+        $decimalSeparator = app()->getLocale() == 'fr' ? ',' : '.';
+        return view('emails.estimateToAdmin', compact('amount', 'estimateCode', 'numberSeparator', 'decimalSeparator'));
+        */
 
-        //SEO::opengraph()->addProperty('locale', app()->getLocale());
-        return view('emails.estimateToAdmin', compact('amount', 'estimateCode'));
+
+        // Traitement to contact to User and contact to Admin
+        $name = 'Ulrich Grah';
+        $email = 'grulog@live.com';
+        $phoneNumber = '+212645717187';
+        $subject = 'Subject of the message';
+        $content ='Lorem ipsum doalutd kgilus lgiaskjh klsiuly jhgs uyammpoqoj sjhuysvx iusigss.';
+
+        
+        // return view('emails.contactToUser', compact('name', 'email', 'phoneNumber', 'subject', 'content'));
+
+        return view('emails.contactToAdmin', compact('name', 'email', 'phoneNumber', 'subject', 'content'));
     }
 
     /**

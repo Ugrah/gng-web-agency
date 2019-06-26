@@ -14,6 +14,7 @@ return [
         ',
         'office' => 'Bureau',
     ],
+    'privacy_policy' => 'Politique de confidentialité',
 
     'gng-description' => 'L\'agence des experts par excellence des technologies du web et du développement mobile.',
 ];
