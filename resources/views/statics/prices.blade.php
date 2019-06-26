@@ -1,51 +1,8 @@
 @extends('layouts.app')
 
-@section('styles')
-<style>
-    ul.nav-pills li.nav-item a.nav-link {
-        border: 1px solid #428bca; margin: 0.5em;
-    }
-
-    ul.nav-pills li.nav-item a.nav-link.active, a.price, button.submit {
-        border-image: linear-gradient(to right top, #1ee6bf, #36e7ac, #4fe798, #67e681, #7fe569);
-        background-image: linear-gradient(to right top, #1ee6bf, #36e7ac, #4fe798, #67e681, #7fe569);
-    }
-
-    .gradient-blue, a.price:hover {
-        background-image: linear-gradient(to right top, #56c7fb, #3eb7fc, #38a5fc, #4892f7, #617ced);
-        color: #fff;
-    }
-
-    .gradient-and-image {
-        background-image: linear-gradient(to right top, rgba(232, 123, 192,0.9), rgba(225, 109, 203,0.9), rgba(211, 98, 218,0.9), rgba(190, 91, 234,0.9), rgba(158, 89, 253,0.9)), url(https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
-        background-position: center center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    div#form-step, a#previous-button, div.result, div.question, div.restart {
-        display: none;
-    }
-
-    /* DYNAMIC FORM */ 
-    /* HIDE RADIO */
-    #dynamic-app-price [type=radio] { 
-        position: absolute;
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-    /* IMAGE STYLES */
-    #dynamic-app-price label {
-        cursor: pointer;
-    }
-</style>
-@endsection
-
 @section('content')
 
-<div style="height: 70vh; background-image: linear-gradient(to right top, rgba(232, 123, 192, 0.9), rgba(225, 109, 203, 0.9), rgba(211, 98, 218, 0.9), rgba(190, 91, 234, 0.9), rgba(158, 89, 253, 0.9)), url('https://images.unsplash.com/photo-1459257831348-f0cdd359235f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'); background-repeat: no-repeat; background-size: cover; background-position: center bottom; background-attachment: fixed;" class="position-relative">
+<div style="height: 70vh; background-image: linear-gradient(to right top, rgba(232, 123, 192, 0.9), rgba(225, 109, 203, 0.9), rgba(211, 98, 218, 0.9), rgba(190, 91, 234, 0.9), rgba(158, 89, 253, 0.9)), url('img/bg/bg-prices.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center bottom; background-attachment: fixed;" class="position-relative">
     {{ Html::navbar_default() }}
 
 

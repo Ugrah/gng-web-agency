@@ -1,17 +1,5 @@
 @extends('layouts.app')
 
-@section('styles')
-    <style>
-        .short-about {
-            background-image: linear-gradient(to right top, rgba(232, 123, 192,0.7), rgba(225, 109, 203,0.8), rgba(211, 98, 218,0.8), rgba(190, 91, 234,0.8), rgba(158, 89, 253,0.8)), url(https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
-            background-position: center center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
-@endsection
-
 @section('content')
     <div style="height: 100vh; background-image: linear-gradient(to right top, #e87bc0, #e16dcb, #d362da, #be5bea, #9e59fd); overflow: hidden;" class="position-relative">
 
@@ -77,7 +65,7 @@
         </div>
     </section>
 
-    <section class="short-about py-5">
+    <section class="short-about-index py-5">
         <div class="container text-light">
             <div class="row justify-content-center">
                 <div class="col-10 col-md-6 d-none d-sm-block my-auto text-center wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s">

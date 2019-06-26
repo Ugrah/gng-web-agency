@@ -36,16 +36,84 @@ ul.navbar-nav a.active-locale { color: #e0e0e0 !important; }
 
 #home-carousel a.btn-primary:hover, #home-carousel a.btn-success:hover { color: dodgerblue; }
 
+ul.nav-pills li.nav-item a.nav-link {
+	border: 1px solid #428bca; margin: 0.5em;
+}
+
+ul.nav-pills li.nav-item a.nav-link.active, a.price, button.submit {
+	border-image: linear-gradient(to right top, #1ee6bf, #36e7ac, #4fe798, #67e681, #7fe569);
+	background-image: linear-gradient(to right top, #1ee6bf, #36e7ac, #4fe798, #67e681, #7fe569);
+}
+
 /*
- * Backgroung
+ * Backgroung Section
+ **
 */
 section.main-background {
-	background-image: linear-gradient(to right top, rgba(232, 123, 192,0.7), rgba(225, 109, 203,0.7), rgba(211, 98, 218,0.7), rgba(190, 91, 234,0.7), rgba(158, 89, 253,0.7)), url(https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80);
+	background-image: linear-gradient(to right top, rgba(232, 123, 192,0.7), rgba(225, 109, 203,0.7), rgba(211, 98, 218,0.7), rgba(190, 91, 234,0.7), rgba(158, 89, 253,0.7)), url('../img/bg/bg_1.jpeg');
 	background-position: center center;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+/* about on index page */
+.short-about-index {
+	background-image: linear-gradient(to right top, rgba(232, 123, 192,0.7), rgba(225, 109, 203,0.8), rgba(211, 98, 218,0.8), rgba(190, 91, 234,0.8), rgba(158, 89, 253,0.8)), url('../img/bg/bg_2.jpeg');
+	background-position: center center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.chose-your-tool {
+	background-image: linear-gradient(to right top, rgba(232, 123, 192,0.9), rgba(225, 109, 203,0.9), rgba(211, 98, 218,0.9), rgba(190, 91, 234,0.9), rgba(158, 89, 253,0.9)), url('../img/bg/bg_3.jpeg');
+	background-position: center center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.gradient-blue, a.price:hover, button.submit:hover {
+	background-image: linear-gradient(to right top, #56c7fb, #3eb7fc, #38a5fc, #4892f7, #617ced);
+	color: #fff;
+}
+
+/*
+** Prices page - dynamic form
+**
+*/
+div#form-step, a#previous-button, div.result, div.question, div.restart {
+	display: none;
+}
+
+/* DYNAMIC FORM */ 
+/* HIDE RADIO */
+#dynamic-app-price [type=radio] { 
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+/* IMAGE STYLES */
+#dynamic-app-price label {
+	cursor: pointer;
+}
+
+/*
+** Image card effect
+**
+*/
+div.card { overflow: hidden; }
+img.card-img{ 
+    transform: scale(1);
+    transition: all 0.8s;
+}
+img.card-img.animate {
+    transform: scale(1.3);
+    opacity: 0.7;
+}
+div.card-footer { z-index: 1; background-color: #f7f7f7; }
 
 /*
  * Typographie

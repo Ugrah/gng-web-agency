@@ -1,45 +1,8 @@
 @extends('layouts.app')
 
-@section('styles')
-<style>
-    ul.nav-pills li.nav-item a.nav-link {
-        border: 1px solid #428bca; margin: 0.5em;
-    }
-
-    ul.nav-pills li.nav-item a.nav-link.active, a.price {
-        border-image: linear-gradient(to right top, #1ee6bf, #36e7ac, #4fe798, #67e681, #7fe569);
-        background-image: linear-gradient(to right top, #1ee6bf, #36e7ac, #4fe798, #67e681, #7fe569);
-    }
-
-    .gradient-blue, a.price:hover {
-        background-image: linear-gradient(to right top, #56c7fb, #3eb7fc, #38a5fc, #4892f7, #617ced);
-        color: #fff;
-    }
-
-    .gradient-and-image {
-        background-image: linear-gradient(to right top, rgba(232, 123, 192,0.9), rgba(225, 109, 203,0.9), rgba(211, 98, 218,0.9), rgba(190, 91, 234,0.9), rgba(158, 89, 253,0.9)), url(https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
-        background-position: center center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    div.card { overflow: hidden; }
-    img.card-img{ 
-        transform: scale(1);
-        transition: all 0.8s;
-    }
-    img.card-img.animate {
-        transform: scale(1.3);
-        opacity: 0.7;
-    }
-    div.card-footer { z-index: 1; background-color: #f7f7f7; }
-</style>
-@endsection
-
 @section('content')
 
-<div style="height: 70vh; background-image: linear-gradient(to right top, rgba(232, 123, 192, 0.9), rgba(225, 109, 203, 0.9), rgba(211, 98, 218, 0.9), rgba(190, 91, 234, 0.9), rgba(158, 89, 253, 0.9)), url('https://image.freepik.com/free-photo/hands-working_1162-121.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center bottom; background-attachment: fixed;" class="position-relative">
+<div style="height: 70vh; background-image: linear-gradient(to right top, rgba(232, 123, 192, 0.9), rgba(225, 109, 203, 0.9), rgba(211, 98, 218, 0.9), rgba(190, 91, 234, 0.9), rgba(158, 89, 253, 0.9)), url('img/bg/bg-realisations.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center bottom; background-attachment: fixed;" class="position-relative">
     {{ Html::navbar_default() }}
 
 
