@@ -21,21 +21,21 @@
     </div>
 
     <section class="text-center py-5 bg-medium">
-        <h2 class="wow bounceInLeft display-4 px-3">{{ trans('front/pages/index.section0.title')}}</h2>
-        <p class="col-10 col-md-8 mx-auto wow bounceInRight">{{ trans('front/pages/index.section0.description')}}</p>
+        <h2 class="display-4 px-3 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s">{{ trans('front/pages/index.section0.title')}}</h2>
+        <p class="col-10 col-md-8 mx-auto wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">{{ trans('front/pages/index.section0.description')}}</p>
         <div class="container mt-5">
             <div class="row justify-content-center">
 
                 {{ Html::div_card_icon(
-                    'fadeInLeft',
-                    '0.5s',
+                    'fadeInUp',
+                    '0.3s',
                     'far fa-window-restore fa-3x',
                     trans('front/pages/index.section0.item0.title'),
                     trans('front/pages/index.section0.item0.content')
                 ) }}
 
                 {{ Html::div_card_icon(
-                    'fadeInLeft',
+                    'fadeInUp',
                     '0.3s',
                     'fas fa-cart-arrow-down',
                     trans('front/pages/index.section0.item1.title'),
@@ -43,23 +43,23 @@
                 ) }}
 
                 {{ Html::div_card_icon(
-                    'fadeInLeft',
-                    '0.1s',
+                    'fadeInUp',
+                    '0.3s',
                     'fas fa-bullseye',
                     trans('front/pages/index.section0.item2.title'),
                     trans('front/pages/index.section0.item2.content')
                 ) }}
 
                 {{ Html::div_card_icon(
-                    'fadeInRight',
-                    '0.1s',
+                    'fadeInUp',
+                    '0.3s',
                     'fas fa-mobile-alt',
                     trans('front/pages/index.section0.item3.title'),
                     trans('front/pages/index.section0.item3.content')
                 ) }}
 
                 {{ Html::div_card_icon(
-                    'fadeInRight',
+                    'fadeInUp',
                     '0.3s',
                     'fas fa-newspaper',
                     trans('front/pages/index.section0.item4.title'),
@@ -67,8 +67,8 @@
                 ) }}
 
                 {{ Html::div_card_icon(
-                    'fadeInRight',
-                    '0.5s',
+                    'fadeInUp',
+                    '0.3s',
                     'fas fa-poll',
                     trans('front/pages/index.section0.item5.title'),
                     trans('front/pages/index.section0.item5.content')
@@ -80,10 +80,10 @@
     <section class="short-about py-5">
         <div class="container text-light">
             <div class="row justify-content-center">
-                <div class="col-10 col-md-6 d-none d-sm-block my-auto wow bounceInLeft text-center">
+                <div class="col-10 col-md-6 d-none d-sm-block my-auto text-center wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s">
                     <img src="{{ asset('img/web-development.jpg') }}" alt="Web development illustration" class="img-fluid">
                 </div>
-                <div class="col-10 col-md-6 text-center text-md-left my-auto wow bounceInRight">
+                <div class="col-10 col-md-6 text-center text-md-left my-auto wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">
                 <h3 class="text-light">{{ trans('front/pages/index.section1.title', ['app_name' => config('infos.name')]) }}</h3>
                     {!! trans('front/pages/index.section1.content') !!}
                 </div>
@@ -92,8 +92,8 @@
     </section>
 
     <section class="text-center py-5 bg-medium">
-        <h2 class="wow bounceInLeft">{{ trans('front/pages/index.section2.title')}}</h2>
-        <p class="col-10 col-md-8 mx-auto wow bounceInRight">{{ trans('front/pages/index.section2.description')}}</p>
+        <h2 class="wow wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.2s">{{ trans('front/pages/index.section2.title')}}</h2>
+        <p class="col-10 col-md-8 mx-auto wow wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.2s">{{ trans('front/pages/index.section2.description')}}</p>
         <div class="container">
             <div class="row justify-content-center mt-5">
                  <div class="card-group">
@@ -180,21 +180,21 @@
     <!--
     <section class="main-background py-5 text-center">
         <div class="container text-light">
-            <h4 class="text-light mb-5">{{trans('front/pages/index.section3.title')}}</h4>
+            <h4 class="text-light mb-5 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.2s">{{trans('front/pages/index.section3.title')}}</h4>
             <div class="row">
-                <div class="col-3 wow bounceInUp">
+                <div class="col-3 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.2s">
                     <span class="counter display-4">100</span>
                     <p>{{trans('front/pages/index.section3.customers')}}</p>
                 </div>
-                <div class="col-3 wow bounceInUp">
+                <div class="col-3 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.2s">
                     <span class="counter display-4">100</span>
                     <p>{{trans('front/pages/index.section3.projects')}}</p>
                 </div>
-                <div class="col-3 wow bounceInUp">
+                <div class="col-3 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.2s">
                     <span class="counter display-4">100</span>
                     <p>{{trans('front/pages/index.section3.satisfaction')}}</p>
                 </div>
-                <div class="col-3 wow bounceInUp">
+                <div class="col-3 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.2s">
                     <span class="counter display-4">100</span>
                     <p>{{trans('front/pages/index.section3.experience')}}</p>
                 </div>
@@ -207,18 +207,18 @@
         <div class="container">
             <div class="row text-center text-md-left justify-content-center">
                 <div class="col-10 col-md-6 my-auto">
-                    <h4 class="text-white" style="font-size: 2rem">{{trans('front/pages/index.section4.title')}}</h4>
-                    <p class="text-light">{{trans('front/pages/index.section4.title')}}</p>
+                    <h4 class="text-white wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.2s" style="font-size: 2rem">{{trans('front/pages/index.section4.title')}}</h4>
+                    <p class="text-light wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.2s">{{trans('front/pages/index.section4.title')}}</p>
                 </div>
-                <div class="col-10 col-md-6 my-auto text-center text-md-right"><a href="{{ url('/contact') }}" class="btn btn-dark py-3 px-4 rounded">{{ trans('front/pages/index.section4.link') }}</a></div>
+                <div class="col-10 col-md-6 my-auto text-center text-md-right wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.2s"><a href="{{ url('/contact') }}" class="btn btn-dark py-3 px-4 rounded">{{ trans('front/pages/index.section4.link') }}</a></div>
             </div>
         </div>
     </section>
 
     <!-- Section to portfolio | Create user space before
     <section class="text-center py-5 bg-medium">
-        <h2 class="wow bounceInLeft">{{ trans('front/pages/index.section4.title')}}</h2>
-        <p class="wow bounceInRight">{{ trans('front/pages/index.section4.description')}}</p>
+        <h2 class="wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.2s">{{ trans('front/pages/index.section4.title')}}</h2>
+        <p class="wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.2s">{{ trans('front/pages/index.section4.description')}}</p>
         <div class="container mt-5">
             <div class="card-deck">
                 <div class="card">

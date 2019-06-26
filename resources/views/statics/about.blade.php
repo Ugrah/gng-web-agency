@@ -18,17 +18,17 @@
     {{ Html::navbar_default() }}
 
     <div class="position-absolute w-100 text-center text-white" style="top: 45%;">
-        <h1>{{ trans('front/pages/about.title') }}</h1>
+        <h1>{{ trans('front/pages/about.title', ['app_name' => config('infos.name')]) }}</h1>
     </div>
 </div>
 
 <section class="py-5">
     <div class="container">
         <div class="row justify-content-center py-5">
-            <div class="col-10 col-md-6">
-                <img class="img-fluid" width="100%" src="https://images.unsplash.com/photo-1559163263-e31c2a5e1895?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="About illustration">
+            <div class="col-10 col-md-6 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s">
+                <img class="img-fluid" width="100%" src="{{asset('img/about/computer_and_mobile_phone.jpg')}}" alt="About illustration">
             </div>
-            <div class="col-10 col-md-6">
+            <div class="col-10 col-md-6 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link rounded active" id="pills-do-tab" data-toggle="pill" href="#pills-do" role="tab" aria-controls="pills-do" aria-selected="true">{{trans('front/pages/about.section0.do.name')}}</a>

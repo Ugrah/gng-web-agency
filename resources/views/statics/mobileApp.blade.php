@@ -38,12 +38,12 @@
 </div>
 
 <section class="py-5">
-    <h2 class="text-center wow bounceInLeft display-4 px-2">{{ trans('front/pages/mobileApp.section0.title')}}</h2>
-    <p class="col-10 col-md-8 mx-auto text-center wow bounceInRight">{{ trans('front/pages/mobileApp.section0.description')}}</p>
+    <h2 class="text-center display-4 px-2 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s">{{ trans('front/pages/mobileApp.section0.title')}}</h2>
+    <p class="col-10 col-md-8 mx-auto text-center wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">{{ trans('front/pages/mobileApp.section0.description')}}</p>
     <div class="container">
         <div class="row justify-content-around py-5">
             <div class="col">
-                <ul class="row nav nav-pills justify-content-center mb-3" id="pills-tab" role="tablist">
+                <ul class="row nav nav-pills justify-content-center mb-3 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s" id="pills-tab" role="tablist">
                     <li class="nav-item col-10 col-md-4 text-center px-1">
                         <a class="nav-link rounded active" id="pills-assistance-tab" data-toggle="pill" href="#pills-assistance" role="tab" aria-controls="pills-assistance" aria-selected="true">{{trans('front/pages/mobileApp.section0.assistance.name')}}</a>
                     </li>
@@ -54,7 +54,7 @@
                         <a class="nav-link rounded" id="pills-innovation-tab" data-toggle="pill" href="#pills-innovation" role="tab" aria-controls="pills-innovation" aria-selected="false">{{trans('front/pages/mobileApp.section0.innovation.name')}}</a>
                     </li>
                 </ul>
-                <div class="tab-content" id="pills-tabContent">
+                <div class="tab-content wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-assistance" role="tabpanel" aria-labelledby="pills-assistance-tab">
                         <div class="row justify-content-center">
                             <div class="col-10 col-md-7 text-center text-md-left">
@@ -95,10 +95,10 @@
 </section>
 
 <section class="py-5 gradient-blue">
-    <h2 class="text-center text-light wow bounceInLeft display-4 px-2">{{ trans('front/pages/mobileApp.section1.title')}}</h2>
-    <p class="col-10 col-md-8 mx-auto text-center text-light wow bounceInRight">{{ trans('front/pages/mobileApp.section1.description')}}</p>
+    <h2 class="text-center text-light display-4 px-2 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s">{{ trans('front/pages/mobileApp.section1.title')}}</h2>
+    <p class="col-10 col-md-8 mx-auto text-center text-light wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">{{ trans('front/pages/mobileApp.section1.description')}}</p>
 
-    <div class="container mt-5">
+    <div class="container mt-5 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">
         <div class="row justify-content-center">
             <div class="col-10 col-md-6 mb-2">
                 <img class="img-fluid" src="{{ asset('img/mobile-app/multi-ui-design.png') }}" alt="{{trans('front/pages/mobileApp.section1.img_alt')}}">
@@ -111,17 +111,17 @@
 </section>
 
 <section class="py-5">
-    <h2 class="text-center wow bounceInLeft display-4">{{ trans('front/pages/mobileApp.section2.title')}}</h2>
-    <p class="col-10 col-md-8 mx-auto text-center wow bounceInRight">{{ trans('front/pages/mobileApp.section2.description')}}</p>
+    <h2 class="text-center display-4 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s">{{ trans('front/pages/mobileApp.section2.title')}}</h2>
+    <p class="col-10 col-md-8 mx-auto text-center wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">{{ trans('front/pages/mobileApp.section2.description')}}</p>
 
-    <div class="container mt-5">
+    <div class="container mt-5 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">
         <div class="row justify-content-center">
-            <div class="col-10 col-md-6 text-center text-light text-md-left mt-4 mt-md-0 wow bounceInLeft">
+            <div class="col-10 col-md-6 text-center text-light text-md-left mt-4 mt-md-0">
                 {!! trans('front/pages/mobileApp.section2.content1')!!}
                 {!! trans('front/pages/mobileApp.section2.content2')!!}
             </div>
 
-            <div class="col-10 col-md-6 mb-2 wow bounceInRight">
+            <div class="col-10 col-md-6 mb-2">
                 <img class="img-fluid" src="{{asset('img/mobile-app/maintenance-mobile-app.png')}}" alt="{{trans('front/pages/mobileApp.section2.img_alt')}}">
             </div>
         </div>
@@ -129,10 +129,10 @@
 </section>
 
 <section class="py-5" style="background-color: #fff;">
-    <h2 class="text-center wow bounceInLeft display-4">{{ trans('front/pages/mobileApp.section3.title')}}</h2>
-    <p class="col-10 col-md-8 mx-auto text-center  wow bounceInRight">{{ trans('front/pages/mobileApp.section3.description')}}</p>
+    <h2 class="text-center display-4 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s">{{ trans('front/pages/mobileApp.section3.title')}}</h2>
+    <p class="col-10 col-md-8 mx-auto text-center wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">{{ trans('front/pages/mobileApp.section3.description')}}</p>
 
-    <div class="container mt-5">
+    <div class="container mt-5 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">
         <div class="row justify-content-center">
             <div class="col-10 col-md-6 mt-4 mt-md-0">
                 {!! trans('front/pages/mobileApp.section3.content') !!}

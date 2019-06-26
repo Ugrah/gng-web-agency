@@ -55,12 +55,12 @@
 </div>
 
 <section class="py-5">
-    <h2 class="text-center wow bounceInLeft display-4 px-2">{{ trans('front/pages/prices.section0.title')}}</h2>
-    <p class="col-10 col-md-8 mx-auto text-center wow bounceInRight">{{ trans('front/pages/prices.section0.description')}}</p>
+    <h2 class="text-center display-4 px-2 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s">{{ trans('front/pages/prices.section0.title')}}</h2>
+    <p class="col-10 col-md-8 mx-auto text-center wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">{{ trans('front/pages/prices.section0.description')}}</p>
     <div class="container">
         <div class="row justify-content-around py-5">
             <div class="col">
-                <ul class="row nav nav-pills justify-content-center mb-3" id="pills-tab" role="tablist">
+                <ul class="row nav nav-pills justify-content-center mb-3 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s" id="pills-tab" role="tablist">
                     <li class="nav-item col-10 col-md-4 text-center px-1">
                         <a class="nav-link rounded active" id="pills-website-tab" data-toggle="pill" href="#pills-website" role="tab" aria-controls="pills-website" aria-selected="true">{{trans('front/pages/prices.section0.website.name')}}</a>
                     </li>
@@ -68,7 +68,7 @@
                         <a class="nav-link rounded" id="pills-mobile_app-tab" data-toggle="pill" href="#pills-mobile_app" role="tab" aria-controls="pills-mobile_app" aria-selected="false">{{trans('front/pages/prices.section0.mobile_app.name')}}</a>
                     </li>
                 </ul>
-                <div class="tab-content" id="pills-tabContent">
+                <div class="tab-content wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-website" role="tabpanel" aria-labelledby="pills-website-tab">
                         {{ Html::carousel_prices($prices) }}
                     </div>

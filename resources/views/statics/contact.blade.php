@@ -10,10 +10,19 @@
     </div>
 </div>
 
+@if(!empty($ok))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ $ok }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+@endif
+
 <section class="py-5">
     <div class="container">
-        <h2>{{trans('front/pages/contact.section0.title')}}</h2><br>
-        <div class="row justify-content-center text-center">
+        <h2 class="text-center display-4 px-2 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s">{{trans('front/pages/contact.section0.title')}}</h2><br>
+        <div class="row justify-content-center text-center wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">
             <div class="col">
                 <div class="card bg-light p-2 mb-3 border-0" style="min-width: 16rem;">
                     <div class="card-body">
@@ -57,17 +66,8 @@
 
         </div>
 
-        @if(!empty($ok))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                 {{ $ok }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @endif
-
         <div class="row justify-content-around py-5">
-            <div class="col-10 col-md-6">
+            <div class="col-10 col-md-6 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s">
                 
                 {!! Form::open(['url' => 'contact']) !!}
                 
@@ -86,7 +86,7 @@
                 {!! Form::close() !!}
 
             </div>
-            <div class="col-10 col-md-6">
+            <div class="col-10 col-md-6 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">
                 <map>for map</map>
             </div>
         </div>

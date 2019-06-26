@@ -36,9 +36,9 @@
 </div>
 
 <section class="py-5">
-    <h2 class="text-center wow bounceInLeft display-4">{{ trans('front/pages/website.section0.title')}}</h2>
-    <div class="col-10 col-md-8 mx-auto text-center wow bounceInRight">{!! trans('front/pages/website.section0.description') !!}</div>
-    <div class="container">
+    <h2 class="text-center wow bounceInLeft display-4 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s">{{ trans('front/pages/website.section0.title')}}</h2>
+    <div class="col-10 col-md-8 mx-auto text-center wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">{!! trans('front/pages/website.section0.description') !!}</div>
+    <div class="container wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">
         <div class="row justify-content-around py-5">
             <div class="col">
                 <ul class="row nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -107,10 +107,10 @@
 </section>
 
 <section class="py-5 gradient-blue">
-    <h2 class="text-center text-light wow bounceInLeft display-4">{{ trans('front/pages/website.section1.title')}}</h2>
-    <p class="col-10 col-md-8 mx-auto text-center text-light wow bounceInRight">{{ trans('front/pages/website.section1.description')}}</p>
+    <h2 class="text-center text-light display-4 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s">{{ trans('front/pages/website.section1.title')}}</h2>
+    <p class="col-10 col-md-8 mx-auto text-center text-light wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">{{ trans('front/pages/website.section1.description')}}</p>
 
-    <div class="container mt-5">
+    <div class="container mt-5 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">
         <div class="row justify-content-center">
             <div class="col-10 col-md-6 mb-2">
                 <img class="img-fluid" src="{{ asset('img/website/website-app.png') }}" alt="{{trans('front/pages/website.section1.img_alt')}}">
@@ -123,20 +123,20 @@
 </section>
 
 <section class="py-5">
-    <h2 class="text-center wow bounceInLeft display-4">{{ trans('front/pages/website.section2.title')}}</h2>
-    <p class="col-10 col-md-8 mx-auto text-center wow bounceInRight">{{ trans('front/pages/website.section2.description')}}</p>
+    <h2 class="text-center wow bounceInLeft display-4 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s">{{ trans('front/pages/website.section2.title')}}</h2>
+    <p class="col-10 col-md-8 mx-auto text-center wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">{{ trans('front/pages/website.section2.description')}}</p>
 
-    <div class="container mt-5">
+    <div class="container mt-5 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">
         <div class="row justify-content-center">
-            <div class="col-10 col-md-3 text-center text-md-right mt-4 mt-md-0 wow bounceInLeft">
+            <div class="col-10 col-md-3 text-center text-md-right mt-4 mt-md-0">
                 {!! trans('front/pages/website.section2.content1')!!}
             </div>
 
-            <div class="col-10 col-md-6 text-center mb-2 wow bounceInUp">
+            <div class="col-10 col-md-6 text-center mb-2">
                 <img class="img-fluid" src="{{asset('img/website/multi-support.png')}}" alt="{{trans('front/pages/website.section2.img_alt')}}">
             </div>
 
-            <div class="col-10 col-md-3 text-center text-md-left mt-4 mt-md-0 wow bounceInRight">
+            <div class="col-10 col-md-3 text-center text-md-left mt-4 mt-md-0">
                 {!! trans('front/pages/website.section2.content2')!!}
             </div>
         </div>
@@ -144,10 +144,10 @@
 </section>
 
 <section class="py-5 gradient-and-image">
-    <h2 class="text-center text-light wow bounceInLeft display-4">{{ trans('front/pages/website.section3.title')}}</h2>
-    <p class="col-10 col-md-8 mx-auto text-center text-light wow bounceInRight">{{ trans('front/pages/website.section3.description')}}</p>
+    <h2 class="text-center text-light display-4 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s">{{ trans('front/pages/website.section3.title')}}</h2>
+    <p class="col-10 col-md-8 mx-auto text-center text-light wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">{{ trans('front/pages/website.section3.description')}}</p>
 
-    <div class="container mt-5">
+    <div class="container mt-5 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">
         <div class="row justify-content-center">
             <div class="col-10 col-md-6 mb-2">
                 <img class="img-fluid" src="{{asset('img/website/chose-your-tool.png')}}" alt="{{trans('front/pages/website.section3.img_alt')}}">
@@ -160,10 +160,10 @@
 </section>
 
 <section class="py-5">
-    <h2 class="text-center wow bounceInLeft display-4">{{ trans('front/pages/website.section4.title')}}</h2>
-    <p class="col-10 col-md-8 mx-auto text-center  wow bounceInRight">{{ trans('front/pages/website.section4.description')}}</p>
+    <h2 class="text-center wow bounceInLeft display-4 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s">{{ trans('front/pages/website.section4.title')}}</h2>
+    <p class="col-10 col-md-8 mx-auto text-center wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">{{ trans('front/pages/website.section4.description')}}</p>
 
-    <div class="container mt-5">
+    <div class="container mt-5 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">
         <div class="row justify-content-center">
             <div class="col-10 col-md-6 text-center text-md-left mt-4 mt-md-0">
                 {!! trans('front/pages/website.section4.content') !!}</p>
