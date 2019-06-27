@@ -152,6 +152,8 @@ nav#standardNavbar *, nav#standardNavbar ul li.active a:hover {
 nav#standardNavbar ul > li.active > a {
 	color: #ccc !important;
 }
+
+div.dropdown-menu a.dropdown-item:hover { background-color: transparent; color: dodgerblue !important; }
 /* end nav bar */
 
 /*

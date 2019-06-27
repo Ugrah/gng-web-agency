@@ -62,8 +62,16 @@ return [
             'showcase' => [
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -74,8 +82,16 @@ return [
                 ],
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -86,8 +102,16 @@ return [
                 ],
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -100,8 +124,16 @@ return [
             'portfolio' => [
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -112,8 +144,16 @@ return [
                 ],
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -124,8 +164,16 @@ return [
                 ],
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -138,8 +186,16 @@ return [
             'e_commerce' => [
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -150,8 +206,16 @@ return [
                 ],
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -162,8 +226,16 @@ return [
                 ],
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -176,8 +248,16 @@ return [
             'catalog' => [
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -188,8 +268,16 @@ return [
                 ],
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -200,8 +288,16 @@ return [
                 ],
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -217,38 +313,56 @@ return [
     'en' => [
         'home' => [
             [
-                'title' => 'Price name',
-                'amount' => 99,
+                'title' => 'Pack Web Stater',
+                'amount' => 1200,
                 'unity' => 'Dh',
                 'options' => [
-                    '<li class="list-group-item">Option 0</li>',
-                    '<li class="list-group-item">Option 1</li>',
-                    '<li class="list-group-item">Option 2</li>',
-                    '<li class="list-group-item">Option 3</li>',
+                    '<li class="list-group-item">Hébergement</li>',
+                    '<li class="list-group-item">Nom de domaine</li>',
+                    '<li class="list-group-item">Thème responsive design</li>',
+                    '<li class="list-group-item">Développement de 2 pages</li>',
+                    '<li class="list-group-item">Rédaction de contenu</li>',
+                    '<li class="list-group-item">Optimisation SEO</li>',
+                    '<li class="list-group-item">Mise à jour du contenu</li>',
+                    '<li class="list-group-item">Ajout de médias</li>',
+                    '<li class="list-group-item">Maintenance du site</li>',
+                    '<li class="list-group-item">Optimisation de contenu</li>',
                 ],
                 'url' => '',
             ],
             [
-                'title' => 'Price name',
-                'amount' => 99,
+                'title' => 'Pack E-Com Mini',
+                'amount' => 5500,
                 'unity' => 'Dh',
                 'options' => [
-                    '<li class="list-group-item">Option 0</li>',
-                    '<li class="list-group-item">Option 1</li>',
-                    '<li class="list-group-item">Option 2</li>',
-                    '<li class="list-group-item">Option 3</li>',
+                    '<li class="list-group-item">Hébergement</li>',
+                    '<li class="list-group-item">Nom de domaine</li>',
+                    '<li class="list-group-item">Thème responsive design</li>',
+                    '<li class="list-group-item">Développement de 4 pages</li>',
+                    '<li class="list-group-item">Rédaction de contenu</li>',
+                    '<li class="list-group-item">Optimisation SEO</li>',
+                    '<li class="list-group-item">Mise à jour du contenu</li>',
+                    '<li class="list-group-item">Ajout de médias</li>',
+                    '<li class="list-group-item">Maintenance du site</li>',
+                    '<li class="list-group-item">Optimisation de contenu</li>',
                 ],
                 'url' => '',
             ],
             [
-                'title' => 'Price name',
-                'amount' => 99,
+                'title' => 'Pack Web Pro',
+                'amount' => 3400,
                 'unity' => 'Dh',
                 'options' => [
-                    '<li class="list-group-item">Option 0</li>',
-                        '<li class="list-group-item">Option 1</li>',
-                        '<li class="list-group-item">Option 2</li>',
-                        '<li class="list-group-item">Option 3</li>',
+                    '<li class="list-group-item">Hébergement</li>',
+                    '<li class="list-group-item">Nom de domaine</li>',
+                    '<li class="list-group-item">Thème responsive design</li>',
+                    '<li class="list-group-item">Développement de 2 pages</li>',
+                    '<li class="list-group-item">Rédaction de contenu</li>',
+                    '<li class="list-group-item">Optimisation SEO</li>',
+                    '<li class="list-group-item">Mise à jour du contenu</li>',
+                    '<li class="list-group-item">Ajout de médias</li>',
+                    '<li class="list-group-item">Maintenance du site</li>',
+                    '<li class="list-group-item">Optimisation de contenu</li>',
                 ],
                 'url' => '',
             ],
@@ -257,8 +371,16 @@ return [
             'showcase' => [
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -269,8 +391,16 @@ return [
                 ],
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -281,8 +411,16 @@ return [
                 ],
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -295,8 +433,16 @@ return [
             'portfolio' => [
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -307,8 +453,16 @@ return [
                 ],
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -319,8 +473,16 @@ return [
                 ],
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -333,8 +495,16 @@ return [
             'e_commerce' => [
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -345,8 +515,16 @@ return [
                 ],
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -357,8 +535,16 @@ return [
                 ],
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -371,8 +557,16 @@ return [
             'catalog' => [
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -383,8 +577,16 @@ return [
                 ],
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',
@@ -395,8 +597,16 @@ return [
                 ],
                 [
                     'title' => 'Price name',
-                    'amount' => 99,
-                    'unity' => 'Dh',
+                    'amount' => [
+                        'ma' => 999,
+                        'ci' => 9999,
+                        'other' => 99,
+                    ],
+                    'unity' => [
+                        'ma' => 'Dh',
+                        'ci' => 'f CFA',
+                        'other' => '€',
+                    ],
                     'options' => [
                         '<li class="list-group-item">Option 0</li>',
                         '<li class="list-group-item">Option 1</li>',

@@ -30,11 +30,14 @@
         </li>
 
         <!-- language links -->
-        <li class="nav-item">
-            <a class="{{ app()->getLocale() == 'en' ? 'nav-link disabled' : 'nav-link' }}" href="{{url('/language/en')}}">en</a>
-        </li>
-        <li class="nav-item">
-            <a class="{{ app()->getLocale() == 'fr' ? 'nav-link disabled' : 'nav-link' }}" href="{{url('/language/fr')}}">fr</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-globe"></i>
+            </a>
+            <div style="background-color: transparent; border: none;" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="{{ app()->getLocale() == 'en' ? 'dropdown-item disabled active-locale' : 'dropdown-item text-muet' }}" href="{{url('/language/en')}}">en</a>
+                <a class="{{ app()->getLocale() == 'fr' ? 'dropdown-item disabled active-locale' : 'dropdown-item text-muet' }}" href="{{url('/language/fr')}}">fr</a>
+            </div>
         </li>
     </ul>
 

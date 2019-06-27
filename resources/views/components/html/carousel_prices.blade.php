@@ -9,8 +9,9 @@
                     @foreach($prices['showcase'] as $price)
                         {{ Html::price_box(
                             $price['title'],
-                            $price['amount'],
-                            $price['options']
+                            $price['amount']['other'],
+                            $price['options'],
+                            $price['unity']['other']
                         ) }}
                     @endforeach
                 </div>
@@ -26,8 +27,9 @@
                     @foreach($prices['portfolio'] as $price)
                         {{ Html::price_box(
                             $price['title'],
-                            $price['amount'],
-                            $price['options']
+                            $price['amount']['ma'],
+                            $price['options'],
+                            $price['unity']['ma']
                         ) }}
                     @endforeach
                 </div>
@@ -43,8 +45,9 @@
                     @foreach($prices['e_commerce'] as $price)
                         {{ Html::price_box(
                             $price['title'],
-                            $price['amount'],
-                            $price['options']
+                            $price['amount']['ma'],
+                            $price['options'],
+                            $price['unity']['ma']
                         ) }}
                     @endforeach
                 </div>
@@ -60,8 +63,9 @@
                     @foreach($prices['catalog'] as $price)
                         {{ Html::price_box(
                             $price['title'],
-                            $price['amount'],
-                            $price['options']
+                            $price['amount']['ma'],
+                            $price['options'],
+                            $price['unity']['ma']
                         ) }}
                     @endforeach
                 </div>
