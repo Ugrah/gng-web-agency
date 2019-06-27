@@ -9,9 +9,9 @@
                     @foreach($prices['showcase'] as $price)
                         {{ Html::price_box(
                             $price['title'],
-                            $price['amount']['other'],
+                            $price['amount'][session('country_iso_code')],
                             $price['options'],
-                            $price['unity']['other']
+                            $price['unity'][session('country_iso_code')]
                         ) }}
                     @endforeach
                 </div>
@@ -27,9 +27,9 @@
                     @foreach($prices['portfolio'] as $price)
                         {{ Html::price_box(
                             $price['title'],
-                            $price['amount']['ma'],
+                            $price['amount'][session('country_iso_code')],
                             $price['options'],
-                            $price['unity']['ma']
+                            $price['unity'][session('country_iso_code')]
                         ) }}
                     @endforeach
                 </div>
@@ -45,9 +45,9 @@
                     @foreach($prices['e_commerce'] as $price)
                         {{ Html::price_box(
                             $price['title'],
-                            $price['amount']['ma'],
+                            $price['amount'][session('country_iso_code')],
                             $price['options'],
-                            $price['unity']['ma']
+                            $price['unity'][session('country_iso_code')]
                         ) }}
                     @endforeach
                 </div>
@@ -63,9 +63,9 @@
                     @foreach($prices['catalog'] as $price)
                         {{ Html::price_box(
                             $price['title'],
-                            $price['amount']['ma'],
+                            $price['amount'][session('country_iso_code')],
                             $price['options'],
-                            $price['unity']['ma']
+                            $price['unity'][session('country_iso_code')]
                         ) }}
                     @endforeach
                 </div>

@@ -6,14 +6,14 @@
 </head>
 
 <body>
-    <h2>prise de contact sur GnG Dev</h2>
-    <p>Réception d'une prise de contact avec les éléments suivants :</p>
-    <ul>
-        <li><strong>Name</strong> : Ulrich Grah</li>
-        <li><strong>Email</strong> : grulog@live.com</li>
-        <li><strong>Subject</strong> : The subject</li>
-        <li><strong>message</strong> : Lorem ipsum</li>
-    </ul>
+    <h2>Geo IP</h2>
+    
+    
+    <pre>
+        {{ dd($arr_ip) }}
+    </pre>
+
+    <!-- <p>{{ $arr_ip['attributes']['ip'] }}</p> -->
 </body>
 
 </html>

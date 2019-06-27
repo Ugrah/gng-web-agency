@@ -197,6 +197,7 @@ return [
         // Collective\Html\HtmlServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+        \Torann\GeoIP\GeoIPServiceProvider::class,
     ],
 
     /*
@@ -260,6 +261,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
+        'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,
 
     ],
 

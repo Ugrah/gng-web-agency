@@ -156,8 +156,11 @@ class MainController extends Controller
 
         
         // return view('emails.contactToUser', compact('name', 'email', 'phoneNumber', 'subject', 'content'));
+        // return view('emails.contactToAdmin', compact('name', 'email', 'phoneNumber', 'subject', 'content'));
 
-        return view('emails.contactToAdmin', compact('name', 'email', 'phoneNumber', 'subject', 'content'));
+        $arrayTest = ['attr_a' => 'value', 'attr_2' => 'value'];
+        $arr_ip = geoip(request()->ip());
+        return view('test', compact('arr_ip', 'arrayTest'));
     }
 
     /**

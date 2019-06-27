@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use App\Jobs\SetLocale;
+use App\Jobs\SetCountry;
 use Illuminate\Bus\Dispatcher as BusDispatcher;
 
 class App
@@ -18,20 +19,27 @@ class App
 	/**
 	 * The setLocale.
 	 */
-    protected $setLocale;
+	protected $setLocale;
+	
+	/**
+	 * The setCountry.
+	 */
+    protected $setCountry;
 
     /**
 	 * Create a new App instance.
 	 *
 	 * @param  Illuminate\Bus\Dispatcher $bus
-	 * @param  App\Jobs\SetLocaleCommand $setLocaleCommand
+	 * @param  App\Jobs\SetLocale $setLocale
+	 * @param  App\Jobs\SetCountry $setCountry
 	 * @return void
 	*/
     public function __construct(BusDispatcher $bus,
-                                SetLocale $setLocale)
+                                SetLocale $setLocale, SetCountry $setCountry)
 	{
 		$this->bus = $bus;
 		$this->setLocale = $setLocale;
+		$this->setCountry = $setCountry;
 	}
     
     /**
@@ -44,6 +52,7 @@ class App
     public function handle($request, Closure $next)
     {
         $this->bus->dispatch($this->setLocale);
+        $this->bus->dispatch($this->setCountry);
         
         return $next($request);
     }
