@@ -30,9 +30,9 @@
                             <i class="fas fa-phone fa-3x fa-stack-1x text-primary"></i>
                         </span>
                         <p class="text-card">
-                            <a class="btn btn-link" href="tel:+212645717187">+212 6 45 71 71 87</a>
-                            <a class="btn btn-link" href="tel:+212645717187">+212 6 45 71 71 87</a>
-                            <a class="btn btn-link" href="tel:+212645717187">+212 6 45 71 71 87</a>
+                            @foreach(config('infos.phones') as $numberPhone)
+                                <a class="btn btn-link" href="tel:{{$numberPhone}}">{{$numberPhone}}</a>
+                            @endforeach
                         </p> 
                     </div>
                 </div>
@@ -45,9 +45,9 @@
                             <i class="far fa-envelope fa-3x fa-stack-1x text-primary"></i>
                         </span>
                         <p class="text-card">
-                            <a class="btn btn-link" href="mailto:contact@gngdev.com">contact@gngdev.com</a>
-                            <a class="btn btn-link" href="mailto:infos@gngdev.com">infos@gngdev.com</a>
-                            <a class="btn btn-link" href="mailto:recrutement@gngdev.com">recrutement@gngdev.com</a>
+                            @foreach(config('infos.emails') as $email)
+                                <a class="btn btn-link" href="mailto:{{$email}}">{{$email}}</a>
+                            @endforeach
                         </p>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                         <span class="fa-stack mb-4">
                             <i class="fas fa-map-marker-alt fa-3x fa-stack-1x text-primary"></i><br>
                         </span>
-                        <p class="card-text">203 Fake St. Mountain View, San Francisco, California, USA</p>
+                        <p class="card-text">{{config('infos.address')}}</p>
                     </div>
                 </div>
             </div>

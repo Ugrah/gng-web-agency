@@ -38,7 +38,11 @@ return [
             'start_title' => 'Combien coûte la création de mon application ?',
             'start_descr' => 'Calculez rapidement le coût pour créer votre application en répondant à ces questions.',
             'start_button' => 'Calculer',
+            'restart_button' => 'Recommencer',
             'previous_button_form' => 'Précedent',
+            'send_email_button' => 'Envoyer votre devis',
+            'send_email_placeholder' => 'Saisissez votre email',
+            'the_cost_is' => 'Le coût estimé de votre application est',
             'questions' => [
                 'item0' => [
                     'title' => 'Quel niveau de qualité recherchez-vous ?',
@@ -110,7 +114,7 @@ return [
                     'option2' => 'App en cours de développement',
                     'option3' => 'App déjà développée',
                 ],
-            ]
+            ],
         ],
     ],
 ];

@@ -37,10 +37,12 @@
             <div class="block-23 mb-3">
                 <ul class="list-unstyled">
                 <li class="mb-3"><i class="fas fa-map-marker-alt fa-lg text-light"></i> <span class="text">{{config('infos.address')}}</span></li>
-                <li class="mb-3">
-                    <a href="#"><i class="fas fa-phone fa-lg text-light"></i> <span class="text">+212 6 45 71 71 87</span></a>
-                </li>
-                <li class="mb-3"><a href="mailto:infos@gngdev.com"><i class="fas fa-envelope fa-lg text-light"></i> <span class="text"><span >infos@gngdev.com</span></span></a></li>
+                @foreach(config('infos.phones') as $numberPhone)
+                    <li class="mb-3"><i class="fas fa-envelope fa-lg text-light"></i><a href="tel:{{$numberPhone}}"> <span class="text"><span>{{$numberPhone}}</span></span></a></li>
+                @endforeach
+                @foreach(config('infos.emails') as $email)
+                    <li class="mb-3"><i class="fas fa-envelope fa-lg text-light"></i><a href="mailto:{{$email}}"> <span class="text"><span>{{$email}}</span></span></a></li>
+                @endforeach
                 </ul>
             </div>
         </div>

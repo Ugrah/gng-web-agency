@@ -180,20 +180,19 @@
                                         
                                     </div>
 
-
                                     <div class="row restart">
                                         <div class="col">
                                             <a id="restart-button" href="#" class="">
-                                            <i class="text-primary fas fa-arrow-left"></i> Recommencer</a>
+                                            <i class="text-primary fas fa-arrow-left"></i> {{trans('front/pages/prices.section0.mobile_app.restart_button')}}</a>
                                         </div>
                                     </div> 
                                     <div class="text-center result">
-                                        <h4>Le coût estimé de votre application est</h4>
+                                        <h4>{{ trans('front/pages/prices.section0.mobile_app.the_cost_is') }}</h4>
                                         <span class="display-4 amount"></span>
-                                        {!! Form::control('text', $errors, 'email', ['class' => 'form-control rounded', 'placeholder' => 'Votre email', 'required'=> 'required']) !!}
+                                        {!! Form::control('text', $errors, 'email', ['class' => 'form-control rounded', 'placeholder' => trans('front/pages/prices.section0.mobile_app.send_email_placeholder'), 'required'=> 'required']) !!}
 
                                         <div class="row justify-content-center">
-                                            <button type="submit" class="btn py-2 px-4 text-light submit rounded">Envoyer votre devis</button>
+                                            <button type="submit" class="btn py-2 px-4 text-light submit rounded">{{ trans('front/pages/prices.section0.mobile_app.send_email_button') }}</button>
                                         </div>
                                         
                                     </div>
