@@ -152,9 +152,9 @@
                                         <h4>{{trans('front/pages/prices.section0.mobile_app.questions.item8.title')}}</h4>
                                         {{ Form::radio_label_img('languageOptionRadio1', 'languageOption', 'one', 8, 250, 'http://placehold.it/150/ccc/fff&text=A', trans('front/pages/prices.section0.mobile_app.questions.item8.option0')) }}
 
-                                        {{ Form::radio_label_img('languageOptionRadio1', 'languageOption', 'two', 8, 250, 'http://placehold.it/150/ccc/fff&text=B', trans('front/pages/prices.section0.mobile_app.questions.item8.option1')) }}
+                                        {{ Form::radio_label_img('languageOptionRadio2', 'languageOption', 'two', 8, 250, 'http://placehold.it/150/ccc/fff&text=B', trans('front/pages/prices.section0.mobile_app.questions.item8.option1')) }}
 
-                                        {{ Form::radio_label_img('languageOptionRadio1', 'languageOption', 'more', 8, 250, 'http://placehold.it/150/ccc/fff&text=C', trans('front/pages/prices.section0.mobile_app.questions.item8.option2')) }}
+                                        {{ Form::radio_label_img('languageOptionRadio3', 'languageOption', 'more', 8, 250, 'http://placehold.it/150/ccc/fff&text=C', trans('front/pages/prices.section0.mobile_app.questions.item8.option2')) }}
                                         
                                     </div>
 
@@ -194,7 +194,7 @@
                                         <div class="row justify-content-center">
                                             <button type="submit" class="btn py-2 px-4 text-light submit rounded">{{ trans('front/pages/prices.section0.mobile_app.send_email_button') }}</button>
                                         </div>
-                                        
+   
                                     </div>
                                 {!! Form::close() !!}
                             </div>
@@ -222,6 +222,8 @@
 
 
 @section('scripts')
+{!! Html::script('js/dynamic-form-prices.'. session('country_iso_code') .'.js') !!}
+
 <script type="text/javascript">
     $(function() {
         // Navbar active links
@@ -243,6 +245,7 @@
             // Initial values
             var options = [];
             var $activeQuestionIndex = 0;
+            var $amounts = getAmountFromQuestion();
 
             // Represente an option of the form
             class Option {
@@ -301,7 +304,8 @@
                 for (let i = 0; i < options.length; ++i){
                     totalAmount += parseInt(options[i].cost);
                 }
-                $('.amount').text(totalAmount);
+                $('.amount').text(`${totalAmount} ${getDevise().symbol}`);
+
             }
 
             function getQuestionRang() {
@@ -331,12 +335,12 @@
                 displayActiveQuestion();
                 $('#dynamic-app-price .form-check-input').click(function() {
                     var newOption = options.find(item => item.name === $(this).attr('name'));
-
+                    
                     if(newOption){
                         newOption.choise = $(this).attr('value');
-                        newOption.cost = $(this).attr('data-cost');
+                        newOption.cost = parseInt( $amounts[ parseInt($(this).attr('data-question')) ][$(this).attr('id')] );
                     } else {
-                        options.push( new Option($(this).attr('name'), $(this).attr('value'), $(this).attr('data-cost')) );
+                        options.push( new Option($(this).attr('name'), $(this).attr('value'), $amounts[ parseInt($(this).attr('data-question')) ][$(this).attr('id')]) );
                     }
 
                     if($activeQuestionIndex < $('div.question').length - 1) {
@@ -376,6 +380,7 @@
                 console.log('Error, Please retry');
             });
         });
+
     });
 </script>
 @endsection

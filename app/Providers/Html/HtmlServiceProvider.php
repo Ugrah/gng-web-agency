@@ -21,7 +21,7 @@ class HtmlServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
+    { 
         Html::component('navbar_fixed', 'components.html.navbar_fixed', []);
         Html::component('navbar_default', 'components.html.navbar_default', []);
         Html::component('footer_main', 'components.html.footer_main', []);
