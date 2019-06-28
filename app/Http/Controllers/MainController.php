@@ -5,14 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Jobs\ChangeLocale;
+use App\Repositories\EstimatedPriceRepository;
 use SEO;
 use Mail;
+use App\Mail\ContactToUser;
+use App\Mail\ContactToAdmin;
 use Validator;
 
 class MainController extends Controller
 {
-    public function __construct(){
+    protected $estimatedPriceRepository;
+
+    public function __construct(EstimatedPriceRepository $estimatedPriceRepository){
         $this->middleware('ajax', ['only' => ['testPost', 'pricesPost']]);
+        $this->estimatedPriceRepository = $estimatedPriceRepository;
     }
 
     /**
@@ -73,14 +79,19 @@ class MainController extends Controller
     public function ajaxPrices(Request $request)
     {
         $validator = $this->validatorPriceForm($request->all());
-        /*
         if ($validator->fails()) {
             $this->throwValidationException(
                 $request, $validator
             );
         }
-        */
-        //Send email to admn and user 
+        // Store estimation in db
+        $estimatePrice = $this->estimatedPriceRepository->store($request->all());
+
+        // Send email to User
+        $this->sendMail('emails.estimateToUser', $request->all(), 'contact@gngdev.com', $request->input('email'), 'Estimation de prix : Application Mobile', config('infos.name'));
+
+        // Send email to Admin
+        $this->sendMail('emails.contactToAdmin', $request->all(), 'contact@gngdev.com', 'infos@gngdev.com', 'Estimation de prix : Application Mobile', config('infos.name').' - Un utilisateur a estimé le prix de son appllication mobile');
         return response()->json();
     }
 
@@ -106,10 +117,12 @@ class MainController extends Controller
     {
 
         // For User
-        $this->sendMail('emails.contactToUser', $request->all(), $request, 'contact@gngdev.com', $request->input('email'), $request->input('subject'), config('infos.name'));
+        Mail::to($request->input('email'))
+            ->send(new ContactToUser($request));
 
         // For Admin
-        $this->sendMail('emails.contactToAdmin', $request->all(), $request, 'contact@gngdev.com', 'infos@gngdev.com', $request->input('subject'), config('infos.name').' - Un utilisateur vous a contacté');
+        Mail::to('infos@gngdev.com')
+            ->send(new ContactToAdmin($request));
 
         //SEO::setTitle('Home Page');
         //SEO::setDescription('This is my page description');
@@ -126,9 +139,9 @@ class MainController extends Controller
         return view('statics.privacyPolicy');
     }
 
-    private function sendMail($view, $variables = [], Request $request, $from, $to, $subject, $mailTitle)
+    private function sendMail($view, $variables = [], $from, $to, $subject, $mailTitle)
     {
-        Mail::send($view, $variables, function ($m) use ($request, $from, $to, $subject, $mailTitle) {
+        Mail::send($view, $variables, function ($m) use ($from, $to, $subject, $mailTitle) {
             $m->from($from, config('infos.name'));
 
             $m->to($to, $mailTitle)->subject($subject);
@@ -172,23 +185,31 @@ class MainController extends Controller
     protected function validatorPriceForm(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'name' => 'string|required|max:255',
+            'email' => 'email|required|max:255|unique:users',
+            'qualityOption' => 'string|required',
+            'typeOption' => 'string|required',
+            'designOption' => 'string|required',
+            'profitableOption' => 'string|required',
+            'loginOption' => 'string|required',
+            'userSpaceOption' => 'string|required',
+            'websiteIntagrationOption' => 'string|required',
+            'adminSpaceOption' => 'string|required',
+            'languageOption' => 'string|required',
+            'advancedFeaturesOption' => 'string|required',
+            'statusProjectOption' => 'string|required',
         ]);
     }
 
     public function testPost(Request $request)
     {
         $validator = $this->validatorPriceForm($request->all());
-        /*
         if ($validator->fails()) {
             $this->throwValidationException(
                 $request, $validator
             );
         }
-        */
-        //$this->create($request->all());
+        $estimatePrice = $this->estimatedPriceRepository->store($request->all());
         return response()->json();
     }
 }

@@ -1,9 +1,5 @@
 @extends('layouts.email')
 
-@section('styles')
-
-@endsection
-
 @section('content')
 
 <section>

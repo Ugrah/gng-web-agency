@@ -189,7 +189,10 @@
                                     <div class="text-center result">
                                         <h4>{{ trans('front/pages/prices.section0.mobile_app.the_cost_is') }}</h4>
                                         <span class="display-4 amount"></span>
-                                        {!! Form::control('text', $errors, 'email', ['class' => 'form-control rounded', 'placeholder' => trans('front/pages/prices.section0.mobile_app.send_email_placeholder'), 'required'=> 'required']) !!}
+                                        
+                                        {!! Form::control('text', $errors, 'name', ['class' => 'form-control rounded', 'placeholder' => trans('front/pages/prices.section0.mobile_app.send_email_placeholder'), 'required'=> 'required']) !!}
+                                        
+                                        {!! Form::control('email', $errors, 'email', ['class' => 'form-control rounded', 'placeholder' => trans('front/pages/prices.section0.mobile_app.send_email_placeholder'), 'required'=> 'required']) !!}
 
                                         <div class="row justify-content-center">
                                             <button type="submit" class="btn py-2 px-4 text-light submit rounded">{{ trans('front/pages/prices.section0.mobile_app.send_email_button') }}</button>
@@ -379,6 +382,7 @@
             .fail(function(data) {
                 console.log('Error, Please retry');
             });
+            
         });
 
     });
