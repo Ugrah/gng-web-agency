@@ -12,6 +12,7 @@ class EstimateToUser extends Mailable
 {
     use Queueable, SerializesModels;
 
+    const TRANS_PATH = 'back/mails/default.';
     public $estimatedPrice;
 
     /**
@@ -34,7 +35,7 @@ class EstimateToUser extends Mailable
         $numberSeparator = app()->getLocale() == 'fr' ? ' ' : ',';
         $decimalSeparator = app()->getLocale() == 'fr' ? ',' : '.';
 
-        return $this->subject('Estimation de prix : Application Mobile')->view('emails.estimateToUser')
+        return $this->subject(trans(self::TRANS_PATH.'estimate_to_admin'))->view('emails.estimateToUser')
                     ->with([
                         'estimatedPrice' => $this->estimatedPrice,
                         'numberSeparator' => $numberSeparator,

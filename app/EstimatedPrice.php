@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class EstimatedPrice extends Model
 {
     protected $fillable = [
-    	'name', 'email', 'amount', 'devise', 'qualityOption', 'typeOption', 'designOption', 'profitableOption', 'loginOption', 'userSpaceOption', 'websiteIntagrationOption', 'adminSpaceOption', 'languageOption', 'advancedFeaturesOption', 'statusProjectOption'
+    	'name', 'email', 'amount', 'devise', 'qualityOption', 'typeOption', 'designOption', 'profitableOption', 'loginOption', 'userSpaceOption', 'websiteIntagrationOption', 'adminSpaceOption', 'languageOption', 'advancedFeaturesOption', 'statusProjectOption', 'ipAdress',
     ];
 
     /**
@@ -16,7 +16,7 @@ class EstimatedPrice extends Model
      * @var array
      */
     protected $hidden = [
-        'amount', 'devise',
+        'amount', 'devise', 'ipAdress',
     ];
 
     public function getLastModification()

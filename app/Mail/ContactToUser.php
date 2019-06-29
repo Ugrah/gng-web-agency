@@ -12,6 +12,7 @@ class ContactToUser extends Mailable
 {
     use Queueable, SerializesModels;
 
+    const TRANS_PATH = 'back/mails/default.';
     public $data;
 
     /**
@@ -31,7 +32,7 @@ class ContactToUser extends Mailable
      */
     public function build()
     {
-        return $this->subject('Merci de nous avoir contacté | ' .$this->data['subject'])->view('emails.contactToUser')
+        return $this->subject(trans(self::TRANS_PATH.'contact_to_user').$this->data['subject'])->view('emails.contactToUser')
                     ->with(['name' => $this->data['name']]);
     }
 }

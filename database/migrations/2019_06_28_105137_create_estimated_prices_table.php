@@ -30,6 +30,7 @@ class CreateEstimatedPricesTable extends Migration
             $table->string('statusProjectOption');
             $table->string('devise')->default('€');
             $table->double('amount', 10, 2)->default(0);
+            $table->string('ipAdress');
             $table->timestamps();
         });
     }

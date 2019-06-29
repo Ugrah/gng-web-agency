@@ -7,7 +7,6 @@ use App\Http\Requests\ContactRequest;
 use App\Jobs\ChangeLocale;
 use App\Repositories\EstimatedPriceRepository;
 use SEO;
-use Mail;
 use App\Jobs\SendContactToUserEmail;
 use App\Jobs\SendContactToAdminEmail;
 use App\Jobs\SendEstimationEmailToUser;
@@ -17,6 +16,8 @@ use Validator;
 
 class MainController extends Controller
 {
+    const TRANS_PATH = 'back/controllers/mainController.';
+
     protected $estimatedPriceRepository;
 
     public function __construct(EstimatedPriceRepository $estimatedPriceRepository){
@@ -88,6 +89,7 @@ class MainController extends Controller
             );
         }
         // Store estimation in db
+        $request->merge(['ipAdress' => request()->ip()]);
         $estimatePrice = $this->estimatedPriceRepository->store($request->all());
 
         SendEstimationEmailToUser::dispatchNow($estimatePrice);
@@ -126,21 +128,12 @@ class MainController extends Controller
         //SEO::opengraph()->addProperty('type', 'articles');
         SEO::opengraph()->addProperty('locale', app()->getLocale());
 
-        return view('statics.contact')->withOk( 'Merci. Votre message a été transmis à l\'administrateur du site. Vous recevrez une réponse rapidement.');
+        return view('statics.contact')->withOk(trans(self::TRANS_PATH.'notif.post_contact'));
     }
 
     public function privacyPolicy()
     {
         return view('statics.privacyPolicy');
-    }
-
-    private function sendMail($view, $variables = [], $from, $to, $subject, $mailTitle)
-    {
-        Mail::send($view, $variables, function ($m) use ($from, $to, $subject, $mailTitle) {
-            $m->from($from, config('infos.name'));
-
-            $m->to($to, $mailTitle)->subject($subject);
-        });
     }
 
     public function test()
@@ -154,7 +147,6 @@ class MainController extends Controller
         return view('emails.estimateToAdmin', compact('amount', 'estimateCode', 'numberSeparator', 'decimalSeparator'));
         */
 
-
         // Traitement to contact to User and contact to Admin
         $name = 'Ulrich Grah';
         $email = 'grulog@live.com';
@@ -162,7 +154,6 @@ class MainController extends Controller
         $subject = 'Subject of the message';
         $content ='Lorem ipsum doalutd kgilus lgiaskjh klsiuly jhgs uyammpoqoj sjhuysvx iusigss.';
 
-        
         // return view('emails.contactToUser', compact('name', 'email', 'phoneNumber', 'subject', 'content'));
         // return view('emails.contactToAdmin', compact('name', 'email', 'phoneNumber', 'subject', 'content'));
 

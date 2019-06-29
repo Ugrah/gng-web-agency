@@ -12,6 +12,7 @@ class ContactToAdmin extends Mailable
 {
     use Queueable, SerializesModels;
 
+    const TRANS_PATH = 'back/mails/default.';
     public $data;
 
     /**
@@ -31,7 +32,7 @@ class ContactToAdmin extends Mailable
      */
     public function build()
     {
-        return $this->subject('Un utilisateur vous a contacté | ' .$this->data['subject'])->view('emails.contactToAdmin')
+        return $this->subject(trans(self::TRANS_PATH.'contact_to_admin').$this->data['subject'])->view('emails.contactToAdmin')
                     ->with([
                         'name' => $this->data['name'],
                         'email' => $this->data['email'],
