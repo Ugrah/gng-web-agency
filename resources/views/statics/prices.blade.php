@@ -194,9 +194,9 @@
                                         
                                         {!! Form::control('email', $errors, 'email', ['class' => 'form-control rounded', 'placeholder' => trans('front/pages/prices.section0.mobile_app.send_email_placeholder'), 'required'=> 'required']) !!}
 
-                                        {!! Form::control('text', $errors, 'amount', ['class' => 'form-control rounded']) !!}
+                                        {!! Form::control('hidden', $errors, 'amount', ['class' => 'form-control rounded']) !!}
 
-                                        {!! Form::control('text', $errors, 'devise', ['class' => 'form-control rounded']) !!}
+                                        {!! Form::control('hidden', $errors, 'devise', ['class' => 'form-control rounded']) !!}
 
                                         <div class="row justify-content-center">
                                             <button type="submit" class="btn py-2 px-4 text-light submit rounded">{{ trans('front/pages/prices.section0.mobile_app.send_email_button') }}</button>

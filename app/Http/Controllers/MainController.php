@@ -10,7 +10,10 @@ use SEO;
 use Mail;
 use App\Jobs\SendContactToUserEmail;
 use App\Jobs\SendContactToAdminEmail;
+use App\Jobs\SendEstimationEmailToUser;
+use App\Jobs\SendEstimationEmailToAdmin;
 use Validator;
+
 
 class MainController extends Controller
 {
@@ -87,11 +90,9 @@ class MainController extends Controller
         // Store estimation in db
         $estimatePrice = $this->estimatedPriceRepository->store($request->all());
 
-        // Send email to User
-        $this->sendMail('emails.estimateToUser', $request->all(), 'contact@gngdev.com', $request->input('email'), 'Estimation de prix : Application Mobile', config('infos.name'));
+        SendEstimationEmailToUser::dispatchNow($estimatePrice);
+        SendEstimationEmailToAdmin::dispatchNow($estimatePrice);
 
-        // Send email to Admin
-        $this->sendMail('emails.contactToAdmin', $request->all(), 'contact@gngdev.com', 'infos@gngdev.com', 'Estimation de prix : Application Mobile', config('infos.name').' - Un utilisateur a estimé le prix de son appllication mobile');
         return response()->json();
     }
 
@@ -192,6 +193,8 @@ class MainController extends Controller
             'languageOption' => 'string|required',
             'advancedFeaturesOption' => 'string|required',
             'statusProjectOption' => 'string|required',
+            'amount' => 'required|required|between:0,99999999.99',
+            'devise' => 'string|required',
         ]);
     }
 

@@ -28,6 +28,8 @@ class CreateEstimatedPricesTable extends Migration
             $table->string('languageOption');
             $table->string('advancedFeaturesOption');
             $table->string('statusProjectOption');
+            $table->string('devise')->default('€');
+            $table->double('amount', 10, 2)->default(0);
             $table->timestamps();
         });
     }

@@ -7,7 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class EstimatedPrice extends Model
 {
     protected $fillable = [
-    	'name', 'email', 'qualityOption', 'typeOption', 'designOption', 'profitableOption', 'loginOption', 'userSpaceOption', 'websiteIntagrationOption', 'adminSpaceOption', 'languageOption', 'advancedFeaturesOption', 'statusProjectOption'
+    	'name', 'email', 'amount', 'devise', 'qualityOption', 'typeOption', 'designOption', 'profitableOption', 'loginOption', 'userSpaceOption', 'websiteIntagrationOption', 'adminSpaceOption', 'languageOption', 'advancedFeaturesOption', 'statusProjectOption'
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'amount', 'devise',
     ];
 
     public function getLastModification()
