@@ -12,16 +12,16 @@ class ContactToUser extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $request;
+    public $data;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Request $request)
+    public function __construct(array $data)
     {
-        $this->request = $request;
+        $this->data = $data;
     }
 
     /**
@@ -31,7 +31,7 @@ class ContactToUser extends Mailable
      */
     public function build()
     {
-        return $this->subject('Merci de nous avoir contacté | ' .$this->request->input('subject'))->view('emails.contactToUser')
-                    ->with(['name' => $this->request->input('name')]);
+        return $this->subject('Merci de nous avoir contacté | ' .$this->data['subject'])->view('emails.contactToUser')
+                    ->with(['name' => $this->data['name']]);
     }
 }

@@ -8,8 +8,8 @@ use App\Jobs\ChangeLocale;
 use App\Repositories\EstimatedPriceRepository;
 use SEO;
 use Mail;
-use App\Mail\ContactToUser;
-use App\Mail\ContactToAdmin;
+use App\Jobs\SendContactToUserEmail;
+use App\Jobs\SendContactToAdminEmail;
 use Validator;
 
 class MainController extends Controller
@@ -115,14 +115,8 @@ class MainController extends Controller
 
     public function postContact(ContactRequest $request)
     {
-
-        // For User
-        Mail::to($request->input('email'))
-            ->send(new ContactToUser($request));
-
-        // For Admin
-        Mail::to('infos@gngdev.com')
-            ->send(new ContactToAdmin($request));
+        SendContactToUserEmail::dispatchNow($request->all());
+        SendContactToAdminEmail::dispatchNow($request->all());
 
         //SEO::setTitle('Home Page');
         //SEO::setDescription('This is my page description');

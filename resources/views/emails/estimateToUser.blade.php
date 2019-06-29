@@ -5,7 +5,7 @@
 <section>
     <div>
         <p>{{ trans('front/emails/estimateToUser.content.p_1') }}</p>
-        <p>{!! trans('front/emails/estimateToUser.content.p_2', [ 'amount' => $amount, 'idSimulation' => $estimateCode ]) !!}</p>
+        <p>{!! trans('front/emails/estimateToUser.content.p_2', [ 'amount' => $amount, 'devise' => $devise ]) !!}</p>
         <br>
         <p>{{ trans('front/emails/estimateToUser.content.p_3') }}</p>
         <br>

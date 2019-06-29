@@ -12,16 +12,16 @@ class ContactToAdmin extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $request;
+    public $data;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Request $request)
+    public function __construct(array $data)
     {
-        $this->request = $request;
+        $this->data = $data;
     }
 
     /**
@@ -31,13 +31,13 @@ class ContactToAdmin extends Mailable
      */
     public function build()
     {
-        return $this->subject('Un utilisateur vous a contacté | ' .$this->request->input('subject'))->view('emails.contactToAdmin')
+        return $this->subject('Un utilisateur vous a contacté | ' .$this->data['subject'])->view('emails.contactToAdmin')
                     ->with([
-                        'name' => $this->request->input('name'),
-                        'email' => $this->request->input('email'),
-                        'numberPhone' => $this->request->input('numberPhone'),
-                        'subject' => $this->request->input('subject'),
-                        'content' => $this->request->input('content')
+                        'name' => $this->data['name'],
+                        'email' => $this->data['email'],
+                        'numberPhone' => $this->data['phoneNumber'],
+                        'subject' => $this->data['subject'],
+                        'content' => $this->data['content']
                     ]);
     }
 }
