@@ -75,9 +75,10 @@ class MainController extends Controller
     public function prices()
     {
         $prices = config('pricing.'.app()->getLocale().'.prices');
+        $numberSeparator = (app()->getLocale() == 'fr') ? ' ' : ',';
 
         SEO::opengraph()->addProperty('locale', app()->getLocale());
-        return view('statics.prices', compact('prices'));
+        return view('statics.prices', compact('prices', 'numberSeparator'));
     }
 
     public function ajaxPrices(Request $request)

@@ -12,7 +12,8 @@
                             $price['amount'][session('country_iso_code')],
                             $price['options'],
                             $price['additional_options'],
-                            $price['unity'][session('country_iso_code')]
+                            $price['unity'][session('country_iso_code')],
+                            $numberSeparator
                         ) }}
                     @endforeach
                 </div>
@@ -31,7 +32,8 @@
                             $price['amount'][session('country_iso_code')],
                             $price['options'],
                             $price['additional_options'],
-                            $price['unity'][session('country_iso_code')]
+                            $price['unity'][session('country_iso_code')],
+                            $numberSeparator
                         ) }}
                     @endforeach
                 </div>
@@ -50,7 +52,8 @@
                             $price['amount'][session('country_iso_code')],
                             $price['options'],
                             $price['additional_options'],
-                            $price['unity'][session('country_iso_code')]
+                            $price['unity'][session('country_iso_code')],
+                            $numberSeparator
                         ) }}
                     @endforeach
                 </div>
@@ -69,7 +72,8 @@
                             $price['amount'][session('country_iso_code')],
                             $price['options'],
                             $price['additional_options'],
-                            $price['unity'][session('country_iso_code')]
+                            $price['unity'][session('country_iso_code')],
+                            $numberSeparator
                         ) }}
                     @endforeach
                 </div>

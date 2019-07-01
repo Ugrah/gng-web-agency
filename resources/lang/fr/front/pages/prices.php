@@ -43,7 +43,8 @@ return [
             'restart_button' => 'Recommencer',
             'previous_button_form' => 'Précedent',
             'send_email_button' => 'Envoyer votre devis',
-            'send_email_placeholder' => 'Saisissez votre email',
+            'input_email_placeholder' => 'Saisissez votre email',
+            'input_name_placeholder' => 'Saisissez votre Nom',
             'the_cost_is' => 'Le coût estimé de votre application est',
             'questions' => [
                 'item0' => [
@@ -73,7 +74,7 @@ return [
                     'option3' => 'Je ne sais pas / Autres moyens',
                 ],
                 'item4' => [
-                    'title' => 'Votre application a-t-elle besoin d\'un système d\‘authentification ?',
+                    'title' => 'Votre application a-t-elle besoin d\'un système d\'authentification ?',
                     'option0' => 'Oui, avec réseaux sociaux + email',
                     'option1' => 'Oui, avec email',
                     'option2' => 'Non',

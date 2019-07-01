@@ -1,15 +1,15 @@
 var getAmountFromQuestion = function(){
     var questionsAmounts = [
-        {qualityOptionRadio1: 550, qualityOptionRadio2: 350, qualityOptionRadio3: 200},
-        {typeOptionRadio1: 250, typeOptionRadio2: 250, typeOptionRadio3: 400},
-        {designOptionRadio1: 250, designOptionRadio2: 250, designOptionRadio3: 200, designOptionRadio4: 200},
-        {profitableOptionRadio1: 250, profitableOptionRadio2: 250, profitableOptionRadio3: 200, profitableOptionRadio4: 200},
-        {loginOptionRadio1: 100, loginOptionRadio2: 100, loginOptionRadio3: 100, loginOptionRadio4: 100},
-        {userSpaceOptionRadio1: 290, userSpaceOptionRadio2: 200, userSpaceOptionRadio3: 130, userSpaceOptionRadio3: 140},
-        {websiteIntagrationOptionRadio1: 200, websiteIntagrationOptionRadio2: 150, websiteIntagrationOptionRadio3: 250},
-        {adminSpaceOptionRadio1: 200, adminSpaceOptionRadio2: 150, adminSpaceOptionRadio3: 250},
-        {languageOptionRadio1: 120, languageOptionRadio2: 115, languageOptionRadio3: 125},
-        {advancedFeaturesOptionRadio1: 100, advancedFeaturesOptionRadio2: 105, advancedFeaturesOptionRadio3: 105},
+        {qualityOptionRadio1: 144000, qualityOptionRadio2: 96000, qualityOptionRadio3: 48000},
+        {typeOptionRadio1: 108000, typeOptionRadio2: 108000, typeOptionRadio3: 216000},
+        {designOptionRadio1: 144000, designOptionRadio2: 432000, designOptionRadio3: 288000, designOptionRadio4: 30000},
+        {profitableOptionRadio1: 18000, profitableOptionRadio2: 18000, profitableOptionRadio3: 144000, profitableOptionRadio4: 36000},
+        {loginOptionRadio1: 144000, loginOptionRadio2: 90000, loginOptionRadio3: 0, loginOptionRadio4: 72000},
+        {userSpaceOptionRadio1: 144000, userSpaceOptionRadio2: 0, userSpaceOptionRadio3: 72000},
+        {websiteIntagrationOptionRadio1: 144000, websiteIntagrationOptionRadio2: 0, websiteIntagrationOptionRadio3: 72000},
+        {adminSpaceOptionRadio1: 144000, adminSpaceOptionRadio2: 0, adminSpaceOptionRadio3: 72000},
+        {languageOptionRadio1: 0, languageOptionRadio2: 72000, languageOptionRadio3: 144000},
+        {advancedFeaturesOptionRadio1: 144000, advancedFeaturesOptionRadio2: 0, advancedFeaturesOptionRadio3: 72000},
         {statusProjectOptionRadio1: 0, statusProjectOptionRadio2: 0, statusProjectOptionRadio3: 0, statusProjectOptionRadio3: 0}
     ];
     return questionsAmounts;

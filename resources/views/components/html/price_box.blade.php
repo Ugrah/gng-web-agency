@@ -4,7 +4,7 @@
     </div>
     <div class="card-body nopadding bg-light">
     <small class="text-muted">{{ trans('front/pages/prices.from')}}</small>
-    <p class="card-text display-4">{{$amount}} <span style="font-size: 0.5em">{{$unity}}</span></p>
+    <p class="card-text display-4">{{number_format($amount, 0, '.', $numberSeparator)}} <span style="font-size: 0.5em">{{$unity}}</span></p>
 
     <ul class="list-group text-md-left mb-3">
         @foreach($options as $option)

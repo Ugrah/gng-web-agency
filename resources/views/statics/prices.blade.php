@@ -27,7 +27,7 @@
                 </ul>
                 <div class="tab-content wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-website" role="tabpanel" aria-labelledby="pills-website-tab">
-                        {{ Html::carousel_prices($prices) }}
+                        {{ Html::carousel_prices($prices, $numberSeparator) }}
                         <p>{{trans('front/pages/prices.n_b')}}</p>
                     </div>
 
@@ -191,9 +191,9 @@
                                         <h4>{{ trans('front/pages/prices.section0.mobile_app.the_cost_is') }}</h4>
                                         <span class="display-4 amount"></span>
                                         
-                                        {!! Form::control('text', $errors, 'name', ['class' => 'form-control rounded', 'placeholder' => trans('front/pages/prices.section0.mobile_app.send_email_placeholder'), 'required'=> 'required']) !!}
+                                        {!! Form::control('text', $errors, 'name', ['class' => 'form-control rounded', 'placeholder' => trans('front/pages/prices.section0.mobile_app.input_name_placeholder'), 'required'=> 'required']) !!}
                                         
-                                        {!! Form::control('email', $errors, 'email', ['class' => 'form-control rounded', 'placeholder' => trans('front/pages/prices.section0.mobile_app.send_email_placeholder'), 'required'=> 'required']) !!}
+                                        {!! Form::control('email', $errors, 'email', ['class' => 'form-control rounded', 'placeholder' => trans('front/pages/prices.section0.mobile_app.input_email_placeholder'), 'required'=> 'required']) !!}
 
                                         {!! Form::control('hidden', $errors, 'amount', ['class' => 'form-control rounded']) !!}
 
