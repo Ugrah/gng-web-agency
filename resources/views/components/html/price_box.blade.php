@@ -6,8 +6,12 @@
     <small class="text-muted">{{ trans('front/pages/prices.from')}}</small>
     <p class="card-text display-4">{{$amount}} <span style="font-size: 0.5em">{{$unity}}</span></p>
 
-    <ul class="list-group mb-3">
+    <ul class="list-group text-md-left mb-3">
         @foreach($options as $option)
+            {!! $option !!}
+        @endforeach
+        <li class="list-group-item text-center text-primary">{{ trans('front/pages/prices.additional_options')}}</li>
+        @foreach($additional_options as $option)
             {!! $option !!}
         @endforeach
     </ul>

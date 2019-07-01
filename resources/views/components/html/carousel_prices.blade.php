@@ -11,6 +11,7 @@
                             $price['title'],
                             $price['amount'][session('country_iso_code')],
                             $price['options'],
+                            $price['additional_options'],
                             $price['unity'][session('country_iso_code')]
                         ) }}
                     @endforeach
@@ -29,6 +30,7 @@
                             $price['title'],
                             $price['amount'][session('country_iso_code')],
                             $price['options'],
+                            $price['additional_options'],
                             $price['unity'][session('country_iso_code')]
                         ) }}
                     @endforeach
@@ -47,6 +49,7 @@
                             $price['title'],
                             $price['amount'][session('country_iso_code')],
                             $price['options'],
+                            $price['additional_options'],
                             $price['unity'][session('country_iso_code')]
                         ) }}
                     @endforeach
@@ -65,6 +68,7 @@
                             $price['title'],
                             $price['amount'][session('country_iso_code')],
                             $price['options'],
+                            $price['additional_options'],
                             $price['unity'][session('country_iso_code')]
                         ) }}
                     @endforeach

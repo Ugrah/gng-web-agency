@@ -3,6 +3,8 @@ return [
 
     'title' => 'Nos Tarifs',
     'from' => 'A partir de',
+    'additional_options' => 'Options Supplémentaires',
+    'n_b' => 'N.B : Les options hébergement, nom de domaine, optimisation SEO n\'ont pas étées affichées dans les listes mais sont bel et bien inclues dans les packs',
 
     /*
     |--------------------------------------------------------------------------

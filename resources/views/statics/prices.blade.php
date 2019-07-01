@@ -28,6 +28,7 @@
                 <div class="tab-content wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-website" role="tabpanel" aria-labelledby="pills-website-tab">
                         {{ Html::carousel_prices($prices) }}
+                        <p>{{trans('front/pages/prices.n_b')}}</p>
                     </div>
 
                     <div class="tab-pane fade" id="pills-mobile_app" role="tabpanel" aria-labelledby="pills-mobile_app-tab">
