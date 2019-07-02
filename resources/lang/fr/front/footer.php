@@ -10,11 +10,10 @@ return [
 
     'title-items' => [
         'unseful' => 'Liens Utiles',
-        'navigational' => 'Navigation
-        ',
+        'navigational' => 'Navigation',
         'office' => 'Bureau',
     ],
     'privacy_policy' => 'Politique de confidentialité',
 
-    'gng-description' => 'L\'agence des experts par excellence des technologies du web et du développement mobile.',
+    'gng-description' => 'L\'agence des technologies du web et du développement mobile accessible à tous.',
 ];

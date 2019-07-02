@@ -9,11 +9,11 @@ return [
     */
 
     'title-items' => [
-        'unseful' => 'Unseful Links',
-        'navigational' => 'Navigational
-        ',
-        'office' => 'Office',
+        'unseful' => 'Liens Utiles',
+        'navigational' => 'Navigation',
+        'office' => 'Bureau',
     ],
+    'privacy_policy' => 'Politique de confidentialité',
 
-    'gng-description' => 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
+    'gng-description' => 'L\'agence des technologies du web et du développement mobile accessible à tous.',
 ];
