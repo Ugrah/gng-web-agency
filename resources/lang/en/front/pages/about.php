@@ -1,7 +1,7 @@
 <?php
 return [
 
-    'title' => 'A propos de :app_name',
+    'title' => 'About :app_name',
 
     /*
     |--------------------------------------------------------------------------
@@ -12,23 +12,23 @@ return [
     'section0' => [
         'title' => 'Section title',
         'do' => [
-            'name' => 'Ce que nous faisons',
-            'title' => 'A Propos de Nous.',
-            'content' => '<p>Fondée tout récemment GnG est une agence digitale spécialisée dans le développement de sites internet modernes, ergonomiques et adaptés à tout type d\'appareil, mais c\'est aussi une agence de développement d\'applcations mobiles innovantes, performantes et sur-mesure.</p>
-            <p>Une équipe de développeurs, designers et chefs de projet, tous experts, passionnés par notre métier et fiers des produits mobiles et web réalisés pour nos partenaires.</p>
-            <p>Notre agence accompagne les entreprises, les professionnels, mais aussi les particuliers à mettre en place une stratégie digitale autour d’un site web ou d\'une application mobile.</p>',
+            'name' => 'What we do',
+            'title' => 'About us.',
+            'content' => '<p>Founded recently GnG is a digital agency specialized in the development of modern, ergonomic websites adapted to all types of devices, but it is also an agency for the development of mobile applications that are innovative, efficient and tailor-made.</p>
+            <p>A team of developers, designers and project managers, all experts, passionate about our business and proud of mobile and web products made for our partners.</p>
+            <p>Our agency supports companies, professionals, but also individuals to set up a digital strategy around a website or a mobile application.</p>',
         ],
         'mission' => [
-            'name' => 'Notre mission',
-            'title' => 'Pourquoi choisir :app_name ?',
-            'content' => '<p>Tout au long de son cycle de vie, votre entreprise, votre commerce requiert que vous y consacrez du temps, et même beaucoup de temps. Chez <span class="text-primary">:app_name</span> nous le savons.</p>
-<p>C\'est pour cette raison que confier à des professionnelles le volé digital de votre entreprise vous permettra de mieux vous focaliser sur ce qui vous correspond. </p>
-<p>Avec nos conseils, notre expertise, gardez le contrôle et rendez réelles vos idées.</p>',
+            'name' => 'Our mission',
+            'title' => 'Why choose :app_name?',
+            'content' => '<p>Throughout its life cycle, your business, your business requires that you spend time, and even a lot of time. At <span class="text-primary">:app_name</span> we know it</p>
+<p>For this reason, entrusting the digital steal of your business to professionals will allow you to better focus on what suits you.</p>
+<p>With our advice, our expertise, keep control and make your ideas real.</p>',
         ],
         'goal' => [
-            'name' => 'Notre vison',
-            'title' => 'Ce que nous vous apportons.',
-            'content' => '<p>Dans un monde de plus en plus tournée vers les nouvelles technologies de l\'information, vous n\'êtes pas sans savoir que le web est devenu incontournable, et ce, quelle que soit votre section.</p><p>Il est donc impératif que votre activité possède une vitrine web et éventuellement une application mobile, si votre secteur d\'activé le permet et le mérite, afin de vous garantir une bonne visibilité afin de fidéliser vos clients, mais aussi d\'attirer de nouveau prospects.</p>',
+            'name' => 'Our mink',
+            'title' => 'What we bring you.',
+            'content' => '<p>In a world increasingly focused on new information technologies, you know that the web has become unavoidable, and this, whatever your section.</p><p>It is therefore imperative that your activity has a web showcase and possibly a mobile application, if your sector of activates allows and deserves, to ensure good visibility to retain your customers, but also to attract new prospects.</p>',
         ]
     ],
 ];

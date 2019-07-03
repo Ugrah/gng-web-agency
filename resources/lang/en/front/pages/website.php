@@ -1,7 +1,7 @@
 <?php
 return [
 
-    'title' => 'Création de site internet',
+    'title' => 'Creation of a website',
 
     /*
     |--------------------------------------------------------------------------
@@ -10,65 +10,65 @@ return [
     |
     */
     'section0' => [
-        'title' => 'Une palette de possibilités',
-        'description' => '<p>Vous désirez avoir un site qui correspond à votre image ? Vous aimeriez savoir quelle solution conviendrait le mieux à votre aspiration ?</p><p>La création ou la refonte d\'un Site internet est plus ou moins complexe. C\'est pourquoi notre agence vous propose une multitude de possibilités vous permettant d\'obtenir la meilleure des solutions pour vous. La solution adaptée à vos besoins, respectant votre budget et la plus rapide à mettre en place.</p>',
+        'title' => 'A range of possibilities',
+        'description' => '<p>You want to have a site that matches your image? Would you like to know which solution would best suit your aspiration?</p><p>The creation or redesign of a website is more or less complex. That is why our agency offers a multitude of possibilities allowing you to obtain the best solutions for you. The solution adapted to your needs, respecting your budget and the fastest to set up.</p>',
         'showcase' => [
-            'name' => 'Site Vitrine',
-            'title' => 'Présentez votre entreprise, votre activité.',
-            'content' => '<p>Généralement, lorsque vous décidez d\'attaquer le web, vous voudriez avant tout présenter votre activité. Un site vitrine est parfait pour présenter votre entreprise. Avec un bon référencement naturel, vous pourriez obtenir de nouveaux clients et leur permettre de découvrir votre entreprise sous toutes ses formes.</p><p>Rapide à mettre en place, vous serai efficacement présenté sur le web.</p>',
-            'img_alt' => 'Site vitrine illustration',
+            'name' => 'Showcase site',
+            'title' => 'Present your business, your business.',
+            'content' => '<p>Generally, when you decide to attack the web, you would first like to present your activity. A showcase site is perfect for presenting your business. With a good SEO, you could get new customers and allow them to discover your business in all its forms.</p><p>Quick to set up, you will be effectively presented on the web.</p>',
+            'img_alt' => 'Website showcase illustration',
 
         ],
         'e_commerce' => [
             'name' => 'E-Commerce',
-            'title' => 'Vendez vos produits via internet en toute sécurité.',
-            'content' => '<p>Vous avez un commerce ? Vous souhaiteriez accroître vos ventes ?</p><p>Voici une façon efficace de présenter et de vendre vos produits à travers le net.</p><p>Mise en place d\'un système de paiement en ligne sécurisé, vous pouvez gérer vos ventes en toute sérénité.</p>',
+            'title' => 'Sell ​​your products via the internet safely.',
+            'content' => '<p>Do you have a business? Would you like to increase your sales?</p><p>Here is an effective way to present and sell your products across the net.</p><p>Set up a secure online payment system, you can manage your sales with confidence.</p>',
             'img_alt' => 'E-Commerce illustration',
 
         ],
         'portfolio' => [
             'name' => 'Porfolio',
-            'title' => 'Faites connaître vos réalisations.',
-            'content' => '<p>Afficher vos réalisations artistique ou professionnelles relatives à votre métier, et faites valoir votre expérience selon votre domaine.</p><p>Voici le format adéquat pour montrer votre  savoir-faire.</p>',
+            'title' => 'Make your achievements known.',
+            'content' => '<p>Show your artistic or professional achievements related to your job, and showcase your experience according to your field.</p><p>Here is the appropriate format to show your know-how.</p>',
             'img_alt' => 'Portfolio illustration',
 
         ],
         'catalog' => [
-            'name' => 'Catalogue',
-            'title' => 'Présentez votre gamme de produits.',
-            'content' => '<p>Vous pouvez présenter vos produits sans forcément vouloir proposer à vos clients en ligne. Et donc voici le format qui respecte ce choix.</p><p>Un Catalogue ergonomique qui présente fidèlement vos produits.</p>',
+            'name' => 'Catalog',
+            'title' => 'Present your range of products.',
+            'content' => '<p>You can present your products without necessarily wanting to offer your customers online. And so here is the format that respects this choice.</p><p>An ergonomic catalog that faithfully presents your products.</p>',
             'img_alt' => 'Catalogue illustration',
 
         ],
     ],
 
     'section1' => [
-        'title' => 'Application web',
-        'description' => 'Il existe des sites plus avancés qui méritent un traitement particulier. Ces derniers ne peuvent être rangés dans les catégories citées plus haut. Nous en parlons ici.',
-        'content' => '<p class="text-light">Si vous voulez avoir un système de gestion, ou effectuer des manipulation avancées via une application internet ou internet, vous avez ici le parfait allié.</p><p class="text-light">Ce type de site internet vous permettra d\'obtenir des fonctionnalités tout aussi complexes que variées, accessibles et disponibles sur tout type de support (Ordinateur, téléphone et tablette).</p>',
+        'title' => 'Web application',
+        'description' => 'There are more advanced sites that deserve special treatment. These can not be placed in the categories mentioned above. We talk about it here.',
+        'content' => '<p class="text-light">If you want to have a management system, or perform advanced manipulation via an internet or internet application, here you have the perfect ally.</p><p class="text-light">This type of website will allow you to obtain features as complex as varied, accessible and available on any type of support (computer, phone and tablet).</p>',
         'img_alt' => 'Web application illustration',
     ],
 
     'section2' => [
-        'title' => 'Site modernes et supports multiples',
-        'description' => 'Des sites web optimisés pour téléphone mobile et tablette. Votre site web développé avec les outils les avancés.',
-        'content1' => '<h5>HTML5 &amp; CSS3</h5><p>Utilisation d\'un système de mise en pages récent et efficace. Validation W3C.</p><h5>RESPONSIVE DESIGN</h5><p>Aujourd\'hui la navigation mobile et tablette est très développée. Optez pour un design qui s\'adapte dynamiquement aux écrans de vos utilisateurs.</p><h5>ANIMATIONS ET EFFETS</h5><p>Rajoutez des animations à vos contenus pour offrir un plaisir de navigation et d\'utilisation.</p>',
-        'content2' => '<h5>GOOGLE SPEED TEST</h5><p>Optimisez vos temps de chargement afin de vous assurer d\'être classé par les moteurs de recherche.</p><h5>CMS WORDPRESS</h5><p>Gardez le contrôle de votre site avec un CMS simple à maintenir et à mettre à jour.</p><h5>OPTIMISATION SEO</h5><p>L\'un des points les plus important du référencement. Positionnez-vous en top des résultats de recherche Google.</p>',
-        'img_alt' => 'Site web design - construction',
+        'title' => 'Modern site and multiple media',
+        'description' => 'Optimized websites for mobile phone and tablet. Your website developed with advanced tools.',
+        'content1' => '<h5>HTML5 &amp; CSS3</h5><p>Use of a recent and efficient layout system. W3C validation.</p><h5>RESPONSIVE DESIGN</h5><p>Today mobile navigation and tablet is very developed. Choose a design that dynamically adapts to your users\'s screens.</p><h5>ANIMATIONS AND EFFECTS</h5><p>Add animations to your content to offer a pleasure of navigation and use.</p>',
+        'content2' => '<h5>GOOGLE SPEED TEST</h5><p>Optimize your loading times to ensure you are ranked by search engines.</p><h5>CMS WORDPRESS</h5><p>Keep control of your site with a simple CMS to maintain and update.</p><h5>SEO OPTIMIZATION</h5><p>One of the most important points of SEO. Position yourself on top of Google search results.</p>',
+        'img_alt' => 'Website design - construction',
     ],
 
     'section3' => [
-        'title' => 'Choisir l\'outil adapté à ses besoins',
-        'description' => 'AAvec tous les outils proposés vous avez peut-être l\'embarras du choix. Ne vous inquiétez pas nous saurons vous guider à choisir la technologie qui vous conviendrait le mieux.',
-        'content' => '<p class="text-light">Si vous désirez modifier régulièrement les contenus de vos pages, vos menus, nous vous proposerons l\'utilisation d\'un CMS tel que Wordpress. Un système de site web modulaire, personnalisable a vos souhaits. Ces avantages les plus significatifs sont sa facilité d\'utilisation et de maintien.</p><p class="text-light">Cependant, l\'ajout de fonctionnalité beaucoup plus avancé reste plus difficile à mettre en place.</p><p class="text-light">Mais rassurez à chaque besoin une solution adaptée.</p><p class="text-light">Ne soyez pas freiné par votre budget. Pour réduit vos coûts et pour répondre à votre demande nous vous proposerons la solution qui lie efficacement performance, qualité et prix.</p>',
-        'img_alt' => 'Ordinateur et langage de programmations multiple illustration',
+        'title' => 'Choose the right tool for your needs',
+        'description' => 'With all the tools on offer, you may be spoiled for choice. Do not worry we will guide you to choose the technology that suits you best.',
+        'content' => '<p class="text-light">If you want to regularly modify the contents of your pages, your menus, we will propose you the use of a CMS such as Wordpress. A modular, customizable website system to your wishes. These most significant advantages are its ease of use and maintenance.</p><p class="text-light">However, adding much more advanced functionality remains more difficult to implement.</p><p class="text-light">But reassure every need a suitable solution.</p><p class="text-light">Do not be hampered by your budget. To reduce your costs and to answer your request, we will propose the solution that effectively links performance, quality and price.</p>',
+        'img_alt' => 'Computer and multiple programming language illustration',
     ],
 
     'section4' => [
-        'title' => 'Combien coûte un site internet ?',
-        'description' => 'Vous vous demandez combien coûte un site internet ?',
-        'content' => '<p>C\'est la question qui revient le plus souvent. Toutefois, c\'est une question complexe à laquelle on ne pourrait pas donner de réponse unique.</p><p>En effet le coût d\'un site internet dépend de la puissance, de la puissance et des fonctionnalités de ce site.</p><p>Afin de vous donner une idée du budget nécessaire à la création de votre site internet vous pouvez consulter la page de tarifs, rédigée pour répondre à la question.</p>',
-        'show_price' => 'Consulter nos tarifs',
+        'title' => 'How much does a website cost?',
+        'description' => 'Wondering how much does a website cost?',
+        'content' => '<p>This is the question that comes up most often. However, it is a complex question that can not be answered in a single way.</p><p>Indeed the cost of a website depends on the power, power and functionality of this site.</p><p>To give you an idea of ​​the budget needed to create your website you can consult the tariff page, written to answer the question.</p>',
+        'show_price' => 'See our rates',
         'img_alt' => 'Website cost illustration',
     ],
 ];

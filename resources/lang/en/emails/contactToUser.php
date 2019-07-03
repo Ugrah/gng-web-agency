@@ -1,8 +1,8 @@
 <?php
 return [
 
-    'hello' => 'Bonjour',
-    'content' => 'Nous vous remercions de nous avoir contacté. Nous répondrons à votre message le plus tôt possible.',
-    'visite_our_site' => 'Visitez notre site internet.',
-    'link' => 'Cliquez ici',
+    'hello' => 'Hello',
+    'content' => 'We thank you for contacting us. We will reply to your message as soon as possible.',
+    'visite_our_site' => 'Visit our website.',
+    'link' => 'Click here',
 ];

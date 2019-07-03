@@ -1,6 +1,6 @@
 <?php
 return [
 
-    'content' => '<p>Un utilisateur vient de réaliser un devis via votre simulateur de coût d\'une application mobile sur votre site.</p><p>Le prix de son projet est de <span class="bold">:amount :devise</span> euros H.T. (+ ou – 20%).</p><br><p>Consultez votre espace administrateur.</p><br>',
-    'button' => 'Cliquez-ici',
+    'content' => '<p>A user has just made a quote through your mobile application cost simulator on your site.</p> <p>The price of his project is <span class="bold">:amount :devise </span> euros HT (+ or - 20%).</p><br><p> Check your admin area. </p><br>',
+    'button' => 'Click here',
 ];

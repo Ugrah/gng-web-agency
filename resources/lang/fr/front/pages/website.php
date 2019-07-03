@@ -59,7 +59,7 @@ return [
 
     'section3' => [
         'title' => 'Choisir l\'outil adapté à ses besoins',
-        'description' => 'AAvec tous les outils proposés vous avez peut-être l\'embarras du choix. Ne vous inquiétez pas nous saurons vous guider à choisir la technologie qui vous conviendrait le mieux.',
+        'description' => 'Avec tous les outils proposés vous avez peut-être l\'embarras du choix. Ne vous inquiétez pas nous saurons vous guider à choisir la technologie qui vous conviendrait le mieux.',
         'content' => '<p class="text-light">Si vous désirez modifier régulièrement les contenus de vos pages, vos menus, nous vous proposerons l\'utilisation d\'un CMS tel que Wordpress. Un système de site web modulaire, personnalisable a vos souhaits. Ces avantages les plus significatifs sont sa facilité d\'utilisation et de maintien.</p><p class="text-light">Cependant, l\'ajout de fonctionnalité beaucoup plus avancé reste plus difficile à mettre en place.</p><p class="text-light">Mais rassurez à chaque besoin une solution adaptée.</p><p class="text-light">Ne soyez pas freiné par votre budget. Pour réduit vos coûts et pour répondre à votre demande nous vous proposerons la solution qui lie efficacement performance, qualité et prix.</p>',
         'img_alt' => 'Ordinateur et langage de programmations multiple illustration',
     ],

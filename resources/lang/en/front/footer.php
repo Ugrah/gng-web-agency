@@ -9,11 +9,11 @@ return [
     */
 
     'title-items' => [
-        'unseful' => 'Liens Utiles',
+        'unseful' => 'Useful links',
         'navigational' => 'Navigation',
-        'office' => 'Bureau',
+        'office' => 'Office',
     ],
-    'privacy_policy' => 'Politique de confidentialité',
+    'privacy_policy' => 'privacy policy',
 
-    'gng-description' => 'L\'agence des technologies du web et du développement mobile accessible à tous.',
+    'gng-description' => 'The agency of web technologies and mobile development accessible to all.',
 ];

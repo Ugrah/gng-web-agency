@@ -1,7 +1,7 @@
 <?php
 return [
 
-    'title' => 'Création et développement d\'Application Mobile',
+    'title' => 'Mobile Application Creation and Development',
 
     /*
     |--------------------------------------------------------------------------
@@ -10,48 +10,48 @@ return [
     |
     */
     'section0' => [
-        'title' => 'Créez votre propre Application Mobile',
-        'description' => 'N\'ayez pas peur de penser, d\'imaginer, la seule limite c\'est vous. Que ce soit pour le fun, pour l\'education, ou pour votre business, nous réalisons vos projets mobiles pour vous.',
+        'title' => 'Create your own Mobile Application',
+        'description' => 'Do not be afraid to think, to imagine, the only limit is you. Whether for fun, for education, or for your business, we realize your mobile projects for you.',
         'assistance' => [
-            'name' => 'Assistance Globale',
-            'title' => 'Avancez sereinement',
-            'content' => 'Tous nos partenaires ne sont pas forcément des experts dans le domaine digital, c\'est pourquoi ils nous choisissent. Nous vous accompagnons et nous vous conseillons dans toutes les étapes du processus de création de votre solution digitale.',
-            'img_alt' => 'Assistance illustration',
+            'name' => 'Global Assistance',
+            'title' => 'Advance serenely',
+            'content' => 'All our partners are not necessarily experts in the digital domain, that\'s why they choose us. We support and advise you in all stages of the process of creating your digital solution.',
+            'img_alt' => 'Illustration assistance',
         ],
         'native' => [
-            'name' => 'Application Native',
-            'title' => 'Développement Natif - Multisupport',
-            'content' => 'Il existe aujourd\'hui de nombreux concepteur d\'appareil mobile avec parfois des OS différents. :app_name vous propose des applications natives et déployable sur iOS et Android.',
+            'name' => 'Native Application',
+            'title' => 'Native Development - Multisupport',
+            'content' => 'Today there are many mobile device designer with sometimes different OS. :app_name offers you native and deployable apps on iOS and Android.',
             'img_alt' => 'Mobile app illustration',
         ],
         'innovation' => [
             'name' => 'Innovation',
-            'title' => 'Prolongez la vie de vos applications',
-            'content' => 'Parce que les nouvelles technologies évoluent très vite. Dans un souci de renouvellement, qui vous assurera forcement un cycle de vie beaucoup plus long pour vos solutions digitales, nous vous apporterons constamment les dernières solutions et innovations qui se font dans ce domaine.',
-            'img_alt' => 'Innovation illustration',
+            'title' => 'Extend the life of your applications',
+            'content' => 'Because new technologies evolve very fast. In the interest of renewal, which will necessarily ensure a much longer life cycle for your digital solutions, we will constantly bring you the latest solutions and innovations that are made in this area.',
+            'img_alt' => 'Illustration innovation',
 
         ],
     ],
 
     'section1' => [
-        'title' => 'Développer des Applications Mobiles',
-        'description' => 'Ai-je besoin d\'une application mobile pour mon entreprise ? Si vous ne vous êtes pas encore posé la question, c\'est probablement parce que vous ne connaissez pas l\'impacte que cela peut avoir sur votre entreprise.',
-        'content' => '<p class="text-light">Il n\'est pas obligatoire que votre activité ou votre entreprise possède sa propre application mobile.</p><p class="text-light">Cependant, sachez que posséder une application mobile dédiée à son business peut être une véritable valeur ajoutée pour développer vos ventes, partager des informations importantes et surtout être connecté à vos utilisateurs et vos clients.</p>',
+        'title' => 'Develop Mobile Applications',
+        'description' => 'Do I need a mobile app for my business? If you have not asked yourself this question, it\'s probably because you do not know the impact this can have on your business.',
+        'content' => '<p class="text-light">It is not required that your business or business has its own mobile application.</p><p class="text-light">However, be aware that having a mobile application dedicated to your business can be a real added value to develop your sales, share important information and especially be connected to your users and customers.</p>',
         'img_alt' => 'Multi UI Design App Illustration',
     ],
 
     'section2' => [
-        'title' => 'Démarquez votre Application',
+        'title' => 'Stand out your Application',
         'description' => '',
-        'content1' => '<h5>DESIGN &amp; ERGONOMIE</h5><p>Des Design modernes et attractifs pour vos applications. Une fluidité d\'utilisation.</p><h5>PERFORMANCE</h5><p>Des applications performantes, des fonctionnalités utiles et simple d\'utilisation.</p>',
-        'content2' => '<h5>CONSEILS</h5><p>Conseils et suivi pour toujours faire évoluer et améliorer vos applications.</p><h5>MAINTENANCE</h5><p>Un service de support pour maintenir vos applications.</p>',
-        'img_alt' => 'Maintenance mobile app illustration',
+        'content1' => '<h5>DESIGN & amp; ERGONOMICS</h5><p>Modern and attractive designs for your applications. A fluidity of use.</p><h5>PERFORMANCE</h5><p>Powerful applications, useful features and easy to use.</p>',
+        'content2' => '<h5>ADVICE</h5><p>Advice and follow-up to always evolve and improve your applications.</p><h5>MAINTENANCE</h5><p>A support service to maintain your applications.</p>',
+        'img_alt' => 'Mobile maintenance app illustration',
     ],
 
     'section3' => [
-        'title' => 'Combien coûte une Application Mobile ?',
-        'description' => 'Il est tout à fait normale de s\'informer sur le coût potentiel de son application avant de se lancer. Nous vous répondons.',
-        'content' => '<p>Le prix d\'une application mobile n\'est ni une valeur fixe, ni statique.</p><p>En effet, le prix de votre application dépend de plusieurs facteurs. Notamment, quelles fonctionnalités vous souhaitez intégrer à votre application ? Pour quel design vous optez ? Souhaitez-vous que vos utilisateurs soient authentifiés pour utiliser votre application ? Sur quel OS voulez-vous publier votre application ? Toute une série de questions qui déterminera le coût de votre application.</p><p>Pour vous simplifier la tache nous vous avons préparez un simulateur afin de vous donner une estimation du coût de votre application.</p>',
-        'estimate_link' => 'Estimez le prix de votre application'
+        'title' => 'How much does a Mobile Application cost?',
+        'description' => 'It is perfectly normal to inquire about the potential cost of its application before embarking on it. We answer you.',
+        'content' => '<p>The price of a mobile app is neither fixed nor static.</p><p>Indeed, the price of your application depends on several factors. In particular, what features do you want to integrate into your application? Which design do you choose? Do you want your users to be authenticated to use your app? On which OS do you want to publish your application? A whole series of questions that will determine the cost of your application.</p><p>To simplify the task we have prepared a simulator to give you an estimate of the cost of your application.</p>',
+        'estimate_link' => 'Estimate the price of your application'
     ],
 ];

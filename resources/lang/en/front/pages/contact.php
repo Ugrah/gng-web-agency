@@ -10,22 +10,22 @@ return [
     |
     */
     'section0' => [
-        'title' => 'Laissez-nous un message',
-        'adress' => 'Adresse :',
-        'phone' => 'Téléphone :',
-        'email' => 'Email :',
-        'website' => 'Site web :',
+        'title' => 'Leave us a message',
+        'adress' => 'Address:',
+        'phone' => 'Phone:',
+        'email' => 'E-mail:',
+        'website' => 'Website:',
     ],
 
     /* Form */
     'form' => [
         'placeholder' => [
-            'name' => 'Votre nom*',
-            'email' => 'Votre email*',
-            'number_phone' => 'Votre numéro de téléphone',
-            'subject' => 'Sujet de votre message*',
-            'message' => 'Votre message*',
+            'name' => 'Your name*',
+            'email' => 'Your email*',
+            'number_phone' => 'Your phone number',
+            'subject' => 'Subject of your message*',
+            'message' => 'Your message*',
         ],
-        'send_button' => 'Envoyer !',
+        'send_button' => 'To send !',
     ],
 ];

@@ -13,7 +13,7 @@ return [
     |
     */
     'section0' => [
-        'title' => 'Ce que GnG vous propose',
+        'title' => 'Ce que GnG Dev vous propose',
         'description' => 'Consultez notre grille tarifaire pour la création de site web ou lancez une estimation de votre application mobile.',
         'website' => [
             'name' => 'Site Internet',

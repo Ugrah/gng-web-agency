@@ -2,6 +2,6 @@
 return [
 
     'notif' => [
-    	'post_contact' => 'Merci. Votre message a été transmis à l\'administrateur du site. Vous recevrez une réponse rapidement.',
+    	'post_contact' => 'Thank you. Your message has been sent to the site administrator. You will receive an answer quickly.',
     ],
 ];

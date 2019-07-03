@@ -1,6 +1,6 @@
 <?php
 return [
 
-    'title' => 'Cette page n\'existe pas',
-    'content' => 'La page que vous recherchez semble introuvable. Sans détour, il n\'est point de voyage... Retournez à la page d\'accueil.',
+    'title' => 'This page does not exist',
+    'content' => 'The page you are looking for can not be found Without a hitch, there is no trip ... Return to the home page.',
 ];

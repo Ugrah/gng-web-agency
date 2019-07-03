@@ -9,12 +9,12 @@ return [
     */
 
     'menu-items' => [
-        'home' => 'Accueil',
-        'about' => 'A Propos',
-        'website' => 'Site Internet',
-        'mobile_app' => 'Application Mobile',
-        'prices' => 'Tarifs',
-        'realisations' => 'Nos réalisations',
+        'home' => 'Home',
+        'about' => 'About',
+        'website' => 'Website',
+        'mobile_app' => 'Mobile app',
+        'prices' => 'Prices',
+        'realisations' => 'Our achievements',
         'contact' => 'Contact',
     ]
 ];

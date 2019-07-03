@@ -10,17 +10,17 @@ return [
     */
     'carousel'  => [
         'item1' => [
-            'title' => 'Conception de Site Internet',
-            'description' => 'Création de site internet moderne, avec une expérience utilisateur faite pour vous. Disponible sur tout type de support.',
-            'button1' => 'Nous contacter',
-            'button2' => 'En savoir plus',
-            'img-alt' => 'Différents appareils site internet'
+            'title' => 'Website Design',
+            'description' => 'Modern website creation, with a user experience made for you. Available on any type of support.',
+            'button1' => 'Contact us',
+            'button2' => 'Learn more',
+            'img-alt' => 'Different devices website'
         ],
         'item2' => [
-            'title' => 'Création d\'application Mobile',
-            'description' => 'Passez le cap et rendez votre projet mobile réel. Créez votre application et allez à la conquête des téléphones mobiles et tablettes.',
-            'button1' => 'Nous contacter',
-            'button2' => 'En savoir plus',
+            'title' => 'Mobile Application Creation',
+            'description' => 'Pass the course and make your mobile project real. Create your app and go on to conquer mobile phones and tablets.',
+            'button1' => 'Contact us',
+            'button2' => 'Learn more',
             'img-alt' => ''
         ],
     ],
@@ -33,67 +33,67 @@ return [
     |
     */
     'section0' => [
-        'title' => 'Agence web, mobile et Marketing Digital',
-        'description' => 'GnG vous accompagne dans la création de sites internet modernes et personnalisable. Notre agence web prend la peine d\'étudier votre projet afin de vous proposer les solutions adaptées à vos besoins.',
+        'title' => 'Web Agency, Mobile and Digital Marketing',
+        'description' => 'GnG supports you in the creation of modern and customizable websites. Our web agency takes the trouble to study your project in order to propose the solutions adapted to your needs.',
         'item0' => [
-            'title' => 'Création de site internet',
-            'content' => 'Site internet moderne et responsive, avec des thèmes personnalisables.',
+            'title' => 'Creation of a website',
+            'content' => 'Modern and responsive website, with customizable themes.',
         ],
         'item1' => [
-            'title' => 'Création de site e-commerce',
-            'content' => 'Présenter vos produits à travers une interface simple ergonomique, pour une expérience utilisateur optimisée.',
+            'title' => 'E-commerce website creation',
+            'content' => 'Present your products through a simple ergonomic interface, for an optimized user experience.',
         ],
         'item2' => [
-            'title' => 'Référencement Naturel - SEO',
-            'content' => 'Optimiser votre référencement SEO afin de mieux vous position dans les résultats de recherches.',
+            'title' => 'Natural reference - SEO',
+            'content' => 'Optimize your SEO to better position you in the search results.',
         ],
         'item3' => [
-            'title' => 'Création d\'Application Mobile',
-            'content' => 'Réaliser vos projet d\'application mobile avec des interfaces moderne et une expérience utilisateur exceptionnelle.',
+            'title' => 'Mobile Application Creation',
+            'content' => 'Realize your mobile application projects with modern interfaces and an exceptional user experience.',
         ],
         'item4' => [
-            'title' => 'Rédaction de contenu',
-            'content' => 'Confier nous la rédaction de vos contenus : campagne commerciale, site internet, réseau social.',
+            'title' => 'Content writing',
+            'content' => 'Entrust us the writing of your contents: commercial campaign, website, social network.',
         ],
         'item5' => [
             'title' => 'Digital Marketing',
-            'content' => 'Booster votre image sur le réseau internet, mais aussi à travers les réseaux sociaux les plus populaires.',
+            'content' => 'Boost your image on the internet, but also through the most popular social networks.',
         ],
     ],
 
     'section1' => [
         'title' => ':app_name',
-        'content' => '<p class="text-light">GnG Dev regroupe tous les métiers et services des nouvelles technologies.</p><p class="text-light">Une équipe de jeunes talentueux, passionnés, créatifs, mais aussi dévoués, qui sont prêts à vous apporter tout leur savoir faire dans toutes vos perspectives de projets digitaux.</p><p class="text-light">Chez GnG, tout comme la qualité, l’écoute du client reste un impératif. C’est pourquoi nous prenons la peine de restituer dans les détails les plus fidèles, vos aspirations tout en gardant une cohérence dans la création et la réalisation de vos différents produits.</p><p class="text-light">Depuis quelques années, le monde digital tourne autour des mêmes principes de production, c’es pourquoi notre équipe vous présente et vous propose une palette de choix respectant les normes actuelles, ainsi nous vous garantissons une expérience utilisateur ergonomique, fluide et performante pour maintenir vos fidèles partenaires, mais également pour la conquête de nouveau marché.</p>',
+        'content' => '<p class="text-light">GnG Dev brings together all the trades and services of new technologies.</p><p class="text-light">A team of talented young people, passionate, creative, but also dedicated, who are ready to bring you all their know-how in all your perspectives of digital projects.</p><p class="text-light">At GnG, just like quality, listening to the customer is a must. That is why we take the trouble to restore in the most faithful details, your aspirations while keeping a coherence in the creation and the realization of your different products.</p><p class="text-light">In recent years, the digital world revolves around the same principles of production, which is why our team presents you and offers you a range of choices respecting the current standards, so we guarantee an ergonomic user experience, smooth and efficient to maintain your loyal partners, but also for the conquest of new markets.</p>',
     ],
 
     'section2' => [
-        'title' => 'Comment ça marche ?',
-        'description' => 'Prenez connaissance de notre méthode de travail pour la réalisation de votre projet web ou mobile.',
-        'item0' => ['content' => 'Ecoute de votre besoin'],
-        'item1' => ['content' => 'Vous fournissez votre contenu. (Textes, images etc. ...)'],
-        'item2' => ['content' => 'Devis estimatif'],
-        'item3' => ['content' => 'Affinage selon votre budget et conseils'],
-        'item4' => ['content' => 'Devis détaillé'],
-        'item5' => ['content' => 'Validation du devis'],
-        'item6' => ['content' => 'Proposition graphique'],
-        'item7' => ['content' => 'Validation de la charte graphique'],
-        'item8' => ['content' => 'Phase de développement du projet'],
-        'item9' => ['content' => 'Intégration des contenus'],
+        'title' => 'How it works ?',
+        'description' => 'Get acquainted with our working method for the realization of your web or mobile project.',
+        'item0' => ['content' => 'Listen to your need'],
+        'item1' => ['content' => 'You provide your content. (Texts, images etc. ...)'],
+        'item2' => ['content' => 'Estimate'],
+        'item3' => ['content' => 'Refining according to your budget and advice'],
+        'item4' => ['content' => 'Detailed estimate'],
+        'item5' => ['content' => 'Validation of the quote'],
+        'item6' => ['content' => 'Graphic proposal'],
+        'item7' => ['content' => 'Validation of the graphic charter'],
+        'item8' => ['content' => 'Project development phase'],
+        'item9' => ['content' => 'Content integration'],
         'item10' => ['content' => 'Validations'],
-        'item11' => ['content' => 'Publication du projet'],
+        'item11' => ['content' => 'Publication of the project'],
     ],
 
     'section3' => [
-        'title' => 'Notre bilan',
-        'customers' => 'Clients',
-        'projects' => 'Projets',
+        'title' => 'Our balance sheet',
+        'customers' => 'Customers',
+        'projects' => 'Projects',
         'satisfaction' => 'Satisfaction',
-        'experience' => 'Années d\'expérience',
+        'experience' => 'Years of experience',
     ],
 
     'section4' => [
-        'title' => 'Prêt à monter en puissance ?',
-        'description' => 'Confiez-nous votre projet, nous vous rendrons un résultat exceptionnel.',
-        'link' => 'Contactez-nous',
+        'title' => 'Ready to ramp up?',
+        'description' => 'Entrust us your project, we will make you an exceptional result.',
+        'link' => 'Contact Us',
     ],
 ];
