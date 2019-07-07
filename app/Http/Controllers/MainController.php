@@ -7,6 +7,7 @@ use App\Http\Requests\ContactRequest;
 use App\Jobs\ChangeLocale;
 use App\Repositories\EstimatedPriceRepository;
 use SEO;
+use App\Traits\SeoTrait;
 use App\Jobs\SendContactToUserEmail;
 use App\Jobs\SendContactToAdminEmail;
 use App\Jobs\SendEstimationEmailToUser;
@@ -16,7 +17,10 @@ use Validator;
 
 class MainController extends Controller
 {
+    use SeoTrait;
+
     const TRANS_PATH = 'back/controllers/mainController.';
+    const SEO_TITLE_PATH = 'back/seo/pageTitle.';
 
     protected $estimatedPriceRepository;
 
@@ -45,30 +49,25 @@ class MainController extends Controller
 
     public function index()
     {
-        //SEO::setTitle('Home Page');
-        //SEO::setDescription('This is my page description');
-        //SEO::opengraph()->setUrl($request->fullUrl());
-        //SEO::setCanonical($request->fullUrl());
-        //SEO::opengraph()->addProperty('type', 'articles');
-        SEO::opengraph()->addProperty('locale', app()->getLocale());
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'home'));
         return view('statics.index');
     }
 
     public function about()
     {
-        SEO::opengraph()->addProperty('locale', app()->getLocale());
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'about'));
         return view('statics.about');
     }
 
     public function website()
     {
-        SEO::opengraph()->addProperty('locale', app()->getLocale());
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'website'));
         return view('statics.website');
     }
 
     public function mobileApp()
     {
-        SEO::opengraph()->addProperty('locale', app()->getLocale());
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'mobile_app'));
         return view('statics.mobileApp');
     }
 
@@ -77,7 +76,8 @@ class MainController extends Controller
         $prices = config('pricing.'.app()->getLocale().'.prices');
         $numberSeparator = (app()->getLocale() == 'fr') ? ' ' : ',';
 
-        SEO::opengraph()->addProperty('locale', app()->getLocale());
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'prices'));
+        $this->addKeywords(config('seoapp.'.app()->getLocale().'.keywords.prices'));
         return view('statics.prices', compact('prices', 'numberSeparator'));
     }
 
@@ -101,19 +101,13 @@ class MainController extends Controller
 
     public function realisations()
     {
-        SEO::opengraph()->addProperty('locale', app()->getLocale());
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'realisations'));
         return view('statics.realisations');
     }
 
     public function getContact()
     {
-        //SEO::setTitle('Home Page');
-        //SEO::setDescription('This is my page description');
-        //SEO::opengraph()->setUrl($request->fullUrl());
-        //SEO::setCanonical($request->fullUrl());
-        //SEO::opengraph()->addProperty('type', 'articles');
-        SEO::opengraph()->addProperty('locale', app()->getLocale());
-
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'contact'));        
         return view('statics.contact');
     }
 
@@ -122,18 +116,13 @@ class MainController extends Controller
         SendContactToUserEmail::dispatchNow($request->all());
         SendContactToAdminEmail::dispatchNow($request->all());
 
-        //SEO::setTitle('Home Page');
-        //SEO::setDescription('This is my page description');
-        //SEO::opengraph()->setUrl($request->fullUrl());
-        //SEO::setCanonical($request->fullUrl());
-        //SEO::opengraph()->addProperty('type', 'articles');
-        SEO::opengraph()->addProperty('locale', app()->getLocale());
-
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'contact'));        
         return view('statics.contact')->withOk(trans(self::TRANS_PATH.'notif.post_contact'));
     }
 
     public function privacyPolicy()
     {
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'privacy_policy'));        
         return view('statics.privacyPolicy');
     }
 
@@ -159,7 +148,8 @@ class MainController extends Controller
         // return view('emails.contactToAdmin', compact('name', 'email', 'phoneNumber', 'subject', 'content'));
 
         $arrayTest = ['attr_a' => 'value', 'attr_2' => 'value'];
-        $arr_ip = geoip(request()->ip());
+        //$arr_ip = geoip(request()->ip());
+        $arr_ip = geoip('41.143.20.230');
         return view('test', compact('arr_ip', 'arrayTest'));
     }
 

@@ -13,7 +13,6 @@
         {{ dd($arr_ip) }}
     </pre>
 
-    <!-- <p>{{ $arr_ip['attributes']['ip'] }}</p> -->
 </body>
 
 </html>

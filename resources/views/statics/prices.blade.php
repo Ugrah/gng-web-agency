@@ -289,6 +289,8 @@
                 if($activeQuestionIndex > 0) {
                     $activeQuestionIndex--;
                     displayActiveQuestion();
+                    options.splice(-1, 1);
+                    getTotalAmount();
                 }
             });
 

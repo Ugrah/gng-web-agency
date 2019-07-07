@@ -6,10 +6,10 @@ return [
          * The default configurations to be used by the meta generator.
          */
         'defaults'       => [
-            'title'        => 'GnG Dev Agency', // set false to total remove
-            'description'  => 'Agence de développement web et marketing digital', // set false to total remove
+            'title'        => config('infos.name').' - Agence web - Agence de communication, Casablanca & Abidjan', // set false to total remove
+            'description'  => config('seoapp.'.app()->getLocale().'.description'), // set false to total remove
             'separator'    => ' - ',
-            'keywords'     => ['website','creation','site','internet','web','agency','mobile','app','referencement','natural','seo'],
+            'keywords'     => [],
             'canonical'    => null, // Set null for using Url::current(), set false to total remove
             'robots'       => false, // Set to 'all', 'none' or any combination of index/noindex and follow/nofollow
         ],
@@ -30,12 +30,23 @@ return [
          * The default configurations to be used by the opengraph generator.
          */
         'defaults' => [
-            'title'       => 'GnG Dev Agency', // set false to total remove
-            'description' => 'Agence de développement web et marketing digital', // set false to total remove
+            'title'       => config('infos.name').'  - Agence web - Agence de communication, Casablanca & Abidjan', // set false to total remove
+            'description' => config('seoapp.'.app()->getLocale().'.description'), // set false to total remove
             'url'         => null, // Set null for using Url::current(), set false to total remove
             'type'        => 'website',
-            'site_name'   => false,
+            //'locale'   => (app()->getLocale() == 'fr') ? 'fr_FR' : 'en_US',
+            'site_name'   => config('infos.name'),
+            'email'       => 'webmaster@gngdev.com',
+            'phone_number' => '+212600000000',
+            'latitude' => 33.5922,
+            'longitude' => -7.6184,
+            'street-address' => '1 OP Najmat S/M GH9 ETG 3 Appt 18 IMM A',
+            'locality' => 'Casablanca',
+            'region' => 'Casablanca-Settat',
+            'postal-code' => '20400',
+            'country-name' => 'Morocco',
             'images'      => [],
+            'videos'      => [],
         ],
     ],
     'twitter' => [
@@ -43,8 +54,14 @@ return [
          * The default values to be used by the twitter cards generator.
          */
         'defaults' => [
-          'card'        => 'summary',
-          'site'        => '@gngdev',
+            'title'       => config('infos.name').'  - Agence web - Agence de communication, Casablanca & Abidjan', // set false to total remove
+            'description' => config('seoapp.'.app()->getLocale().'.description'), // set false to total remove
+            //'locale'   => (app()->getLocale() == 'fr') ? 'fr_FR' : 'en_US',
+            //'site_name'   => config('infos.name'),
+            'images'      => [],
+            'videos'      => [],
+            'card'        => 'summary',
+            'site'        => '@gngdev',
         ],
     ],
 ];

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- SEOTools meta -->
-    {!! SEO::generate() !!}
+    {!! html_entity_decode(SEO::generate()) !!}
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}" />

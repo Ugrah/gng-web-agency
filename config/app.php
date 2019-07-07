@@ -260,7 +260,9 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
+        
         'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,
 
     ],
