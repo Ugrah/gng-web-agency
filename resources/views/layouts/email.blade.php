@@ -121,7 +121,7 @@
         <div class="text-center" style="background-color: #f2f2f2">
             <h4 class="text-center">{{ trans('emails/layout.footer.title') }}</h4>
 
-            <a class="social-icon" href="#"><img src="{{asset('img/icons/facebook-logo.png')}}" width="50" /></a>
+            <a class="social-icon" href="https://www.facebook.com/GnG-Dev-Agence-420818978521192/"><img src="{{asset('img/icons/facebook-logo.png')}}" width="50" /></a>
             <a class="social-icon" href="#"><img src="{{asset('img/icons/instagram-logo.png')}}" width="50" /></a>
             <a class="social-icon" href="#"><img src="{{asset('img/icons/twitter-logo.png')}}" width="50" /></a>
             

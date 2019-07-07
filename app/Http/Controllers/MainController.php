@@ -49,25 +49,25 @@ class MainController extends Controller
 
     public function index()
     {
-        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'home'));
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'home').' - '.trans('back/seo/defaults.default_title'));
         return view('statics.index');
     }
 
     public function about()
     {
-        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'about'));
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'about').' - '.trans('back/seo/defaults.default_title'));
         return view('statics.about');
     }
 
     public function website()
     {
-        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'website'));
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'website').' - '.trans('back/seo/defaults.default_title'));
         return view('statics.website');
     }
 
     public function mobileApp()
     {
-        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'mobile_app'));
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'mobile_app').' - '.trans('back/seo/defaults.default_title'));
         return view('statics.mobileApp');
     }
 
@@ -76,7 +76,7 @@ class MainController extends Controller
         $prices = config('pricing.'.app()->getLocale().'.prices');
         $numberSeparator = (app()->getLocale() == 'fr') ? ' ' : ',';
 
-        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'prices'));
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'prices').' - '.trans('back/seo/defaults.default_title'));
         $this->addKeywords(config('seoapp.'.app()->getLocale().'.keywords.prices'));
         return view('statics.prices', compact('prices', 'numberSeparator'));
     }
@@ -101,13 +101,13 @@ class MainController extends Controller
 
     public function realisations()
     {
-        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'realisations'));
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'realisations').' - '.trans('back/seo/defaults.default_title'));
         return view('statics.realisations');
     }
 
     public function getContact()
     {
-        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'contact'));        
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'contact').' - '.trans('back/seo/defaults.default_title'));        
         return view('statics.contact');
     }
 
@@ -116,13 +116,13 @@ class MainController extends Controller
         SendContactToUserEmail::dispatchNow($request->all());
         SendContactToAdminEmail::dispatchNow($request->all());
 
-        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'contact'));        
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'contact').' - '.trans('back/seo/defaults.default_title'));        
         return view('statics.contact')->withOk(trans(self::TRANS_PATH.'notif.post_contact'));
     }
 
     public function privacyPolicy()
     {
-        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'privacy_policy'));        
+        $this->defaultSeo(trans(self::SEO_TITLE_PATH.'privacy_policy').' - '.trans('back/seo/defaults.default_title'));        
         return view('statics.privacyPolicy');
     }
 

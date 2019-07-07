@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    'default_title' => 'Agence web, Communication Digitale - Casablanca & Abidjan',
     'description'  => 'Agence web digital Casablanca, Maroc : Création, Développement de Site Internet, Applications Mobiles',
     'keywords'     => [
         'Agence web',

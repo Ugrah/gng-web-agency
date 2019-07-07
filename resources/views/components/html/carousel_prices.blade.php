@@ -1,4 +1,10 @@
 <div id="carouselPricesControls" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselPricesControls" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselPricesControls" data-slide-to="1"></li>
+    <li data-target="#carouselPricesControls" data-slide-to="2"></li>
+    <li data-target="#carouselPricesControls" data-slide-to="3"></li>
+  </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
         <div class="row justify-content-center mt-3">
@@ -92,5 +98,5 @@
 </div>
 
 <style>
-span.carousel-control-prev-icon{background-color: red; color: blue;}
+
 </style>

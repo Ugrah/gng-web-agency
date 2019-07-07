@@ -87,6 +87,40 @@ div#form-step, a#previous-button, div.result, div.question, div.restart {
 	display: none;
 }
 
+/* Price carousel */
+ol.carousel-indicators li.active { background-color: #bc3fc7; }
+ol.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: rgba(188, 63, 199, 0.4);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  background-size: 100%, 100%;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands", "Font Awesome 5 Pro";
+  font-weight: 900;
+  content: "\f105";
+  font-size: 55px;
+  color: rgba(57, 168, 252, 0.4);
+}
+
+.carousel-control-prev-icon:after {
+  font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands", "Font Awesome 5 Pro";
+  font-weight: 900;
+  content: "\f104";
+  font-size: 55px;
+  color: rgba(57, 168, 252, 0.4);
+}
+
 /* DYNAMIC FORM */ 
 /* HIDE RADIO */
 #dynamic-app-price [type=radio] { 

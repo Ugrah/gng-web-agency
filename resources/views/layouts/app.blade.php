@@ -25,7 +25,7 @@
     @yield('styles')
 
     <!-- Font Awesome -->
-    {!! Html::script('https://kit.fontawesome.com/754591c5ca.js') !!}
+    {!! Html::script('https://kit.fontawesome.com/59db206fd0.js') !!}
 
     @yield('scriptsBefore')
   </head>

@@ -14,7 +14,7 @@ trait SeoTrait {
 
     private function defaultMetas($pageTitle = null)
     {
-        if($pageTitle){ SEO::setTitle($pageTitle); }
+        if($pageTitle){ SEO::setTitle($pageTitle, false); }
         SEO::setDescription( trans('back/seo/defaults.description') );
 
         SEO::metatags()->setKeywords(trans('back/seo/defaults.keywords'))
