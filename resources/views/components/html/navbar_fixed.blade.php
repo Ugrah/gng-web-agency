@@ -39,6 +39,20 @@
                 <a class="{{ app()->getLocale() == 'fr' ? 'dropdown-item disabled active-locale' : 'dropdown-item text-muet' }}" href="{{url('/language/fr')}}">fr</a>
             </div>
         </li>
+
+        @guest
+        <li class="nav-item">
+            <a class="nav-link" href="{{url('/login')}}"><i class="fas fa-sign-in-alt"></i> Sign in</a>
+        </li>
+        @else
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Log out</a>
+            </li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
+        @endguest
+
     </ul>
 
     <!--

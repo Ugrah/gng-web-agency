@@ -8,10 +8,12 @@
 <body>
     <h2>Geo IP</h2>
     
-    
     <pre>
-        {{ dd($arr_ip) }}
+        {{-- dd($arr_ip) --}}
     </pre>
+
+    <p>{{url('/')}}</p>
+    <p>Hello</p>
 
 </body>
 

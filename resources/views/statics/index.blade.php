@@ -90,7 +90,7 @@
                         'fadeInUp',
                         '0.1s',
                         'far fa-comment-dots',
-                        trans('front/pages/index.section2.item0.content'),
+                        trans('front/pages/index.section2.item0.content')
                     )}}
                     {{ Html::prod_step(
                         'fadeInUp',
