@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <!-- Required meta tags -->
@@ -25,7 +25,7 @@
     @yield('styles')
 
     <!-- Font Awesome -->
-    {!! Html::script('https://kit.fontawesome.com/59db206fd0.js') !!}
+    {!! Html::script('https://kit.fontawesome.com/754591c5ca.js') !!}
 
     @yield('scriptsBefore')
   </head>

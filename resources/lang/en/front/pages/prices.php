@@ -68,7 +68,7 @@ return [
                 ],
                 'item3' => [
                     'title' => 'How do you want to make your application profitable?',
-                    'option0' => 'How do you want to make your application profitable?',
+                    'option0' => 'Free application with ads',
                     'option1' => 'Paid application',
                     'option2' => 'Purchase \'in-app\'',
                     'option3' => 'I do not know / Other means',

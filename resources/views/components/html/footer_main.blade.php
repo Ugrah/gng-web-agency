@@ -5,6 +5,11 @@
         <div class="">
             <h2 class="text-light"><a href="{{ url('/') }}">{{config('infos.name')}}</a></h2>
             <p>{{ trans('front/footer.gng-description') }}</p>
+            <div>
+            <a class="social-icon px-1" target="_blank" href="https://www.facebook.com/GnG-Dev-Agence-420818978521192/"><img src="{{asset('img/icons/facebook-logo-2.png')}}" width="50" /></a>
+            <a class="social-icon px-1" target="_blank" href="https://www.instagram.com/gngdevinsta"><img src="{{asset('img/icons/instagram-logo-2.png')}}" width="50" /></a>
+            <a class="social-icon px-1" target="_blank" href="https://twitter.com/DevGng"><img src="{{asset('img/icons/twitter-logo-2.png')}}" width="50" /></a>
+            </div>
         </div>
         </div>
         <div class="col-md">

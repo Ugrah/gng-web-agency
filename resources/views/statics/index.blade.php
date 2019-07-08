@@ -7,7 +7,7 @@
         {{ Html::carousel_home() }}
         
     </div>
-    <h1 class="d-none">{{ config('infos.name') }} - trans('back/seo/defaults.default_title')</h1>
+    <h1 class="d-none">{{ config('infos.name').' - '.trans('back/seo/defaults.default_title') }}</h1>
 
     <section class="text-center py-5 bg-medium">
         <h2 class="display-4 px-3 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.1s">{{ trans('front/pages/index.section0.title')}}</h2>

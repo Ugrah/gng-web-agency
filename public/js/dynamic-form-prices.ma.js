@@ -10,7 +10,7 @@ var getAmountFromQuestion = function(){
         {adminSpaceOptionRadio1: 2400, adminSpaceOptionRadio2: 0, adminSpaceOptionRadio3: 1200},
         {languageOptionRadio1: 0, languageOptionRadio2: 1200, languageOptionRadio3: 2400},
         {advancedFeaturesOptionRadio1: 2400, advancedFeaturesOptionRadio2: 0, advancedFeaturesOptionRadio3: 1200},
-        {statusProjectOptionRadio1: 0, statusProjectOptionRadio2: 0, statusProjectOptionRadio3: 0, statusProjectOptionRadio3: 0}
+        {statusProjectOptionRadio1: 0, statusProjectOptionRadio2: 0, statusProjectOptionRadio3: 0, statusProjectOptionRadio4: 0}
     ];
     return questionsAmounts;
 }

@@ -178,7 +178,7 @@
                                         {{ Form::radio_label_img('statusProjectOptionRadio3', 'statusProjectOption', 'ongoing_development', 10, 250, 'http://placehold.it/150/ccc/fff&text=C', trans('front/pages/prices.section0.mobile_app.questions.item10.option2')) }}
 
                                         {{ Form::radio_label_img('statusProjectOptionRadio4', 'statusProjectOption', 'already_developed', 10, 250, 'http://placehold.it/150/ccc/fff&text=D', trans('front/pages/prices.section0.mobile_app.questions.item10.option3')) }}
-                                        
+
                                     </div>
 
                                     <div class="row restart">

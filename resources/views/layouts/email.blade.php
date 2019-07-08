@@ -122,8 +122,8 @@
             <h4 class="text-center">{{ trans('emails/layout.footer.title') }}</h4>
 
             <a class="social-icon" href="https://www.facebook.com/GnG-Dev-Agence-420818978521192/"><img src="{{asset('img/icons/facebook-logo.png')}}" width="50" /></a>
-            <a class="social-icon" href="#"><img src="{{asset('img/icons/instagram-logo.png')}}" width="50" /></a>
-            <a class="social-icon" href="#"><img src="{{asset('img/icons/twitter-logo.png')}}" width="50" /></a>
+            <a class="social-icon" href="https://www.instagram.com/gngdevinsta"><img src="{{asset('img/icons/instagram-logo.png')}}" width="50" /></a>
+            <a class="social-icon" href="https://twitter.com/DevGng"><img src="{{asset('img/icons/twitter-logo.png')}}" width="50" /></a>
             
             {!! trans('emails/layout.footer.content', ['url' => url('privacy-policy')]) !!}
         </div>

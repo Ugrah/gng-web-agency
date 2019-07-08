@@ -2,7 +2,7 @@
 
 return [
     'default_title' => 'Web Agency, Digital Communication - Casablanca & Abidjan',
-    'description'  => 'Digital web agency Casablanca, Morocco: Creation, Website development, Mobile Applications',
+    'description'  => 'Digital web agency Casablanca - Morocco, Website development, Mobile Applications development',
     'keywords'     => [
         'Web Agency',
         'Digital Agency',
