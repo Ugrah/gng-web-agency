@@ -55,10 +55,7 @@
     </div>
     <div class="row">
         <div class="col-md-12 text-center">
-
-        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy; 2019 {{config('infos.name')}}, All rights reserved.
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p>Copyright &copy; {{config('infos.name')}} 2019</p>
         </div>
     </div>
     </div>
