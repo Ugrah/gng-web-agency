@@ -45,11 +45,11 @@ return [
         ],
         'item2' => [
             'title' => 'Référencement Naturel - SEO',
-            'content' => 'Optimiser votre référencement SEO afin de mieux vous position dans les résultats de recherches.',
+            'content' => 'Optimiser votre référencement SEO afin de mieux vous positionner dans les résultats de recherches.',
         ],
         'item3' => [
             'title' => 'Création d\'Application Mobile',
-            'content' => 'Réaliser vos projet d\'application mobile avec des interfaces moderne et une expérience utilisateur exceptionnelle.',
+            'content' => 'Réaliser vos projets d\'application mobile avec des interfaces modernes et une expérience utilisateur exceptionnelle.',
         ],
         'item4' => [
             'title' => 'Rédaction de contenu',

@@ -45,7 +45,7 @@ return [
         ],
         'item2' => [
             'title' => 'Natural reference - SEO',
-            'content' => 'Optimize your SEO to better position you in the search results.',
+            'content' => 'Optimize your SEO to better position yourself in search results.',
         ],
         'item3' => [
             'title' => 'Mobile Application Creation',
