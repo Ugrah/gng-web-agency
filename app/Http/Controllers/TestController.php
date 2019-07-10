@@ -51,4 +51,31 @@ class TestController extends Controller
         $estimatePrice = $this->estimatedPriceRepository->store($request->all());
         return response()->json();
     }
+
+     /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validatorPriceForm(array $data)
+    {
+        return Validator::make($data, [
+            'name' => 'string|required|max:255',
+            'email' => 'email|required|max:255|unique:users',
+            'qualityOption' => 'string|required',
+            'typeOption' => 'string|required',
+            'designOption' => 'string|required',
+            'profitableOption' => 'string|required',
+            'loginOption' => 'string|required',
+            'userSpaceOption' => 'string|required',
+            'websiteIntagrationOption' => 'string|required',
+            'adminSpaceOption' => 'string|required',
+            'languageOption' => 'string|required',
+            'advancedFeaturesOption' => 'string|required',
+            'statusProjectOption' => 'string|required',
+            'amount' => 'required|required|between:0,99999999.99',
+            'devise' => 'string|required',
+        ]);
+    }
 }
