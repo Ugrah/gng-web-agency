@@ -41,7 +41,7 @@ return [
             'start_descr' => 'Calculez rapidement le coût pour créer votre application en répondant à ces questions.',
             'start_button' => 'Calculer',
             'restart_button' => 'Recommencer',
-            'previous_button_form' => 'Précédant',
+            'previous_button_form' => 'Précédent',
             'send_email_button' => 'Envoyer votre devis',
             'input_email_placeholder' => 'Saisissez votre e-mail',
             'input_name_placeholder' => 'Saisissez votre Nom',
@@ -49,7 +49,7 @@ return [
             'questions' => [
                 'item0' => [
                     'title' => 'Quel niveau de qualité recherchez-vous ?',
-                    'option0' => 'Qualité optimale',
+                    'option0' => 'Qualité optimaleQualité optimaleQualité optimale',
                     'option1' => 'Bon rapport qualité/prix',
                     'option2' => 'La qualité importe peu',
                 ],

@@ -69,115 +69,116 @@
 
                                     <div class="text-center question" data-question="0">
                                         <h4>{{trans('front/pages/prices.section0.mobile_app.questions.item0.title')}}</h4>
-                                        {{ Form::radio_label_img('qualityOptionRadio1', 'qualityOption', 'high', 0, 550, 'http://placehold.it/150/ccc/fff&text=A', trans('front/pages/prices.section0.mobile_app.questions.item0.option0')) }}
 
-                                        {{ Form::radio_label_img('qualityOptionRadio2', 'qualityOption', 'medium', 0, 350, 'http://placehold.it/150/ccc/fff&text=B', trans('front/pages/prices.section0.mobile_app.questions.item0.option1')) }}
+                                        {{ Form::radio_label_img('qualityOptionRadio1', 'qualityOption', 'high', 0, 550, asset('img/icons/form/optimal-quality.png'), trans('front/pages/prices.section0.mobile_app.questions.item0.option0')) }}
 
-                                        {{ Form::radio_label_img('qualityOptionRadio3', 'qualityOption', 'not_important', 0, 200, 'http://placehold.it/150/ccc/fff&text=C', trans('front/pages/prices.section0.mobile_app.questions.item0.option2')) }}
+                                        {{ Form::radio_label_img('qualityOptionRadio2', 'qualityOption', 'medium', 0, 350, asset('img/icons/form/medium-quality.png'), trans('front/pages/prices.section0.mobile_app.questions.item0.option1')) }}
+
+                                        {{ Form::radio_label_img('qualityOptionRadio3', 'qualityOption', 'not_important', 0, 200, asset('img/icons/form/not-important-quality.png'), trans('front/pages/prices.section0.mobile_app.questions.item0.option2')) }}
                                     </div>
 
                                     <div class="text-center question" data-question="1">
                                         <h4>{{trans('front/pages/prices.section0.mobile_app.questions.item1.title')}}</h4>
-                                        {{ Form::radio_label_img('typeOptionRadio1', 'typeOption', 'ios', 1, 250, 'http://placehold.it/150/ccc/fff&text=A', trans('front/pages/prices.section0.mobile_app.questions.item1.option0')) }}
+                                        {{ Form::radio_label_img('typeOptionRadio1', 'typeOption', 'ios', 1, 250, asset('img/icons/form/android-type.png'), trans('front/pages/prices.section0.mobile_app.questions.item1.option0')) }}
 
-                                        {{ Form::radio_label_img('typeOptionRadio2', 'typeOption', 'android', 1, 250, 'http://placehold.it/150/ccc/fff&text=B', trans('front/pages/prices.section0.mobile_app.questions.item1.option1')) }}
+                                        {{ Form::radio_label_img('typeOptionRadio2', 'typeOption', 'android', 1, 250, asset('img/icons/form/ios-type.png'), trans('front/pages/prices.section0.mobile_app.questions.item1.option1')) }}
 
-                                        {{ Form::radio_label_img('typeOptionRadio3', 'typeOption', 'ios_and_android', 1, 400, 'http://placehold.it/150/ccc/fff&text=C', trans('front/pages/prices.section0.mobile_app.questions.item1.option2')) }}
+                                        {{ Form::radio_label_img('typeOptionRadio3', 'typeOption', 'ios_and_android', 1, 400, asset('img/icons/form/android-and-ios-type.png'), trans('front/pages/prices.section0.mobile_app.questions.item1.option2')) }}
                                     </div>
 
                                     <div class="text-center question" data-question="2">
                                         <h4>{{trans('front/pages/prices.section0.mobile_app.questions.item2.title')}}</h4>
-                                        {{ Form::radio_label_img('designOptionRadio1', 'designOption', 'simple', 2, 250, 'http://placehold.it/150/ccc/fff&text=A', trans('front/pages/prices.section0.mobile_app.questions.item2.option0')) }}
+                                        {{ Form::radio_label_img('designOptionRadio1', 'designOption', 'simple', 2, 250, asset('img/icons/form/simple-interface.png'), trans('front/pages/prices.section0.mobile_app.questions.item2.option0')) }}
 
-                                        {{ Form::radio_label_img('designOptionRadio2', 'designOption', 'custom', 2, 250, 'http://placehold.it/150/ccc/fff&text=B', trans('front/pages/prices.section0.mobile_app.questions.item2.option1')) }}
+                                        {{ Form::radio_label_img('designOptionRadio2', 'designOption', 'custom', 2, 250, asset('img/icons/form/custom-interface.png'), trans('front/pages/prices.section0.mobile_app.questions.item2.option1')) }}
 
-                                        {{ Form::radio_label_img('designOptionRadio3', 'designOption', 'like_website', 2, 200, 'http://placehold.it/150/ccc/fff&text=C', trans('front/pages/prices.section0.mobile_app.questions.item2.option2')) }}
+                                        {{ Form::radio_label_img('designOptionRadio3', 'designOption', 'like_website', 2, 200, asset('img/icons/form/like-website-interface.png'), trans('front/pages/prices.section0.mobile_app.questions.item2.option2')) }}
                                         
-                                        {{ Form::radio_label_img('designOptionRadio4', 'designOption', 'minimalist', 2, 200, 'http://placehold.it/150/ccc/fff&text=D', trans('front/pages/prices.section0.mobile_app.questions.item2.option3')) }}
+                                        {{ Form::radio_label_img('designOptionRadio4', 'designOption', 'minimalist', 2, 200, asset('img/icons/form/minimalist-interface.png'), trans('front/pages/prices.section0.mobile_app.questions.item2.option3')) }}
                                     </div>
 
                                     <div class="text-center question" data-question="3">
                                         <h4>{{trans('front/pages/prices.section0.mobile_app.questions.item3.title')}}</h4>
-                                        {{ Form::radio_label_img('profitableOptionRadio1', 'profitableOption', 'free_with_ads', 3, 250, 'http://placehold.it/150/ccc/fff&text=A', trans('front/pages/prices.section0.mobile_app.questions.item3.option0')) }}
+                                        {{ Form::radio_label_img('profitableOptionRadio1', 'profitableOption', 'free_with_ads', 3, 250, asset('img/icons/form/free-with-ads-profitable.png'), trans('front/pages/prices.section0.mobile_app.questions.item3.option0')) }}
 
-                                        {{ Form::radio_label_img('profitableOptionRadio2', 'profitableOption', 'pay', 3, 250, 'http://placehold.it/150/ccc/fff&text=B', trans('front/pages/prices.section0.mobile_app.questions.item3.option1')) }}
+                                        {{ Form::radio_label_img('profitableOptionRadio2', 'profitableOption', 'pay', 3, 250, asset('img/icons/form/pay-profitable.png'), trans('front/pages/prices.section0.mobile_app.questions.item3.option1')) }}
 
-                                        {{ Form::radio_label_img('profitableOptionRadio3', 'profitableOption', 'pay_in_app', 3, 200, 'http://placehold.it/150/ccc/fff&text=C', trans('front/pages/prices.section0.mobile_app.questions.item3.option2')) }}
+                                        {{ Form::radio_label_img('profitableOptionRadio3', 'profitableOption', 'pay_in_app', 3, 200, asset('img/icons/form/pay-in-app-profitable.png'), trans('front/pages/prices.section0.mobile_app.questions.item3.option2')) }}
                                         
-                                        {{ Form::radio_label_img('profitableOptionRadio4', 'profitableOption', 'i_dont_know', 3, 200, 'http://placehold.it/150/ccc/fff&text=D', trans('front/pages/prices.section0.mobile_app.questions.item3.option3')) }}
+                                        {{ Form::radio_label_img('profitableOptionRadio4', 'profitableOption', 'i_dont_know', 3, 200, asset('img/icons/form/i-dont-know-profitable.png'), trans('front/pages/prices.section0.mobile_app.questions.item3.option3')) }}
                                     </div>
 
                                     <div class="text-center question" data-question="4">
                                         <h4>{{trans('front/pages/prices.section0.mobile_app.questions.item4.title')}}</h4>
-                                        {{ Form::radio_label_img('loginOptionRadio1', 'loginOption', 'yes_rs_and_email', 4, 250, 'http://placehold.it/150/ccc/fff&text=A', trans('front/pages/prices.section0.mobile_app.questions.item4.option0')) }}
+                                        {{ Form::radio_label_img('loginOptionRadio1', 'loginOption', 'yes_rs_and_email', 4, 250, asset('img/icons/form/rs-email-login.png'), trans('front/pages/prices.section0.mobile_app.questions.item4.option0')) }}
 
-                                        {{ Form::radio_label_img('loginOptionRadio2', 'loginOption', 'yes_email', 4, 250, 'http://placehold.it/150/ccc/fff&text=B', trans('front/pages/prices.section0.mobile_app.questions.item4.option1')) }}
+                                        {{ Form::radio_label_img('loginOptionRadio2', 'loginOption', 'yes_email', 4, 250, asset('img/icons/form/email-login.png'), trans('front/pages/prices.section0.mobile_app.questions.item4.option1')) }}
 
-                                        {{ Form::radio_label_img('loginOptionRadio3', 'loginOption', 'none', 4, 250, 'http://placehold.it/150/ccc/fff&text=C', trans('front/pages/prices.section0.mobile_app.questions.item4.option2')) }}
+                                        {{ Form::radio_label_img('loginOptionRadio3', 'loginOption', 'none', 4, 250, asset('img/icons/form/none-login.png'), trans('front/pages/prices.section0.mobile_app.questions.item4.option2')) }}
 
-                                        {{ Form::radio_label_img('loginOptionRadio4', 'loginOption', 'i_dont_know', 4, 250, 'http://placehold.it/150/ccc/fff&text=D', trans('front/pages/prices.section0.mobile_app.questions.item4.option3')) }}
+                                        {{ Form::radio_label_img('loginOptionRadio4', 'loginOption', 'i_dont_know', 4, 250, asset('img/icons/form/i-dont-know-login.png'), trans('front/pages/prices.section0.mobile_app.questions.item4.option3')) }}
                                         
                                     </div>
 
                                     <div class="text-center question" data-question="5">
                                         <h4>{{trans('front/pages/prices.section0.mobile_app.questions.item5.title')}}</h4>
-                                        {{ Form::radio_label_img('userSpaceOptionRadio1', 'userSpaceOption', 'yes', 5, 250, 'http://placehold.it/150/ccc/fff&text=A', trans('front/pages/prices.section0.mobile_app.questions.item5.option0')) }}
+                                        {{ Form::radio_label_img('userSpaceOptionRadio1', 'userSpaceOption', 'yes', 5, 250, asset('img/icons/form/yes-userSpace.png'), trans('front/pages/prices.section0.mobile_app.questions.item5.option0')) }}
 
-                                        {{ Form::radio_label_img('userSpaceOptionRadio1', 'userSpaceOption', 'none', 5, 250, 'http://placehold.it/150/ccc/fff&text=B', trans('front/pages/prices.section0.mobile_app.questions.item5.option1')) }}
+                                        {{ Form::radio_label_img('userSpaceOptionRadio1', 'userSpaceOption', 'none', 5, 250, asset('img/icons/form/none-userSpace.png'), trans('front/pages/prices.section0.mobile_app.questions.item5.option1')) }}
 
-                                        {{ Form::radio_label_img('userSpaceOptionRadio1', 'userSpaceOption', 'i_dont_know', 5, 250, 'http://placehold.it/150/ccc/fff&text=C', trans('front/pages/prices.section0.mobile_app.questions.item5.option2')) }}
+                                        {{ Form::radio_label_img('userSpaceOptionRadio1', 'userSpaceOption', 'i_dont_know', 5, 250, asset('img/icons/form/i-dont-know-userSpace.png'), trans('front/pages/prices.section0.mobile_app.questions.item5.option2')) }}
                                         
                                     </div>
 
                                     <div class="text-center question" data-question="6">
                                         <h4>{{trans('front/pages/prices.section0.mobile_app.questions.item6.title')}}</h4>
-                                        {{ Form::radio_label_img('websiteIntagrationOptionRadio1', 'websiteIntagrationOption', 'yes', 6, 250, 'http://placehold.it/150/ccc/fff&text=A', trans('front/pages/prices.section0.mobile_app.questions.item6.option0')) }}
+                                        {{ Form::radio_label_img('websiteIntagrationOptionRadio1', 'websiteIntagrationOption', 'yes', 6, 250, asset('img/icons/form/yes-web-integration.png'), trans('front/pages/prices.section0.mobile_app.questions.item6.option0')) }}
                                         
-                                        {{ Form::radio_label_img('websiteIntagrationOptionRadio2', 'websiteIntagrationOption', 'none', 6, 250, 'http://placehold.it/150/ccc/fff&text=B', trans('front/pages/prices.section0.mobile_app.questions.item6.option1')) }}
+                                        {{ Form::radio_label_img('websiteIntagrationOptionRadio2', 'websiteIntagrationOption', 'none', 6, 250, asset('img/icons/form/none-web-integration.png'), trans('front/pages/prices.section0.mobile_app.questions.item6.option1')) }}
 
-                                        {{ Form::radio_label_img('websiteIntagrationOptionRadio3', 'websiteIntagrationOption', 'i_dont_know', 6, 250, 'http://placehold.it/150/ccc/fff&text=C', trans('front/pages/prices.section0.mobile_app.questions.item6.option2')) }}
+                                        {{ Form::radio_label_img('websiteIntagrationOptionRadio3', 'websiteIntagrationOption', 'i_dont_know', 6, 250, asset('img/icons/form/i-dont-know-web-integration.png'), trans('front/pages/prices.section0.mobile_app.questions.item6.option2')) }}
                                         
                                     </div>
 
                                     <div class="text-center question" data-question="7">
                                         <h4>{{trans('front/pages/prices.section0.mobile_app.questions.item7.title')}}</h4>
-                                        {{ Form::radio_label_img('adminSpaceOptionRadio1', 'adminSpaceOption', 'yes', 7, 250, 'http://placehold.it/150/ccc/fff&text=A', trans('front/pages/prices.section0.mobile_app.questions.item7.option0')) }}
+                                        {{ Form::radio_label_img('adminSpaceOptionRadio1', 'adminSpaceOption', 'yes', 7, 250, asset('img/icons/form/yes-adminSpace.png'), trans('front/pages/prices.section0.mobile_app.questions.item7.option0')) }}
 
-                                        {{ Form::radio_label_img('adminSpaceOptionRadio2', 'adminSpaceOption', 'none', 7, 250, 'http://placehold.it/150/ccc/fff&text=B', trans('front/pages/prices.section0.mobile_app.questions.item7.option1')) }}
+                                        {{ Form::radio_label_img('adminSpaceOptionRadio2', 'adminSpaceOption', 'none', 7, 250, asset('img/icons/form/none-adminSpace.png'), trans('front/pages/prices.section0.mobile_app.questions.item7.option1')) }}
 
-                                        {{ Form::radio_label_img('adminSpaceOptionRadio3', 'adminSpaceOption', 'i_dont_know', 7, 250, 'http://placehold.it/150/ccc/fff&text=C', trans('front/pages/prices.section0.mobile_app.questions.item7.option2')) }}
+                                        {{ Form::radio_label_img('adminSpaceOptionRadio3', 'adminSpaceOption', 'i_dont_know', 7, 250, asset('img/icons/form/i-dont-know-adminSpace.png'), trans('front/pages/prices.section0.mobile_app.questions.item7.option2')) }}
                                         
                                     </div>
 
                                     <div class="text-center question" data-question="8">
                                         <h4>{{trans('front/pages/prices.section0.mobile_app.questions.item8.title')}}</h4>
-                                        {{ Form::radio_label_img('languageOptionRadio1', 'languageOption', 'one', 8, 250, 'http://placehold.it/150/ccc/fff&text=A', trans('front/pages/prices.section0.mobile_app.questions.item8.option0')) }}
+                                        {{ Form::radio_label_img('languageOptionRadio1', 'languageOption', 'one', 8, 250, asset('img/icons/form/one-language.png'), trans('front/pages/prices.section0.mobile_app.questions.item8.option0')) }}
 
-                                        {{ Form::radio_label_img('languageOptionRadio2', 'languageOption', 'two', 8, 250, 'http://placehold.it/150/ccc/fff&text=B', trans('front/pages/prices.section0.mobile_app.questions.item8.option1')) }}
+                                        {{ Form::radio_label_img('languageOptionRadio2', 'languageOption', 'two', 8, 250, asset('img/icons/form/two-language.png'), trans('front/pages/prices.section0.mobile_app.questions.item8.option1')) }}
 
-                                        {{ Form::radio_label_img('languageOptionRadio3', 'languageOption', 'more', 8, 250, 'http://placehold.it/150/ccc/fff&text=C', trans('front/pages/prices.section0.mobile_app.questions.item8.option2')) }}
+                                        {{ Form::radio_label_img('languageOptionRadio3', 'languageOption', 'more', 8, 250, asset('img/icons/form/more-language.png'), trans('front/pages/prices.section0.mobile_app.questions.item8.option2')) }}
                                         
                                     </div>
 
                                     <div class="text-center question" data-question="9">
                                         <h4>{{trans('front/pages/prices.section0.mobile_app.questions.item9.title')}}</h4>
-                                        {{ Form::radio_label_img('advancedFeaturesOptionRadio1', 'advancedFeaturesOption', 'yes', 9, 250, 'http://placehold.it/150/ccc/fff&text=A', trans('front/pages/prices.section0.mobile_app.questions.item9.option0')) }}
+                                        {{ Form::radio_label_img('advancedFeaturesOptionRadio1', 'advancedFeaturesOption', 'yes', 9, 250, asset('img/icons/form/yes-advancedFeatures.png'), trans('front/pages/prices.section0.mobile_app.questions.item9.option0')) }}
 
-                                        {{ Form::radio_label_img('advancedFeaturesOptionRadio2', 'advancedFeaturesOption', 'none', 9, 250, 'http://placehold.it/150/ccc/fff&text=B', trans('front/pages/prices.section0.mobile_app.questions.item9.option1')) }}
+                                        {{ Form::radio_label_img('advancedFeaturesOptionRadio2', 'advancedFeaturesOption', 'none', 9, 250, asset('img/icons/form/none-advancedFeatures.png'), trans('front/pages/prices.section0.mobile_app.questions.item9.option1')) }}
 
-                                        {{ Form::radio_label_img('advancedFeaturesOptionRadio3', 'advancedFeaturesOption', 'i_dont_know', 9, 250, 'http://placehold.it/150/ccc/fff&text=C', trans('front/pages/prices.section0.mobile_app.questions.item9.option2')) }}
+                                        {{ Form::radio_label_img('advancedFeaturesOptionRadio3', 'advancedFeaturesOption', 'i_dont_know', 9, 250, asset('img/icons/form/i-dont-know-advancedFeatures.png'), trans('front/pages/prices.section0.mobile_app.questions.item9.option2')) }}
                                         
                                     </div>
 
                                     <div class="text-center question" data-question="10">
                                         <h4>{{trans('front/pages/prices.section0.mobile_app.questions.item10.title')}}</h4>
-                                        {{ Form::radio_label_img('statusProjectOptionRadio1', 'statusProjectOption', 'just_an_idea', 10, 250, 'http://placehold.it/150/ccc/fff&text=A', trans('front/pages/prices.section0.mobile_app.questions.item10.option0')) }}
+                                        {{ Form::radio_label_img('statusProjectOptionRadio1', 'statusProjectOption', 'just_an_idea', 10, 250, asset('img/icons/form/idea-status.png'), trans('front/pages/prices.section0.mobile_app.questions.item10.option0')) }}
 
-                                        {{ Form::radio_label_img('statusProjectOptionRadio2', 'statusProjectOption', 'draft_ready', 10, 250, 'http://placehold.it/150/ccc/fff&text=B', trans('front/pages/prices.section0.mobile_app.questions.item10.option1')) }}
+                                        {{ Form::radio_label_img('statusProjectOptionRadio2', 'statusProjectOption', 'draft_ready', 10, 250, asset('img/icons/form/draft-status.png'), trans('front/pages/prices.section0.mobile_app.questions.item10.option1')) }}
 
-                                        {{ Form::radio_label_img('statusProjectOptionRadio3', 'statusProjectOption', 'ongoing_development', 10, 250, 'http://placehold.it/150/ccc/fff&text=C', trans('front/pages/prices.section0.mobile_app.questions.item10.option2')) }}
+                                        {{ Form::radio_label_img('statusProjectOptionRadio3', 'statusProjectOption', 'ongoing_development', 10, 250, asset('img/icons/form/ongoing-development-status.png'), trans('front/pages/prices.section0.mobile_app.questions.item10.option2')) }}
 
-                                        {{ Form::radio_label_img('statusProjectOptionRadio4', 'statusProjectOption', 'already_developed', 10, 250, 'http://placehold.it/150/ccc/fff&text=D', trans('front/pages/prices.section0.mobile_app.questions.item10.option3')) }}
+                                        {{ Form::radio_label_img('statusProjectOptionRadio4', 'statusProjectOption', 'already_developed', 10, 250, asset('img/icons/form/already-developed-status.png'), trans('front/pages/prices.section0.mobile_app.questions.item10.option3')) }}
 
                                     </div>
 
