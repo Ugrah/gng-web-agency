@@ -14,7 +14,7 @@ return [
         'do' => [
             'name' => 'Ce que nous faisons',
             'title' => 'A Propos de Nous.',
-            'content' => '<p>Fondée tout récemment GnG est une agence digitale spécialisée dans le développement de sites internet modernes, ergonomiques et adaptés à tout type d\'appareil, mais c\'est aussi une agence de développement d\'applcations mobiles innovantes, performantes et sur-mesure.</p>
+            'content' => '<p>Fondée tout récemment GnG est une agence digitale spécialisée dans le développement de sites internet modernes, ergonomiques et adaptés à tout type d\'appareil, mais c\'est aussi une agence de développement d\'applications mobiles innovantes, performantes et sur-mesure.</p>
             <p>Une équipe de développeurs, designers et chefs de projet, tous experts, passionnés par notre métier et fiers des produits mobiles et web réalisés pour nos partenaires.</p>
             <p>Notre agence accompagne les entreprises, les professionnels, mais aussi les particuliers à mettre en place une stratégie digitale autour d’un site web ou d\'une application mobile.</p>',
         ],

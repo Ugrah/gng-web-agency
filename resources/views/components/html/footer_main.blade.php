@@ -43,7 +43,7 @@
                 <ul class="list-unstyled">
                 <li class="mb-3"><i class="fas fa-map-marker-alt fa-lg text-light"></i> <span class="text">{{config('infos.address')}}</span></li>
                 @foreach(config('infos.phones') as $numberPhone)
-                    <li class="mb-3"><i class="fas fa-envelope fa-lg text-light"></i><a href="tel:{{$numberPhone}}"> <span class="text"><span>{{$numberPhone}}</span></span></a></li>
+                    <li class="mb-3"><i class="fas fa-phone-alt"></i><a href="tel:{{$numberPhone}}"> <span class="text"><span>{{$numberPhone}}</span></span></a></li>
                 @endforeach
                 @foreach(config('infos.emails') as $email)
                     <li class="mb-3"><i class="fas fa-envelope fa-lg text-light"></i><a href="mailto:{{$email}}"> <span class="text"><span>{{$email}}</span></span></a></li>

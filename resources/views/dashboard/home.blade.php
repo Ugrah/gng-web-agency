@@ -2,13 +2,13 @@
 
 @section('content')
 
-  <div class="container-fluid bg-white">
+  <div class="container-fluid p-4">
     <!-- Page notification -->
-@if (session('status'))
-    <div class="alert alert-success" role="alert">
-        {{ session('status') }}
-    </div>
-@endif
+    @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+    @endif
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -289,4 +289,15 @@
 </div>
   </div>
 
+@endsection
+
+@section('scripts')
+
+<script type="text/javascript">
+    $(function() {
+        // Aside active link
+        $('#mySidebar ul.navbar-nav > li.nav-item > a.nav-link:eq(0)').addClass('active');
+
+    });
+</script>
 @endsection
