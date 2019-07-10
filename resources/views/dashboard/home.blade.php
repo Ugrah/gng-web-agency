@@ -1,7 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-<!-- Page notification -->
+
+  <div class="container-fluid bg-white">
+    <!-- Page notification -->
 @if (session('status'))
     <div class="alert alert-success" role="alert">
         {{ session('status') }}
@@ -285,5 +287,6 @@
 
   </div>
 </div>
+  </div>
 
 @endsection
