@@ -52,7 +52,8 @@
         left: -10px;
       }
 
-      #user-informations a.dropdown-item { font-size: 0.9em; }
+      div.dropdown-menu a.dropdown-item { font-size: 0.9em; color: #363636 !important; }
+      div.dropdown-menu a.dropdown-item:hover { background-color: #F8F9FC !important; color: #363636 !important; }
 
       /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
       @media screen and (max-height: 450px) {
@@ -155,7 +156,7 @@
   </div>
 
   <div id="main">
-    <nav class="navbar navbar-expand navbar-light bg-white shadow py-2 pl-4">
+    <nav class="navbar navbar-expand navbar-light bg-white shadow py-0 pl-4">
       <a id="open-sidebar-btn" class="fa-2x d-none" href="#"><i class="fas fa-bars text-secondary"></i></a> 
       <a id="close-sidebar-btn" class="fa-2x" href="#"><i class="fas fa-times text-secondary"></i></a>
 
@@ -163,7 +164,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="collapse h-100 navbar-collapse" id="navbarNavDropdown">
         <!--
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -176,33 +177,59 @@
         -->
 
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link pt-3" href="#">
+          <li class="nav-item dropdown py-1">
+            <a class="nav-link pt-3 dropdown-toggle" href="#" id="alertDropdownLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-bell" style="font-size: 1rem; color: #B7B9CC"></i>
               <span class="badge badge-notify">3+</span>
             </a>
+            <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="alertDropdownLink">
+              <ul class="list-group">
+                <li class="list-group-item py-1 active">Alerts center</li>
+                <li class="list-group-item p-0"><a class="dropdown-item" href="#">
+                  <small class="text-muted">11 Juillet 2019</small>
+                  <p class="text-muted mb-1">Donec id elit non mi metus...</p>
+                </a></li>
+                <li class="list-group-item p-0"><a class="dropdown-item" href="#">
+                  <small class="text-muted">04 Septembre 2012</small>
+                  <p class="text-muted mb-1">Donec id elit non mi metus...</p>
+                </a></li>
+              </ul>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link pt-3" href="#">
+          <li class="nav-item dropdown py-1">
+            <a class="nav-link pt-3 dropdown-toggle" href="#" id="messageDropdownLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-envelope" style="font-size: 1rem; color: #B7B9CC"></i>
               <span class="badge badge-notify">10</span>
             </a>
+            <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="messageDropdownLink">
+              <ul class="list-group">
+                <li class="list-group-item py-1 active">Message center</li>
+                <li class="list-group-item p-0"><a class="dropdown-item" href="#">
+                  <p class="text-muted mb-1">Donec id elit non mi metus...</p>
+                  <small class="text-muted">Donec id elit non mi porta.</small>
+                </a></li>
+                <li class="list-group-item p-0"><a class="dropdown-item" href="#">
+                  <p class="text-muted mb-1">Donec id elit non mi metus...</p>
+                  <small class="text-muted">Donec id elit non mi porta.</small>
+                </a></li>
+              </ul>
+            </div>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown py-1">
             <a class="nav-link pt-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span>{{ auth()->user()->name }} </span>
               <img src="{{ asset('img/icons/facebook-logo-2.png') }}" width="32" alt="" class="img-fluid img-rounded">
               <!-- <i class="fas fa-user-circle fa-2x"></i> -->
             </a>
-            <div id="user-informations" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+            <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a>
               <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i> Setting</a>
               @auth
               <hr class="my-2">
-                <a class="dropdown-item" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Log out</a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                </form>
+              <a class="dropdown-item" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Log out</a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  {{ csrf_field() }}
+              </form>
               @endauth
             </div>
           </li>
