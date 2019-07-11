@@ -50,7 +50,9 @@
         font-weight: bold;
         top: -10px;
         left: -10px;
-        }
+      }
+
+      #user-informations a.dropdown-item { font-size: 0.9em; }
 
       /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
       @media screen and (max-height: 450px) {
@@ -192,10 +194,16 @@
               <img src="{{ asset('img/icons/facebook-logo-2.png') }}" width="32" alt="" class="img-fluid img-rounded">
               <!-- <i class="fas fa-user-circle fa-2x"></i> -->
             </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+            <div id="user-informations" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a>
+              <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i> Setting</a>
+              @auth
+              <hr class="my-2">
+                <a class="dropdown-item" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Log out</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+              @endauth
             </div>
           </li>
         </ul>
@@ -224,14 +232,16 @@
 
     <script type="text/javascript">
       $(function(){
-        $('#open-sidebar-btn').click(function(){
+        $('#open-sidebar-btn').click(function(e){
+          e.preventDefault();
           $(this).addClass('d-none');
           $('#close-sidebar-btn').removeClass('d-none');
           $('#mySidebar').css('width', '14rem');
           $('#main').css('marginLeft', '14rem');
         });
 
-        $('#close-sidebar-btn').click(function(){
+        $('#close-sidebar-btn').click(function(e){
+          e.preventDefault();
           $(this).addClass('d-none'); 
           $('#open-sidebar-btn').removeClass('d-none');
           $('#mySidebar').css('width', '0');

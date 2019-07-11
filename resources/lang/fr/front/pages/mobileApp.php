@@ -11,7 +11,7 @@ return [
     */
     'section0' => [
         'title' => 'Créez votre propre Application Mobile',
-        'description' => 'N\'ayez pas peur de penser, d\'imaginer, la seule limite c\'est vous. Que ce soit pour le fun, pour l\'education, ou pour votre business, nous réalisons vos projets mobiles pour vous.',
+        'description' => 'N\'ayez pas peur de penser, d\'imaginer, la seule limite c\'est vous. Que ce soit pour le fun, pour l\'éducation, ou pour votre business, nous réalisons vos projets mobiles pour vous.',
         'assistance' => [
             'name' => 'Assistance Globale',
             'title' => 'Avancez sereinement',
@@ -21,7 +21,7 @@ return [
         'native' => [
             'name' => 'Application Native',
             'title' => 'Développement Natif - Multisupport',
-            'content' => 'Il existe aujourd\'hui de nombreux concepteur d\'appareil mobile avec parfois des OS différents. :app_name vous propose des applications natives et déployable sur iOS et Android.',
+            'content' => 'Il existe aujourd\'hui de nombreux concepteurs d\'appareil mobile avec parfois des OS différents. :app_name vous propose des applications natives et déployable sur iOS et Android.',
             'img_alt' => 'Mobile app illustration',
         ],
         'innovation' => [
