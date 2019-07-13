@@ -132,13 +132,13 @@
 
             <li class="nav-item">
               <a class="nav-link px-3 text-light" data-toggle="collapse" href="#collapsePortfolio" role="button" aria-expanded="false" aria-controls="collapsePortfolio">
-                <i class="fas fa-clone pr-2"></i>  {{ __('Portfolio') }}
+                <i class="fas fa-layer-group pr-2"></i> {{ __('Portfolio') }}
                 <i class="fas fa-angle-right float-right"></i>
                 <i class="fas fa-angle-down d-none float-right"></i>
               </a>
               <ul id="collapsePortfolio" class="collapse list-group mx-3">
-                <a href="#" class="list-group-item list-group-item-action py-2">{{ __('Ajouter nouveau') }}</a>
-                <a href="#" class="list-group-item list-group-item-action py-2">Afficher la liste</a>
+                <a href="{{route('production.create')}}" class="list-group-item list-group-item-action py-2">{{ __('Ajouter Portfolio') }}</a>
+                <a href="{{route('production.index')}}" class="list-group-item list-group-item-action py-2">{{ __('Voir la liste') }}</a>
               </ul>
             </li>
             <li class="nav-item">
@@ -223,20 +223,20 @@
             </li>
             <li class="nav-item dropdown py-1">
               <a class="nav-link pt-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span>{{ $user->name }} </span>
-                <img src="@if(!isset($user->profileImage)) {{ asset( config('images.profiles').'/profile-empty.jpg' ) }} @else {{ asset( config('images.profiles').'/'.$user->profileImage ) }} @endif" width="32" alt="" class="img-fluid rounded-circle">
+                <span>{{ auth()->user()->name }} </span>
+                <img src="@if(!isset($user->profileImage)) {{ asset( config('images.profiles').'/profile-empty.jpg' ) }} @else {{ asset( config('images.profiles').'/'.auth()->user()->profileImage ) }} @endif" width="32" alt="" class="img-fluid rounded-circle">
                 <!-- <i class="fas fa-user-circle fa-2x"></i> -->
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a>
                 <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i> Setting</a>
-                @if(isset($user))
+                @auth
                 <hr class="my-2">
                 <a class="dropdown-item" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Log out</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
                 </form>
-                @endif
+                @endauth
               </div>
             </li>
           </ul>
