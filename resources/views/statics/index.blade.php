@@ -5,7 +5,7 @@
 
         {{ Html::navbar_default() }}
         {{ Html::carousel_home() }}
-        
+
     </div>
     <h1 class="d-none">{{ config('infos.name').' - '.trans('back/seo/defaults.default_title') }}</h1>
 
@@ -162,7 +162,7 @@
                     )}}
                 </div>
             </div>
-           
+
         </div>
     </section>
 

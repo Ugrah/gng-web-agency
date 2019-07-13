@@ -49,7 +49,7 @@ return [
             'questions' => [
                 'item0' => [
                     'title' => 'Quel niveau de qualité recherchez-vous ?',
-                    'option0' => 'Qualité optimaleQualité optimaleQualité optimale',
+                    'option0' => 'Qualité optimale',
                     'option1' => 'Bon rapport qualité/prix',
                     'option2' => 'La qualité importe peu',
                 ],

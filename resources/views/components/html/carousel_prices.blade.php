@@ -1,4 +1,4 @@
-<div id="carouselPricesControls" class="carousel slide" data-ride="carousel">
+<div id="carouselPricesControls" class="carousel slide" data-ride="carousel" data-interval="60000">
   <ol class="carousel-indicators">
     <li data-target="#carouselPricesControls" data-slide-to="0" class="active"></li>
     <li data-target="#carouselPricesControls" data-slide-to="1"></li>

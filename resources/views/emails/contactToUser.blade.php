@@ -8,7 +8,7 @@
         {{ trans('emails/contactToUser.content') }}</p>
         <br>
         <p>{{ trans('emails/contactToUser.visite_our_site') }}</p>
-        <p style="text-align: center"><a class="btn-custom-gradient rounded" href="{{url('/')}}" target="_blank">{{ trans('emails/contactToUser.link') }}</a></p>
+        <p style="text-align: center"><a class="btn-custom-gradient rounded" href="{{url('/contact')}}" target="_blank">{{ trans('emails/contactToUser.link') }}</a></p>
     </div>
 </section>
 

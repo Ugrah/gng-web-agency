@@ -21,7 +21,7 @@ return [
         'native' => [
             'name' => 'Application Native',
             'title' => 'Développement Natif - Multisupport',
-            'content' => 'Il existe aujourd\'hui de nombreux concepteurs d\'appareil mobile avec parfois des OS différents. :app_name vous propose des applications natives et déployable sur iOS et Android.',
+            'content' => 'Il existe aujourd\'hui de nombreux concepteurs d\'appareil mobile avec parfois des OS différents. :app_name vous propose des applications natives et déployables sur iOS et Android.',
             'img_alt' => 'Mobile app illustration',
         ],
         'innovation' => [
@@ -35,7 +35,7 @@ return [
 
     'section1' => [
         'title' => 'Développer des Applications Mobiles',
-        'description' => 'Ai-je besoin d\'une application mobile pour mon entreprise ? Si vous ne vous êtes pas encore posé la question, c\'est probablement parce que vous ne connaissez pas l\'impacte que cela peut avoir sur votre entreprise.',
+        'description' => 'Ai-je besoin d\'une application mobile pour mon entreprise ? Si vous ne vous êtes pas encore posé la question, c\'est probablement parce que vous ne connaissez pas l\'impact que cela peut avoir sur votre entreprise.',
         'content' => '<p class="text-light">Il n\'est pas obligatoire que votre activité ou votre entreprise possède sa propre application mobile.</p><p class="text-light">Cependant, sachez que posséder une application mobile dédiée à son business peut être une véritable valeur ajoutée pour développer vos ventes, partager des informations importantes et surtout être connecté à vos utilisateurs et vos clients.</p>',
         'img_alt' => 'Multi UI Design App Illustration',
     ],
@@ -43,15 +43,15 @@ return [
     'section2' => [
         'title' => 'Démarquez votre Application',
         'description' => '',
-        'content1' => '<h5>DESIGN &amp; ERGONOMIE</h5><p>Des Design modernes et attractifs pour vos applications. Une fluidité d\'utilisation.</p><h5>PERFORMANCE</h5><p>Des applications performantes, des fonctionnalités utiles et simple d\'utilisation.</p>',
+        'content1' => '<h5>DESIGN &amp; ERGONOMIE</h5><p>Des Designs modernes et attractifs pour vos applications. Une fluidité d\'utilisation.</p><h5>PERFORMANCE</h5><p>Des applications performantes, des fonctionnalités utiles et simples d\'utilisation.</p>',
         'content2' => '<h5>CONSEILS</h5><p>Conseils et suivi pour toujours faire évoluer et améliorer vos applications.</p><h5>MAINTENANCE</h5><p>Un service de support pour maintenir vos applications.</p>',
         'img_alt' => 'Maintenance mobile app illustration',
     ],
 
     'section3' => [
         'title' => 'Combien coûte une Application Mobile ?',
-        'description' => 'Il est tout à fait normale de s\'informer sur le coût potentiel de son application avant de se lancer. Nous vous répondons.',
-        'content' => '<p>Le prix d\'une application mobile n\'est ni une valeur fixe, ni statique.</p><p>En effet, le prix de votre application dépend de plusieurs facteurs. Notamment, quelles fonctionnalités vous souhaitez intégrer à votre application ? Pour quel design vous optez ? Souhaitez-vous que vos utilisateurs soient authentifiés pour utiliser votre application ? Sur quel OS voulez-vous publier votre application ? Toute une série de questions qui déterminera le coût de votre application.</p><p>Pour vous simplifier la tache nous vous avons préparez un simulateur afin de vous donner une estimation du coût de votre application.</p>',
+        'description' => 'Il est tout à fait normal de s\'informer sur le coût potentiel de son application avant de se lancer. Nous vous répondons.',
+        'content' => '<p>Le prix d\'une application mobile n\'est ni une valeur fixe, ni statique.</p><p>En effet, le prix de votre application dépend de plusieurs facteurs. Notamment, quelles fonctionnalités vous souhaitez intégrer à votre application ? Pour quel design vous optez ? Souhaitez-vous que vos utilisateurs soient authentifiés pour utiliser votre application ? Sur quel OS voulez-vous publier votre application ? Toute une série de questions qui déterminera le coût de votre application.</p><p>Pour vous simplifier la tâche nous vous avons préparé un simulateur afin de vous donner une estimation du coût de votre application.</p>',
         'estimate_link' => 'Estimez le prix de votre application'
     ],
 ];

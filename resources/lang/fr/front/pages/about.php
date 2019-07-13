@@ -28,7 +28,7 @@ return [
         'goal' => [
             'name' => 'Notre vision',
             'title' => 'Ce que nous vous apportons.',
-            'content' => '<p>Dans un monde de plus en plus tournée vers les nouvelles technologies de l\'information, vous n\'êtes pas sans savoir que le web est devenu incontournable, et ce, quelle que soit votre domaine d\'activité.</p><p>Il est donc impératif que votre activité possède une vitrine web et éventuellement une application mobile, si votre secteur d\'activé le permet et le mérite, avec la garantie d\'une excellente visibilité pour fidélisation de vos clients, mais aussi vous permettre d\'attirer de nouveau prospects.</p>',
+            'content' => '<p>Dans un monde de plus en plus tourné vers les nouvelles technologies de l\'information, vous n\'êtes pas sans savoir que le web est devenu incontournable, et ce, quel que soit votre domaine d\'activité.</p><p>Il est donc impératif que votre activité possède une vitrine web et éventuellement une application mobile, si votre secteur d\'activé le permet et le mérite, avec la garantie d\'une excellente visibilité pour la fidélisation de vos clients, mais aussi pour vous permettre d\'attirer de nouveaux prospects.</p>',
         ]
     ],
 ];

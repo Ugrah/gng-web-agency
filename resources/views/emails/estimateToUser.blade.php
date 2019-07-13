@@ -9,7 +9,7 @@
         <br>
         <p>{{ trans('emails/estimateToUser.content.p_3') }}</p>
         <br>
-        <p style="text-align: center"><a class="btn-custom-gradient rounded" href="{{url('/')}}" target="_blank">{{ trans('emails/estimateToUser.link') }}</a></p>
+        <p style="text-align: center"><a class="btn-custom-gradient rounded" href="{{url('/contact')}}" target="_blank">{{ trans('emails/estimateToUser.link') }}</a></p>
     </div>
 </section>
 

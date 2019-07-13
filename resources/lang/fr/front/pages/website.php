@@ -15,28 +15,28 @@ return [
         'showcase' => [
             'name' => 'Site Vitrine',
             'title' => 'Présentez votre entreprise, votre activité.',
-            'content' => '<p>Généralement, lorsque vous décidez d\'attaquer le web, vous voudriez avant tout présenter votre activité. Un site vitrine est parfait pour présenter votre entreprise. Avec un bon référencement naturel, vous pourriez obtenir de nouveaux clients et leur permettre de découvrir votre entreprise sous toutes ses formes.</p><p>Rapide à mettre en place, vous serez efficacement présenté sur le web.</p>',
+            'content' => '<p>Généralement, lorsque vous décidez d\'aborder le web, vous voudriez avant tout présenter votre activité. Un site vitrine est parfait pour présenter votre entreprise. Avec un bon référencement naturel, vous pourriez obtenir de nouveaux clients et leur permettre de découvrir votre entreprise sous toutes ses formes.</p><p>Rapide à mettre en place, vous serez efficacement présenté sur le web.</p>',
             'img_alt' => 'Site vitrine illustration',
 
         ],
         'e_commerce' => [
             'name' => 'E-Commerce',
             'title' => 'Vendez vos produits via internet en toute sécurité.',
-            'content' => '<p>Vous avez un commerce ? Vous souhaiteriez accroître vos ventes ?</p><p>Voici une façon efficace de présenter et de vendre vos produits à travers le net.</p><p>Mise en place d\'un système de paiement en ligne sécurisé, vous pouvez gérer vos ventes en toute sérénité.</p>',
+            'content' => '<p>Vous avez un commerce ? Vous souhaitez accroître vos ventes ?</p><p>Voici une façon efficace de présenter et de vendre vos produits à travers le net.</p><p>Mise en place d\'un système de paiement en ligne sécurisé, vous pouvez gérer vos ventes en toute sérénité.</p>',
             'img_alt' => 'E-Commerce illustration',
 
         ],
         'portfolio' => [
-            'name' => 'Porfolio',
+            'name' => 'Portfolio',
             'title' => 'Faites connaître vos réalisations.',
-            'content' => '<p>Afficher vos réalisations artistique ou professionnelles relatives à votre métier, et faites valoir votre expérience selon votre domaine.</p><p>Voici le format adéquat pour montrer votre  savoir-faire.</p>',
+            'content' => '<p>Afficher vos réalisations artistiques ou professionnelles relatives à votre métier, et faites valoir votre expérience selon votre domaine.</p><p>Voici le format adéquat pour montrer votre  savoir-faire.</p>',
             'img_alt' => 'Portfolio illustration',
 
         ],
         'catalog' => [
             'name' => 'Catalogue',
             'title' => 'Présentez votre gamme de produits.',
-            'content' => '<p>Vous pouvez présenter vos produits sans forcément vouloir proposer à vos clients en ligne. Et donc voici le format qui respecte ce choix.</p><p>Un Catalogue ergonomique qui présente fidèlement vos produits.</p>',
+            'content' => '<p>Vous pouvez présenter vos produits a vos clients en ligne. Et donc voici le format qui respecte ce choix.</p><p>Un Catalogue ergonomique qui présente fidèlement vos produits.</p>',
             'img_alt' => 'Catalogue illustration',
 
         ],
@@ -45,7 +45,7 @@ return [
     'section1' => [
         'title' => 'Application web',
         'description' => 'Il existe des sites plus avancés qui méritent un traitement particulier. Ces derniers ne peuvent être rangés dans les catégories citées plus haut. Nous en parlons ici.',
-        'content' => '<p class="text-light">Si vous voulez avoir un système de gestion, ou effectuer des manipulation avancées via une application internet ou eternet, vous avez ici le parfait allié.</p><p class="text-light">Ce type de site internet vous permettra d\'obtenir des fonctionnalités tout aussi complexes que variées, accessibles et disponibles sur tout type de support (Ordinateur, téléphone et tablette).</p>',
+        'content' => '<p class="text-light">Si vous voulez avoir un système de gestion, ou effectuer des manipulations avancées via une application internet ou ethernet, vous avez ici le parfait allié.</p><p class="text-light">Ce type de site internet vous permettra d\'obtenir des fonctionnalités tout aussi complexes que variées, accessibles et disponibles sur tout type de support (Ordinateur, téléphone et tablette).</p>',
         'img_alt' => 'Web application illustration',
     ],
 
@@ -58,9 +58,9 @@ return [
     ],
 
     'section3' => [
-        'title' => 'Choisir l\'outil adapté à ses besoins',
-        'description' => 'Avec tous les outils proposés vous avez peut-être l\'embarras du choix. Ne vous inquiétez pas nous saurons vous guider à choisir la technologie qui vous conviendrait le mieux.',
-        'content' => '<p class="text-light">Si vous désirez modifier régulièrement les contenus de vos pages, vos menus, nous vous proposerons l\'utilisation d\'un CMS tel que Wordpress. Un système de site web modulaire, personnalisable a vos souhaits. Ces avantages les plus significatifs sont sa facilité d\'utilisation et de maintien.</p><p class="text-light">Cependant, l\'ajout de fonctionnalité beaucoup plus avancé reste plus difficile à mettre en place.</p><p class="text-light">Mais rassurez vous à chaque besoin une solution adaptée.</p><p class="text-light">Ne soyez pas freiné par votre budget. Pour réduire vos coûts et pour répondre à votre demande nous vous proposerons la solution qui lie efficacement performance, qualité et prix.</p>',
+        'title' => 'Choisir l\'outil adapté à vos besoins',
+        'description' => 'Avec tous les outils proposés vous avez peut-être l\'embarras du choix. Ne vous inquiétez pas nous saurons vous guider pour choisir la technologie qui vous conviendrait le mieux.',
+        'content' => '<p class="text-light">Si vous désirez modifier régulièrement les contenus de vos pages, vos menus, nous vous proposerons l\'utilisation d\'un CMS tel que Wordpress. Un système de site web modulaire, personnalisable à vos souhaits. Ses avantages les plus significatifs sont sa facilité d\'utilisation et de maintien.</p><p class="text-light">Cependant, l\'ajout de fonctionnalité beaucoup plus avancé reste plus difficile à mettre en place.</p><p class="text-light">Mais rassurez-vous: à chaque besoin, une solution adaptée.</p><p class="text-light">Ne soyez pas freiné par votre budget. Pour réduire vos coûts et pour répondre à votre demande nous vous proposerons la solution qui lie efficacement performance, qualité et prix.</p>',
         'img_alt' => 'Ordinateur et langage de programmations multiple illustration',
     ],
 
