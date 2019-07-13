@@ -87,7 +87,7 @@
 
             </div>
             <div class="col-10 col-md-6 wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">
-                <map>for map</map>
+                <!-- <map>for map</map> -->
             </div>
         </div>
     </div>

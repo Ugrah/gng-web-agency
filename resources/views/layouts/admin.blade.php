@@ -217,20 +217,20 @@
           </li>
           <li class="nav-item dropdown py-1">
             <a class="nav-link pt-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span>{{ auth()->user()->name }} </span>
-              <img src="{{ asset('img/icons/facebook-logo-2.png') }}" width="32" alt="" class="img-fluid img-rounded">
+              <span>{{ $user->name }} </span>
+              <img src="@if(!isset($user->profileImage)) {{ asset( config('images.profiles').'/profile-empty.jpg' ) }} @else {{ asset( config('images.profiles').'/'.$user->profileImage ) }} @endif" width="32" alt="" class="img-fluid rounded-circle">
               <!-- <i class="fas fa-user-circle fa-2x"></i> -->
             </a>
-            <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="navbarDropdownMenuLink">
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a>
               <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i> Setting</a>
-              @auth
+              @if(isset($user))
               <hr class="my-2">
               <a class="dropdown-item" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Log out</a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                   {{ csrf_field() }}
               </form>
-              @endauth
+              @endif
             </div>
           </li>
         </ul>

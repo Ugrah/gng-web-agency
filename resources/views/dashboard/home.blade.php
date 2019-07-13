@@ -293,11 +293,11 @@
 
 @section('scripts')
 
-<script type="text/javascript">
-    $(function() {
-        // Aside active link
-        $('#mySidebar ul.navbar-nav > li.nav-item > a.nav-link:eq(0)').addClass('active');
+  <script type="text/javascript">
+      $(function() {
+          // Aside active link
+          $('#mySidebar ul.navbar-nav > li.nav-item > a.nav-link:eq(0)').addClass('active');
 
-    });
-</script>
+      });
+  </script>
 @endsection

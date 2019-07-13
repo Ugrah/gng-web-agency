@@ -197,7 +197,7 @@
             <div class="row text-center text-md-left justify-content-center">
                 <div class="col-10 col-md-6 my-auto">
                     <h4 class="text-white wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.2s" style="font-size: 2rem">{{trans('front/pages/index.section4.title')}}</h4>
-                    <p class="text-light wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.2s">{{trans('front/pages/index.section4.title')}}</p>
+                    <p class="text-light wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.2s">{{trans('front/pages/index.section4.description')}}</p>
                 </div>
                 <div class="col-10 col-md-6 my-auto text-center text-md-right wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.2s"><a href="{{ url('/contact') }}" class="btn btn-dark py-3 px-4 rounded">{{ trans('front/pages/index.section4.link') }}</a></div>
             </div>

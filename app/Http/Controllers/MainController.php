@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Jobs\ChangeLocale;
 use App\Repositories\EstimatedPriceRepository;
+use App\Repositories\UserMessageRepository;
 use SEO;
 use App\Traits\SeoTrait;
 use App\Jobs\SendContactToUserEmail;
@@ -23,10 +24,12 @@ class MainController extends Controller
     const SEO_TITLE_PATH = 'back/seo/pageTitle.';
 
     protected $estimatedPriceRepository;
+    protected $userMessageRepository;
 
-    public function __construct(EstimatedPriceRepository $estimatedPriceRepository){
+    public function __construct(EstimatedPriceRepository $estimatedPriceRepository, UserMessageRepository $userMessageRepository){
         $this->middleware('ajax', ['only' => ['pricesPost']]);
         $this->estimatedPriceRepository = $estimatedPriceRepository;
+        $this->userMessageRepository = $userMessageRepository;
     }
 
     /**
@@ -113,6 +116,10 @@ class MainController extends Controller
 
     public function postContact(ContactRequest $request)
     {
+        // Store userMessage in db
+        $request->merge(['userIpAdress' => request()->ip()]);
+        $this->userMessageRepository->store($request->all());
+
         SendContactToUserEmail::dispatchNow($request->all());
         SendContactToAdminEmail::dispatchNow($request->all());
 

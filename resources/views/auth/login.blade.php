@@ -19,7 +19,7 @@
                 <div class="card-body p-0">
                     <div class="row">
                         <div class="col bg d-none d-md-block">
-                    </div>
+                        </div>
                         <div class="col p-4">
                             <h2 class="text-center pb-3">{{ __('Welcome back !') }}</h2>
                             <form method="POST" action="{{ route('login') }}">

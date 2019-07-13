@@ -20,7 +20,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/mobile-app', 'MainController@mobileApp')->name('mobileApp');
     Route::get('/prices', 'MainController@prices')->name('prices');
     Route::post('/prices', 'MainController@ajaxPrices')->name('prices');
-    //Route::get('/realisations', 'MainController@realisations')->name('realisations');
+    Route::get('/realisations', 'MainController@realisations')->name('realisations');
 
     Route::get('/contact', 'MainController@getContact')->name('contact');
     Route::post('/contact', 'MainController@postContact')->name('contact');
