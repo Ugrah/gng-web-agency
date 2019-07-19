@@ -52,7 +52,43 @@ class TestController extends Controller
         return response()->json();
     }
 
-     /**
+    public function formFile()
+    {
+        return view('tests.form_file');
+    }
+
+    public function formFilePost(Request $request)
+    {
+        
+        $this->validate($request, [
+            'images' => 'required',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+        
+        
+        if($request->hasfile('images'))
+        {
+            foreach($request->file('images') as $image)
+            {
+                do {
+                    $imgName = time().'.'.$image->getClientOriginalExtension();
+                } while(file_exists(config('images.tests').'/'.$imgName));
+                $image->move(config('images.tests'), $imgName);  
+                //$data[] = $name;
+            }
+        }
+
+        /*
+        $form= new Form();
+        $form->images=json_encode($data);
+        $form->save();
+        */
+
+        return back()->with('success', 'Your images has been successfully');
+        //return response()->json();
+    }
+
+    /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data

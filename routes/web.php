@@ -50,8 +50,8 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::group(['middleware' => []], function(){
 
-        Route::get('/test', 'TestController@test')->name('test');
-        Route::post('/test', 'TestController@testPost')->name('test');
+        Route::get('/test', 'TestController@formFile')->name('test');
+        Route::post('/test', 'TestController@formFilePost')->name('test');
 
         //Route::get('dashboard', function () { $account = "It's me"; dd($account); });
     });

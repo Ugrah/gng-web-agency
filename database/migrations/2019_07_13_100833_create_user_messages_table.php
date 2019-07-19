@@ -17,10 +17,10 @@ class CreateUserMessagesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email');
-            $table->string('phoneNumber')->nullable();
+            $table->string('phone_number')->nullable();
             $table->string('subject');
             $table->string('content');
-            $table->string('userIpAdress');
+            $table->string('user_ip_adress');
             $table->boolean('read')->default(false);
             $table->timestamps();
         });

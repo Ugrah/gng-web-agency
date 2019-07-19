@@ -11,7 +11,7 @@ class Production extends Model
      *
      * @var array
      */
-    protected $fillable = [ 'title', 'image', 'type', 'url', 'author',];
+    protected $fillable = [ 'name', 'descriptionEn', 'descriptionFr', 'imageName', 'type', 'url', 'author',];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -20,8 +20,8 @@ class Production extends Model
      */
     protected $hidden = [];
 
-    public function productionImages()
-    {
-        return $this->hasMany('App\ProductionImage');
-    }
+    public function tags()
+	{
+		return $this->belongsToMany('App\Tag');
+	}
 }

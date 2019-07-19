@@ -49,6 +49,7 @@ class HtmlServiceProvider extends ServiceProvider
 
         $this->registerFormControl();
         $this->registerFormSubmit();
+        $this->registerFormSelect();
         $this->registerHtmlButtonBack();
     }
 

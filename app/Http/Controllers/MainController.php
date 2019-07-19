@@ -117,7 +117,7 @@ class MainController extends Controller
     public function postContact(ContactRequest $request)
     {
         // Store userMessage in db
-        $request->merge(['userIpAdress' => request()->ip()]);
+        $request->merge(['user_ip_adress' => request()->ip()]);
         $this->userMessageRepository->store($request->all());
 
         SendContactToUserEmail::dispatchNow($request->all());

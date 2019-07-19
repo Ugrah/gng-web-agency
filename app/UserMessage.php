@@ -12,7 +12,7 @@ class UserMessage extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'phoneNumber', 'subject', 'content', 'userIpAdress', 'read',
+        'name', 'email', 'phone_number', 'subject', 'content', 'user_ip_adress', 'read',
     ];
 
     /**
@@ -21,6 +21,6 @@ class UserMessage extends Model
      * @var array
      */
     protected $hidden = [
-        'userIpAdress', 'read',
+        'user_ip_adress', 'read',
     ];
 }

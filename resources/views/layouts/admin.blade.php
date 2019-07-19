@@ -132,7 +132,7 @@
 
             <li class="nav-item">
               <a class="nav-link px-3 text-light" data-toggle="collapse" href="#collapsePortfolio" role="button" aria-expanded="false" aria-controls="collapsePortfolio">
-                <i class="fas fa-layer-group pr-2"></i> {{ __('Portfolio') }}
+                <i class="fas fa-layer-group pr-2"></i> {{ __('Productions') }}
                 <i class="fas fa-angle-right float-right"></i>
                 <i class="fas fa-angle-down d-none float-right"></i>
               </a>
@@ -224,7 +224,7 @@
             <li class="nav-item dropdown py-1">
               <a class="nav-link pt-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span>{{ auth()->user()->name }} </span>
-                <img src="@if(!isset($user->profileImage)) {{ asset( config('images.profiles').'/profile-empty.jpg' ) }} @else {{ asset( config('images.profiles').'/'.auth()->user()->profileImage ) }} @endif" width="32" alt="" class="img-fluid rounded-circle">
+                <img src="@if(!isset($user->profile_image)) {{ asset( config('images.profiles').'/profile-empty.jpg' ) }} @else {{ asset( config('images.profiles').'/'.auth()->user()->profile_image ) }} @endif" width="32" alt="" class="img-fluid rounded-circle">
                 <!-- <i class="fas fa-user-circle fa-2x"></i> -->
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">

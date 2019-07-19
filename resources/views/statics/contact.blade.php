@@ -4,14 +4,13 @@
 <div style="height: 70vh; background-image: linear-gradient(to right top, rgba(232, 123, 192, 0.9), rgba(225, 109, 203, 0.9), rgba(211, 98, 218, 0.9), rgba(190, 91, 234, 0.9), rgba(158, 89, 253, 0.9)), url('img/bg/bg-contact.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center center;" class="position-relative">
     {{ Html::navbar_default() }}
 
-
     <div class="position-absolute w-100 text-center text-white" style="top: 45%;">
         <h1>{{ trans('front/pages/contact.title') }}</h1>
     </div>
 </div>
 
 @if(!empty($ok))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
             {{ $ok }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -75,7 +74,7 @@
 
                     {!! Form::control('email', $errors, 'email', ['class' => 'form-control rounded', 'placeholder' => trans('front/pages/contact.form.placeholder.email'), 'required'=> 'required']) !!}
 
-                    {!! Form::control('tel', $errors, 'phoneNumber', ['class' => 'form-control rounded', 'placeholder' => trans('front/pages/contact.form.placeholder.number_phone')]) !!}
+                    {!! Form::control('tel', $errors, 'phone_number', ['class' => 'form-control rounded', 'placeholder' => trans('front/pages/contact.form.placeholder.number_phone')]) !!}
 
                     {!! Form::control('text', $errors, 'subject', ['class' => 'form-control rounded', 'placeholder' => trans('front/pages/contact.form.placeholder.subject'), 'required'=> 'required']) !!}
 
