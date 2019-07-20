@@ -15,9 +15,9 @@ class CreateProductionsTable extends Migration
     {
         Schema::create('productions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('description_en')->nullable();
-            $table->string('description_fr')->nullable();
+            $table->string('name')->unique();
+            $table->text('description_en');
+            $table->text('description_fr');
             $table->string('image_name');
             $table->string('screenshots')->nullable();
             $table->enum('type', ['website', 'mobile_app']);

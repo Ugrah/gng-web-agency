@@ -11,7 +11,7 @@ class Production extends Model
      *
      * @var array
      */
-    protected $fillable = [ 'name', 'descriptionEn', 'descriptionFr', 'imageName', 'type', 'url', 'author',];
+    protected $fillable = [ 'name', 'description_en', 'description_fr', 'image_name', 'screenshots', 'type', 'url', 'author',];
 
     /**
      * The attributes that should be hidden for arrays.

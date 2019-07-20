@@ -23,21 +23,18 @@ class ProductionCreateRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = [
+        return [
+            /*
             'name' => 'string|required|between:5,50|unique:productions',
-            'descriptionEn' => 'string|max:255',
-            'descriptionFr' => 'string|max:255',
+            'description_en' => 'string|min:20|max:1000',
+            'description_fr' => 'string|min:20|max:1000',
             'imageFile' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'screenshotFiles.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'type' => 'required|in:website,mobileApp',
             'url' => 'string|max:100',
             'author' => 'string|max:50',
             'tags' => ['Regex:/^[A-Za-z0-9-éèàù]{0,50}?(,[A-Za-z0-9-éèàù]{0,50})*$/'],
+            */
         ];
-        $images = count(request()->images);
-        foreach(range(0, $images) as $index) {
-            $rules['images.' . $index] = 'image|mimes:jpeg,png,jpg,gif,svg|max:2048';
-        }
-
-        return $rules;
     }
 }

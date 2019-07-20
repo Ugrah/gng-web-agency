@@ -26,13 +26,14 @@ class ProductionUpdateRequest extends FormRequest
         $id = $this->production;
         return [
             'name' => 'string|required|between:5,50|unique:productions,name,'.$id,
-            'description_en' => 'string|max:255',
-            'description_fr' => 'string|max:255',
+            'description_en' => 'string',
+            'description_fr' => 'string',
             'imageFile' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'screenshotFiles.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'type' => 'required|in:website,mobileApp',
             'url' => 'string|max:100',
             'author' => 'string|max:50',
-            'tags' => ['Regex:/^[A-Za-z0-9-éèàù]{1,50}?(,[A-Za-z0-9-éèàù]{1,50})*$/'],
+            'tags' => ['Regex:/^[A-Za-z0-9-éèàù]{0,50}?(,[A-Za-z0-9-éèàù]{0,50})*$/'],
         ];
     }
 }

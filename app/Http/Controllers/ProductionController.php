@@ -53,9 +53,9 @@ class ProductionController extends Controller
      */
     public function store(ProductionCreateRequest $request)
     {
-        $request->merge(['imageName' => 'image_name']);
-        // Upload Image and put name in request
-        
+        $screenshots_array = [];
+
+        // Upload Main Image and put name in request
         if($request->hasFile('imageFile'))
         {
             $image = $request->file('imageFile');
@@ -63,34 +63,39 @@ class ProductionController extends Controller
             do {
                 $imageName = time().'.'.$image->getClientOriginalExtension();
             } while(file_exists($chemin.'/'.$imageName));
-            $image->move($chemin, $imageName);
-            $request->merge(['imageName' => $imageName]);
+
+            if($image->move($chemin, $imageName)) {
+                $request->merge(['image_name' => $imageName]);
+            }
         }
-        $production = $this->productionRepository->store($request->all());
         
-        // Upload each ProductionImages
-        if($request->input('images'))
+        // Upload Screenshots
+        if($request->hasfile('screenshotFiles'))
         {
-            foreach ($request->input('images') as $img) {
-                $img = $request->file('image');
-                $chemin = config('images.productions');
+            foreach($request->file('screenshotFiles') as $screenshot)
+            {
                 do {
-                    $imgName = time().'.'.$img->getClientOriginalExtension();
-                } while(file_exists($chemin.'/'.$imgName));
-                $img->move($chemin, $imgName);
-                $this->productionImageRepository->create([
-                    'name' => $imgName,
-                    'production_id' => $production->id,
-                ]);
+                    $screenshotName = time().'.'.$screenshot->getClientOriginalExtension();
+                } while(file_exists(config('images.screenshots').'/'.$screenshotName));
+
+                if($screenshot->move(config('images.screenshots'), $screenshotName)) {
+                    $screenshots_array[] = $screenshotName;
+                }  
             }
         }
 
+        if( count($screenshots_array) > 0) {
+            $request->merge(['screenshots' => json_encode($screenshots_array)]);
+        }
+        
+        $production = $this->productionRepository->store($request->all());
+
+
+        // Save Production's tags
 		if(isset($request->tags)) 
 		{
-			$this->tagRepository->store($production, $$request->tags);
+			$this->tagRepository->store($production, $request->tags);
         }
-
-        // return response()->json();
 
 		return redirect(route('production.index'))->withOk('Elément ajouté avec succès');
     }

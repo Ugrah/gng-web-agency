@@ -34,18 +34,20 @@
 
           {!! Form::control('text', $errors, 'author', ['class' => 'form-control', 'placeholder' => __('Author'), 'required' =>'required']) !!}
 
-          {!! Form::control('file', $errors, 'imageFile', ['class' => 'form-control', 'required' =>'required'], __('Choisir l\'image de votre production')) !!}
+          {!! Form::control('text', $errors, 'tags', ['class' => 'form-control', 'placeholder' => __('Entrez les tags séparés par des virgules'), 'required' =>'required']) !!}
+
+          {!! Form::control('file', $errors, 'imageFile', ['class' => 'form-control', 'required' =>'required'], __('Choisir une image principale')) !!}
 
           <label for="inputEmail4">{{ __('Add Screenshots') }}</label>
           <div class="input-group control-group increment">
-            <input type="file" name="images[]" class="form-control">
+            <input type="file" name="screenshotFiles[]" class="form-control">
             <div class="input-group-btn"> 
                 <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
             </div>
           </div>
           <div class="clone hide">
             <div class="control-group input-group" style="margin-top:10px">
-                <input type="file" name="images[]" class="form-control">
+                <input type="file" name="screenshotFiles[]" class="form-control">
                 <div class="input-group-btn"> 
                   <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
                 </div>
@@ -53,10 +55,11 @@
           </div>
 
         </div>
-        <div class="col-md-6">
-          {!! Form::control('textarea', $errors, 'descriptionEn', ['class' => 'form-control', 'placeholder' =>  __('Desc En'), 'required'=> 'required']) !!}
 
-          {!! Form::control('textarea', $errors, 'descriptionFr', ['class' => 'form-control', 'placeholder' =>  __('Desc Fr'), 'required'=> 'required']) !!}
+        <div class="col-md-6">
+          {!! Form::control('textarea', $errors, 'description_en', ['class' => 'form-control', 'placeholder' =>  __('Desc En'), 'required'=> 'required']) !!}
+
+          {!! Form::control('textarea', $errors, 'description_fr', ['class' => 'form-control', 'placeholder' =>  __('Desc Fr'), 'required'=> 'required']) !!}
         </div>
       </div>
     {!! Form::close() !!}
@@ -89,26 +92,7 @@
             e.preventDefault();
             $('#production-form').trigger('submit');           
           });
-          // Submit dynamic form price
-          /*
-          $('#production-form').on('submit', function(e) {  
-              e.preventDefault();
-              console.log($(this).serialize());
-              
-              $.ajax({
-                  method: $(this).attr('method'),
-                  url: $(this).attr('action'),
-                  data: $(this).serialize(),
-                  dataType: 'json'
-              })
-              .done(function(data) {
-              })
-              .fail(function(data) {
-                  console.log('Error, Please retry');
-              });
-              
-          });
-        */
+
       });
   </script>
 @endsection
