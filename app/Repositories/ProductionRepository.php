@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Production;
+use Illuminate\Support\Facades\DB;
 
 class ProductionRepository extends ResourceRepository
 {
@@ -12,20 +13,19 @@ class ProductionRepository extends ResourceRepository
 		$this->model = $production;
     }
     
-    public function queryWithProductionImagesAndTags()
+    public function queryWithTags()
 	{
-		return $this->model->with('productionImages', 'tags')
-		->orderBy('productions.created_at', 'desc');		
+		return DB::table('productions')->get();
 	}
 
-	public function getWithUProductionImagesAndTagsPaginate($n)
+	public function getWithTagsPaginate($n)
 	{
-		return $this->queryWithProductionImagesAndTags()->paginate($n);
+		return $this->queryWithTags()->paginate($n);
 	}
 
-	public function getWithProductionImagesAndTagsForTagPaginate($tag, $n)
+	public function getWithTagsForTagPaginate($tag, $n)
 	{
-		return $this->queryWithProductionImagesAndTags()
+		return $this->queryWithTags()
 		->whereHas('tags', function($q) use ($tag)
 		{
 		  $q->where('tags.tag_url', $tag);

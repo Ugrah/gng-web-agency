@@ -24,7 +24,6 @@ class ProductionCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            /*
             'name' => 'string|required|between:5,50|unique:productions',
             'description_en' => 'string|min:20|max:1000',
             'description_fr' => 'string|min:20|max:1000',
@@ -34,7 +33,6 @@ class ProductionCreateRequest extends FormRequest
             'url' => 'string|max:100',
             'author' => 'string|max:50',
             'tags' => ['Regex:/^[A-Za-z0-9-éèàù]{0,50}?(,[A-Za-z0-9-éèàù]{0,50})*$/'],
-            */
         ];
     }
 }

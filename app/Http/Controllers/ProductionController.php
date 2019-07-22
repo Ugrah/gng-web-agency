@@ -7,6 +7,7 @@ use App\Repositories\TagRepository;
 use App\Http\Requests\ProductionCreateRequest;
 use App\Http\Requests\ProductionUpdateRequest;
 use Illuminate\Http\Request;
+use App\Production;
 
 class ProductionController extends Controller
 {
@@ -31,7 +32,8 @@ class ProductionController extends Controller
      */
     public function index()
     {
-        $productions = $this->productionRepository->queryWithProductionImagesAndTags();
+        // $productions = Production::all();
+        $productions = $this->productionRepository->queryWithTags();
         return view('dashboard.productions.index', compact('productions'));        
     }
 

@@ -26,8 +26,8 @@ class ProductionUpdateRequest extends FormRequest
         $id = $this->production;
         return [
             'name' => 'string|required|between:5,50|unique:productions,name,'.$id,
-            'description_en' => 'string',
-            'description_fr' => 'string',
+            'description_en' => 'string|min:20|max:1000',
+            'description_fr' => 'string|min:20|max:1000',
             'imageFile' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'screenshotFiles.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'type' => 'required|in:website,mobileApp',
