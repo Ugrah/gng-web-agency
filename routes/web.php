@@ -53,6 +53,9 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/test', 'TestController@formFile')->name('test');
         Route::post('/test', 'TestController@formFilePost')->name('test');
 
+        Route::get('production-list', 'TestController@getDataProduction');
+        Route::get('get-productions', 'TestController@displayData');
+
         //Route::get('dashboard', function () { $account = "It's me"; dd($account); });
     });
 

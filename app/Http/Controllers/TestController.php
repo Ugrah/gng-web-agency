@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Repositories\EstimatedPriceRepository;
 
 use Illuminate\Http\Request;
+use DataTables;
+use App\Production;
 
 class TestController extends Controller
 {
@@ -86,6 +88,40 @@ class TestController extends Controller
 
         return back()->with('success', 'Your images has been successfully');
         //return response()->json();
+    }
+
+    /**
+    * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getDataProduction()
+    {
+        return DataTables::of(Production::query())
+                ->rawColumns(['show', 'edit', 'delete'])
+                ->addColumn('show', function($production){
+                    return '<a href="'.route('production.show', ['id' => $production->id]).'" class="btn btn-success btn-block">Voir</a>';
+                })
+                ->addColumn('edit', function($production){
+                    return '<a href="'.route('production.edit', ['id' => $production->id]).'" class="btn btn-warning btn-block">Edit</a>';
+                })
+                ->addColumn('delete', function($production){
+                    return '<a href="#" class="btn btn-danger btn-block" onclick="event.preventDefault();document.getElementById(\'delete-production-'.$production->id.'\').submit();">Delete</a>
+                    <form id="delete-production-'.$production->id.'" action="'.route('production.destroy', ['id' => $production->id]).'" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>';
+                })->make(true);
+        // return response()->json(DataTables::of(Production::query())->make(true));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function displayData()
+    {
+        return view('tests.displaydata');
     }
 
     /**

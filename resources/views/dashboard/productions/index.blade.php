@@ -25,7 +25,7 @@
             Featured
           </div>
           <div class="card-body">
-            <table class="table">
+            <table id="dataTable" class="table">
               <thead class="thead-dark">
                 <tr>
                   <th scope="col">{{ __('Name') }}</th>
@@ -69,6 +69,8 @@
       $(function() {
           // Aside active link
           $('#mySidebar ul.navbar-nav > li.nav-item > a.nav-link:eq(1)').addClass('active');
+
+          $('#dataTable').DataTable();
       });
   </script>
 @endsection

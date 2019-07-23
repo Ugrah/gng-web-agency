@@ -198,6 +198,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         \Torann\GeoIP\GeoIPServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
     ],
 
     /*
@@ -264,6 +265,8 @@ return [
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
         
         'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,
+
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
 
     ],
 

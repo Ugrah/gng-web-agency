@@ -16,7 +16,8 @@
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.8",
         "spatie/laravel-cookie-consent": "^2.6",
-        "torann/geoip": "^1.0"
+        "torann/geoip": "^1.0",
+        "yajra/laravel-datatables-oracle": "^9.4"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

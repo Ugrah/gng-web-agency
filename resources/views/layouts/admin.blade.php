@@ -21,6 +21,7 @@
     {!! Html::style('css/app.css') !!}
     {!! Html::style('css/global.min.css') !!}
     {!! Html::style('css/animate.css') !!}
+    {!! Html::style('https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css') !!}
 
     <style>
       .sidebar {
