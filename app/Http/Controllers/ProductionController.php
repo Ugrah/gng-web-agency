@@ -7,7 +7,10 @@ use App\Repositories\TagRepository;
 use App\Http\Requests\ProductionCreateRequest;
 use App\Http\Requests\ProductionUpdateRequest;
 use Illuminate\Http\Request;
+use DataTables;
 use App\Production;
+use Str;
+use Form;
 
 class ProductionController extends Controller
 {
@@ -30,11 +33,35 @@ class ProductionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function getProductionsData()
+    {
+        return DataTables::of(Production::query())
+                ->rawColumns(['description', 'show', 'edit', 'delete'])
+                ->addColumn('description', function ($production) {
+                    return (session('locale') === 'fr') ? Str::limit($production->description_fr, $limit = 130, $end = ' ...') : Str::limit($production->description_en, $limit = 130, $end = ' ...');
+                })
+                ->addColumn('show', function($production){
+                    return '<a href="'.route('production.show', ['id' => $production->id]).'" class="btn btn-success btn-block">Voir</a>';
+                })
+                ->addColumn('edit', function($production){
+                    return '<a href="'.route('production.edit', ['id' => $production->id]).'" class="btn btn-warning btn-block">Edit</a>';
+                })
+                ->addColumn('delete', function($production){
+                    return Form::open(['method' => 'DELETE', 'route' => ['production.destroy', $production->id]]).
+                    Form::submit('Supprimer', ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm(\'Vraiment supprimer cet utilisateur ?\')']).
+                    Form::close();
+                })->make(true);
+    }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        // $productions = Production::all();
-        $productions = $this->productionRepository->queryWithTags();
-        return view('dashboard.productions.index', compact('productions'));        
+        return view('dashboard.productions.index');        
     }
 
     /**

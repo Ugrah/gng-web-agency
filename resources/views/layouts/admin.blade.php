@@ -12,7 +12,12 @@
     <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}" />
 
     <!-- Bootstrap CSS -->
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    {!! Html::style('https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css') !!}
+    {!! Html::script('https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js') !!}
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=ABeeZee|Lato|PT+Sans|Roboto|Roboto+Condensed" rel="stylesheet">
@@ -21,7 +26,6 @@
     {!! Html::style('css/app.css') !!}
     {!! Html::style('css/global.min.css') !!}
     {!! Html::style('css/animate.css') !!}
-    {!! Html::style('https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css') !!}
 
     <style>
       .sidebar {
@@ -64,54 +68,55 @@
 
     <style>
       #scroll-to-top {
-      display: inline-block;
-      width: 50px;
-      height: 50px;
-      text-align: center;
-      border-radius: 8px;
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      transition: background-color .3s, 
-        opacity .2s, visibility .2s;
-      opacity: 0;
-      visibility: hidden;
-      z-index: 1000;
-    }
-    #scroll-to-top:hover {
-      cursor: pointer;
-      background-color: #333;
-    }
-    #scroll-to-top.show {
-      opacity: 1;
-      visibility: visible;
-    }
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        border-radius: 8px;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        transition: background-color .3s, 
+          opacity .2s, visibility .2s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1000;
+      }
+      #scroll-to-top:hover {
+        cursor: pointer;
+        background-color: #333;
+      }
+      #scroll-to-top.show {
+        opacity: 1;
+        visibility: visible;
+      }
 
-    /* Styles for the content section */
+      /* Styles for the content section */
 
-    .content {
-      width: 77%;
-      margin: 50px auto;
-      font-family: 'Merriweather', serif;
-      font-size: 17px;
-      color: #6c767a;
-      line-height: 1.9;
-    }
-    
-    @media (min-width: 500px) {
       .content {
-        width: 43%;
+        width: 77%;
+        margin: 50px auto;
+        font-family: 'Merriweather', serif;
+        font-size: 17px;
+        color: #6c767a;
+        line-height: 1.9;
       }
-      #button {
-        margin: 30px;
+      
+      @media (min-width: 500px) {
+        .content {
+          width: 43%;
+        }
+        #button {
+          margin: 30px;
+        }
       }
-    }
     </style>
 
     @yield('styles')
 
     <!-- Font Awesome -->
     {!! Html::script('https://kit.fontawesome.com/754591c5ca.js') !!}
+
 
     @yield('scriptsBefore')
   </head>
@@ -251,9 +256,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <!-- <script src="{{asset('js/wow.js')}}"></script> -->
     {!! Html::script('js/wow.js') !!}

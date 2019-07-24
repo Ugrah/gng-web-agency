@@ -28,9 +28,9 @@
                                 <div class="form-group row justify-content-center">
 
                                     <div class="col-md-10">
-                                        <input id="email" type="email" class="form-control rounded @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="{{ __('E-Mail Address') }}" required autocomplete="email" autofocus>
+                                        <input id="identity" type="text" class="form-control rounded @error('identity') is-invalid @enderror" name="identity" value="{{ old('identity') }}" placeholder="{{ __('E-Mail Address') }}" required autocomplete="identity" autofocus>
 
-                                        @error('email')
+                                        @error('identity')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
