@@ -24,6 +24,7 @@ class ProductionController extends Controller
     public function __construct(ProductionRepository $productionRepository, TagRepository $tagRepository)
     {
         $this->middleware('admin');
+        $this->middleware('ajax', ['only' => ['getProductionsData']]);
         $this->productionRepository = $productionRepository;
         $this->tagRepository = $tagRepository;
     }
@@ -41,10 +42,10 @@ class ProductionController extends Controller
                     return (session('locale') === 'fr') ? Str::limit($production->description_fr, $limit = 130, $end = ' ...') : Str::limit($production->description_en, $limit = 130, $end = ' ...');
                 })
                 ->addColumn('show', function($production){
-                    return '<a href="'.route('production.show', ['id' => $production->id]).'" class="btn btn-success btn-block">Voir</a>';
+                    return '<a href="'.route('production.show', ['id' => $production->id]).'" class="btn btn-link btn-block">Voir</a>';
                 })
                 ->addColumn('edit', function($production){
-                    return '<a href="'.route('production.edit', ['id' => $production->id]).'" class="btn btn-warning btn-block">Edit</a>';
+                    return '<a href="'.route('production.edit', ['id' => $production->id]).'" class="btn btn-link btn-block">Edit</a>';
                 })
                 ->addColumn('delete', function($production){
                     return Form::open(['method' => 'DELETE', 'route' => ['production.destroy', $production->id]]).
@@ -126,7 +127,7 @@ class ProductionController extends Controller
 			$this->tagRepository->store($production, $request->tags);
         }
 
-		return redirect(route('production.index'))->withOk('Elément ajouté avec succès');
+		return redirect('production')->withOk('Elément ajouté avec succès');
     }
 
     /**
@@ -137,7 +138,8 @@ class ProductionController extends Controller
      */
     public function show($id)
     {
-        //
+        $production = $this->productionRepository->getById($id);
+        return view('dashboard.productions.show', compact('production'));
     }
 
     /**

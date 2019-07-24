@@ -4,10 +4,8 @@
 
   <div class="container-fluid p-4">
     <!-- Page notification -->
-    @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
+    @if(session()->has('ok'))
+			<div class="alert alert-success alert-dismissible">{!! session('ok') !!}</div>
     @endif
 
     <!-- Page Heading -->
@@ -51,22 +49,29 @@
 
   <script type="text/javascript">
       $(function() {
-          // Aside active link
-          $('#mySidebar ul.navbar-nav > li.nav-item > a.nav-link:eq(1)').addClass('active');
+        // Aside active link
+        $('#mySidebar ul.navbar-nav > li.nav-item > a.nav-link:eq(1)').addClass('active');
 
-          $('#dataTable').DataTable({
-            processing: true,
-            serverSide: true,
-            ajax: '{{ url('get-productions-data') }}',
-            columns: [
-                        { data: 'name', name: 'name' },
-                        { data: 'type', name: 'type' },
-                        { data: 'description', name: 'description', orderable: false, searchable: false },
-                        { data: 'show', name: 'show', orderable: false, searchable: false },
-                        { data: 'edit', name: 'edit', orderable: false, searchable: false },
-                        { data: 'delete', name: 'delete', orderable: false, searchable: false }
-                    ]
-          });
+        // Dismissible alert
+        if($('div.alert-success').css('display') === 'block'){
+            setTimeout(function() { 
+                $('div.alert-success').fadeOut('slow');
+            }, 5000);
+        }
+
+        $('#dataTable').DataTable({
+          processing: true,
+          serverSide: true,
+          ajax: '{{ url('get-productions-data') }}',
+          columns: [
+                      { data: 'name', name: 'name' },
+                      { data: 'type', name: 'type' },
+                      { data: 'description', name: 'description', orderable: false, searchable: false },
+                      { data: 'show', name: 'show', orderable: false, searchable: false },
+                      { data: 'edit', name: 'edit', orderable: false, searchable: false },
+                      { data: 'delete', name: 'delete', orderable: false, searchable: false }
+                  ]
+        });
       });
   </script>
 @endsection

@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Presenters\DatePresenter;
 
 class Production extends Model
 {
+    use DatePresenter;
+
     /**
      * The attributes that are mass assignable.
      *
