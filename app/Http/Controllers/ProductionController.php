@@ -230,12 +230,44 @@ class ProductionController extends Controller
         return redirect()->back()->withOk("La  production a été supprimée de la Base de données.");
     }
 
-    public function detachTag(Request $request)
+    /**
+     * Detach the specified tag from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function detachTag()
     {
         $production = $this->productionRepository->getById(Input::get('production'));
         $tag = $this->tagRepository->getById(Input::get('tag'));
         $production->tags()->detach($tag->id);
         
+        return response()->json();
+    }
+
+    /**
+     * Remove the specified image from uploads directory.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function removeScreenshot()
+    {
+        $production = $this->productionRepository->getById(Input::get('production'));
+        $image_name = Input::get('file');
+
+        $screenshots_array = json_decode($production->screenshots);
+
+        foreach (array_keys($screenshots_array, $image_name) as $key) {
+            unset($screenshots_array[$key]);
+            //Delete old screenshot if exists
+            if(file_exists(config('images.screenshots').'/'.$image_name)){
+                File::delete(config('images.screenshots').'/'.$image_name);
+            }
+        }
+
+        $production->update(['screenshots' => json_encode($screenshots_array)]);
+
         return response()->json();
     }
 }

@@ -13,8 +13,15 @@
       </div>
     @endif
 
-    <div class="alert alert-success alert-dismissible fade show text-center d-none" role="alert">
+    <div class="detach-tags-success alert alert-success alert-dismissible fade show text-center d-none" role="alert">
         {{ __('The tag has been deleted') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="delete-file-success alert alert-success alert-dismissible fade show text-center d-none" role="alert">
+        {{ __('The file has been deleted') }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -86,9 +93,9 @@
                 
                 <div class="row pt-2">
                 @foreach(json_decode($production->screenshots, true) as $key => $img_name)
-                    <div class="col">
+                    <div data-block-img="screenshot-{{ $img_name }}" class="col">
                         <div class="card position-relative">
-                            <span style="top: 0.25em; right:0.25em" class="ml-1 position-absolute"><a class="px-1" href=""><i class="fa fa-times-circle close text-danger"></i></a></span>
+                            <span style="top: 0.25em; right:0.25em" class="ml-1 position-absolute"><a class="delete-file px-1" href="#"  data-production="{{ $production->id }}" data-file="{{ $img_name }}" data-name="screenshot-{{ $img_name }}"><i class="fa fa-times-circle close text-danger"></i></a></span>
                             <img src="{{asset(config('images.screenshots').'/'.$img_name)}}" class="card-img-top">
                         </div>
                     </div>
@@ -148,8 +155,33 @@
                 })
                 .done(function(data) {
                     $button.remove();
-                    $('.alert-success').removeClass('d-none');
-                    setTimeout(function(){$('.alert-success').addClass('d-none');}, 4000);
+                    $('.detach-tags-success').removeClass('d-none');
+                    setTimeout(function(){$('.detach-tags-success').addClass('d-none');}, 4000);
+                })
+                .fail(function(data) {
+                    console.log('Error, Please retry');
+                });
+            });
+        });
+
+        // Remove image from uploads
+        $('a.delete-file').each(function(){
+            $(this).on('click', function(e){
+                e.preventDefault();
+                var $datas = { production: $(this).attr('data-production'), file : $(this).attr('data-file') };
+                var $file = $( 'div[data-block-img="' + $(this).attr('data-name') + '"]' );
+
+                $.ajax({
+                    headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+                    method: 'post',
+                    url: '{{ url('remove-screenshot') }}',
+                    data: $datas,
+                    dataType: 'json'
+                })
+                .done(function(data) {
+                    $file.remove();
+                    $('.delete-file-success').removeClass('d-none');
+                    setTimeout(function(){$('.delete-file-success').addClass('d-none');}, 4000);
                 })
                 .fail(function(data) {
                     console.log('Error, Please retry');
