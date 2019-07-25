@@ -38,6 +38,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     Route::resource('production', 'ProductionController')->except([]);
+    Route::post('detach-tag', 'ProductionController@detachTag')->name('detach.production.tag');
     Route::get('get-productions-data', 'ProductionController@getProductionsData')->name('get.data.productions');
     
     

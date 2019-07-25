@@ -4,31 +4,27 @@ namespace App\Repositories;
 use App\Tag;
 use Illuminate\Support\Str;
 
-class TagRepository
+class TagRepository extends ResourceRepository
 {
-
-    protected $tag;
-
-    public function __construct(Tag $tag)
+	public function __construct(Tag $tag)
 	{
-		$this->tag = $tag;
-	}
+		$this->model = $tag;
+    }
 
-	public function store($production, $tags)
+	public function tagStore($production, $tags)
 	{
 		$tags = explode(',', $tags);
-
 		foreach ($tags as $tag) {
 
 			$tag = trim($tag);
 
 			$tag_url = Str::slug($tag);
 
-			$tag_ref = $this->tag->where('tag_url', $tag_url)->first();
+			$tag_ref = $this->model->where('tag_url', $tag_url)->first();
 
 			if(is_null($tag_ref)) 
 			{
-				$tag_ref = new $this->tag([
+				$tag_ref = new $this->model([
 					'tag' => $tag,
 					'tag_url' => $tag_url
 				]);	
@@ -42,7 +38,6 @@ class TagRepository
 			}
 
 		}
-
 	}
 
 }

@@ -12,6 +12,7 @@ use App\Production;
 use Str;
 use Form;
 use File;
+use Illuminate\Support\Facades\Input;
 
 class ProductionController extends Controller
 {
@@ -128,7 +129,7 @@ class ProductionController extends Controller
         // Save Production's tags
 		if(isset($request->tags)) 
 		{
-			$this->tagRepository->store($production, $request->tags);
+			$this->tagRepository->tagStore($production, $request->tags);
         }
 
 		return redirect('production')->withOk('Elément ajouté avec succès');
@@ -211,7 +212,7 @@ class ProductionController extends Controller
         // Save Production's tags
 		if(isset($request->new_tags)) 
 		{
-			$this->tagRepository->store($production, $request->new_tags);
+			$this->tagRepository->tagStore($production, $request->new_tags);
         }
 
 		return redirect('production')->withOk('Elément modifié avec succès');
@@ -227,5 +228,14 @@ class ProductionController extends Controller
     {
         $this->productionRepository->destroy($id);
         return redirect()->back()->withOk("La  production a été supprimée de la Base de données.");
+    }
+
+    public function detachTag(Request $request)
+    {
+        $production = $this->productionRepository->getById(Input::get('production'));
+        $tag = $this->tagRepository->getById(Input::get('tag'));
+        $production->tags()->detach($tag->id);
+        
+        return response()->json();
     }
 }

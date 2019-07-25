@@ -13,6 +13,13 @@
       </div>
     @endif
 
+    <div class="alert alert-success alert-dismissible fade show text-center d-none" role="alert">
+        {{ __('The tag has been deleted') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">{{  __('Edit Production') }}</h1>
@@ -29,7 +36,7 @@
             <div class="col-md-6">
                 {!! Form::control('text', $errors, 'name', ['class' => 'form-control', 'placeholder' => __('Production name'), 'required' =>'required']) !!}
 
-                {!! Form::select_options($errors, 'type', ['website' => __('Website'), 'mobile_app' => __('Mobile App')]) !!}
+                {!! Form::select_options($errors, 'type', ['website' => __('Website'), 'mobile_app' => __('Mobile App')], $production->type) !!}
 
                 {!! Form::control('text', $errors, 'url', ['class' => 'form-control', 'placeholder' => __('Production Url'), 'required' =>'required']) !!}
 
@@ -40,7 +47,7 @@
                 @foreach($production->tags as $tag)
                     <button type="button" class="btn btn-info my-1 px-2 py-1 rounded">
                         <span>{{$tag->tag}} </span>
-                        <span class="ml-1 float-right"><a class="px-1" href=""><i class="fa fa-times-circle close"></i></a></span>
+                        <span class="ml-1 float-right"><a class="detach-tag px-1" data-production="{{ $production->id }}" data-tag="{{ $tag->id }}" href=""><i class="fa fa-times-circle close"></i></a></span>
                     </button>
                 @endforeach
             </div>
@@ -114,17 +121,41 @@
 
         // Add and remove screenshot function 
         var addAndRemoveScreenshot = function() {
-        $(".btn-success").click(function(){ 
-            var html = $(".clone").html();
-            $(".increment").after(html);
-        });
-        $("body").on("click",".btn-danger",function(){ 
-            $(this).parents(".control-group").remove();
-        });
+            $(".btn-success").click(function(){ 
+                var html = $(".clone").html();
+                $(".increment").after(html);
+            });
+            $("body").on("click",".btn-danger",function(){ 
+                $(this).parents(".control-group").remove();
+            });
         };
-
         // Launch addAndRemoveScreenshot()
         addAndRemoveScreenshot();
+
+        // Detach tag from production by ajax call
+        $('a.detach-tag').each(function(){
+            $(this).on('click', function(e){
+                e.preventDefault();
+                var $button = $(this).parent().parent('button');
+                var $datas = { production: $(this).attr('data-production'), tag : $(this).attr('data-tag') };
+
+                $.ajax({
+                    headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+                    method: 'post',
+                    url: '{{ url('detach-tag') }}',
+                    data: $datas,
+                    dataType: 'json'
+                })
+                .done(function(data) {
+                    $button.remove();
+                    $('.alert-success').removeClass('d-none');
+                    setTimeout(function(){$('.alert-success').addClass('d-none');}, 4000);
+                })
+                .fail(function(data) {
+                    console.log('Error, Please retry');
+                });
+            });
+        });
 
         $('#submit-form').click(function(e){
             e.preventDefault();

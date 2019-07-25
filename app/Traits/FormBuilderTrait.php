@@ -30,11 +30,13 @@ trait FormBuilderTrait
 
     private function registerFormSelect()
     {
-        FormBuilder::macro('select_options', function($errors, $name, $data = [])
+        FormBuilder::macro('select_options', function($errors, $name, $data = [], $seleted = null)
         {
             $options = '';
             foreach ($data as $key => $value){
-                $options .= '<option value="'.$key.'">'.$value.'</option>';
+                $options .= '<option ';
+                ($key == $seleted) ? $options .= 'selected="selected" ' : $options .= '';
+                $options .= ' value="'.$key.'">'.$value.'</option>';
             }
             return sprintf('
                 <div class="form-group %s">
