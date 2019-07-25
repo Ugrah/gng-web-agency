@@ -11,6 +11,7 @@ use DataTables;
 use App\Production;
 use Str;
 use Form;
+use File;
 
 class ProductionController extends Controller
 {
@@ -48,8 +49,12 @@ class ProductionController extends Controller
                     return '<a href="'.route('production.edit', ['id' => $production->id]).'" class="btn btn-link btn-block">Edit</a>';
                 })
                 ->addColumn('delete', function($production){
-                    return Form::open(['method' => 'DELETE', 'route' => ['production.destroy', $production->id]]).
-                    Form::submit('Supprimer', ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm(\'Vraiment supprimer cet utilisateur ?\')']).
+                    return Form::open(['method' => 'DELETE', 'route' => ['production.destroy', $production->id], 'class' => 'delete-form']).
+                    Form::button('<i class="fas fa-trash-alt fa-lg"></i>', [
+                        'type' => 'submit',
+                        'class'=> 'btn btn-danger btn-block',
+                        'onclick'=>'return confirm("Are you sure?")'
+                    ]).
                     Form::close();
                 })->make(true);
     }
@@ -120,7 +125,6 @@ class ProductionController extends Controller
         
         $production = $this->productionRepository->store($request->all());
 
-
         // Save Production's tags
 		if(isset($request->tags)) 
 		{
@@ -150,7 +154,8 @@ class ProductionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $production = $this->productionRepository->getById($id);
+        return view('dashboard.productions.edit', compact('production'));
     }
 
     /**
@@ -162,7 +167,54 @@ class ProductionController extends Controller
      */
     public function update(ProductionUpdateRequest $request, $id)
     {
-        //
+        $screenshots_array = [];
+        $production = $this->productionRepository->getById($id);
+
+        // Upload Main Image and put name in request
+        if($request->hasFile('imageFile'))
+        {
+            $image = $request->file('imageFile');
+            $chemin = config('images.productions');
+            do {
+                $imageName = time().'.'.$image->getClientOriginalExtension();
+            } while(file_exists($chemin.'/'.$imageName));
+
+            if($image->move($chemin, $imageName)) {
+                //Delete old image if exists
+                if(file_exists($chemin.'/'.$production->image_name)){
+                    File::delete($chemin.'/'.$production->image_name);
+                }
+                //Update image_name
+                $request->merge(['image_name' => $imageName]);
+            }
+        }
+        
+        // Upload Screenshots
+        if($request->hasfile('screenshotFiles'))
+        {
+            $screenshots_array = json_decode($production->screenshots);
+            foreach($request->file('screenshotFiles') as $screenshot)
+            {
+                do {
+                    $screenshotName = time().'.'.$screenshot->getClientOriginalExtension();
+                } while(file_exists(config('images.screenshots').'/'.$screenshotName));
+
+                if($screenshot->move(config('images.screenshots'), $screenshotName)) {
+                    $screenshots_array[] = $screenshotName;
+                }  
+            }
+            $request->merge(['screenshots' => json_encode($screenshots_array)]);
+        }
+
+        $this->productionRepository->update($id, $request->all());
+        
+        // Save Production's tags
+		if(isset($request->new_tags)) 
+		{
+			$this->tagRepository->store($production, $request->new_tags);
+        }
+
+		return redirect('production')->withOk('Elément modifié avec succès');
     }
 
     /**

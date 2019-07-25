@@ -30,7 +30,7 @@ trait FormBuilderTrait
 
     private function registerFormSelect()
     {
-        FormBuilder::macro('select_options', function($errors, $name, $data = [], $label = null)
+        FormBuilder::macro('select_options', function($errors, $name, $data = [])
         {
             $options = '';
             foreach ($data as $key => $value){
@@ -41,11 +41,9 @@ trait FormBuilderTrait
                     <select class="custom-select" id="'.$name.'" name="'.$name.'">
                         %s
                         %s
-                        %s
                     </select>
                 </div>',
                 $errors->has($name) ? 'has-error' : '',
-                $label ? '<label for="'.$name.'">'.$label.'</label><br>' : '',
                 $options,
                 $errors->first($name, '<small class="help-block text-danger">:message</small>')
             );

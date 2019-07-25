@@ -5,7 +5,12 @@
 <div class="container-fluid p-4">
     <!-- Page notification -->
     @if(session()->has('ok'))
-			<div class="alert alert-success alert-dismissible">{!! session('ok') !!}</div>
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+            {!! session('ok') !!}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
     @endif
 
     <!-- Page Heading -->
@@ -15,7 +20,7 @@
     </div>
 
     <div class="row">
-        <img class="px-3 mx-auto w-100 mb-4" src="{{asset('uploads/productions/'.$production->image_name)}}" class="img-fluid" alt="Responsive image">
+        <img class="px-3 mx-auto w-100 mb-4" src="{{asset(config('images.productions').'/'.$production->image_name)}}" class="img-fluid" alt="Responsive image">
     </div>
 
     <div class="row">
@@ -29,7 +34,7 @@
                     <li class="list-group-item">{{ __('Type') }} <span class="float-right">{{ $production->type }}</span></li>
                     <li class="list-group-item">{{ __('Author') }} <span class="float-right">{{ $production->author }}</span></li>
                     <li class="list-group-item">{{ __('Url') }} <span class="float-right"> <a href="{{ $production->url }}" target="_blank">{{ $production->url }}</a></span></li>
-                    <li class="list-group-item">{{ __('Released') }} <span class="float-right"> <a href="{{ $production->url }}" target="_blank">{{ $production->created_at }}</a></span></li>
+                    <li class="list-group-item">{{ __('Released') }} <span class="float-right">{{ $production->created_at }}</span></li>
                 </ul>
             </div>
         </div>
@@ -45,7 +50,7 @@
                     <div class="carousel-inner">
                         @foreach(json_decode($production->screenshots, true) as $key => $img_name)
                             <div class="carousel-item{{ $key == 0 ? ' active' : '' }}">
-                            <img src="{{asset('uploads/productions/screenshots/'.$img_name)}}" class="d-block w-100" alt="">
+                            <img src="{{asset(config('images.screenshots').'/'.$img_name)}}" class="d-block w-100" alt="">
                             </div>
                         @endforeach
                     </div>
@@ -76,7 +81,7 @@
         <div class="col">
         <div class="card">
             <div class="card-header">
-                {{ __('Description English') }}
+                {{ __('Description French') }}
             </div>
             <div class="card-body">{{ $production->description_fr }}</div>
         </div>

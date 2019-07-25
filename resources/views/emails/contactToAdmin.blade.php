@@ -18,8 +18,8 @@
                 {!! trans('emails/contactToAdmin.email', ['email' => $email]) !!}
             @endif
 
-            @if(isset($numberPhone))
-                {!! trans('emails/contactToAdmin.number_phone', ['number_phone' => $numberPhone]) !!}
+            @if(isset($phone_number))
+                {!! trans('emails/contactToAdmin.number_phone', ['number_phone' => $phone_number]) !!}
             @endif
 
             @if(isset($subject))

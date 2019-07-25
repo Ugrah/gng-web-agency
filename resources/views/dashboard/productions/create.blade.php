@@ -4,13 +4,13 @@
 
   <div class="container-fluid p-4">
     <!-- Page notification -->
-    @if(!empty($ok))
-      <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-        {{ $ok }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+    @if(session()->has('ok'))
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+            {!! session('ok') !!}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
     @endif
 
     <!-- Page Heading -->
@@ -23,12 +23,11 @@
 		  <div class="alert alert-danger">{!! session('error') !!}</div>
 		@endif
     {!! Form::open(['route' => 'production.store', 'id' => 'production-form', 'files' => true]) !!}
-
       <div class="form-row">
         <div class="col-md-6">
           {!! Form::control('text', $errors, 'name', ['class' => 'form-control', 'placeholder' => __('Production name'), 'required' =>'required']) !!}
 
-          {!! Form::select_options($errors, 'type', ['website' => __('Website'), 'mobile_app' => __('Mobile App')], __('Type')) !!}
+          {!! Form::select_options($errors, 'type', ['website' => __('Website'), 'mobile_app' => __('Mobile App')]) !!}
 
           {!! Form::control('text', $errors, 'url', ['class' => 'form-control', 'placeholder' => __('Production Url'), 'required' =>'required']) !!}
 
@@ -36,9 +35,14 @@
 
           {!! Form::control('text', $errors, 'tags', ['class' => 'form-control', 'placeholder' => __('Entrez les tags séparés par des virgules'), 'required' =>'required']) !!}
 
-          {!! Form::control('file', $errors, 'imageFile', ['class' => 'form-control', 'required' =>'required'], __('Choisir une image principale')) !!}
+        </div>
 
-          <label for="inputEmail4">{{ __('Add Screenshots') }}</label>
+        <div class="col-md-6">
+
+          {!! Form::label('imageFile', __('Add Production Image')) !!}
+          {!! Form::control('file', $errors, 'imageFile', ['class' => 'form-control', 'required' =>'required']) !!}
+
+          {!! Form::label('screenshotFiles[]', __('Add Production Screenshots')) !!}
           <div class="input-group control-group increment">
             <input type="file" name="screenshotFiles[]" class="form-control">
             <div class="input-group-btn"> 
@@ -53,13 +57,17 @@
                 </div>
             </div>
           </div>
-
         </div>
-
+      </div>
+      <hr>
+      <div class="form-row">
         <div class="col-md-6">
-          {!! Form::control('textarea', $errors, 'description_en', ['class' => 'form-control', 'placeholder' =>  __('Desc En'), 'required'=> 'required']) !!}
-
-          {!! Form::control('textarea', $errors, 'description_fr', ['class' => 'form-control', 'placeholder' =>  __('Desc Fr'), 'required'=> 'required']) !!}
+          {!! Form::label('description_en', __('Description english version')) !!}
+          {!! Form::control('textarea', $errors, 'description_en', ['class' => 'form-control', 'placeholder' =>  __('Description english version'), 'required'=> 'required']) !!}
+        </div>
+        <div class="col-md-6">
+          {!! Form::label('description_en', __('Description french version')) !!}
+          {!! Form::control('textarea', $errors, 'description_fr', ['class' => 'form-control', 'placeholder' =>  __('Description french version'), 'required'=> 'required']) !!}
         </div>
       </div>
     {!! Form::close() !!}
@@ -92,6 +100,13 @@
             e.preventDefault();
             $('#production-form').trigger('submit');           
           });
+
+          // Dismissible alert
+          if($('div.alert-success').css('display') === 'block'){
+            setTimeout(function() { 
+                $('div.alert-success').fadeOut('slow');
+            }, 5000);
+          }
 
       });
   </script>

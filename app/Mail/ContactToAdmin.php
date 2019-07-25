@@ -36,7 +36,7 @@ class ContactToAdmin extends Mailable
                     ->with([
                         'name' => $this->data['name'],
                         'email' => $this->data['email'],
-                        'numberPhone' => $this->data['phoneNumber'],
+                        'phone_number' => $this->data['phone_number'],
                         'subject' => $this->data['subject'],
                         'content' => $this->data['content']
                     ]);
