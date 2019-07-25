@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Production;
 use Illuminate\Support\Facades\DB;
+use File;
 
 class ProductionRepository extends ResourceRepository
 {
@@ -40,6 +41,18 @@ class ProductionRepository extends ResourceRepository
 	public function destroy($id)
 	{
 		$production = $this->model->findOrFail($id);
+		if(file_exists( config('images.productions').'/'.$production->image_name )){
+			File::delete(config('images.productions').'/'.$production->image_name);
+		}
+
+		$screenshots_array = json_decode($production->screenshots);
+
+		foreach($screenshots_array as $screenshot){
+			if(file_exists( config('images.screenshots').'/'.$screenshot )){
+				File::delete( config('images.screenshots').'/'.$screenshot );
+			}
+		}
+
 		$production->tags()->detach();
 		$production->delete();
 	}

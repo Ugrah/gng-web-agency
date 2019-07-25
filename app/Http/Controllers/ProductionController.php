@@ -225,6 +225,7 @@ class ProductionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->productionRepository->destroy($id);
+        return redirect()->back()->withOk("La  production a été supprimée de la Base de données.");
     }
 }
