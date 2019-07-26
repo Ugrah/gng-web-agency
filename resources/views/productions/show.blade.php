@@ -3,21 +3,27 @@
 @section('content')
 
 {{ Html::navbar_fixed_2() }}
-<br><br><br><br><br>
+<br><br><br>
 <!-- Page Heading -->
-<div class="container-fluid">
+<div class="container-fluid gradient-blue p-2 p-md-5">
     <div class="d-sm-flex align-items-center justify-content-between px-5 my-4">
-        <h1 class="px-5 mb-0 text-gray-800">{{ config('infos.name'). ' : '. $production->name }}</h1>
+        <h1 class="px-1 px-md-5 mb-0 text-gray-800">{{ config('infos.name'). ' : '. $production->name }}</h1>
         
     </div>
 </div>
 
 
-<section class="py-5">
-    <div class="container mt-5">
-        <div class="row rounded-soft">
-            <div class="col col-md-8 mb-4">
-                <img class="shadow lazy-rounded mx-auto w-100 mb-4" src="{{asset(config('images.productions').'/'.$production->image_name)}}" class="img-fluid" alt="Responsive image">
+<section class="py-2 py-md-5">
+    <div class="container mt-2 mt-md-5">
+        <div class="row justify-content-center rounded-soft">
+            <div class="col col-11 col-md-8 mb-4">
+                <div class="card lazy-rounded shadow mb-4 position-relative item-main-image">
+                    <img class="lazy-rounded  w-100" src="{{asset(config('images.productions').'/'.$production->image_name)}}" class="img-fluid" alt="Responsive image">
+
+                    <button class="position-absolute lazy-rounded h-100 w-100 my-auto text-center gradient-blue show-item-link">
+                        <a style="top:45%" target="_blank" href="{{ route('live.preview.production', ['id' => $production->id]) }}" class="btn btn-light position-relative py-2 px-4">{{ __('View preview') }}</a>
+                    </button>
+                </div>
 
                 <div class="card lazy-rounded mb-4">
                     <div class="card-header">
@@ -53,11 +59,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col col-md-4">
+            <div class="col col-11 col-md-4">
                 <!-- Card to button -->
                 <div class="card lazy-rounded mb-4">
                     <div class="card-body px-3 py-2">
                         <a target="_blank" href="{{ route('live.preview.production', ['id' => $production->id]) }}" class="btn btn-primary btn-block gradient-blue my-3">{{ __('Live preview') }}</a>
+                        <a target="_blank" href="{{ url($production->url) }}" class="btn btn-light btn-block my-3">{{ __('Visite website') }}</a>
                     </div>
                 </div>
 
@@ -89,11 +96,11 @@
         // $('#fixedNavbarCollapse ul.navbar-nav > li.nav-item:eq(5)').addClass('active');
 
         //Item production hover link effect
-        $('a.item-preview-img')
+        $('div.item-main-image')
             .mouseenter(function(){
-                $(this).children('img.card-img').addClass('animate')
+                $(this).children('button.show-item-link').addClass('animate')
             }).mouseleave(function(){
-                $(this).children('img.card-img').removeClass('animate')
+                $(this).children('button.show-item-link').removeClass('animate')
             });
         
         $('#fixedNavbar').remove();

@@ -146,6 +146,14 @@ a.item-preview-img img.animate {
 	transform: translateY(-0.3em);
 }
 
+button.show-item-link {
+	transition: all 0.5s;
+	opacity: 0;
+}
+button.show-item-link.animate {
+	opacity: 0.8;
+}
+
 /*
  * Typographie
 */

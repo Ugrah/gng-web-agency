@@ -20,11 +20,9 @@
         <li class="nav-item">
         <a class="nav-link" href="{{url('/prices')}}">{{ trans('front/navBar.menu-items.prices') }}</a>
         </li>
-        <!--
         <li class="nav-item">
         <a class="nav-link" href="{{url('/realisations')}}">{{ trans('front/navBar.menu-items.realisations') }}</a>
         </li>
-        -->
         <li class="nav-item">
         <a class="nav-link" href="{{url('/contact')}}">{{ trans('front/navBar.menu-items.contact') }}</a>
         </li>
