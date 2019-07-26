@@ -27,16 +27,11 @@
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-website" role="tabpanel" aria-labelledby="pills-website-tab">
-                        <div class="row justify-content-center">
-                            
-                            <div class="card-deck">
+                        <div class="row">
 
-                                {{ Html::card_img('https://image.freepik.com/free-photo/executive-with-light-bulb-surrounded-by-icons_1232-162.jpg', 'Title', 'Text Right', 'Text Left', 'Footer') }}
-
-                                {{ Html::card_img('https://image.freepik.com/free-photo/executive-with-light-bulb-surrounded-by-icons_1232-162.jpg', 'Title', 'Text Right', 'Text Left', 'Footer') }}
-
-                                {{ Html::card_img('https://image.freepik.com/free-photo/executive-with-light-bulb-surrounded-by-icons_1232-162.jpg', 'Title', 'Text Right', 'Text Left', 'Footer') }}
-                            </div>
+                            @foreach($productions as $production)
+                                {{ Html::card_img($production) }}
+                            @endforeach
 
                         </div>
                     </div>
@@ -45,11 +40,10 @@
                         
                             <div class="card-deck">
 
-                                {{ Html::card_img('https://image.freepik.com/free-photo/executive-with-light-bulb-surrounded-by-icons_1232-162.jpg', 'Title', 'Text Right', 'Text Left', 'Footer') }}
-
-                                {{ Html::card_img('https://image.freepik.com/free-photo/executive-with-light-bulb-surrounded-by-icons_1232-162.jpg', 'Title', 'Text Right', 'Text Left', 'Footer') }}
-
-                                {{ Html::card_img('https://image.freepik.com/free-photo/executive-with-light-bulb-surrounded-by-icons_1232-162.jpg', 'Title', 'Text Right', 'Text Left', 'Footer') }}
+                            @foreach($productions as $production)
+                                {{ Html::card_img($production) }}
+                            @endforeach
+                                
                             </div>
 
                         </div>
@@ -71,7 +65,7 @@
         $('#fixedNavbarCollapse ul.navbar-nav > li.nav-item:eq(5)').addClass('active');
 
         //Card hover effect
-        $('div.card')
+        $('a.item-preview-img')
             .mouseenter(function(){
                 $(this).children('img.card-img').addClass('animate')
             }).mouseleave(function(){

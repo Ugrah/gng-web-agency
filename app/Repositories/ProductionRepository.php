@@ -3,7 +3,6 @@
 namespace App\Repositories;
 
 use App\Production;
-use Illuminate\Support\Facades\DB;
 use File;
 
 class ProductionRepository extends ResourceRepository
@@ -16,7 +15,7 @@ class ProductionRepository extends ResourceRepository
     
     public function queryWithTags()
 	{
-		return DB::table('productions')->get();
+		return Production::with('tags')->limit(100)->get();
 	}
 
 	public function getWithTagsPaginate($n)

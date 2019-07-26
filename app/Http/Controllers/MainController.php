@@ -7,6 +7,7 @@ use App\Http\Requests\ContactRequest;
 use App\Jobs\ChangeLocale;
 use App\Repositories\EstimatedPriceRepository;
 use App\Repositories\UserMessageRepository;
+use App\Repositories\ProductionRepository;
 use SEO;
 use App\Traits\SeoTrait;
 use App\Jobs\SendContactToUserEmail;
@@ -25,11 +26,15 @@ class MainController extends Controller
 
     protected $estimatedPriceRepository;
     protected $userMessageRepository;
+    protected $productionRepository;
 
-    public function __construct(EstimatedPriceRepository $estimatedPriceRepository, UserMessageRepository $userMessageRepository){
+    public function __construct(EstimatedPriceRepository $estimatedPriceRepository,
+                                UserMessageRepository $userMessageRepository,
+                                ProductionRepository $productionRepository){
         $this->middleware('ajax', ['only' => ['pricesPost']]);
         $this->estimatedPriceRepository = $estimatedPriceRepository;
         $this->userMessageRepository = $userMessageRepository;
+        $this->productionRepository = $productionRepository;
     }
 
     /**
@@ -104,8 +109,9 @@ class MainController extends Controller
 
     public function realisations()
     {
+        $productions = $this->productionRepository->queryWithTags();
         $this->defaultSeo(trans(self::SEO_TITLE_PATH.'realisations').' - '.trans('back/seo/defaults.default_title'));
-        return view('statics.realisations');
+        return view('statics.realisations', compact('productions'));
     }
 
     public function getContact()

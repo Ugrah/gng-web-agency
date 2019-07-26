@@ -26,7 +26,7 @@ class ProductionController extends Controller
     public function __construct(ProductionRepository $productionRepository, TagRepository $tagRepository)
     {
         $this->middleware('admin');
-        $this->middleware('ajax', ['only' => ['getProductionsData']]);
+        $this->middleware('ajax', ['only' => ['getProductionsData', 'removeScreenshot']]);
         $this->productionRepository = $productionRepository;
         $this->tagRepository = $tagRepository;
     }

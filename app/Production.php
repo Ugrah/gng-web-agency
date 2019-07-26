@@ -27,4 +27,14 @@ class Production extends Model
 	{
 		return $this->belongsToMany('App\Tag');
     }
+
+    public function getImagePath()
+    {
+        return config('images.productions').'/'.$this->image_name;
+    }
+
+    public function getScreenshotPath($image_name)
+    {
+        return config('images.screenshots').'/'.$image_name;
+    }
 }
