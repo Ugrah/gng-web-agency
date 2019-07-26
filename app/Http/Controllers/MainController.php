@@ -114,6 +114,18 @@ class MainController extends Controller
         return view('statics.realisations', compact('productions'));
     }
 
+    public function showProduction($id)
+    {
+        $production = $this->productionRepository->getById($id);
+        return view('productions.show', compact('production'));
+    }
+
+    public function livePreview($id)
+    {
+        $production = $this->productionRepository->getById($id);
+        return view('productions.live_preview', compact('production'));
+    }
+
     public function getContact()
     {
         $this->defaultSeo(trans(self::SEO_TITLE_PATH.'contact').' - '.trans('back/seo/defaults.default_title'));        

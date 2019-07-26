@@ -23,6 +23,7 @@ class HtmlServiceProvider extends ServiceProvider
     public function boot()
     { 
         Html::component('navbar_fixed', 'components.html.navbar_fixed', []);
+        Html::component('navbar_fixed_2', 'components.html.navbar_fixed_2', []);
         Html::component('navbar_default', 'components.html.navbar_default', []);
         Html::component('footer_main', 'components.html.footer_main', []);
         Html::component('carousel_home', 'components.html.carousel_home', []);
@@ -30,7 +31,7 @@ class HtmlServiceProvider extends ServiceProvider
         Html::component('go_to_url', 'components.html.go_to_url', ['url','text']);
         Html::component('div_card_icon', 'components.html.div_card_icon', [ 'wowEffect', 'wowDelay','iconClass', 'title', 'content']);
         Html::component('prod_step', 'components.html.prod_step', [ 'wowEffect', 'wowDelay', 'iconClass', 'content', 'iconClassSecond']);
-        Html::component('card_img', 'components.html.card_img', ['production']);
+        Html::component('prod_item_preview', 'components.html.prod_item_preview', ['production']);
         Html::component('price_box', 'components.html.price_box', ['name', 'amount', 'options', 'additional_options', 'unity', 'numberSeparator', 'urlButton']);
 
         Form::component('radio_label_img', 'components.form.radio_label_img' ,['idLabel', 'optionName', 'optionValue', 'dataQuestion', 'dataCost', 'imgPath', 'title']);

@@ -30,7 +30,9 @@
                         <div class="row">
 
                             @foreach($productions as $production)
-                                {{ Html::card_img($production) }}
+                                @if($production->type === 'website')
+                                    {{ Html::prod_item_preview($production) }}
+                                @endif
                             @endforeach
 
                         </div>
@@ -41,7 +43,9 @@
                             <div class="card-deck">
 
                             @foreach($productions as $production)
-                                {{ Html::card_img($production) }}
+                                @if($production->type === 'mobile_app')
+                                    {{ Html::prod_item_preview($production) }}
+                                @endif
                             @endforeach
                                 
                             </div>
@@ -64,7 +68,7 @@
         $('#standardNavbarCollapse ul.navbar-nav > li.nav-item:eq(5)').addClass('active text-muet');
         $('#fixedNavbarCollapse ul.navbar-nav > li.nav-item:eq(5)').addClass('active');
 
-        //Card hover effect
+        //Item production hover link effect
         $('a.item-preview-img')
             .mouseenter(function(){
                 $(this).children('img.card-img').addClass('animate')

@@ -21,6 +21,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/prices', 'MainController@prices')->name('prices');
     Route::post('/prices', 'MainController@ajaxPrices')->name('prices');
     Route::get('/realisations', 'MainController@realisations')->name('realisations');
+    Route::get('/realisations/{production}', 'MainController@showProduction')->name('show.production');
+    Route::get('/previews/{production}', 'MainController@livePreview')->name('live.preview.production');
 
     Route::get('/contact', 'MainController@getContact')->name('contact');
     Route::post('/contact', 'MainController@postContact')->name('contact');

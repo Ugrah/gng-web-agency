@@ -37,4 +37,9 @@ class Production extends Model
     {
         return config('images.screenshots').'/'.$image_name;
     }
+
+    public function getDescription()
+    {
+        return (session('locale') === 'fr') ? $this->description_fr : $this->description_en ;
+    }
 }
