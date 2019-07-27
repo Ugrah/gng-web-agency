@@ -70,7 +70,7 @@
           ajax: '{{ url('get-productions-data') }}',
           columns: [
                       { data: 'name', name: 'name' },
-                      { data: 'type', name: 'type', render: function ( data, type, row ) { return (data === 'website') ? '<i class="far fa-window-maximize fa-2x text-center text-success d-block"></i>' : '<i class="fas fa-mobile-alt fa-2x text-center text-primary d-block"></i>' } },
+                      { data: 'type', name: 'type', render: function ( data, type, row ) { return (data === 'website') ? '<i class="fas fa-desktop fa-2x text-center text-success d-block"></i>' : '<i class="fas fa-mobile-alt fa-2x text-center text-primary d-block"></i>' } },
                       { data: 'description', name: 'description', orderable: false },
                       { data: 'show', name: 'show', orderable: false, searchable: false },
                       { data: 'edit', name: 'edit', orderable: false, searchable: false },
