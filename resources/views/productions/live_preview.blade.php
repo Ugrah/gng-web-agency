@@ -22,27 +22,31 @@
     {!! Html::style('css/global.min.css') !!}
     {!! Html::style('css/animate.css') !!}
 
+    <style>
+        a.preview-button.active { color: dodgerblue !important; }
+        .preview-iframe-mobile{ max-width: 380px; }
+    </style>
+
     <!-- Font Awesome -->
     {!! Html::script('https://kit.fontawesome.com/754591c5ca.js') !!}
 
   </head>
-  <body style="margin:0px;padding:0px;overflow:hidden">
+  <body class="bg-dark" style="margin:0px;padding:0px;overflow:hidden">
     
-    <div class="container-fluid position-absolute overflow-hidden" style="height:8%;top:0px;left:0px;border-bottom: 3px solid tomato">
+    <div class="container-fluid position-absolute overflow-hidden bg-light" style="height:8%;top:0px;left:0px;border-bottom: 3px solid tomato">
         <div class="row h-100">
-            <div class="col my-auto"><a href="{{ url('/') }}">{{ config('infos.name') }}</a></div>
-            <div class="col d-none d-sm-block my-auto text-center">
-                <a class="px-3" href="#"><i class="fas fa-desktop fa-lg"></i></a>
-                <a class="px-3" href="#"><i class="fas fa-mobile-alt fa-lg"></i></a>
+            <div class="col my-auto"><a class="navbar-brand" href="{{url('/')}}" style="max-width:10rem"><img src="{{asset('img/gng-logo-width-2.png')}}" alt="GnG Dev Logo" class="img-fluid" /></a></div>
+            <div class="col d-none d-md-block my-auto text-center">
+                <a id="desktopToggle" class="preview-button text-muted px-3 active" href="#"><i class="fas fa-desktop fa-lg"></i></a>
+                <a id="mobileToggle" class="preview-button text-muted px-3" href="#"><i class="fas fa-mobile-alt fa-lg"></i></a>
             </div>
             <div class="col my-auto text-right">
-                <button type="button" class="btn btn-primary">Dark</button>
-                <button type="button" class="btn btn-link">Link</button>
+                <a class="btn btn-primary py-1" href="{{ url('/realisations') }}"><i class="fas fa-th fa-lg"></i> {{ __('Go to list') }}</a>
             </div>
         </div>
     </div>
 
-    <iframe class="mx-auto" src="{{ $production->url }}" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:92%;width:100%;position:absolute;top:8%;left:0px;right:0px;bottom:0px; max-width: 380px"></iframe>
+    <iframe class="preview-iframe mx-auto" src="{{ $production->url }}" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:92%;width:100%;position:absolute;top:8%;left:0px;right:0px;bottom:0px;"></iframe>
 
     @include('cookieConsent::index')
 
@@ -55,6 +59,18 @@
     <script type="text/javascript">
       $(function(){
 
+        $("#desktopToggle").on('click', function(e) {
+            e.preventDefault();
+            $(".preview-iframe").removeClass("preview-iframe-mobile");
+            $(this).addClass('active');
+            $("#mobileToggle").removeClass('active');
+        });
+        $("#mobileToggle").on('click', function(e) {
+            e.preventDefault();
+            $(".preview-iframe").addClass("preview-iframe-mobile");
+            $(this).addClass('active');
+            $("#desktopToggle").removeClass('active');
+        });
         
       });
     </script>
