@@ -338,7 +338,7 @@
 					url: '{{ url('get-last-user-message') }}',
 					dataType: 'json'
 				}).done(function(data) {
-					$('#messageDropdownLink span.badge').text(data.numberNewMessage);
+					(data.numberNewMessage > 0) ? $('#messageDropdownLink span.badge').text(data.numberNewMessage) : '' ;
 					$.each(data.lastMessages, function(key, item){
 						var htmlItem = createUserMessageItem(item);
 						displayItem('#user-message-list', htmlItem);
@@ -359,12 +359,11 @@
 						<div class="d-flex w-100 justify-content-between">
 							<small class="text-muted">${item.created_at}</small>`;
 					
-					if(!item.read)
-						htmlItem += `<small class="badge badge-danger badge-new-message py-1">New</small>`;
+					(item.read === false) ? htmlItem += `<small class="badge badge-danger badge-new-message py-1">New</small>` : '';
 					
 					htmlItem +=	`</div><p class="text-muted mb-1">${item.subject}</p></a></li>`;
 
-					if(!item.read){ $(htmlItem).addClass('new-message') }
+					(item.read === false) ? $(htmlItem).addClass('new-message') : '' ;
 					return $(htmlItem);
 				}
 				else
@@ -430,7 +429,7 @@
 					var $spanBadge = $('#messageDropdownLink span.badge');
 					if( parseInt($spanBadge.text()) > 0 ) {
 						$spanBadge.text( parseInt($spanBadge.text()) - 1 );
-						if( parseInt($spanBadge.text()) <= 0 ) { $spanBadge.addClass('d-none') }
+						( parseInt($spanBadge.text()) <= 0 ) ? $spanBadge.addClass('d-none') : '';
 					}
 				}
 			}
