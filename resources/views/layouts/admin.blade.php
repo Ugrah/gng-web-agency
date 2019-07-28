@@ -360,7 +360,7 @@
 							<small class="text-muted">${item.created_at}</small>`;
 					
 					if(!item.read)
-						htmlItem += `<small class="badge badge-danger py-1">New</small>`;
+						htmlItem += `<small class="badge badge-danger badge-new-message py-1">New</small>`;
 					
 					htmlItem +=	`</div><p class="text-muted mb-1">${item.subject}</p></a></li>`;
 
@@ -382,16 +382,18 @@
 			$('#user-message-list').on('click', 'a.user-message-item', function(e){
 				e.preventDefault();
 				$('#spinnerModal').modal('show');
+				var $elt = $(this);
 				$.ajax({
 					headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
                     method: 'post',
 					url: '{{ url('single-user-message') }}',
-                    data: { user_message: $(this).attr('data-message') },
+                    data: { user_message: $elt.attr('data-message') },
 					dataType: 'json'
 				}).done(function(data) {
 					$('#spinnerModal').modal('hide');
 					$('#singleUserMessageModal div.modal-content').html(createModalMessageContent(data));
 					$('#singleUserMessageModal').modal('show');
+					messageJustRead($elt, data.read);
 				}).fail(function(data) {
 					$('#spinnerModal').modal('hide');
 					alert('Impossible to display Message');
@@ -399,6 +401,10 @@
 			});
 			/* End Ajex request */
 
+			/* Create modal to show single user message
+			 * param message : jsonObject userMessage
+			 * return html text
+			*/
 			function createModalMessageContent(message){
 				return $(`<div class="modal-header">
 					<h5 class="modal-title">${message.subject}</h5>
@@ -410,6 +416,25 @@
 					<div>${message.content}</div>
 				</div>`);
 			}
+			/* End createModalMessageContent */
+
+			/* Create modal to show single user message
+			 * param noeud : a.dropdown-item jquery object
+			 * param isRead : boolean
+			 * return void
+			*/
+			function messageJustRead(noeud, isRead){
+				if(!isRead){
+					noeud.find('small.badge-new-message').remove();
+					noeud.parent('li.list-group-item').removeClass('new-message');
+					var $spanBadge = $('#messageDropdownLink span.badge');
+					if( parseInt($spanBadge.text()) > 0 ) {
+						$spanBadge.text( parseInt($spanBadge.text()) - 1 );
+						if( parseInt($spanBadge.text()) <= 0 ) { $spanBadge.addClass('d-none') }
+					}
+				}
+			}
+			/* End messageJustRead */
 
 		});
 	</script>
