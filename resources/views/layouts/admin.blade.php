@@ -211,19 +211,11 @@
             <li class="nav-item dropdown py-1">
               <a class="nav-link pt-3 dropdown-toggle" href="#" id="messageDropdownLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-envelope" style="font-size: 1rem; color: #B7B9CC"></i>
-                <span class="badge badge-notify">10</span>
+                <span class="badge badge-notify"></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="messageDropdownLink">
-                <ul class="list-group">
+                <ul id="user-message-list" class="list-group">
                   <li class="list-group-item py-1 active">Message center</li>
-                  <li class="list-group-item p-0"><a class="dropdown-item" href="#">
-                    <p class="text-muted mb-1">Donec id elit non mi metus...</p>
-                    <small class="text-muted">Donec id elit non mi porta.</small>
-                  </a></li>
-                  <li class="list-group-item p-0"><a class="dropdown-item" href="#">
-                    <p class="text-muted mb-1">Donec id elit non mi metus...</p>
-                    <small class="text-muted">Donec id elit non mi porta.</small>
-                  </a></li>
                 </ul>
               </div>
             </li>
@@ -262,52 +254,90 @@
     {!! Html::script('js/wow.js') !!}
 
     <script type="text/javascript">
-      $(function(){
-        $('#open-sidebar-btn').click(function(e){
-          e.preventDefault();
-          $(this).addClass('d-none');
-          $('#close-sidebar-btn').removeClass('d-none');
-          $('#mySidebar').css('width', '14rem');
-          $('#main').css('marginLeft', '14rem');
-        });
+    	$(function(){
+			/* Sidebar system */ 
+			$('#open-sidebar-btn').click(function(e){
+				e.preventDefault();
+				$(this).addClass('d-none');
+				$('#close-sidebar-btn').removeClass('d-none');
+				$('#mySidebar').css('width', '14rem');
+				$('#main').css('marginLeft', '14rem');
+			});
+			$('#close-sidebar-btn').click(function(e){
+				e.preventDefault();
+				$(this).addClass('d-none'); 
+				$('#open-sidebar-btn').removeClass('d-none');
+				$('#mySidebar').css('width', '0');
+				$('#main').css('marginLeft', '0');
+			});
+			/* End Sidebar system */ 
 
-        $('#close-sidebar-btn').click(function(e){
-          e.preventDefault();
-          $(this).addClass('d-none'); 
-          $('#open-sidebar-btn').removeClass('d-none');
-          $('#mySidebar').css('width', '0');
-          $('#main').css('marginLeft', '0');
-        });
+			/* Aside bar collapse animation */
+			$("[data-toggle='collapse']").each(function () {
+				$(this).on('click', function () {
+					if($(this).find('i.fas.fa-angle-right').hasClass('d-none')){
+					$(this).find('i.fas.fa-angle-right').removeClass('d-none');
+					$(this).find('i.fas.fa-angle-down').addClass('d-none');
+					} else if($(this).find('i.fas.fa-angle-down').hasClass('d-none')) { 
+					$(this).find('i.fas.fa-angle-right').addClass('d-none');
+					$(this).find('i.fas.fa-angle-down').removeClass('d-none');
+					}
+				});
+			});
+			/*End Aside bar collapse animation */
 
-        var $scrollToTopButton = $('#scroll-to-top');
+			/* Function of scroll to top button */ 
+			var $scrollToTopButton = $('#scroll-to-top');
+			$(window).scroll(function() {
+				if ($(window).scrollTop() > 300) {
+					$scrollToTopButton.addClass('show');
+				} else {
+					$scrollToTopButton.removeClass('show');
+				}
+			});
+			$scrollToTopButton.on('click', function(e) {
+				e.preventDefault();
+				$('html, body').animate({scrollTop:0}, '300');
+			});
+			/* End Function scroll to top button */
 
-        $(window).scroll(function() {
-          if ($(window).scrollTop() > 300) {
-            $scrollToTopButton.addClass('show');
-          } else {
-            $scrollToTopButton.removeClass('show');
-          }
-        });
+			/* Function to get user messages informations */
+			function getUserMessages(){
+				$.ajax({
+					headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+					url: '{{ url('get-last-user-message') }}',
+					dataType: 'json'
+				}).done(function(data) {
+					$('#messageDropdownLink span.badge').text(data.numberNewMessage);
+					$.each(data.lastMessages, function(key, item){
+						var htmlItem = createUserMessageItem(item);
+						displayItem('#user-message-list', htmlItem);
+					});
+					displayItem('#user-message-list', createUserMessageItem());
+				}).fail(function(data) {
+					console.log('Error, Please retry');
+				});
+			} /* End Function to get user messages informations */
+			// Run function to get user messages informations
+			getUserMessages();
 
-        $scrollToTopButton.on('click', function(e) {
-          e.preventDefault();
-          $('html, body').animate({scrollTop:0}, '300');
-        });
+			/* Function to create user message item */
+			function createUserMessageItem(item = null){
+				if(item !== null)
+					return $(`<li class="list-group-item p-0"><a class="dropdown-item" href="#"><p class="text-muted mb-1">${item.subject}</p><small class="text-muted">${item.content}</small></a></li>`);
+				else
+					return $(`<li class="list-group-item text-center p-0"><a class="dropdown-item" href="#"><small class="text-muted">{{ __('Read More Messages') }}</small></a></li>`);
+			}
+			/* End Function to create user message item */
 
-        /* Aside bar collapse animation */
-        $("[data-toggle='collapse']").each(function () {
-          $(this).on('click', function () {
-            if($(this).find('i.fas.fa-angle-right').hasClass('d-none')){
-              $(this).find('i.fas.fa-angle-right').removeClass('d-none');
-              $(this).find('i.fas.fa-angle-down').addClass('d-none');
-            } else if($(this).find('i.fas.fa-angle-down').hasClass('d-none')) { 
-              $(this).find('i.fas.fa-angle-right').addClass('d-none');
-              $(this).find('i.fas.fa-angle-down').removeClass('d-none');
-            }
-          });
-        });
-        
-      });
+      		/* Function to display an item from parent */
+      		function displayItem(parent, htmlItem){
+				$(parent).append(htmlItem);
+      		}
+      		/* Function to display user message item */
+
+			
+      	});
     </script>
 
     <!-- Initilise wowjs -->

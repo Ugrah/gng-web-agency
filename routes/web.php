@@ -32,7 +32,7 @@ Route::group(['middleware' => ['web']], function () {
     
     /*
     |--------------------------------------------------------------------------
-    | Auth Routes
+    | Auth Routes | Admin functionnalities
     |--------------------------------------------------------------------------
     |
     */
@@ -43,6 +43,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('detach-tag', 'ProductionController@detachTag')->name('detach.production.tag');
     Route::post('remove-screenshot', 'ProductionController@removeScreenshot')->name('remove.production.screenshot');
     Route::get('get-productions-data', 'ProductionController@getProductionsData')->name('get.data.productions');
+    Route::get('get-last-user-message','DashboardController@getLastUserMessage')->name('get.user.message');
     
     
     /*
