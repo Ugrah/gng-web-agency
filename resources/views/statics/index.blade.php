@@ -73,7 +73,7 @@
                     <img src="{{ asset('img/web-development.jpg') }}" alt="Web development illustration" class="img-fluid">
                 </div>
                 <div class="col-10 col-md-6 text-center text-md-left my-auto wow fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.3s">
-                <h3 class="text-light">{{ trans('front/pages/index.section1.title', ['app_name' => config('infos.name')]) }}</h3>
+                    <h3 class="text-light">{{ trans('front/pages/index.section1.title', ['app_name' => config('infos.name')]) }}</h3>
                     {!! trans('front/pages/index.section1.content') !!}
                 </div>
             </div>
