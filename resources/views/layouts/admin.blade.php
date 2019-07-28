@@ -93,7 +93,7 @@
       }
 
 	  /* user message item (new message style) */
-	  li.new-message { font-weight: bold; background-color: #f0f3f7; }
+	  li.new-message { font-weight: bold; background-color: #f0f3f7 !important; }
 
       /* Styles for the content section */
 
@@ -338,7 +338,9 @@
 					url: '{{ url('get-last-user-message') }}',
 					dataType: 'json'
 				}).done(function(data) {
-					(data.numberNewMessage > 0) ? $('#messageDropdownLink span.badge').text(data.numberNewMessage) : '' ;
+					if (data.numberNewMessage > 0) { 
+						$('#messageDropdownLink span.badge').text(data.numberNewMessage);
+					}
 					$.each(data.lastMessages, function(key, item){
 						var htmlItem = createUserMessageItem(item);
 						displayItem('#user-message-list', htmlItem);
@@ -354,17 +356,27 @@
 			/* Function to create user message item */
 			function createUserMessageItem(item = null){
 				if(item !== null) {
-					var htmlItem = `<li class="list-group-item p-0">
-					<a class="dropdown-item user-message-item text-muted" href="#" data-message="${item.id}">
-						<div class="d-flex w-100 justify-content-between">
-							<small class="text-muted">${item.created_at}</small>`;
+					var $eltLi = $(`<li class="list-group-item p-0"></li>`);
+					var $link = $(`<a class="dropdown-item user-message-item text-muted" href="#" data-message="${item.id}"></a>`);
+					var $smallDate = $(`<small class="text-muted">${item.created_at}</small>`);
 					
-					(item.read === false) ? htmlItem += `<small class="badge badge-danger badge-new-message py-1">New</small>` : '';
-					
-					htmlItem +=	`</div><p class="text-muted mb-1">${item.subject}</p></a></li>`;
+					var $divFlexTop = $(`<div class="d-flex w-100 justify-content-between"></div>`);
+					var $paraContent = $(`<p class="text-muted mb-1">${item.subject}</p>`);
 
-					(item.read === false) ? $(htmlItem).addClass('new-message') : '' ;
-					return $(htmlItem);
+					$divFlexTop.append($smallDate);
+
+					$link.append($divFlexTop);
+					$link.append($paraContent);
+
+					$eltLi.append($link);
+
+					if(!item.read) {
+						$eltLi.addClass('new-message');
+						var $smallBadge = $(`<small class="badge badge-danger badge-new-message py-1">New</small>`);
+						$divFlexTop.append($smallBadge);
+					}
+
+					return $eltLi;
 				}
 				else
 					return $(`<li class="list-group-item text-center p-0"><a class="dropdown-item" href="#"><small class="text-muted">{{ __('Read More Messages') }}</small></a></li>`);
@@ -376,29 +388,6 @@
 				$(parent).append(htmlItem);
       		}
       		/* Function to display user message item */
-
-			/* Event - Click on One user message - ajex request */
-			$('#user-message-list').on('click', 'a.user-message-item', function(e){
-				e.preventDefault();
-				$('#spinnerModal').modal('show');
-				var $elt = $(this);
-				$.ajax({
-					headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
-                    method: 'post',
-					url: '{{ url('single-user-message') }}',
-                    data: { user_message: $elt.attr('data-message') },
-					dataType: 'json'
-				}).done(function(data) {
-					$('#spinnerModal').modal('hide');
-					$('#singleUserMessageModal div.modal-content').html(createModalMessageContent(data));
-					$('#singleUserMessageModal').modal('show');
-					messageJustRead($elt, data.read);
-				}).fail(function(data) {
-					$('#spinnerModal').modal('hide');
-					alert('Impossible to display Message');
-				});
-			});
-			/* End Ajex request */
 
 			/* Create modal to show single user message
 			 * param message : jsonObject userMessage
@@ -423,17 +412,42 @@
 			 * return void
 			*/
 			function messageJustRead(noeud, isRead){
-				if(!isRead){
+				if(isRead !== true){
 					noeud.find('small.badge-new-message').remove();
 					noeud.parent('li.list-group-item').removeClass('new-message');
 					var $spanBadge = $('#messageDropdownLink span.badge');
 					if( parseInt($spanBadge.text()) > 0 ) {
 						$spanBadge.text( parseInt($spanBadge.text()) - 1 );
-						( parseInt($spanBadge.text()) <= 0 ) ? $spanBadge.addClass('d-none') : '';
+						if( parseInt($spanBadge.text()) <= 0 ) { $spanBadge.addClass('d-none') }
 					}
 				}
+				// Send request to update current user message
 			}
 			/* End messageJustRead */
+
+			/* Event - Click on One user message - ajex request */
+			$('#user-message-list').on('click', 'a.user-message-item', function(e){
+				e.preventDefault();
+				$('#spinnerModal').modal('show');
+				var $elt = $(this);
+				var isRead;
+				$.ajax({
+					headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+                    method: 'post',
+					url: '{{ url('single-user-message') }}',
+                    data: { user_message: $elt.attr('data-message') },
+					dataType: 'json'
+				}).done(function(data) {
+					$('#spinnerModal').modal('hide');
+					$('#singleUserMessageModal div.modal-content').html(createModalMessageContent(data));
+					$('#singleUserMessageModal').modal('show');
+					messageJustRead($elt, data.read);
+				}).fail(function(data) {
+					$('#spinnerModal').modal('hide');
+					alert('Impossible to display Message');
+				});
+			});
+			/* End Ajex request */
 
 		});
 	</script>

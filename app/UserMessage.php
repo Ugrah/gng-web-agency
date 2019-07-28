@@ -23,6 +23,6 @@ class UserMessage extends Model
      * @var array
      */
     protected $hidden = [
-        'user_ip_adress', 'read',
+        'user_ip_adress'
     ];
 }
