@@ -328,16 +328,18 @@
 			/* Function to create user message item */
 			function createUserMessageItem(item = null){
 				if(item !== null) {
-					var htmlItem = $(`<li class="list-group-item p-0">
+					var htmlItem = `<li class="list-group-item p-0">
 					<a class="dropdown-item text-muted" href="#">
 						<div class="d-flex w-100 justify-content-between">
-							<small class="text-muted">${item.created_at}</small>
-							<small class="badge badge-danger py-1">New</small>
-						</div>
-                    	<p class="text-muted mb-1">${item.subject}</p>
-					</a></li>`);
-					if(!item.read){ htmlItem.addClass('new-message') }
-					return htmlItem;
+							<small class="text-muted">${item.created_at}</small>`;
+					
+					if(!item.read)
+						htmlItem += `<small class="badge badge-danger py-1">New</small>`;
+					
+					htmlItem +=	`</div><p class="text-muted mb-1">${item.subject}</p></a></li>`;
+
+					if(!item.read){ $(htmlItem).addClass('new-message') }
+					return $(htmlItem);
 				}
 				else
 					return $(`<li class="list-group-item text-center p-0"><a class="dropdown-item" href="#"><small class="text-muted">{{ __('Read More Messages') }}</small></a></li>`);
