@@ -57,6 +57,7 @@
         left: -10px;
       }
 
+	  div#main div.dropdown-menu-alert { min-width: 22rem; }
       div.dropdown-menu a.dropdown-item { font-size: 0.9em; color: #363636 !important; }
       div.dropdown-menu a.dropdown-item:hover { background-color: #F8F9FC !important; color: #363636 !important; }
 
@@ -90,6 +91,9 @@
         opacity: 1;
         visibility: visible;
       }
+
+	  /* user message item (new message style) */
+	  li.new-message { font-weight: bold; background-color: #f0f3f7; }
 
       /* Styles for the content section */
 
@@ -194,7 +198,7 @@
                 <i class="fas fa-bell" style="font-size: 1rem; color: #B7B9CC"></i>
                 <span class="badge badge-notify">3+</span>
               </a>
-              <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="alertDropdownLink">
+              <div class="dropdown-menu dropdown-menu-right dropdown-menu-alert py-0" aria-labelledby="alertDropdownLink">
                 <ul class="list-group">
                   <li class="list-group-item py-1 active">Alerts center</li>
                   <li class="list-group-item p-0"><a class="dropdown-item" href="#">
@@ -213,7 +217,7 @@
                 <i class="fas fa-envelope" style="font-size: 1rem; color: #B7B9CC"></i>
                 <span class="badge badge-notify"></span>
               </a>
-              <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="messageDropdownLink">
+              <div class="dropdown-menu dropdown-menu-right dropdown-menu-alert py-0" aria-labelledby="messageDropdownLink">
                 <ul id="user-message-list" class="list-group">
                   <li class="list-group-item py-1 active">Message center</li>
                 </ul>
@@ -323,8 +327,18 @@
 
 			/* Function to create user message item */
 			function createUserMessageItem(item = null){
-				if(item !== null)
-					return $(`<li class="list-group-item p-0"><a class="dropdown-item" href="#"><p class="text-muted mb-1">${item.subject}</p><small class="text-muted">${item.content}</small></a></li>`);
+				if(item !== null) {
+					var htmlItem = $(`<li class="list-group-item p-0">
+					<a class="dropdown-item text-muted" href="#">
+						<div class="d-flex w-100 justify-content-between">
+							<small class="text-muted">${item.created_at}</small>
+							<small class="badge badge-danger py-1">New</small>
+						</div>
+                    	<p class="text-muted mb-1">${item.subject}</p>
+					</a></li>`);
+					if(!item.read){ htmlItem.addClass('new-message') }
+					return htmlItem;
+				}
 				else
 					return $(`<li class="list-group-item text-center p-0"><a class="dropdown-item" href="#"><small class="text-muted">{{ __('Read More Messages') }}</small></a></li>`);
 			}
