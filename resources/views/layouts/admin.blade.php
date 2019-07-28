@@ -248,7 +248,7 @@
 	</div>
 	
 	<!-- Display Spinner Modal -->
-	<div id="spinnerModal" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div id="spinnerModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="spinnerModalTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div style="background-color:transparent;border:none;" class="modal-content">
 				<div class="modal-spinner text-center">
@@ -262,28 +262,8 @@
 
 	<!-- Display one user message - Modal -->
 	<div id="singleUserMessageModal" class="modal" tabindex="-1" role="dialog">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
-				
-				<!-- 
-				<div class="modal-header">
-					<h5 class="modal-title">Modal title</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<div class="d-flex justify-content-center">
-						<div class="spinner-border" role="status">
-							<span class="sr-only">Loading...</span>
-						</div>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary">Save changes</button>
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				</div>
-				-->
 			</div>
 		</div>
 	</div>
@@ -375,7 +355,7 @@
 			function createUserMessageItem(item = null){
 				if(item !== null) {
 					var htmlItem = `<li class="list-group-item p-0">
-					<a class="dropdown-item user-message-item text-muted" href="#">
+					<a class="dropdown-item user-message-item text-muted" href="#" data-message="${item.id}">
 						<div class="d-flex w-100 justify-content-between">
 							<small class="text-muted">${item.created_at}</small>`;
 					
@@ -398,21 +378,38 @@
       		}
       		/* Function to display user message item */
 
-			/* Event - Click on One user message */
+			/* Event - Click on One user message - ajex request */
 			$('#user-message-list').on('click', 'a.user-message-item', function(e){
 				e.preventDefault();
 				$('#spinnerModal').modal('show');
 				$.ajax({
 					headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
-					url: '{{ url('get-last-user-message') }}',
+                    method: 'post',
+					url: '{{ url('single-user-message') }}',
+                    data: { user_message: $(this).attr('data-message') },
 					dataType: 'json'
 				}).done(function(data) {
-					
+					$('#spinnerModal').modal('hide');
+					$('#singleUserMessageModal div.modal-content').html(createModalMessageContent(data));
+					$('#singleUserMessageModal').modal('show');
 				}).fail(function(data) {
 					$('#spinnerModal').modal('hide');
 					alert('Impossible to display Message');
 				});
 			});
+			/* End Ajex request */
+
+			function createModalMessageContent(message){
+				return $(`<div class="modal-header">
+					<h5 class="modal-title">${message.subject}</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div>${message.content}</div>
+				</div>`);
+			}
 
 		});
 	</script>

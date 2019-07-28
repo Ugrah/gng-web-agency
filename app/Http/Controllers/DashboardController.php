@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\UserMessageRepository;
+use Illuminate\Support\Facades\Input;
 
 class DashboardController extends Controller
 {
@@ -19,7 +20,7 @@ class DashboardController extends Controller
     public function __construct(UserMessageRepository $userMessageRepository)
     {
         $this->middleware('admin');
-        $this->middleware('ajax', ['only' => ['getLastUserMessage']]);
+        $this->middleware('ajax', ['only' => ['getLastUserMessage', 'getSingleUserMessage']]);
         $this->userMessageRepository = $userMessageRepository;
     }
 
@@ -39,5 +40,11 @@ class DashboardController extends Controller
             'numberNewMessage' => $this->userMessageRepository->getNewMessageCount(),
             'lastMessages' => $this->userMessageRepository->getLastMessage($this->lastMessageLimit)
         ]);
+    }
+
+    public function getSingleUserMessage()
+    {
+        $message = $this->userMessageRepository->getById(Input::get('user_message'));
+        return response()->json($message);
     }
 }
