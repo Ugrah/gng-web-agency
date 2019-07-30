@@ -40,12 +40,15 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     Route::resource('production', 'ProductionController')->except([]);
+
+    Route::resource('user-message', 'UserMessageController')->except(['edit', 'update']);
+    Route::post('single-user-message','UserMessageController@getSingleUserMessage')->name('single.user.message');
+    Route::post('update-user-message', 'UserMessageController@updateUserMessage')->name('update.user.message');
+    Route::get('get-last-user-message','UserMessageController@getLastUserMessage')->name('user.messages');
+
     Route::post('detach-tag', 'ProductionController@detachTag')->name('detach.production.tag');
     Route::post('remove-screenshot', 'ProductionController@removeScreenshot')->name('remove.production.screenshot');
     Route::get('get-productions-data', 'ProductionController@getProductionsData')->name('data.productions');
-    Route::get('get-last-user-message','DashboardController@getLastUserMessage')->name('user.messages');
-    Route::post('single-user-message','DashboardController@getSingleUserMessage')->name('single.user.message');
-    Route::post('update-user-message', 'DashboardController@updateUserMessage')->name('update.user.message');
     
     
     /*
