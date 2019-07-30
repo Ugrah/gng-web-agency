@@ -45,6 +45,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('get-productions-data', 'ProductionController@getProductionsData')->name('data.productions');
     Route::get('get-last-user-message','DashboardController@getLastUserMessage')->name('user.messages');
     Route::post('single-user-message','DashboardController@getSingleUserMessage')->name('single.user.message');
+    Route::post('update-user-message', 'DashboardController@updateUserMessage')->name('update.user.message');
     
     
     /*

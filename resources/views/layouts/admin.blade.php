@@ -406,12 +406,12 @@
 			}
 			/* End createModalMessageContent */
 
-			/* Create modal to show single user message
+			/* Update Interface after display user message
 			 * param noeud : a.dropdown-item jquery object
 			 * param isRead : boolean
 			 * return void
 			*/
-			function messageJustRead(noeud, isRead){
+			function updateInterface(noeud, isRead, user_message){
 				if(isRead !== true){
 					noeud.find('small.badge-new-message').remove();
 					noeud.parent('li.list-group-item').removeClass('new-message');
@@ -421,9 +421,29 @@
 						if( parseInt($spanBadge.text()) <= 0 ) { $spanBadge.addClass('d-none') }
 					}
 				}
-				// Send request to update current user message
+				updateDB(isRead, user_message);
 			}
-			/* End messageJustRead */
+			/* End updateInterface */
+
+            /* Update Database after display user message
+			 * return void
+			*/
+			function updateDB(isRead, user_message){
+				if(isRead !== true){
+					$.ajax({
+                        headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+                        method: 'post',
+                        url: '{{ url('update-user-message') }}',
+                        data: { user_message: user_message },
+                        dataType: 'json'
+                    }).done(function(data) {
+                        console.log('Done success');
+                    }).fail(function(data) {
+                        console.log('Server error');
+                    });
+				}
+			}
+			/* End updateDB */
 
 			/* Event - Click on One user message - ajex request */
 			$('#user-message-list').on('click', 'a.user-message-item', function(e){
@@ -441,13 +461,13 @@
 					$('#spinnerModal').modal('hide');
 					$('#singleUserMessageModal div.modal-content').html(createModalMessageContent(data));
 					$('#singleUserMessageModal').modal('show');
-					messageJustRead($elt, data.read);
+					updateInterface($elt, data.read, data.id);
 				}).fail(function(data) {
 					$('#spinnerModal').modal('hide');
 					alert('Impossible to display Message');
 				});
 			});
-			/* End Ajex request */
+			/* End Ajax request */
 
 		});
 	</script>

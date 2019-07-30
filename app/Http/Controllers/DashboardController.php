@@ -45,9 +45,12 @@ class DashboardController extends Controller
     public function getSingleUserMessage()
     {
         $message = $this->userMessageRepository->getById(Input::get('user_message'));
-        if(!$message->read){
-            //$message->update(['read' => true]);
-        }
         return response()->json($message);
+    }
+
+    public function updateUserMessage()
+    {
+        $this->userMessageRepository->getById(Input::get('user_message'))->update(['read' => true]);
+        return response()->json();
     }
 }
