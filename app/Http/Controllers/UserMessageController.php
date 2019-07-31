@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\UserMessageRepository;
 use Illuminate\Support\Facades\Input;
+use DataTables;
+use App\UserMessage;
+use Form;
 
 class UserMessageController extends Controller
 {
@@ -20,8 +23,34 @@ class UserMessageController extends Controller
     public function __construct(UserMessageRepository $userMessageRepository)
     {
         $this->middleware('admin');
-        $this->middleware('ajax', ['only' => ['getLastUserMessage', 'getSingleUserMessage', 'updateUserMessage']]);
+        $this->middleware('ajax', ['only' => ['getLastUserMessage', 'getSingleUserMessage', 'updateUserMessage', 'getUserMessagesData']]);
         $this->userMessageRepository = $userMessageRepository;
+    }
+    
+    /**
+     * Get a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getUserMessagesData()
+    {
+        return DataTables::of(UserMessage::query())
+            ->rawColumns(['read_message', 'reply', 'delete'])
+            ->addColumn('read_message', function($user_message){
+                return '<a href="{!! route(\'user-message.show\', [\'user_message\' => '.$user_message->id.'])) !!}" class="btn btn-link btn-block read-button" data-user-message="'.$user_message->id.'">Read</a>';
+            })
+            ->addColumn('reply', function($user_message){
+                return '<a href="{!! route(\'user-message.reply\', [\'user_message\' => '.$user_message->id.'])) !!}" class="btn btn-link btn-block reply-button" data-user-message="'.$user_message->id.'">Reply</a>';
+            })
+            ->addColumn('delete', function($user_message){
+                return Form::open(['method' => 'DELETE', 'route' => ['user-message.destroy', $user_message->id], 'class' => 'delete-form']).
+                Form::button('<i class="fas fa-trash-alt fa-lg"></i>', [
+                    'type' => 'submit',
+                    'class'=> 'btn btn-danger btn-block',
+                    'onclick'=>'return confirm("Are you sure?")'
+                ]).
+                Form::close();
+            })->make(true);
     }
 
     /**
@@ -31,7 +60,7 @@ class UserMessageController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.user_messages.index');        
     }
 
     /**

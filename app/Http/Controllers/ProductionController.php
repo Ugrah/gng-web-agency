@@ -32,7 +32,7 @@ class ProductionController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Get a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */

@@ -41,7 +41,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     Route::resource('production', 'ProductionController')->except([]);
 
-    Route::resource('user-message', 'UserMessageController')->except(['edit', 'update']);
+    Route::resource('user-message', 'UserMessageController')->only(['index', 'show', 'destroy']);
+    Route::get('user-message/{user_message}/reply', 'UserMessageController@reply')->name('user-message.reply');
+    Route::get('get-user-message-data', 'UserMessageController@getUserMessagesData')->name('data.user.messages');
     Route::post('single-user-message','UserMessageController@getSingleUserMessage')->name('single.user.message');
     Route::post('update-user-message', 'UserMessageController@updateUserMessage')->name('update.user.message');
     Route::get('get-last-user-message','UserMessageController@getLastUserMessage')->name('user.messages');

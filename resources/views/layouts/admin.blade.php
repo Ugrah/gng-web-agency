@@ -379,7 +379,7 @@
 					return $eltLi;
 				}
 				else
-					return $(`<li class="list-group-item text-center p-0"><a class="dropdown-item" href="#"><small class="text-muted">{{ __('Read More Messages') }}</small></a></li>`);
+					return $(`<li class="list-group-item text-center p-0"><a class="dropdown-item" href="{{ route('user-message.index') }}"><small class="text-muted">{{ __('Read More Messages') }}</small></a></li>`);
 			}
 			/* End Function to create user message item */
 
