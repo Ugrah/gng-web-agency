@@ -1,5 +1,19 @@
 @extends('layouts.admin')
 
+@section('styles')
+
+<style>
+#dataTable tbody tr:hover {cursor: pointer;}
+table#dataTable tbody tr.odd:hover, table#dataTable tbody tr.even:hover {
+  background-color: #ffa !important;
+  width: 100%;
+  box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.5);
+  z-index: 99999;
+}
+</style>
+
+@endsection
+
 @section('content')
 
   <div class="container-fluid p-4">
@@ -28,16 +42,11 @@
             Featured
           </div>
           <div class="card-body">
-            <table id="dataTable" class="table">
+            <table id="dataTable" class="table table-sm">
               <thead class="thead-dark">
-                <tr>
+                <tr class="">
                   <th scope="col">{{ __('Sender\'s Name') }}</th>
-                  <th scope="col">{{ __('e-Mail') }}</th>
-                  <th scope="col">{{ __('Phone number') }}</th>
                   <th scope="col">{{ __('subject') }}</th>
-                  <th scope="col">{{ __('Status') }}</th>
-                  <th scope="col"></th>
-                  <th scope="col"></th>
                   <th scope="col"></th>
                 </tr>
               </thead>
@@ -67,20 +76,35 @@
         }
 
         $('#dataTable').DataTable({
-          processing: true,
-          serverSide: true,
-          ajax: '{{ url('get-user-message-data') }}',
-          columns: [
-                      { data: 'name', name: 'name' },
-                      { data: 'email', name: 'email' },
-                      { data: 'phone_number', name: 'phone_number' },
-                      { data: 'subject', name: 'subject' },
-                      { data: 'read', name: 'read', render: function ( data, type, row ) { return (data == true) ? '<i class="far fa-envelope-open fa-2x text-center text-success d-block">' : '<i class="far fa-envelope fa-2x text-center text-success d-block">' }, searchable: false },
-                      { data: 'read_message', name: 'read_message', orderable: false, searchable: false },
-                      { data: 'reply', name: 'reply', orderable: false, searchable: false },
-                      { data: 'delete', name: 'delete', orderable: false, searchable: false }
-                  ]
+        	processing: true,
+        	serverSide: true,
+        	ajax: '{{ url('get-user-message-data') }}',
+        	createdRow: function( row, data, dataIndex ) {
+                $(row).attr('data-message', data.id);
+        	},
+          	columns: [
+				{ data: 'name', name: 'name' },
+				{ data: 'subject', name: 'subject' },
+				{ data: 'actions', name: 'actions', orderable: false, searchable: false }
+			]
         });
+
+        /* Event - Click on One user message - Go to show single user message page */
+        $('#dataTable').on('click', 'tbody tr', function(e){
+            e.preventDefault();
+            var $elt = $(this);
+            $.ajax({
+                headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+                url: $elt.find('a.status-button').attr('href'),
+                dataType: 'json'
+            }).done(function(data) {
+                console.log('Action done');
+            }).fail(function(data) {
+                alert('Impossible to edit Message');
+            });
+        });
+        /* End Ajax request */
+
       });
   </script>
 @endsection

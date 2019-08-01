@@ -450,7 +450,6 @@
 				e.preventDefault();
 				$('#spinnerModal').modal('show');
 				var $elt = $(this);
-				var isRead;
 				$.ajax({
 					headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
                     method: 'post',

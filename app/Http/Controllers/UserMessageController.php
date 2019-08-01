@@ -35,21 +35,32 @@ class UserMessageController extends Controller
     public function getUserMessagesData()
     {
         return DataTables::of(UserMessage::query())
-            ->rawColumns(['read_message', 'reply', 'delete'])
+            ->rawColumns(['read_message', 'reply', 'actions'])
             ->addColumn('read_message', function($user_message){
-                return '<a href="{!! route(\'user-message.show\', [\'user_message\' => '.$user_message->id.'])) !!}" class="btn btn-link btn-block read-button" data-user-message="'.$user_message->id.'">Read</a>';
+                $button = '<a href="'. route('user-message.show', ['user_message' => $user_message->id]).'" class="btn btn-link btn-block read-button" data-user-message="'.$user_message->id.'">';
+                ($user_message->read) ? $button .= '<i class="far fa-envelope-open fa-2x text-center text-success d-block"></a>' : $button .= '<i class="far fa-envelope fa-2x text-center text-success d-block"></a>' ;
+                return $button;
             })
             ->addColumn('reply', function($user_message){
-                return '<a href="{!! route(\'user-message.reply\', [\'user_message\' => '.$user_message->id.'])) !!}" class="btn btn-link btn-block reply-button" data-user-message="'.$user_message->id.'">Reply</a>';
+                return '<a href="'. route('user-message.reply', ['user_message' => $user_message->id]).'" class="btn btn-link btn-block reply-button" data-user-message="'.$user_message->id.'">Reply</a>';
             })
-            ->addColumn('delete', function($user_message){
-                return Form::open(['method' => 'DELETE', 'route' => ['user-message.destroy', $user_message->id], 'class' => 'delete-form']).
+            ->addColumn('actions', function($user_message){
+                $button = '';
+                if ($user_message->read){
+                    $button = '<a title="marquer comme non lu" href="'. route('user-message.status', ['user_message' => $user_message->id]).'" class="btn btn-link status-button rounded px-0 reply-button" role="button" data-user-message="'.$user_message->id.'"><i class="fas fa-envelope fa-lg"></i></a>';
+                }
+                else {
+                    $button = '<a title="marquer comme lu" href="'. route('user-message.status', ['user_message' => $user_message->id]).'" class="btn btn-link status-button rounded px-0 reply-button" role="button" data-user-message="'.$user_message->id.'"><i class="fas fa-envelope-open-text fa-lg"></i></a>' ;
+                } 
+                $form = Form::open(['method' => 'DELETE', 'route' => ['user-message.destroy', $user_message->id], 'class' => 'delete-form']).
                 Form::button('<i class="fas fa-trash-alt fa-lg"></i>', [
                     'type' => 'submit',
-                    'class'=> 'btn btn-danger btn-block',
-                    'onclick'=>'return confirm("Are you sure?")'
+                    'class'=> 'btn btn-danger rounded',
+                    'onclick'=>'return confirm("Are you sure?")',
+                    'title' => 'Supprimer'
                 ]).
                 Form::close();
+                return '<div class="d-flex justify-content-around">'.$button.$form.'</div>';
             })->make(true);
     }
 
@@ -92,7 +103,19 @@ class UserMessageController extends Controller
      */
     public function show($id)
     {
-        //
+        $message = $this->userMessageRepository->getById($id);
+        return view('dashboard.user_messages.show', compact('message'));
+    }
+
+    /**
+     * Reply to user message the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function reply($id)
+    {
+        return view('dashboard.user_messages.reply');                
     }
 
     /**
@@ -104,6 +127,17 @@ class UserMessageController extends Controller
     public function edit($id)
     {
         //
+    }
+
+    /**
+     * Update user message status.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function status($id)
+    {
+        return response()->json();
     }
 
     /**

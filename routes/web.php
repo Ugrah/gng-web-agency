@@ -43,6 +43,7 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::resource('user-message', 'UserMessageController')->only(['index', 'show', 'destroy']);
     Route::get('user-message/{user_message}/reply', 'UserMessageController@reply')->name('user-message.reply');
+    Route::get('user-message/{user_message}/status', 'UserMessageController@status')->name('user-message.status');
     Route::get('get-user-message-data', 'UserMessageController@getUserMessagesData')->name('data.user.messages');
     Route::post('single-user-message','UserMessageController@getSingleUserMessage')->name('single.user.message');
     Route::post('update-user-message', 'UserMessageController@updateUserMessage')->name('update.user.message');
