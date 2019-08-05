@@ -3,13 +3,23 @@
 @section('styles')
 
 <style>
-#dataTable tbody tr:hover {cursor: pointer;}
-table#dataTable tbody tr.odd:hover, table#dataTable tbody tr.even:hover {
-  background-color: #ffa !important;
-  width: 100%;
-  box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.5);
-  z-index: 99999;
-}
+	#dataTable tbody tr:hover {cursor: pointer;}
+	table#dataTable tbody tr.odd:hover, table#dataTable tbody tr.even:hover {
+		/* background-color: #ffa !important; */
+		width: 100%;
+		box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.5);
+		z-index: 99999;
+	}
+
+	.btn-circle {
+		width: 30px;
+		height: 30px;
+		padding: 6px 0px;
+		border-radius: 15px;
+		text-align: center;
+		font-size: 12px;
+		line-height: 1.42857;
+	}
 </style>
 
 @endsection
@@ -92,16 +102,19 @@ table#dataTable tbody tr.odd:hover, table#dataTable tbody tr.even:hover {
         /* Event - Click on One user message - Go to show single user message page */
         $('#dataTable').on('click', 'tbody tr', function(e){
             e.preventDefault();
-            var $elt = $(this);
-            $.ajax({
-                headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
-                url: $elt.find('a.status-button').attr('href'),
-                dataType: 'json'
-            }).done(function(data) {
-                console.log('Action done');
-            }).fail(function(data) {
-                alert('Impossible to edit Message');
-            });
+			var url = '{{ url('user-message') }}';
+			var id = $(this).find('a.status-button').attr('data-user-message');
+			window.location = `${url}/${id}`;
+            // var $elt = $(this);
+            // $.ajax({
+            //     headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+            //     url: $elt.find('a.status-button').attr('href'),
+            //     dataType: 'json'
+            // }).done(function(data) {
+            //     console.log('Action done :' + $elt.find('a.status-button').attr('href'));
+            // }).fail(function(data) {
+            //     alert('Impossible to edit Message');
+            // });
         });
         /* End Ajax request */
 

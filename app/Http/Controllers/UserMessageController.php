@@ -47,20 +47,20 @@ class UserMessageController extends Controller
             ->addColumn('actions', function($user_message){
                 $button = '';
                 if ($user_message->read){
-                    $button = '<a title="marquer comme non lu" href="'. route('user-message.status', ['user_message' => $user_message->id]).'" class="btn btn-link status-button rounded px-0 reply-button" role="button" data-user-message="'.$user_message->id.'"><i class="fas fa-envelope fa-lg"></i></a>';
+                    $button = '<a title="marquer comme non lu" href="'. route('user-message.status', ['user_message' => $user_message->id]).'" class="btn btn-light status-button btn-circle reply-button mx-1" role="button" data-user-message="'.$user_message->id.'"><i class="fas fa-envelope fa-lg"></i></a>';
                 }
                 else {
-                    $button = '<a title="marquer comme lu" href="'. route('user-message.status', ['user_message' => $user_message->id]).'" class="btn btn-link status-button rounded px-0 reply-button" role="button" data-user-message="'.$user_message->id.'"><i class="fas fa-envelope-open-text fa-lg"></i></a>' ;
+                    $button = '<a title="marquer comme lu" href="'. route('user-message.status', ['user_message' => $user_message->id]).'" class="btn btn-light status-button btn-circle delete-button mx-1" role="button" data-user-message="'.$user_message->id.'"><i class="fas fa-envelope-open-text fa-lg"></i></a>' ;
                 } 
                 $form = Form::open(['method' => 'DELETE', 'route' => ['user-message.destroy', $user_message->id], 'class' => 'delete-form']).
                 Form::button('<i class="fas fa-trash-alt fa-lg"></i>', [
                     'type' => 'submit',
-                    'class'=> 'btn btn-danger rounded',
+                    'class'=> 'btn btn-light btn-circle',
                     'onclick'=>'return confirm("Are you sure?")',
                     'title' => 'Supprimer'
                 ]).
                 Form::close();
-                return '<div class="d-flex justify-content-around">'.$button.$form.'</div>';
+                return '<div class="d-flex float-right">'.$button.$form.'</div>';
             })->make(true);
     }
 

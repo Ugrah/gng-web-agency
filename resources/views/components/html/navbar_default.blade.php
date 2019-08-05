@@ -4,53 +4,53 @@
     <span class="navbar-toggler-icon"></span>
     </button>
 <div class="collapse navbar-collapse" id="standardNavbarCollapse">
-<ul class="navbar-nav ml-auto">
-    <li class="nav-item">
-    <a class="nav-link" href="{{url('/')}}">{{ trans('front/navBar.menu-items.home') }} <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link" href="{{url('/about')}}">{{ trans('front/navBar.menu-items.about') }}</a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link" href="{{url('/website')}}">{{ trans('front/navBar.menu-items.website') }}</a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link" href="{{url('/mobile-app')}}">{{ trans('front/navBar.menu-items.mobile_app') }}</a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link" href="{{url('/prices')}}">{{ trans('front/navBar.menu-items.prices') }}</a>
-    </li>
-    <!--
-    <li class="nav-item">
-    <a class="nav-link" href="{{url('/realisations')}}">{{ trans('front/navBar.menu-items.realisations') }}</a>
-    </li>
-    -->
-    <li class="nav-item">
-    <a class="nav-link" href="{{url('/contact')}}">{{ trans('front/navBar.menu-items.contact') }}</a>
-    </li>
-
-    <!-- language links -->
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-globe"></i>
-        </a>
-        <div style="background-color: transparent; border: none;" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="{{ app()->getLocale() == 'en' ? 'dropdown-item disabled active-locale' : 'dropdown-item text-muet' }}" href="{{url('/language/en')}}">en</a>
-            <a class="{{ app()->getLocale() == 'fr' ? 'dropdown-item disabled active-locale' : 'dropdown-item text-muet' }}" href="{{url('/language/fr')}}">fr</a>
-        </div>
-    </li>
-
-
-    @auth
+    <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Log out</a>
+        <a class="nav-link" href="{{url('/')}}">{{ trans('front/navBar.menu-items.home') }} <span class="sr-only">(current)</span></a>
         </li>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            {{ csrf_field() }}
-        </form>
-    @endauth
-    
-</ul>
+        <li class="nav-item">
+        <a class="nav-link" href="{{url('/about')}}">{{ trans('front/navBar.menu-items.about') }}</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{{url('/website')}}">{{ trans('front/navBar.menu-items.website') }}</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{{url('/mobile-app')}}">{{ trans('front/navBar.menu-items.mobile_app') }}</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{{url('/prices')}}">{{ trans('front/navBar.menu-items.prices') }}</a>
+        </li>
+        <!--
+        <li class="nav-item">
+        <a class="nav-link" href="{{url('/realisations')}}">{{ trans('front/navBar.menu-items.realisations') }}</a>
+        </li>
+        -->
+        <li class="nav-item">
+        <a class="nav-link" href="{{url('/contact')}}">{{ trans('front/navBar.menu-items.contact') }}</a>
+        </li>
+
+        <!-- language links -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-globe"></i>
+            </a>
+            <div style="background-color: transparent; border: none;" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="{{ app()->getLocale() == 'en' ? 'dropdown-item disabled active-locale' : 'dropdown-item text-muet' }}" href="{{url('/language/en')}}">en</a>
+                <a class="{{ app()->getLocale() == 'fr' ? 'dropdown-item disabled active-locale' : 'dropdown-item text-muet' }}" href="{{url('/language/fr')}}">fr</a>
+            </div>
+        </li>
+
+
+        @auth
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Log out</a>
+            </li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
+        @endauth
+        
+    </ul>
 
 <!--
 <form class="form-inline mt-2 mt-md-0">
