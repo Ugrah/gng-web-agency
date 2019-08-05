@@ -104,7 +104,9 @@ class UserMessageController extends Controller
     public function show($id)
     {
         $message = $this->userMessageRepository->getById($id);
-        return view('dashboard.user_messages.show', compact('message'));
+        $message->update(['read' => true]);
+        $arr_ip = geoip($message->user_ip_adress);
+        return view('dashboard.user_messages.show', compact('message', 'arr_ip'));
     }
 
     /**

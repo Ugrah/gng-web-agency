@@ -40,7 +40,7 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">{{ __('User Messages') }}</h1>
-        <a id="submit-form" href="{{route('production.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> {{  __('Add Fun') }}</a>
+        <a id="submit-form" href="{{route('production.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> {{  __('Add Function') }}</a>
     </div>
 
     <p>DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the official DataTables documentation.</p>
@@ -105,18 +105,7 @@
 			var url = '{{ url('user-message') }}';
 			var id = $(this).find('a.status-button').attr('data-user-message');
 			window.location = `${url}/${id}`;
-            // var $elt = $(this);
-            // $.ajax({
-            //     headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
-            //     url: $elt.find('a.status-button').attr('href'),
-            //     dataType: 'json'
-            // }).done(function(data) {
-            //     console.log('Action done :' + $elt.find('a.status-button').attr('href'));
-            // }).fail(function(data) {
-            //     alert('Impossible to edit Message');
-            // });
         });
-        /* End Ajax request */
 
       });
   </script>
