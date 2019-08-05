@@ -152,6 +152,10 @@
               </ul>
             </li>
             <li class="nav-item">
+                <a class="nav-link px-3 text-light" href="{{ url('/user-message') }}">
+                <i class="fas fa-envelope pr-2"></i>  User message</a>
+            </li>
+            <!-- <li class="nav-item">
               <a class="nav-link px-3 text-light" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                 <i class="fas fa-clone pr-2"></i>  {{ __('Template') }}
                 <i class="fas fa-angle-right float-right"></i>
@@ -162,7 +166,7 @@
                 <a href="#" class="list-group-item list-group-item-action py-2">Dapibus</a>
                 <a href="#" class="list-group-item list-group-item-action py-2">Dapibus</a>
               </ul>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link px-3 text-light" href="#">
                 <i class="fas fa-clone pr-2"></i>  Link</a>
