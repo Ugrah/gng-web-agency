@@ -5,10 +5,13 @@
 <style>
 	#dataTable tbody tr:hover {cursor: pointer;}
 	table#dataTable tbody tr.odd:hover, table#dataTable tbody tr.even:hover {
-		/* background-color: #ffa !important; */
 		width: 100%;
 		box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.5);
 		z-index: 99999;
+	}
+	table#dataTable tbody tr.new-message td {
+		background-color: #f7f7f7 !important;
+		font-weight: bold !important;
 	}
 
 	.btn-circle {
@@ -91,6 +94,7 @@
         	ajax: '{{ url('get-user-message-data') }}',
         	createdRow: function( row, data, dataIndex ) {
                 $(row).attr('data-message', data.id);
+				if(!data.read) { $(row).addClass('new-message'); }
         	},
           	columns: [
 				{ data: 'name', name: 'name' },
@@ -103,7 +107,7 @@
         $('#dataTable').on('click', 'tbody tr', function(e){
             e.preventDefault();
 			var url = '{{ url('user-message') }}';
-			var id = $(this).find('a.status-button').attr('data-user-message');
+			var id = $(this).attr('data-message');
 			window.location = `${url}/${id}`;
         });
 
