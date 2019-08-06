@@ -60,7 +60,6 @@ class ProductionController extends Controller
                 })->make(true);
     }
 
-
     /**
      * Display a listing of the resource.
      *

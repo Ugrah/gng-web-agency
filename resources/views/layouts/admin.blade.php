@@ -336,7 +336,7 @@
 	<script type="text/javascript">
     	$(function(){
 			/* Function to get user messages informations */
-			function getUserMessages(){
+			$.fn.getUserMessages = function (){
 				$.ajax({
 					headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
 					url: '{{ url('get-last-user-message') }}',
@@ -345,6 +345,8 @@
 					if (data.numberNewMessage > 0) { 
 						$('#messageDropdownLink span.badge').text(data.numberNewMessage);
 					}
+					$('#user-message-list li.list-group-message').remove();
+					$('#user-message-list li.show-all-messages').remove();
 					$.each(data.lastMessages, function(key, item){
 						var htmlItem = createUserMessageItem(item);
 						displayItem('#user-message-list', htmlItem);
@@ -355,12 +357,12 @@
 				});
 			} /* End Function to get user messages informations */
 			// Run function to get user messages informations
-			getUserMessages();
+			$(document).getUserMessages();
 
 			/* Function to create user message item */
 			function createUserMessageItem(item = null){
 				if(item !== null) {
-					var $eltLi = $(`<li class="list-group-item p-0"></li>`);
+					var $eltLi = $(`<li class="list-group-item list-group-message p-0"></li>`);
 					var $link = $(`<a class="dropdown-item user-message-item text-muted" href="#" data-message="${item.id}"></a>`);
 					var $smallDate = $(`<small class="text-muted">${item.created_at}</small>`);
 					
@@ -383,7 +385,7 @@
 					return $eltLi;
 				}
 				else
-					return $(`<li class="list-group-item text-center p-0"><a class="dropdown-item" href="{{ route('user-message.index') }}"><small class="text-muted">{{ __('Read More Messages') }}</small></a></li>`);
+					return $(`<li class="list-group-item show-all-messages text-center p-0"><a class="dropdown-item" href="{{ route('user-message.index') }}"><small class="text-muted">{{ __('Read More Messages') }}</small></a></li>`);
 			}
 			/* End Function to create user message item */
 
@@ -433,7 +435,7 @@
 			 * return void
 			*/
 			function updateDB(isRead, user_message){
-				if(isRead !== true){
+				if(isRead !== true) {
 					$.ajax({
                         headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
                         method: 'post',
@@ -449,7 +451,7 @@
 			}
 			/* End updateDB */
 
-			/* Event - Click on One user message - ajex request */
+			/* Event - Click on single user message - ajax request */
 			$('#user-message-list').on('click', 'a.user-message-item', function(e){
 				e.preventDefault();
 				$('#spinnerModal').modal('show');

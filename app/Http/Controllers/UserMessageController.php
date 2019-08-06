@@ -23,7 +23,7 @@ class UserMessageController extends Controller
     public function __construct(UserMessageRepository $userMessageRepository)
     {
         $this->middleware('admin');
-        $this->middleware('ajax', ['only' => ['getLastUserMessage', 'getSingleUserMessage', 'updateUserMessage', 'getUserMessagesData']]);
+        $this->middleware('ajax', ['only' => ['getLastUserMessage', 'getSingleUserMessage', 'updateUserMessage', 'getUserMessagesData', 'status']]);
         $this->userMessageRepository = $userMessageRepository;
     }
     
@@ -47,10 +47,10 @@ class UserMessageController extends Controller
             ->addColumn('actions', function($user_message){
                 $button = '';
                 if ($user_message->read){
-                    $button = '<a title="marquer comme non lu" href="'. route('user-message.status', ['user_message' => $user_message->id]).'" class="btn btn-light status-button btn-circle reply-button mx-1" role="button" data-user-message="'.$user_message->id.'"><i class="fas fa-envelope fa-lg"></i></a>';
+                    $button = '<a title="marquer comme non lu" href="'. route('user-message.status', ['user_message' => $user_message->id]).'" class="btn btn-light status-button btn-circle mx-1" role="button" data-user-message="'.$user_message->id.'"><i class="fas fa-envelope fa-lg"></i></a>';
                 }
                 else {
-                    $button = '<a title="marquer comme lu" href="'. route('user-message.status', ['user_message' => $user_message->id]).'" class="btn btn-light status-button btn-circle delete-button mx-1" role="button" data-user-message="'.$user_message->id.'"><i class="fas fa-envelope-open-text fa-lg"></i></a>' ;
+                    $button = '<a title="marquer comme lu" href="'. route('user-message.status', ['user_message' => $user_message->id]).'" class="btn btn-light status-button btn-circle mx-1" role="button" data-user-message="'.$user_message->id.'"><i class="fas fa-envelope-open-text fa-lg"></i></a>' ;
                 } 
                 $form = Form::open(['method' => 'DELETE', 'route' => ['user-message.destroy', $user_message->id], 'class' => 'delete-form']).
                 Form::button('<i class="fas fa-trash-alt fa-lg"></i>', [
@@ -104,7 +104,9 @@ class UserMessageController extends Controller
     public function show($id)
     {
         $message = $this->userMessageRepository->getById($id);
-        $message->update(['read' => true]);
+        if(!$message->read) {
+            $message->update(['read' => true]);
+        }
         $arr_ip = geoip($message->user_ip_adress);
         return view('dashboard.user_messages.show', compact('message', 'arr_ip'));
     }
@@ -117,7 +119,7 @@ class UserMessageController extends Controller
      */
     public function reply($id)
     {
-        return view('dashboard.user_messages.reply');                
+        return view('dashboard.user_messages.reply');
     }
 
     /**
@@ -139,7 +141,21 @@ class UserMessageController extends Controller
      */
     public function status($id)
     {
-        return response()->json();
+        $data = [];
+        $message = $this->userMessageRepository->getById($id);
+        
+        if($message->read) {
+            $message->update(['read' => false]);
+            $data['message'] = $message;
+            $data['oldStatus'] = true;
+        }
+        else {
+            $message->update(['read' => true]);
+            $data['message'] = $message;
+            $data['oldStatus'] = false;
+        }
+        // 
+        return response()->json($data);
     }
 
     /**

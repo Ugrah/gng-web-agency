@@ -103,12 +103,46 @@
 			]
         });
 
-        /* Event - Click on One user message - Go to show single user message page */
+        /* Event - Click on One user message - Go to show single user message page
+		 * Or Event - Click on mark like read or not read button
+		*/
         $('#dataTable').on('click', 'tbody tr', function(e){
             e.preventDefault();
-			var url = '{{ url('user-message') }}';
-			var id = $(this).attr('data-message');
-			window.location = `${url}/${id}`;
+			if( $(e.target).is('td') ) {
+			 	var url = '{{ url('user-message') }}';
+             	var id = $(this).attr('data-message');
+             	window.location = `${url}/${id}`;
+			}
+        });
+
+        $('#dataTable').on('click', 'tbody td a.status-button', function(e){
+			e.preventDefault();
+			var $elmt = $(this);
+			$.ajax({
+				headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+				method: 'get',
+				url: $elmt.attr('href'),
+				dataType: 'json'
+			})
+			.done(function(data) {
+				if(data.oldStatus) {
+					// Run function to get user messages informations after update datas
+					$(document).getUserMessages();
+					// update fa icon an class of button
+					console.log($elmt.find('i.fa-envelope'));
+					$elmt.attr('title', 'marquer comme lu');
+					$elmt.find('i.fa-envelope-open-text').addClass('fa-envelope').removeClass('fa-envelope-open-text');
+				} else {
+					// Run function to get user messages informations after update datas
+					$(document).getUserMessages();
+					// update fa icon an class of button
+					$elmt.attr('title', 'marquer comme non lu');
+					$elmt.find('i.fa-envelope').addClass('fa-envelope-open-text').removeClass('fa-envelope');
+				}
+			})
+			.fail(function(data) {
+				console.log('Error, Please retry');
+			});
         });
 
       });
