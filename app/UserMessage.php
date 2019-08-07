@@ -25,4 +25,9 @@ class UserMessage extends Model
     protected $hidden = [
         'user_ip_adress'
     ];
+
+    public function adminResponses() 
+{
+    return $this->hasMany('App\AdminToUser');
+}
 }

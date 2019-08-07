@@ -129,15 +129,18 @@
 					// Run function to get user messages informations after update datas
 					$(document).getUserMessages();
 					// update fa icon an class of button
-					console.log($elmt.find('i.fa-envelope'));
 					$elmt.attr('title', 'marquer comme lu');
 					$elmt.find('i.fa-envelope-open-text').addClass('fa-envelope').removeClass('fa-envelope-open-text');
+					// remove class "new-message" of the td parent
+					$elmt.parent().parent().parent('tr').removeClass('new-message');
 				} else {
 					// Run function to get user messages informations after update datas
 					$(document).getUserMessages();
 					// update fa icon an class of button
 					$elmt.attr('title', 'marquer comme non lu');
 					$elmt.find('i.fa-envelope').addClass('fa-envelope-open-text').removeClass('fa-envelope');
+					// add class "new-message" to the td parent 
+					$elmt.parent().parent().parent('tr').addClass('new-message');
 				}
 			})
 			.fail(function(data) {
