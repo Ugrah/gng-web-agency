@@ -23,7 +23,7 @@ class UserMessageController extends Controller
     public function __construct(UserMessageRepository $userMessageRepository)
     {
         $this->middleware('admin');
-        $this->middleware('ajax', ['only' => ['getLastUserMessage', 'getSingleUserMessage', 'updateUserMessage', 'getUserMessagesData', 'status']]);
+        $this->middleware('ajax', ['only' => ['getLastUserMessage', 'getSingleUserMessage', 'updateUserMessage', 'getUserMessagesData', 'status', 'destroy']]);
         $this->userMessageRepository = $userMessageRepository;
     }
     
@@ -51,16 +51,17 @@ class UserMessageController extends Controller
                 }
                 else {
                     $button = '<a title="marquer comme lu" href="'. route('user-message.status', ['user_message' => $user_message->id]).'" class="btn btn-light status-button btn-circle mx-1" role="button" data-user-message="'.$user_message->id.'"><i class="fas fa-envelope-open-text fa-lg"></i></a>' ;
-                } 
-                $form = Form::open(['method' => 'DELETE', 'route' => ['user-message.destroy', $user_message->id], 'class' => 'delete-form']).
-                Form::button('<i class="fas fa-trash-alt fa-lg"></i>', [
-                    'type' => 'submit',
-                    'class'=> 'btn btn-light btn-circle',
-                    'onclick'=>'return confirm("Are you sure?")',
-                    'title' => 'Supprimer'
-                ]).
-                Form::close();
-                return '<div class="d-flex float-right">'.$button.$form.'</div>';
+                }
+                // $form = Form::open(['method' => 'DELETE', 'route' => ['user-message.destroy', $user_message->id], 'class' => 'delete-form']).
+                // Form::button('<i class="fas fa-trash-alt fa-lg"></i>', [
+                //     'type' => 'submit',
+                //     'class'=> 'btn btn-light btn-circle',
+                //     'onclick'=>'return confirm("Are you sure?")',
+                //     'title' => 'Supprimer'
+                // ]).
+                // Form::close();
+                $deleteButton = '<a title="Delete" href="'. route('user-message.destroy', ['user_message' => $user_message->id]).'" class="btn btn-light delete-button btn-circle mx-1" role="button" data-user-message="'.$user_message->id.'" onclick="return confirm(\'Are you sure?\')"><i class="fas fa-trash-alt fa-lg"></i></a>';
+                return '<div class="d-flex float-right">'.$button.$deleteButton.'</div>';
             })->make(true);
     }
 
@@ -178,7 +179,8 @@ class UserMessageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->userMessageRepository->destroy($id);
+        return response()->json();
     }
 
     public function getLastUserMessage()

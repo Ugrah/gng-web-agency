@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('profile_image')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -35,6 +36,7 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        // Schema::dropIfExists('users');
+        Schema::dropSoftDeletes('users');
     }
 }

@@ -23,6 +23,7 @@ class CreateUserMessagesTable extends Migration
             $table->string('user_ip_adress');
             $table->boolean('read')->default(false);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -33,6 +34,7 @@ class CreateUserMessagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_messages');
+        // Schema::dropIfExists('user_messages');
+        Schema::dropSoftDeletes('user_messages');
     }
 }

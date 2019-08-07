@@ -24,6 +24,7 @@ class CreateProductionsTable extends Migration
             $table->string('url')->nullable();
             $table->string('author')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -34,6 +35,7 @@ class CreateProductionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('productions');
+        // Schema::dropIfExists('productions');
+        Schema::dropSoftDeletes('productions');
     }
 }

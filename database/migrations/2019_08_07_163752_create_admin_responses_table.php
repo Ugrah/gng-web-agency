@@ -22,8 +22,9 @@ class CreateAdminResponsesTable extends Migration
 				  ->references('id')
 				  ->on('user_messages')
 				  ->onDelete('restrict')
-				  ->onUpdate('restrict');
+                  ->onUpdate('restrict');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -38,6 +39,8 @@ class CreateAdminResponsesTable extends Migration
             $table->dropForeign('admin_responses_user_message_id_foreign');
         });
 
-        Schema::dropIfExists('admin_responses');
+        // Schema::dropIfExists('admin_responses');
+        Schema::dropSoftDeletes('admin_responses');
+
     }
 }

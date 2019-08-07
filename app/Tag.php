@@ -3,10 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Tag extends Model
 {
-    protected $fillable = ['tag','tag_url'];
+    use SoftDeletes;
+
+	protected $fillable = ['tag','tag_url'];
 
 	public function productions()
 	{

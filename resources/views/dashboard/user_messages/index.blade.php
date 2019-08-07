@@ -46,7 +46,14 @@
         <a id="submit-form" href="{{route('production.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> {{  __('Add Function') }}</a>
     </div>
 
-    <p>DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the official DataTables documentation.</p>
+	<p>DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the official DataTables documentation.</p>
+	
+	<div id="delete-notification" class="alert alert-success alert-dismissible fade text-center" role="alert">
+            Here message to notification delete user message
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 
     <div class="container">
       <div class="row">
@@ -80,13 +87,6 @@
       $(function() {
         // Aside active link
         //$('#mySidebar ul.navbar-nav > li.nav-item > a.nav-link:eq(1)').addClass('active');
-
-        // Dismissible alert
-        if($('div.alert-success').css('display') === 'block'){
-            setTimeout(function() { 
-                $('div.alert-success').fadeOut('slow');
-            }, 5000);
-        }
 
         $('#dataTable').DataTable({
         	processing: true,
@@ -147,6 +147,31 @@
 				console.log('Error, Please retry');
 			});
         });
+
+		$('#dataTable').on('click', 'tbody td a.delete-button', function(e){
+			e.preventDefault();
+			var $elmt = $(this);
+			$.ajax({
+				headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+				method: 'delete',
+				url: $elmt.attr('href'),
+				dataType: 'json'
+			})
+			.done(function(data) {
+				// Run function to get user messages informations after remove a item from database
+				$(document).getUserMessages();
+				// remove item parent from list
+				$elmt.parent().parent().parent('tr').remove();
+				// Alert Notification
+				$('div#delete-notification').addClass('slow');				
+				setTimeout(function() { 
+					$('div#delete-notification').removeClass('slow');
+				}, 5000);
+			})
+			.fail(function(data) {
+				console.log('Error, Please retry');
+			});
+		});
 
       });
   </script>

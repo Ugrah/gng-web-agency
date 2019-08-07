@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Presenters\DatePresenter;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Production extends Model
 {
     use DatePresenter;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.

@@ -4,10 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Presenters\DatePresenter;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class UserMessage extends Model
 {
-        use DatePresenter;
+    use DatePresenter;
+    use SoftDeletes;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -27,7 +30,7 @@ class UserMessage extends Model
     ];
 
     public function adminResponses() 
-{
-    return $this->hasMany('App\AdminToUser');
-}
+    {
+        return $this->hasMany('App\AdminToUser');
+    }
 }

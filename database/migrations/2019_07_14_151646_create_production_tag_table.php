@@ -23,6 +23,7 @@ class CreateProductionTagTable extends Migration
             $table->foreign('tag_id')->references('id')->on('tags')
                   ->onDelete('restrict')
                   ->onUpdate('restrict');
+            $table->softDeletes();
         });
     }
 
@@ -37,6 +38,7 @@ class CreateProductionTagTable extends Migration
             $table->dropForeign('production_tag_production_id_foreign');
             $table->dropForeign('production_tag_tag_id_foreign');
         });
-        Schema::dropIfExists('production_tag');
+        // Schema::dropIfExists('production_tag');
+        Schema::dropSoftDeletes('production_tag');
     }
 }

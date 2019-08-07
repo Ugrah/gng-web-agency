@@ -32,6 +32,7 @@ class CreateEstimatedPricesTable extends Migration
             $table->double('amount', 10, 2)->default(0);
             $table->string('ipAdress');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -42,6 +43,7 @@ class CreateEstimatedPricesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estimated_prices');
+        // Schema::dropIfExists('estimated_prices');
+        Schema::dropSoftDeletes('estimated_prices');
     }
 }

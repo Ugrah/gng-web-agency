@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class EstimatedPrice extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
     	'name', 'email', 'amount', 'devise', 'qualityOption', 'typeOption', 'designOption', 'profitableOption', 'loginOption', 'userSpaceOption', 'websiteIntagrationOption', 'adminSpaceOption', 'languageOption', 'advancedFeaturesOption', 'statusProjectOption', 'ipAdress',
     ];

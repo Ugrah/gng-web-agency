@@ -18,6 +18,7 @@ class CreateTagsTable extends Migration
             $table->string('tag', 50)->unique();
             $table->string('tag_url', 60)->unique();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -28,6 +29,7 @@ class CreateTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tags');
+        // Schema::dropIfExists('tags');
+        Schema::dropSoftDeletes('tags');
     }
 }
