@@ -7,6 +7,7 @@ use App\Repositories\EstimatedPriceRepository;
 use Illuminate\Http\Request;
 use DataTables;
 use App\Production;
+use App\AdminResponse;
 
 class TestController extends Controller
 {
@@ -149,5 +150,47 @@ class TestController extends Controller
             'amount' => 'required|required|between:0,99999999.99',
             'devise' => 'string|required',
         ]);
+    }
+
+    public function getSummernote()
+    {
+        return view('tests.summernote');
+    }
+
+    public function postSummernote(Request $request)
+    {
+        $this->validate($request, [
+            'recipient' => 'required',
+            'message' => 'required'
+        ]);
+
+        $recipient = $request->input('recipient');
+        $message = $request->input('message');
+
+        $dom = new \DOMDocument();
+        $dom->loadHtml($message, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+        $images = $dom->getElementsByTagName('img');
+
+        foreach($images as $k => $img){
+            $data = $img->getAttribute('src');
+            list($type, $data) = explode(';', $data);
+            list(, $data) = explode(',', $data);
+            $data = base64_decode($data);
+            do {
+                $image_name = time().$k.'.png';
+            } while(file_exists( config('images.summernotes').'/'.$image_name ));
+            $image_path = config('images.summernotes').'/'.$image_name;
+            file_put_contents($image_path, $data);
+            $img->removeAttribute('src');
+            $img->setAttribute('src', $image_path);
+        }
+        $content = $dom->saveHTML();
+        $AdminResponse = AdminResponse::create([
+            'recipient' => $recipient,
+            'content' => $message,
+            'user_message_id' => 1
+        ]);
+        return redirect('summernote')->withOk('Elément enregistré');
     }
 }

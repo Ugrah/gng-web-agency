@@ -7,7 +7,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class AdminResponse extends Model
 {
-    use SoftDeletes;
+	use SoftDeletes;
+	
+	/**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [ 'recipient', 'content', 'user_message_id'];
 
     public function userMessage() 
 	{
