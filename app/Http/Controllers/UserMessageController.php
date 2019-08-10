@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Input;
 use DataTables;
 use App\UserMessage;
 use Form;
+use App\AdminResponse;
 
 class UserMessageController extends Controller
 {
@@ -118,9 +119,26 @@ class UserMessageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function reply($id)
+    public function reply(Request $request, $id)
     {
-        return view('dashboard.user_messages.reply');
+        $this->validate($request, [
+            'recipient' => 'required',
+            'message' => 'required'
+        ]);
+
+        $recipient = $request->input('recipient');
+        $message = $request->input('message');
+
+        $dom = new \DOMDocument();
+        $dom->loadHtml($message, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $content = $dom->saveHTML();
+        
+        $AdminResponse = AdminResponse::create([
+            'recipient' => $recipient,
+            'content' => $content,
+            'user_message_id' => $id
+        ]);
+        return redirect('user-message/'.$id)->withOk('Message envoyé');
     }
 
     /**

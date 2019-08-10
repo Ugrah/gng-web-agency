@@ -48,6 +48,45 @@
                 </div>
             </div>
         </div>
+
+        <div class="row ">
+            <div class="col mb-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        {{ __('Formulaire de réponse aministrateur') }}
+                    </div>
+                    <div class="card-body">
+                        {!! Form::model($message, ['route' => ['user-message.reply', $message->id], 'id' => 'admin-reply-form', 'method' => 'post', 'class' => 'form-horizontal']) !!}
+
+                            <div class="form-group{{ $errors->has('recipient') ? ' has-error' : '' }}">
+                                <label for="recipient" class="control-label">Email</label>
+                                <input id="recipient" type="email" class="form-control" name="recipient" value="{{ $message->email }}" readonly>
+
+                                @if ($errors->has('recipient'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('recipient') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group{{ $errors->has('message') ? ' has-error' : '' }}">
+                                <label for="message" class="control-label">Email</label>
+                                <textarea id="message" class="form-control" name="message">{{ old('message') }}</textarea>
+
+                                @if ($errors->has('message'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('message') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </div>
+                        {!! Form::close() !!}                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
 
@@ -56,11 +95,15 @@
 @endsection
 
 @section('scripts')
+    <script type="text/javascript">
+        $(function() {
+            // Aside active link
+            //$('#mySidebar ul.navbar-nav > li.nav-item > a.nav-link:eq(1)').addClass('active');
 
-  <script type="text/javascript">
-      $(function() {
-        // Aside active link
-        //$('#mySidebar ul.navbar-nav > li.nav-item > a.nav-link:eq(1)').addClass('active');
-      });
-  </script>
+            $('textarea').summernote({
+                height: 300,   //set editable area's height
+                fontSizes: ['8', '9', '10', '11', '12', '14', '18', '24', '36', '48' , '64', '82', '150']
+            });
+        });
+    </script>
 @endsection

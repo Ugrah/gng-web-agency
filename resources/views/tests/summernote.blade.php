@@ -2,14 +2,11 @@
 <head>
     <title>Summernote Tutorial Example</title>
     
-        <!-- include libraries(jQuery, bootstrap) -->
-        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
-
-        {!! Html::style('http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css') !!}
-        {!! Html::script('http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js') !!}
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=ABeeZee|Lato|PT+Sans|Roboto|Roboto+Condensed" rel="stylesheet">
 
 </head>
       <body>
@@ -41,8 +38,8 @@
                     </div>
 
                     <div class="form-group{{ $errors->has('message') ? ' has-error' : '' }}">
-                        <label for="message" class="control-label">Email</label>
-                        <textarea id="message" class="form-control summernote" name="message">{{ old('message') }}</textarea>
+                        <label for="message" class="control-label">Message</label>
+                        <textarea id="message" class="form-control" name="message">{!! old('message', 'test editor content') !!}</textarea>
 
                         @if ($errors->has('message'))
                             <span class="help-block">
@@ -55,14 +52,33 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
+
+            {!! $adminResponse[3]->content !!}
             
          </div>
-       <script>
-         $(function() {
-            $('.summernote').summernote({
-                height:300,
+    
+    
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+        <script src="{{asset('vendor/unisharp/laravel-ckeditor/adapters/jquery.js')}}"></script>
+        <script type="text/javascript">
+            CKEDITOR.extraPlugins = 'embed';
+
+            $(function() {
+                var options = {
+                    filebrowserImageBrowseUrl : "{{url('laravel-filemanager?type=Images')}}",
+                    filebrowserImageUploadUrl : "{{url('laravel-filemanager/upload?type&_token=csrf_token()')}}",
+                    filebrowserBrowseUrl : "{{url('laravel-filemanager?type=Files')}}",
+                    filebrowserUploadUrl : "{{url('laravel-filemanager/upload?type=Files&_token=csrf_token()')}}"
+                };
+                $('textarea').ckeditor(options);
             });
-         });
-         </script>
+        </script>
+        
    </body>
 </html>

@@ -12,6 +12,7 @@ use App\AdminResponse;
 class TestController extends Controller
 {
     public function __construct(EstimatedPriceRepository $estimatedPriceRepository){
+        $this->middleware('admin');
         $this->middleware('ajax', ['only' => ['testPost']]);
         $this->estimatedPriceRepository = $estimatedPriceRepository;
     }
@@ -154,7 +155,8 @@ class TestController extends Controller
 
     public function getSummernote()
     {
-        return view('tests.summernote');
+        $adminResponse = \App\AdminResponse::all();
+        return view('tests.summernote', compact('adminResponse'));
     }
 
     public function postSummernote(Request $request)
@@ -169,26 +171,11 @@ class TestController extends Controller
 
         $dom = new \DOMDocument();
         $dom->loadHtml($message, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-
-        $images = $dom->getElementsByTagName('img');
-
-        foreach($images as $k => $img){
-            $data = $img->getAttribute('src');
-            list($type, $data) = explode(';', $data);
-            list(, $data) = explode(',', $data);
-            $data = base64_decode($data);
-            do {
-                $image_name = time().$k.'.png';
-            } while(file_exists( config('images.summernotes').'/'.$image_name ));
-            $image_path = config('images.summernotes').'/'.$image_name;
-            file_put_contents($image_path, $data);
-            $img->removeAttribute('src');
-            $img->setAttribute('src', $image_path);
-        }
         $content = $dom->saveHTML();
+
         $AdminResponse = AdminResponse::create([
             'recipient' => $recipient,
-            'content' => $message,
+            'content' => $content,
             'user_message_id' => 1
         ]);
         return redirect('summernote')->withOk('Elément enregistré');

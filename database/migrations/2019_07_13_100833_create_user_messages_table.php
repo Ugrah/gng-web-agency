@@ -19,7 +19,7 @@ class CreateUserMessagesTable extends Migration
             $table->string('email');
             $table->string('phone_number')->nullable();
             $table->string('subject');
-            $table->string('content');
+            $table->longText('content');
             $table->string('user_ip_adress');
             $table->boolean('read')->default(false);
             $table->timestamps();

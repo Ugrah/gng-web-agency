@@ -1,0 +1,16 @@
+Node.js
+This package will install:
+	•	Node.js v10.13.0 to /usr/local/bin/node
+	•	npm v6.4.1 to /usr/local/bin/npm
+Make sure that /usr/local/bin is in your $PATH.
+
+
+TO npm install -g ios-deploy --unsafe-perm=true
+
+Android SDK Location
+/Users/grulog/Library/Android/sdk
+
+JDK 11
+/Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home/bin
+
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin

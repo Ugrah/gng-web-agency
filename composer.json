@@ -17,6 +17,8 @@
         "laravelcollective/html": "^5.8",
         "spatie/laravel-cookie-consent": "^2.6",
         "torann/geoip": "^1.0",
+        "unisharp/laravel-ckeditor": "^4.7",
+        "unisharp/laravel-filemanager": "~1.8",
         "yajra/laravel-datatables-oracle": "^9.4"
     },
     "require-dev": {

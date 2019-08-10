@@ -189,7 +189,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         App\Providers\Html\HtmlServiceProvider::class,
-        //App\Providers\HtmlMacrosServiceProvider::class,
+        // App\Providers\HtmlMacrosServiceProvider::class,
 
         /* 
          * Package added 
@@ -199,6 +199,9 @@ return [
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         \Torann\GeoIP\GeoIPServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
+        Unisharp\Ckeditor\ServiceProvider::class,
+        UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
     ],
 
     /*
@@ -267,6 +270,8 @@ return [
         'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,
 
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

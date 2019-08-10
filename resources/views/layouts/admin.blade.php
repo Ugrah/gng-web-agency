@@ -14,8 +14,6 @@
     <!-- Bootstrap CSS -->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     {!! Html::style('https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css') !!}
     {!! Html::script('https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js') !!}
 
@@ -152,8 +150,15 @@
               </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link px-3 text-light" href="{{ url('/user-message') }}">
-                <i class="fas fa-envelope pr-2"></i>  User message</a>
+              <a class="nav-link px-3 text-light" data-toggle="collapse" href="#collapseUserMessage" role="button" aria-expanded="false" aria-controls="collapseUserMessage">
+                <i class="fas fa-envelope pr-2"></i> {{ __('User message') }}
+                <i class="fas fa-angle-right float-right"></i>
+                <i class="fas fa-angle-down d-none float-right"></i>
+              </a>
+              <ul id="collapseUserMessage" class="collapse list-group mx-3">
+                <a href="{{ url('/user-message') }}" class="list-group-item list-group-item-action py-2">{{ __('Messages reçus') }}</a>
+                <a href="#" class="list-group-item list-group-item-action py-2">{{ __('Corbeille') }}</a>
+              </ul>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link px-3 text-light" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -277,9 +282,24 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <!-- <script src="{{asset('js/wow.js')}}"></script> -->
+    <script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+    <script src="{{asset('vendor/unisharp/laravel-ckeditor/adapters/jquery.js')}}"></script>
+    <script type="text/javascript">
+        $(function() {
+            var options = {
+                filebrowserImageBrowseUrl : "{{url('laravel-filemanager?type=Images')}}",
+                filebrowserImageUploadUrl : "{{url('laravel-filemanager/upload?type&_token=csrf_token()')}}",
+                filebrowserBrowseUrl : "{{url('laravel-filemanager?type=Files')}}",
+                filebrowserUploadUrl : "{{url('laravel-filemanager/upload?type=Files&_token=csrf_token()')}}"
+            };
+            $('textarea').ckeditor(options);
+        });
+    </script>
+
     {!! Html::script('js/wow.js') !!}
 
     <script type="text/javascript">
@@ -330,7 +350,7 @@
 			});
 			/* End Function scroll to top button */
       	});
-	</script>
+	  </script>
 	
     <!-- UserMessage Manager -->
 	<script type="text/javascript">

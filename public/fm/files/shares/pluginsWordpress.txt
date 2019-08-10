@@ -1,0 +1,9 @@
+* Installer un thème
+	- Installation de OceanWP
+	- Cliquez ensuite sur “Commencez à installer les extensions”, pour installer toutes les extensions
+
+* Installation d'une démo (ici celle de OceanWP)
+	- Installation de l'extension "Ocean Demo Import"
+	- Installation des extensions nécessaires
+
+* Installer un thème builder (
