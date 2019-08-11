@@ -2,27 +2,23 @@
 
 namespace App\Mail;
 
-use Illuminate\Http\Request;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ContactToUser extends Mailable
+class MarkdownTest extends Mailable
 {
     use Queueable, SerializesModels;
-
-    const TRANS_PATH = 'back/mails/default.';
-    public $data;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(array $data)
+    public function __construct()
     {
-        $this->data = $data;
+        //
     }
 
     /**
@@ -32,7 +28,6 @@ class ContactToUser extends Mailable
      */
     public function build()
     {
-        return $this->subject(trans(self::TRANS_PATH.'contact_to_user').$this->data['subject'])->markdown('emails.contactToUser')
-                    ->with(['name' => $this->data['name']]);
+        return $this->markdown('emails.markdown_test');
     }
 }

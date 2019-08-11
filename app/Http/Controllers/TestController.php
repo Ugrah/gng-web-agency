@@ -7,6 +7,7 @@ use App\Repositories\EstimatedPriceRepository;
 use Illuminate\Http\Request;
 use DataTables;
 use App\Production;
+use App\EstimatedPrice;
 use App\AdminResponse;
 
 class TestController extends Controller
@@ -179,5 +180,36 @@ class TestController extends Controller
             'user_message_id' => 1
         ]);
         return redirect('summernote')->withOk('Elément enregistré');
+    }
+
+    /**
+     * To create your markdown email template.
+     *
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    public function markdownMail()
+    {
+        // return (new \App\Mail\MarkdownTest())->render();
+        // return (new \App\Mail\ContactToAdmin([
+        //     'name' => 'Ulrich Grah',
+        //     'email' => 'grulog23@gmail.com',
+        //     'phone_number' => null,
+        //     'subject' => 'this is the subject',
+        //     'content' => 'This is the message content'
+        // ]))->render();
+        // return (new \App\Mail\ContactToUser([
+        //     'name' => 'Ulrich Grah',
+        //     'email' => 'grulog23@gmail.com',
+        //     'phone_number' => null,
+        //     'subject' => 'this is the subject',
+        //     'content' => 'This is the message content'
+        // ]))->render();
+        // $estimatePrice = EstimatedPrice::find(1);
+        // return (new \App\Mail\EstimateToAdmin($estimatePrice)->render();
+    }
+
+    public function markdownMailPost()
+    {
+        return redirect('markdown-mail')->withOk('Elément enregistré');
     }
 }

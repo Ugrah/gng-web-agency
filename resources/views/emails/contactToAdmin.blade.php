@@ -1,36 +1,33 @@
-@extends('layouts.email')
+@component('mail::message')
 
-@section('styles')
+# Notifications d'utilisateur
 
-@endsection
+@lang('emails/contactToAdmin.hello')
+    
+    @if(isset($name))
+        * @lang('emails/contactToAdmin.name', ['name' => $name])
+    @endif
 
-@section('content')
+    @if(isset($email))
+        * @lang('emails/contactToAdmin.email', ['email' => $email])
+    @endif
 
-<section>
-    <div>
-        {!! trans('emails/contactToAdmin.hello') !!}
-        <ul>
-            @if(isset($name))
-                {!! trans('emails/contactToAdmin.name', ['name' => $name]) !!}
-            @endif
+    @if(isset($phone_number))
+        * @lang('emails/contactToAdmin.number_phone', ['number_phone' => $phone_number])
+    @endif
 
-            @if(isset($email))
-                {!! trans('emails/contactToAdmin.email', ['email' => $email]) !!}
-            @endif
+    @if(isset($subject))
+        * @lang('emails/contactToAdmin.subject', ['subject' => $subject])
+    @endif
 
-            @if(isset($phone_number))
-                {!! trans('emails/contactToAdmin.number_phone', ['number_phone' => $phone_number]) !!}
-            @endif
+    @if(isset($content))
+        * @lang('emails/contactToAdmin.message', ['message' => $content])
+    @endif
 
-            @if(isset($subject))
-                {!! trans('emails/contactToAdmin.subject', ['subject' => $subject]) !!}
-            @endif
 
-            @if(isset($content))
-                {!! trans('emails/contactToAdmin.message', ['message' => $content]) !!}
-            @endif
-        </ul>
-    </div>
-</section>
+@lang('emails/contactToAdmin.go_to_admin_space')
+@component('mail::button', ['url' => url('/dashboard')])
+Cliquez ici
+@endcomponent
 
-@endsection
+@endcomponent

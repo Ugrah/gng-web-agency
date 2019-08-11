@@ -1,16 +1,12 @@
-@extends('layouts.email')
+@component('mail::message')
 
-@section('content')
+@lang('emails/estimateToUser.content.p_1')
+@lang('emails/estimateToUser.content.p_2', ['amount' => number_format($estimatedPrice->amount, 2, $decimalSeparator, $numberSeparator), 'devise' => $estimatedPrice->devise])
+@lang('emails/estimateToUser.content.p_3')
 
-<section>
-    <div>
-        <p>{{ trans('emails/estimateToUser.content.p_1') }}</p>
-        <p>{!! trans('emails/estimateToUser.content.p_2', ['amount' => number_format($estimatedPrice->amount, 2, $decimalSeparator, $numberSeparator), 'devise' => $estimatedPrice->devise]) !!}</p>
-        <br>
-        <p>{{ trans('emails/estimateToUser.content.p_3') }}</p>
-        <br>
-        <p style="text-align: center"><a class="btn-custom-gradient rounded" href="{{url('/contact')}}" target="_blank">{{ trans('emails/estimateToUser.link') }}</a></p>
-    </div>
-</section>
+@lang('emails/estimateToUser.visite_our_site')
+@component('mail::button', ['url' => url('/')])
+    @lang('emails/estimateToUser.link')
+@endcomponent
 
-@endsection
+@endcomponent

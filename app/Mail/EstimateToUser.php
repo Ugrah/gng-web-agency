@@ -35,7 +35,7 @@ class EstimateToUser extends Mailable
         $numberSeparator = app()->getLocale() == 'fr' ? ' ' : ',';
         $decimalSeparator = app()->getLocale() == 'fr' ? ',' : '.';
 
-        return $this->subject(trans(self::TRANS_PATH.'estimate_to_user'))->view('emails.estimateToUser')
+        return $this->subject(trans(self::TRANS_PATH.'estimate_to_user'))->markdown('emails.estimateToUser')
                     ->with([
                         'estimatedPrice' => $this->estimatedPrice,
                         'numberSeparator' => $numberSeparator,

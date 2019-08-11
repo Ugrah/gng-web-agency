@@ -1,10 +1,11 @@
 <?php
 return [
 
-    'hello' => '<p>Bonjour Admin.<br>Un utilisateur vous a contacté sur votre site web.</p>',
-    'name' => '<li>Nom : <span>:name</span></li>',
-    'email' => '<li>Prénom : <span>:email</span></li>',
-    'number_phone' => '<li>Numéro de téléphone : <span>:number_phone</span></li>',
-    'subject' => '<li>Sujet du message : <span>:subject</span></li>',
-    'message' => '<li>Contenu du message : <span>:message</span></li>',
+    'hello' => 'Bonjour Admin.<br>Un utilisateur vous a contacté sur votre site web.',
+    'name' => 'Nom : :name',
+    'email' => 'Email : :email',
+    'number_phone' => 'Numéro de téléphone : :number_phone',
+    'subject' => 'Sujet du message : :subject',
+    'message' => 'Contenu du message : :message',
+    'go_to_admin_space' => 'Consultez votre espace administrateur'
 ];

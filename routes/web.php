@@ -74,6 +74,9 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('production-list', 'TestController@getDataProduction');
         Route::get('get-productions', 'TestController@displayData');
 
+        Route::get('markdown-mail', 'TestController@markdownMail');
+        Route::post('markdown-mail', 'TestController@markdownMailPost');
+
         //Route::get('dashboard', function () { $account = "It's me"; dd($account); });
     });
 

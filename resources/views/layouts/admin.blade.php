@@ -15,7 +15,6 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     {!! Html::style('https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css') !!}
-    {!! Html::script('https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js') !!}
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=ABeeZee|Lato|PT+Sans|Roboto|Roboto+Condensed" rel="stylesheet">
@@ -55,7 +54,7 @@
         left: -10px;
       }
 
-	  div#main div.dropdown-menu-alert { min-width: 22rem; }
+	    div#main div.dropdown-menu-alert { min-width: 22rem; }
       div.dropdown-menu a.dropdown-item { font-size: 0.9em; color: #363636 !important; }
       div.dropdown-menu a.dropdown-item:hover { background-color: #F8F9FC !important; color: #363636 !important; }
 
@@ -90,8 +89,8 @@
         visibility: visible;
       }
 
-	  /* user message item (new message style) */
-	  li.new-message { font-weight: bold; background-color: #f0f3f7 !important; }
+	    /* user message item (new message style) */
+	    li.new-message { font-weight: bold; background-color: #f0f3f7 !important; }
 
       /* Styles for the content section */
 
@@ -285,6 +284,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    {!! Html::script('https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js') !!}
+
 
     <script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
     <script src="{{asset('vendor/unisharp/laravel-ckeditor/adapters/jquery.js')}}"></script>

@@ -35,7 +35,7 @@ class EstimateToAdmin extends Mailable
         $numberSeparator = app()->getLocale() == 'fr' ? ' ' : ',';
         $decimalSeparator = app()->getLocale() == 'fr' ? ',' : '.';
 
-        return $this->subject(trans(self::TRANS_PATH.'estimate_to_admin'))->view('emails.estimateToAdmin')
+        return $this->subject(trans(self::TRANS_PATH.'estimate_to_admin'))->markdown('emails.estimateToAdmin')
                     ->with([
                         'estimatedPrice' => $this->estimatedPrice,
                         'numberSeparator' => $numberSeparator,
