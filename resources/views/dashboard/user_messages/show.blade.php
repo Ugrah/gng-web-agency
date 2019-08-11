@@ -99,11 +99,6 @@
         $(function() {
             // Aside active link
             //$('#mySidebar ul.navbar-nav > li.nav-item > a.nav-link:eq(1)').addClass('active');
-
-            $('textarea').summernote({
-                height: 300,   //set editable area's height
-                fontSizes: ['8', '9', '10', '11', '12', '14', '18', '24', '36', '48' , '64', '82', '150']
-            });
         });
     </script>
 @endsection

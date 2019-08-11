@@ -9,6 +9,7 @@ use DataTables;
 use App\UserMessage;
 use Form;
 use App\AdminResponse;
+use App\Jobs\SendAdminResponseToUserEmail;
 
 class UserMessageController extends Controller
 {
@@ -138,6 +139,8 @@ class UserMessageController extends Controller
             'content' => $content,
             'user_message_id' => $id
         ]);
+
+        SendAdminResponseToUserEmail::dispatchNow($AdminResponse);
         return redirect('user-message/'.$id)->withOk('Message envoyé');
     }
 

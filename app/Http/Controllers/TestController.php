@@ -189,7 +189,7 @@ class TestController extends Controller
      */
     public function markdownMail()
     {
-        // return (new \App\Mail\MarkdownTest())->render();
+        return (new \App\Mail\MarkdownTest())->render();
         // return (new \App\Mail\ContactToAdmin([
         //     'name' => 'Ulrich Grah',
         //     'email' => 'grulog23@gmail.com',
